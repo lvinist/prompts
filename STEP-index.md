@@ -26,7 +26,16 @@ worked, and completed.
 
 | STEP | Title | Owner | Status | Repos (projection) | Scope (one line) |
 |------|-------|-------|--------|--------------------|------------------|
-| STEP-1 | Architecture | | Planned | `mine-flow-docs`, `prompts` | Architecture-first: design docs + ADRs, no code. Substeps = the sessions in `templates/architecture-sessions/`. `init.sh` reserves this row; kickoff flips it to `In progress` and uses branch `step-0001-architecture` where branch-per-STEP applies. |
+| STEP-1 | Architecture | | Done | `mine-flow-docs`, `prompts` | Architecture-first: design docs + ADRs, no code. Substeps = the sessions in `templates/architecture-sessions/`. Branch: `step-0001-architecture`. |
+| STEP-2 | Scaffold repos & skeleton | | Planned | `mine-flow-app` | Create the Flutter repository, Clean Architecture structure, apply license, and setup `.env.example` baseline. |
+| STEP-3 | Core Data Layer & Authentication | | Planned | `mine-flow-app` | Implement Supabase schema, RLS policies, auth, generate Dart models, and setup offline caching foundation. |
+| STEP-4 | Tier 1 - Attendance & Daily Logging | | Planned | `mine-flow-app` | Build UI and offline sync logic for crew attendance and daily structured logs for field operations. |
+| STEP-5 | Tier 1 - Equipment Digital Checks | | Planned | `mine-flow-app` | Implement SOP-based pre-work and post-work condition checks for GNSS, Total Station, and Drone/UAV with offline sync. |
+| STEP-6 | Mid-Phase Check-in | | Planned | `mine-flow-docs`, `prompts` | Run standard check-in runbook (`runbooks/check-in.md`) to reconcile drift and review risks. |
+| STEP-7 | Tier 2 - Field Tracking & Measurement | | Planned | `mine-flow-app` | Build manual entry screens and data flow for cut/fill volume tracking, land clearing area, and inventory. |
+| STEP-8 | Tier 2 - Data Bucket Integration | | Planned | `mine-flow-app` | Integrate Google Drive API for uploading heavy geospatial files (.shp, .tiff) and save metadata to Supabase. |
+| STEP-9 | Tier 3 - Reporting, Timeline & Polish | | Planned | `mine-flow-app` | Add visual work timeline, PDF report generation, and in-app notifications. |
+| STEP-10 | End-to-End Integration & Final Check-in | | Planned | `mine-flow-app`, `mine-flow-docs`, `prompts` | Wire capabilities together to ensure launch criteria are met end-to-end, and run final check-in. |
 
 <!-- STEP-1 is the ONLY row at bootstrap. STEP-2 onward are the implementation STEPs — don't
      add them by hand: after STEP-1's review passes, run the planning session
@@ -45,20 +54,23 @@ worked, and completed.
 
 | Substep | Session | Status | Output doc |
 |---------|---------|--------|------------|
-| 1.1 | System Overview, Requirements & Non-Goals | Planned | `architecture/01-…` |
-| 1.2 | Phasing & Roadmap | Planned | `architecture/02-…` |
-| 1.3 | Architecture Overview & Component Boundaries | Planned | `architecture/03-…` |
-| 1.4 | Data Model, Ownership & Retention | Planned | `architecture/04-…` |
-| 1.5 | Scaling & Performance | Planned | `architecture/05-…` |
-| 1.6 | Security & Threat Model | Planned | `architecture/06-…` |
-| 1.7 | UI / Design System | Planned | `architecture/07-…` |
-| 1.8 | Infrastructure & Deployment | Planned | `architecture/08-…` |
-| 1.9 | Environments | Planned | `architecture/09-…` |
-| 1.10 | Observability | Planned | `architecture/10-…` |
-| 1.11 | Interface Contracts | Planned | `architecture/11-…` |
-| 1.12 | Test Strategy | Planned | `architecture/12-…` |
-| 1.13 | Glossary | Planned | `architecture/13-…` |
-| 1.14 | Cross-Cutting Review | Planned | review doc |
+| 1.1 | System Overview, Requirements & Non-Goals | Done | `architecture/01-system-overview.md` |
+| 1.2 | Phasing & Roadmap | Done | `architecture/02-phasing-roadmap.md` |
+| 1.3 | Architecture Overview & Component Boundaries | Done | `architecture/03-architecture-overview.md` |
+| 1.3a | Native App Architecture | Done | `architecture/15-native-app-architecture.md` |
+| 1.4 | Data Model, Ownership & Retention | Done | `architecture/04-data-model.md` |
+| 1.5 | Scaling & Performance | Done | `architecture/05-scaling-performance.md` |
+| 1.6 | Security & Threat Model | Done | `architecture/06-security-threat-model.md` |
+| 1.6a | Identity & Auth | Done | `architecture/16-identity-auth.md` |
+| 1.6b | Privacy, Compliance & Data Governance | Done | `architecture/17-privacy-compliance.md` |
+| 1.7 | UI / Design System | Done | `architecture/07-ui-design-system.md` |
+| 1.8 | Infrastructure & Deployment | Done | `architecture/08-infrastructure-deployment.md` |
+| 1.9 | Environments | Done | `architecture/09-environments.md` |
+| 1.10 | Observability | Done | `architecture/10-observability.md` |
+| 1.11 | Interface Contracts | Done | `architecture/11-interface-contracts.md` |
+| 1.12 | Test Strategy | Done | `architecture/12-test-strategy.md` |
+| 1.13 | Glossary | Done | `architecture/13-glossary.md` |
+| 1.14 | Cross-Cutting Review | Done | review doc |
 
 <!-- Conditional sessions: enumerate every conditional-*.md template and include/defer/skip it
      in the STEP-1 PLAN's "Conditional sessions considered" table. Add an index row only when
