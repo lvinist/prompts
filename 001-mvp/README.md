@@ -9,7 +9,7 @@ here. STEP numbers are global (they don't reset per phase).
 
 | STEP | Title | Substeps | Archived |
 |------|-------|----------|----------|
-| | | | |
+| STEP-1 | Architecture | 17 | `step-0001/` |
 
 <!-- The architecture STEP (STEP-1) is archived here as step-0001/ once its Cross-Cutting
      review passes. Add a row per STEP on completion. -->
