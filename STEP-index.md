@@ -168,7 +168,7 @@ worked, and completed.
 | STEP-25 | Phase 2 UI pass - ReportDashboardPage       | DeepSeek    | Done    | `mine-flow-app`, `prompts`        | Phase 2 styling, markup, and shadcn-admin conventions for ReportDashboardPage. Substeps: 25.1 craft, 25.2 polish, 25.3 audit. Branch: `step-0025-phase2-reportdashboardpage`.             |
 | STEP-26 | Phase 2 UI pass - ReportConfigPage          | Antigravity | Done    | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for ReportConfigPage. Substeps: 26.1 craft, 26.2 polish, 26.3 audit. Branch: `step-0026-phase2-reportconfigpage`.                   |
 | STEP-27 | Phase 2 UI pass - NotificationListPage      |             | Done    | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for NotificationListPage. Substeps: 27.1 craft, 27.2 polish, 27.3 audit. Branch: `step-0027-phase2-notificationlistpage`.           |
-| STEP-28 | Phase 2 Tier 1 Check-in, Audit & Bug Fixes  |             | Planned | `mine-flow-app`, `mine-flow-docs` | Final cross-screen consistency audit of all 15 rebuilt screens, standard check-in (reconcile docs, test suite), and fixing accumulated UI bugs from the rebuild.                          |
+| STEP-28 | Phase 2 Tier 1 Check-in, Audit & Bug Fixes  |             | In progress | `mine-flow-app`, `mine-flow-docs` | Final cross-screen consistency audit of all 15 rebuilt screens, standard check-in (reconcile docs, test suite), and fixing accumulated UI bugs from the rebuild.                          |
 
 ### STEP-20 substeps
 
