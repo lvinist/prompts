@@ -151,11 +151,12 @@ worked, and completed.
 
 ## Phase 2 — Impeccable UI Rebuild
 
-| STEP    | Title                              | Owner       | Status | Repos (projection) | Scope (one line)                                                                                                                                                        |
-| ------- | ---------------------------------- | ----------- | ------ | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| STEP-13 | Phase 2 UI pass - LoginPage        | Gemini      | Done   | `mine-flow-app`    | Impeccable-driven styling and markup rebuild of LoginPage matching shadcn-admin conventions. Branch: `step-0013-phase2-loginpage`.                                      |
-| STEP-14 | Phase 2 UI pass - DashboardPage    | DeepSeek    | Done   | `mine-flow-app`    | Phase 2 styling, markup, and shadcn-admin conventions for DashboardPage. Substeps: 14.1 craft, 14.2 polish, 14.3 audit. Branch: `step-0014-phase2-dashboardpage`.       |
-| STEP-15 | Phase 2 UI pass - AttendanceScreen | Antigravity | Done   | `mine-flow-app`    | Phase 2 styling, markup, and shadcn-admin conventions for AttendanceScreen. Substeps: 15.1 craft, 15.2 polish, 15.3 audit. Branch: `step-0015-phase2-attendancescreen`. |
+| STEP    | Title                                | Owner       | Status | Repos (projection) | Scope (one line)                                                                                                                                                            |
+| ------- | ------------------------------------ | ----------- | ------ | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| STEP-13 | Phase 2 UI pass - LoginPage          | Gemini      | Done   | `mine-flow-app`    | Impeccable-driven styling and markup rebuild of LoginPage matching shadcn-admin conventions. Branch: `step-0013-phase2-loginpage`.                                          |
+| STEP-14 | Phase 2 UI pass - DashboardPage      | DeepSeek    | Done   | `mine-flow-app`    | Phase 2 styling, markup, and shadcn-admin conventions for DashboardPage. Substeps: 14.1 craft, 14.2 polish, 14.3 audit. Branch: `step-0014-phase2-dashboardpage`.           |
+| STEP-15 | Phase 2 UI pass - AttendanceScreen   | Antigravity | Done   | `mine-flow-app`    | Phase 2 styling, markup, and shadcn-admin conventions for AttendanceScreen. Substeps: 15.1 craft, 15.2 polish, 15.3 audit. Branch: `step-0015-phase2-attendancescreen`.     |
+| STEP-16 | Phase 2 UI pass - DailyLogListScreen | DeepSeek    | Done   | `mine-flow-app`    | Phase 2 styling, markup, and shadcn-admin conventions for DailyLogListScreen. Substeps: 16.1 craft, 16.2 polish, 16.3 audit. Branch: `step-0016-phase2-dailyloglistscreen`. |
 
 ## How to add a STEP
 
