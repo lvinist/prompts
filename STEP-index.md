@@ -242,6 +242,14 @@ worked, and completed.
 | 24.2    | Polish (Animations & Details)      | Done   | `lib/features/data_bucket/presentation/pages/file_detail_page.dart` — Custom transition intervals, micro-interactions applied with robust Theme colour usage.           |
 | 24.3    | Audit (Cross-check & Consistency)  | Done   | Verified against DESIGN.md: theme tokens (no raw colors), layout breakpoints, analyzer passes with zero issues. Git branch synced.                                      |
 
+### STEP-28 substeps
+
+| Substep | Session / Title                            | Status   | Output / Deliverables                                                                                        |
+| ------- | ------------------------------------------ | -------- | ------------------------------------------------------------------------------------------------------------ |
+| 28.1    | Audit 15 Phase 2 screens                   | Done     | `mine-flow-STEP-28.1-AUDIT.md` (identified bugs and inconsistencies)                                         |
+| 28.2    | Check-in (Doc reconcile & tests)           | Done     | `reports/2026-07-21-step-0028-check-in-report.md`, ADR-0007                                                  |
+| 28.3    | Bug Fixes                                  | In progress |                                                                                                              |
+
 ## How to add a STEP
 
 See `prompts/README.md` for the authoring recipe.
