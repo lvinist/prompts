@@ -164,7 +164,7 @@ worked, and completed.
 | STEP-21 | Phase 2 UI pass - TimelinePage              | DeepSeek    | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for TimelinePage. Substeps: 21.1 craft, 21.2 polish, 21.3 audit. Branch: `step-0021-phase2-timelinepage`.                           |
 | STEP-22 | Phase 2 UI pass - DataBucketListPage        | DeepSeek    | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for DataBucketListPage. Substeps: 22.1 craft, 22.2 polish, 22.3 audit. Branch: `step-0022-phase2-databucketlistpage`.               |
 | STEP-23 | Phase 2 UI pass - UploadFilePage            | Antigravity | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for UploadFilePage. Substeps: 23.1 craft, 23.2 polish, 23.3 audit. Branch: `step-0023-phase2-uploadfilepage`.                       |
-| STEP-24 | Phase 2 UI pass - FileDetailPage            |             | Planned     | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for FileDetailPage. Substeps: 24.1 craft, 24.2 polish, 24.3 audit. Branch: `step-0024-phase2-filedetailpage`.                       |
+| STEP-24 | Phase 2 UI pass - FileDetailPage            | DeepSeek    | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for FileDetailPage. Substeps: 24.1 craft, 24.2 polish, 24.3 audit. Branch: `step-0024-phase2-filedetailpage`.                       |
 | STEP-25 | Phase 2 UI pass - ReportDashboardPage       |             | Planned     | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for ReportDashboardPage. Substeps: 25.1 craft, 25.2 polish, 25.3 audit. Branch: `step-0025-phase2-reportdashboardpage`.             |
 | STEP-26 | Phase 2 UI pass - ReportConfigPage          |             | Planned     | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for ReportConfigPage. Substeps: 26.1 craft, 26.2 polish, 26.3 audit. Branch: `step-0026-phase2-reportconfigpage`.                   |
 | STEP-27 | Phase 2 UI pass - NotificationListPage      |             | Planned     | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for NotificationListPage. Substeps: 27.1 craft, 27.2 polish, 27.3 audit. Branch: `step-0027-phase2-notificationlistpage`.           |
@@ -213,3 +213,11 @@ worked, and completed.
 ## How to add a STEP
 
 See `prompts/README.md` for the authoring recipe.
+
+### STEP-24 substeps
+
+| Substep | Session / Title                    | Status | Output / Deliverables                                                                                                                                                                                                                                          |
+| ------- | ---------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 24.1    | Craft (Markup & layout foundation) | Done   | `lib/features/data_bucket/presentation/pages/file_detail_page.dart` — Phase 2 shadcn-admin styling, layout adjustments, responsive details row, and semantic labelling.                                                                                                        |
+| 24.2    | Polish (Animations & Details)      | Done   | `lib/features/data_bucket/presentation/pages/file_detail_page.dart` — Custom transition intervals, micro-interactions applied with robust Theme colour usage.                                                        |
+| 24.3    | Audit (Cross-check & Consistency)  | Done   | Verified against DESIGN.md: theme tokens (no raw colors), layout breakpoints, analyzer passes with zero issues. Git branch synced.                                                  |
