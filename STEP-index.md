@@ -162,7 +162,7 @@ worked, and completed.
 | STEP-19 | Phase 2 UI pass - InventoryDashboardScreen  | DeepSeek    | Done    | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for InventoryDashboardScreen. Substeps: 19.1 craft, 19.2 polish, 19.3 audit. Branch: `step-0019-phase2-inventorydashboardscreen`.   |
 | STEP-20 | Phase 2 UI pass - EquipmentHistoryScreen    | DeepSeek    | Done    | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for EquipmentHistoryScreen. Substeps: 20.1 craft, 20.2 polish, 20.3 audit. Branch: `step-0020-phase2-equipmenthistoryscreen`.       |
 | STEP-21 | Phase 2 UI pass - TimelinePage              | DeepSeek    | Done    | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for TimelinePage. Substeps: 21.1 craft, 21.2 polish, 21.3 audit. Branch: `step-0021-phase2-timelinepage`.                           |
-| STEP-22 | Phase 2 UI pass - DataBucketListPage        |             | Planned | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for DataBucketListPage. Substeps: 22.1 craft, 22.2 polish, 22.3 audit. Branch: `step-0022-phase2-databucketlistpage`.               |
+| STEP-22 | Phase 2 UI pass - DataBucketListPage        | DeepSeek    | Done    | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for DataBucketListPage. Substeps: 22.1 craft, 22.2 polish, 22.3 audit. Branch: `step-0022-phase2-databucketlistpage`.               |
 | STEP-23 | Phase 2 UI pass - UploadFilePage            |             | Planned | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for UploadFilePage. Substeps: 23.1 craft, 23.2 polish, 23.3 audit. Branch: `step-0023-phase2-uploadfilepage`.                       |
 | STEP-24 | Phase 2 UI pass - FileDetailPage            |             | Planned | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for FileDetailPage. Substeps: 24.1 craft, 24.2 polish, 24.3 audit. Branch: `step-0024-phase2-filedetailpage`.                       |
 | STEP-25 | Phase 2 UI pass - ReportDashboardPage       |             | Planned | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for ReportDashboardPage. Substeps: 25.1 craft, 25.2 polish, 25.3 audit. Branch: `step-0025-phase2-reportdashboardpage`.             |
@@ -180,19 +180,27 @@ worked, and completed.
 
 ### STEP-19 substeps
 
-| Substep | Session / Title                    | Status | Output / Deliverables                                                                                                                                                                                            |
-| ------- | ---------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 19.1    | Craft (Markup & layout foundation) | Done   | `lib/features/tracking/presentation/pages/inventory_dashboard_screen.dart` — Phase 2 shadcn-admin styling, markup and layout foundation.                                                                         |
-| 19.2    | Polish (Animations & Details)      | Done   | `lib/features/tracking/presentation/pages/inventory_dashboard_screen.dart` — Spacing, typography, micro-interactions applied.                                                                                    |
-| 19.3    | Audit (Cross-check & Consistency)  | Done   | Antigravity verified: Code accurately reflects `shadcn-admin` token usage, accessibility, and responsive checks.                                                                                                 |
+| Substep | Session / Title                    | Status | Output / Deliverables                                                                                                                    |
+| ------- | ---------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 19.1    | Craft (Markup & layout foundation) | Done   | `lib/features/tracking/presentation/pages/inventory_dashboard_screen.dart` — Phase 2 shadcn-admin styling, markup and layout foundation. |
+| 19.2    | Polish (Animations & Details)      | Done   | `lib/features/tracking/presentation/pages/inventory_dashboard_screen.dart` — Spacing, typography, micro-interactions applied.            |
+| 19.3    | Audit (Cross-check & Consistency)  | Done   | Antigravity verified: Code accurately reflects `shadcn-admin` token usage, accessibility, and responsive checks.                         |
 
 ### STEP-21 substeps
 
-| Substep | Session / Title                    | Status | Output / Deliverables                                                                                                                                                                                            |
-| ------- | ---------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 21.1    | Craft (Markup & layout foundation) | Done   | `lib/features/timeline/presentation/pages/timeline_page.dart` — Phase 2 shadcn-admin styling, CustomScrollView layout.                                                                                           |
-| 21.2    | Polish (Animations & Details)      | Done   | `lib/features/timeline/presentation/widgets/timeline_chart.dart`, `milestone_card.dart` — Micro-interactions, standard status color token usage, updated tooltips.                                               |
-| 21.3    | Audit (Cross-check & Consistency)  | Done   | Antigravity verified: Code accurately reflects `shadcn-admin` token usage, Git branches synced, all layout constraints handle breakpoints cleanly.                                                               |
+| Substep | Session / Title                    | Status | Output / Deliverables                                                                                                                                              |
+| ------- | ---------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 21.1    | Craft (Markup & layout foundation) | Done   | `lib/features/timeline/presentation/pages/timeline_page.dart` — Phase 2 shadcn-admin styling, CustomScrollView layout.                                             |
+| 21.2    | Polish (Animations & Details)      | Done   | `lib/features/timeline/presentation/widgets/timeline_chart.dart`, `milestone_card.dart` — Micro-interactions, standard status color token usage, updated tooltips. |
+| 21.3    | Audit (Cross-check & Consistency)  | Done   | Antigravity verified: Code accurately reflects `shadcn-admin` token usage, Git branches synced, all layout constraints handle breakpoints cleanly.                 |
+
+### STEP-22 substeps
+
+| Substep | Session / Title                    | Status | Output / Deliverables                                                                                                                                                                                                                                          |
+| ------- | ---------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 22.1    | Craft (Markup & layout foundation) | Done   | `lib/features/data_bucket/presentation/pages/data_bucket_list_page.dart` — Phase 2 shadcn-admin styling, CustomScrollView layout, SliverAppBar, polished empty/error states.                                                                                   |
+| 22.2    | Polish (Animations & Details)      | Done   | `lib/features/data_bucket/presentation/pages/data_bucket_list_page.dart` — `easeOutQuart` curves per DESIGN.md, staggered slide+fade card entrance, refined file count label typography and spacing, `TickerProviderStateMixin` for multiple anim controllers. |
+| 22.3    | Audit (Cross-check & Consistency)  | Done   | Verified against DESIGN.md: `easeOutQuart` curves, staggered slide+fade entrance, spacing scale (4,8,12,16,20,24,32), theme tokens (no raw colors), shadcn-admin style, analyzer passes with zero issues. Git branch synced.                                   |
 
 ## How to add a STEP
 
