@@ -157,6 +157,7 @@ worked, and completed.
 | STEP-14 | Phase 2 UI pass - DashboardPage      | DeepSeek    | Done   | `mine-flow-app`    | Phase 2 styling, markup, and shadcn-admin conventions for DashboardPage. Substeps: 14.1 craft, 14.2 polish, 14.3 audit. Branch: `step-0014-phase2-dashboardpage`.           |
 | STEP-15 | Phase 2 UI pass - AttendanceScreen   | Antigravity | Done   | `mine-flow-app`    | Phase 2 styling, markup, and shadcn-admin conventions for AttendanceScreen. Substeps: 15.1 craft, 15.2 polish, 15.3 audit. Branch: `step-0015-phase2-attendancescreen`.     |
 | STEP-16 | Phase 2 UI pass - DailyLogListScreen | DeepSeek    | Done   | `mine-flow-app`    | Phase 2 styling, markup, and shadcn-admin conventions for DailyLogListScreen. Substeps: 16.1 craft, 16.2 polish, 16.3 audit. Branch: `step-0016-phase2-dailyloglistscreen`. |
+| STEP-17 | Phase 2 UI pass - CutFillListScreen  | DeepSeek    | Done   | `mine-flow-app`    | Phase 2 styling, markup, and shadcn-admin conventions for CutFillListScreen. Substeps: 17.1 craft, 17.2 polish, 17.3 audit. Branch: `step-0017-phase2-cutfilllistscreen`.   |
 
 ## How to add a STEP
 
