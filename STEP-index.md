@@ -24,20 +24,20 @@ worked, and completed.
 
 ## Phase 1 — MVP
 
-| STEP    | Title                                   | Owner       | Status  | Repos (projection)                           | Scope (one line)                                                                                                                                                                      |
-| ------- | --------------------------------------- | ----------- | ------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| STEP-1  | Architecture                            |             | Done    | `mine-flow-docs`, `prompts`                  | Architecture-first: design docs + ADRs, no code. Substeps = the sessions in `templates/architecture-sessions/`. Branch: `step-0001-architecture`.                                     |
-| STEP-2  | Scaffold repos & skeleton               |             | Done    | `mine-flow-app`                              | Create the Flutter repository, Clean Architecture structure, apply license, and setup `.env.example` baseline.                                                                        |
-| STEP-3  | Core Data Layer & Authentication        | Antigravity | Done    | `mine-flow-app`                              | Implement Supabase schema, RLS policies, auth, generate Dart models, and setup Hive offline caching foundation. Substeps 3.1–3.5. Branch: `step-0003-core-data-auth`.                 |
-| STEP-4  | Tier 1 - Attendance & Daily Logging     | Antigravity | Done    | `mine-flow-app`                              | Build UI and offline sync logic for crew attendance and daily structured logs for field operations. Substeps 4.1–4.5. Branch: `step-0004-attendance-daily-logging`.                   |
-| STEP-5  | Tier 1 - Equipment Digital Checks       | Antigravity | Done    | `mine-flow-app`                              | Implement SOP-based pre-work and post-work condition checks for GNSS, Total Station, and Drone/UAV with offline sync. Substeps 5.1–5.4. Branch: `step-0005-equipment-digital-checks`. |
-| STEP-6  | Mid-Phase Check-in                      | Antigravity | Done    | `mine-flow-docs`, `prompts`                  | Run standard check-in runbook (`runbooks/check-in.md`) to reconcile drift and review risks.                                                                                           |
-| STEP-7  | Tier 2 - Field Tracking & Measurement   | Antigravity | Done    | `mine-flow-app`                              | Build manual entry screens and data flow for cut/fill volume tracking, land clearing area, and inventory. Substeps 7.1–7.5. Branch: `step-0007-field-tracking-measurement`.           |
-| STEP-8  | Tier 2 - Data Bucket Integration        | Antigravity | Done    | `mine-flow-app`                              | Integrate Google Drive API for uploading heavy geospatial files (.shp, .tiff) and save metadata to Supabase.                                                                          |
-| STEP-9  | Tier 3 - Reporting, Timeline & Polish   | Antigravity | Done    | `mine-flow-app`                              | Add visual work timeline, PDF report generation, and in-app notifications. Substeps 9.1–9.5. Branch: `step-0009-reporting-timeline-polish`.                                           |
-| STEP-10 | End-to-End Integration & Final Check-in | Antigravity | Done    | `mine-flow-app`, `mine-flow-docs`, `prompts` | Wire capabilities together to ensure launch criteria are met end-to-end, and run final check-in.                                                                                      |
-| STEP-11 | Phase 1 Polish & UI Wrap-up             | DeepSeek    | Planned | `mine-flow-app`, `prompts`                   | Implement shadcn-admin collapsible sidebar shell and responsive dashboard, fix 92 analyzer warnings, and archive loose prompts.                                                       |
-| STEP-12 | Complete MVP Functional Wiring & Sync   | DeepSeek    | In progress | `mine-flow-app`, `prompts`                   | Wire orphaned UI screens into router, implement missing sync registrars for tracking/attendance/logging/equipment, and clean up duplicate folders.                                    |
+| STEP    | Title                                   | Owner       | Status | Repos (projection)                           | Scope (one line)                                                                                                                                                                      |
+| ------- | --------------------------------------- | ----------- | ------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| STEP-1  | Architecture                            |             | Done   | `mine-flow-docs`, `prompts`                  | Architecture-first: design docs + ADRs, no code. Substeps = the sessions in `templates/architecture-sessions/`. Branch: `step-0001-architecture`.                                     |
+| STEP-2  | Scaffold repos & skeleton               |             | Done   | `mine-flow-app`                              | Create the Flutter repository, Clean Architecture structure, apply license, and setup `.env.example` baseline.                                                                        |
+| STEP-3  | Core Data Layer & Authentication        | Antigravity | Done   | `mine-flow-app`                              | Implement Supabase schema, RLS policies, auth, generate Dart models, and setup Hive offline caching foundation. Substeps 3.1–3.5. Branch: `step-0003-core-data-auth`.                 |
+| STEP-4  | Tier 1 - Attendance & Daily Logging     | Antigravity | Done   | `mine-flow-app`                              | Build UI and offline sync logic for crew attendance and daily structured logs for field operations. Substeps 4.1–4.5. Branch: `step-0004-attendance-daily-logging`.                   |
+| STEP-5  | Tier 1 - Equipment Digital Checks       | Antigravity | Done   | `mine-flow-app`                              | Implement SOP-based pre-work and post-work condition checks for GNSS, Total Station, and Drone/UAV with offline sync. Substeps 5.1–5.4. Branch: `step-0005-equipment-digital-checks`. |
+| STEP-6  | Mid-Phase Check-in                      | Antigravity | Done   | `mine-flow-docs`, `prompts`                  | Run standard check-in runbook (`runbooks/check-in.md`) to reconcile drift and review risks.                                                                                           |
+| STEP-7  | Tier 2 - Field Tracking & Measurement   | Antigravity | Done   | `mine-flow-app`                              | Build manual entry screens and data flow for cut/fill volume tracking, land clearing area, and inventory. Substeps 7.1–7.5. Branch: `step-0007-field-tracking-measurement`.           |
+| STEP-8  | Tier 2 - Data Bucket Integration        | Antigravity | Done   | `mine-flow-app`                              | Integrate Google Drive API for uploading heavy geospatial files (.shp, .tiff) and save metadata to Supabase.                                                                          |
+| STEP-9  | Tier 3 - Reporting, Timeline & Polish   | Antigravity | Done   | `mine-flow-app`                              | Add visual work timeline, PDF report generation, and in-app notifications. Substeps 9.1–9.5. Branch: `step-0009-reporting-timeline-polish`.                                           |
+| STEP-10 | End-to-End Integration & Final Check-in | Antigravity | Done   | `mine-flow-app`, `mine-flow-docs`, `prompts` | Wire capabilities together to ensure launch criteria are met end-to-end, and run final check-in.                                                                                      |
+| STEP-11 | Phase 1 Polish & UI Wrap-up             | DeepSeek    | Done   | `mine-flow-app`, `prompts`                   | Implement shadcn-admin collapsible sidebar shell and responsive dashboard, fix 92 analyzer warnings, and archive loose prompts.                                                       |
+| STEP-12 | Complete MVP Functional Wiring & Sync   | DeepSeek    | Done   | `mine-flow-app`, `prompts`                   | Wire orphaned UI screens into router, implement missing sync registrars for tracking/attendance/logging/equipment, and clean up duplicate folders.                                    |
 
 <!-- STEP-1 is the ONLY row at bootstrap. STEP-2 onward are the implementation STEPs — don'
      add them by hand: after STEP-1's review passes, run the planning session
@@ -141,13 +141,21 @@ worked, and completed.
 
 ### STEP-11 substeps
 
-| Substep | Session / Title                     | Status  | Output / Deliverables                                                              |
-| ------- | ----------------------------------- | ------- | ---------------------------------------------------------------------------------- |
-| 11.1    | Responsive UI Shell & Navigation    | Planned | `lib/app/router.dart`, new `lib/app/presentation/` shell, dark/light toggle action |
-| 11.2    | Card-based Dashboard Stats          | Planned | Updated dashboard placeholder with stat summary cards (shadcn-admin style)         |
-| 11.3    | Code Quality Polish (Lint Fixes)    | Done    | Global fix for 92 analyzer warnings (prefer_const_constructors, etc.)              |
-| 11.4    | Workspace Hygiene (Archive Prompts) | Done    | Unarchived STEP-7, 8, 9 files moved into `prompts/001-mvp/step-NNNN/`              |
-| 11.5    | Notification Rules Implementation   | Planned | Fully implemented rules 2-4 in `NotificationRuleEngine` connected to repos         |
+| Substep | Session / Title                     | Status | Output / Deliverables                                                              |
+| ------- | ----------------------------------- | ------ | ---------------------------------------------------------------------------------- |
+| 11.1    | Responsive UI Shell & Navigation    | Done   | `lib/app/router.dart`, new `lib/app/presentation/` shell, dark/light toggle action |
+| 11.2    | Card-based Dashboard Stats          | Done   | Updated dashboard placeholder with stat summary cards (shadcn-admin style)         |
+| 11.3    | Code Quality Polish (Lint Fixes)    | Done   | Global fix for 92 analyzer warnings (prefer_const_constructors, etc.)              |
+| 11.4    | Workspace Hygiene (Archive Prompts) | Done   | Unarchived STEP-7, 8, 9 files moved into `prompts/001-mvp/step-NNNN/`              |
+| 11.5    | Notification Rules Implementation   | Done   | Fully implemented rules 2-4 in `NotificationRuleEngine` connected to repos         |
+
+## Phase 2 — Impeccable UI Rebuild
+
+| STEP    | Title                              | Owner       | Status | Repos (projection) | Scope (one line)                                                                                                                                                        |
+| ------- | ---------------------------------- | ----------- | ------ | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| STEP-13 | Phase 2 UI pass - LoginPage        | Gemini      | Done   | `mine-flow-app`    | Impeccable-driven styling and markup rebuild of LoginPage matching shadcn-admin conventions. Branch: `step-0013-phase2-loginpage`.                                      |
+| STEP-14 | Phase 2 UI pass - DashboardPage    | DeepSeek    | Done   | `mine-flow-app`    | Phase 2 styling, markup, and shadcn-admin conventions for DashboardPage. Substeps: 14.1 craft, 14.2 polish, 14.3 audit. Branch: `step-0014-phase2-dashboardpage`.       |
+| STEP-15 | Phase 2 UI pass - AttendanceScreen | Antigravity | Done   | `mine-flow-app`    | Phase 2 styling, markup, and shadcn-admin conventions for AttendanceScreen. Substeps: 15.1 craft, 15.2 polish, 15.3 audit. Branch: `step-0015-phase2-attendancescreen`. |
 
 ## How to add a STEP
 
