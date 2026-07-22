@@ -168,8 +168,8 @@ worked, and completed.
 | STEP-25 | Phase 2 UI pass - ReportDashboardPage       | DeepSeek    | Done        | `mine-flow-app`, `prompts`        | Phase 2 styling, markup, and shadcn-admin conventions for ReportDashboardPage. Substeps: 25.1 craft, 25.2 polish, 25.3 audit. Branch: `step-0025-phase2-reportdashboardpage`.             |
 | STEP-26 | Phase 2 UI pass - ReportConfigPage          | Antigravity | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for ReportConfigPage. Substeps: 26.1 craft, 26.2 polish, 26.3 audit. Branch: `step-0026-phase2-reportconfigpage`.                   |
 | STEP-27 | Phase 2 UI pass - NotificationListPage      |             | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for NotificationListPage. Substeps: 27.1 craft, 27.2 polish, 27.3 audit. Branch: `step-0027-phase2-notificationlistpage`.           |
-| STEP-28 | Phase 2 Tier 1 Check-in, Audit & Bug Fixes  |             | Done        | `mine-flow-app`, `mine-flow-docs` | Final cross-screen consistency audit of all 15 rebuilt screens, standard check-in (reconcile docs, test suite), and fixing accumulated UI bugs from the rebuild.                          |
-| STEP-29 | Impeccable/Throughstone Bridge & Doc Reconciliation |             | Planned     | `mine-flow-docs`, `mine-flow-app` | Impeccable/Throughstone Bridge & Doc Reconciliation.                                                                                                                      |
+| STEP-28 | Phase 2 Tier 1 Check-in, Audit & Bug Fixes  |             | Done        | `mine-flow-app`, `mine-flow-docs` | Final cross-screen consistency audit of all 15 rebuilt screens, standard check-in (reconcile docs, test suite). Bug Fixes (28.3) deferred to STEP-30+ (ForUI rebuild).                    |
+| STEP-29 | Impeccable/Throughstone Bridge & Doc Reconciliation | Antigravity | Done        | `mine-flow-docs`, `mine-flow-app` | Impeccable/Throughstone Bridge & Doc Reconciliation.                                                                                                                      |
 
 ### STEP-20 substeps
 
@@ -249,8 +249,28 @@ worked, and completed.
 | ------- | -------------------------------- | ----------- | -------------------------------------------------------------------------------------------------- |
 | 28.1    | Audit 15 Phase 2 screens         | Done        | `mine-flow-STEP-28.1-AUDIT.md` (identified bugs and inconsistencies)                               |
 | 28.2    | Check-in (Doc reconcile & tests) | Done        | `reports/2026-07-21-step-0028-check-in-report.md`, ADR-0007                                        |
-| 28.3    | Bug Fixes                        | Done        |                                                                                                    |
+| 28.3    | Bug Fixes                        | Deferred    | Deferred to STEP-30+ (ForUI rebuild)                                                               |
 | 28.4    | Token Standardization            | Done        | Standardization of colors (Forest & Stone), typography, and spacing across the presentation layer. |
+
+### STEP-29 substeps
+
+| Substep | Session / Title                      | Status      | Output / Deliverables                                                |
+| ------- | ------------------------------------ | ----------- | -------------------------------------------------------------------- |
+| 29.1    | Update Architecture 07-doc to v0.2.0 | Done        | `architecture/07-ui-design-system.md` updated to v0.2.0               |
+| 29.2    | ADR-0008 & METHOD.md Amendment       | Done        | `adr/ADR-0008-impeccable-bridge.md`, `METHOD.md`, risk register update |
+| 29.3    | Impeccable Bridge Script             | Done        | `scripts/impeccable-bridge.ps1`                                      |
+
+### Phase 2 Tier 2 (ForUI Migration & Feature Regrouping)
+
+| STEP | Title | Owner | Status | Repos (projection) | Scope (one line) |
+| --- | --- | --- | --- | --- | --- |
+| STEP-30 | Phase 2 Tier 2 - ForUI Migration | | Planned | `mine-flow-app` | Swap all 15 Tier 1 screens from hand-rolled Material ThemeData to forui/FTheme/FThemes.zinc, per architecture/07-ui-design-system.md v0.2.0. |
+| STEP-31 | Navigation Shell & Profile Regrouping | | Planned | `mine-flow-app` | Implement collapsible sectioned sidebar (desktop) / group tiles (mobile), add appbar profile card, move theme toggle to appbar, and regroup all features. |
+| STEP-32 | Shared Creatable Combobox & Zone State | | Planned | `mine-flow-app` | Build shared `CreatableCombobox` widget for dynamically adding non-existent options and wire up a shared local database box (e.g., for Zones). |
+| STEP-33 | Forms Refactor & Data Model Polish | | Planned | `mine-flow-app` | Update Cut/Fill (BCM/LCM cols, Material Type), Land Clearing (method combobox, plan/actual cols), Daily Log (zone combobox), Inventory (item auto-predict). |
+| STEP-34 | Reporting Integration & Data Bucket Tweaks | | Planned | `mine-flow-app` | Integrate Laporan buttons directly into respective feature screens (removing central menu) and remove lat/lon fields from Data Bucket form and table. |
+| STEP-35 | Settings Page Feature | | Planned | `mine-flow-app` | Implement comprehensive Settings page including language, profile, theme configuration, logout, and support contact routing. |
+| STEP-36 | Benchmark Database Feature | | Planned | `mine-flow-app` | Scaffold domain, data, and presentation layers for the new Benchmark Database feature under Operations. |
 
 ## How to add a STEP
 
