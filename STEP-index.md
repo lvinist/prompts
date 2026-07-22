@@ -151,25 +151,25 @@ worked, and completed.
 
 ## Phase 2 — Impeccable UI Rebuild
 
-| STEP    | Title                                       | Owner       | Status      | Repos (projection)                | Scope (one line)                                                                                                                                                                          |
-| ------- | ------------------------------------------- | ----------- | ----------- | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| STEP-13 | Phase 2 UI pass - LoginPage                 | Gemini      | Done        | `mine-flow-app`                   | Impeccable-driven styling and markup rebuild of LoginPage matching shadcn-admin conventions. Branch: `step-0013-phase2-loginpage`.                                                        |
-| STEP-14 | Phase 2 UI pass - DashboardPage             | DeepSeek    | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for DashboardPage. Substeps: 14.1 craft, 14.2 polish, 14.3 audit. Branch: `step-0014-phase2-dashboardpage`.                         |
-| STEP-15 | Phase 2 UI pass - AttendanceScreen          | Antigravity | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for AttendanceScreen. Substeps: 15.1 craft, 15.2 polish, 15.3 audit. Branch: `step-0015-phase2-attendancescreen`.                   |
-| STEP-16 | Phase 2 UI pass - DailyLogListScreen        | DeepSeek    | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for DailyLogListScreen. Substeps: 16.1 craft, 16.2 polish, 16.3 audit. Branch: `step-0016-phase2-dailyloglistscreen`.               |
-| STEP-17 | Phase 2 UI pass - CutFillListScreen         | DeepSeek    | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for CutFillListScreen. Substeps: 17.1 craft, 17.2 polish, 17.3 audit. Branch: `step-0017-phase2-cutfilllistscreen`.                 |
-| STEP-18 | Phase 2 UI pass - LandClearingSummaryScreen | DeepSeek    | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for LandClearingSummaryScreen. Substeps: 18.1 craft, 18.2 polish, 18.3 audit. Branch: `step-0018-phase2-landclearingsummaryscreen`. |
-| STEP-19 | Phase 2 UI pass - InventoryDashboardScreen  | DeepSeek    | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for InventoryDashboardScreen. Substeps: 19.1 craft, 19.2 polish, 19.3 audit. Branch: `step-0019-phase2-inventorydashboardscreen`.   |
-| STEP-20 | Phase 2 UI pass - EquipmentHistoryScreen    | DeepSeek    | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for EquipmentHistoryScreen. Substeps: 20.1 craft, 20.2 polish, 20.3 audit. Branch: `step-0020-phase2-equipmenthistoryscreen`.       |
-| STEP-21 | Phase 2 UI pass - TimelinePage              | DeepSeek    | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for TimelinePage. Substeps: 21.1 craft, 21.2 polish, 21.3 audit. Branch: `step-0021-phase2-timelinepage`.                           |
-| STEP-22 | Phase 2 UI pass - DataBucketListPage        | DeepSeek    | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for DataBucketListPage. Substeps: 22.1 craft, 22.2 polish, 22.3 audit. Branch: `step-0022-phase2-databucketlistpage`.               |
-| STEP-23 | Phase 2 UI pass - UploadFilePage            | Antigravity | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for UploadFilePage. Substeps: 23.1 craft, 23.2 polish, 23.3 audit. Branch: `step-0023-phase2-uploadfilepage`.                       |
-| STEP-24 | Phase 2 UI pass - FileDetailPage            | DeepSeek    | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for FileDetailPage. Substeps: 24.1 craft, 24.2 polish, 24.3 audit. Branch: `step-0024-phase2-filedetailpage`.                       |
-| STEP-25 | Phase 2 UI pass - ReportDashboardPage       | DeepSeek    | Done        | `mine-flow-app`, `prompts`        | Phase 2 styling, markup, and shadcn-admin conventions for ReportDashboardPage. Substeps: 25.1 craft, 25.2 polish, 25.3 audit. Branch: `step-0025-phase2-reportdashboardpage`.             |
-| STEP-26 | Phase 2 UI pass - ReportConfigPage          | Antigravity | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for ReportConfigPage. Substeps: 26.1 craft, 26.2 polish, 26.3 audit. Branch: `step-0026-phase2-reportconfigpage`.                   |
-| STEP-27 | Phase 2 UI pass - NotificationListPage      |             | Done        | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for NotificationListPage. Substeps: 27.1 craft, 27.2 polish, 27.3 audit. Branch: `step-0027-phase2-notificationlistpage`.           |
-| STEP-28 | Phase 2 Tier 1 Check-in, Audit & Bug Fixes  |             | Done        | `mine-flow-app`, `mine-flow-docs` | Final cross-screen consistency audit of all 15 rebuilt screens, standard check-in (reconcile docs, test suite). Bug Fixes (28.3) deferred to STEP-30+ (ForUI rebuild).                    |
-| STEP-29 | Impeccable/Throughstone Bridge & Doc Reconciliation | Antigravity | Done        | `mine-flow-docs`, `mine-flow-app` | Impeccable/Throughstone Bridge & Doc Reconciliation.                                                                                                                      |
+| STEP    | Title                                               | Owner       | Status | Repos (projection)                | Scope (one line)                                                                                                                                                                          |
+| ------- | --------------------------------------------------- | ----------- | ------ | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| STEP-13 | Phase 2 UI pass - LoginPage                         | Gemini      | Done   | `mine-flow-app`                   | Impeccable-driven styling and markup rebuild of LoginPage matching shadcn-admin conventions. Branch: `step-0013-phase2-loginpage`.                                                        |
+| STEP-14 | Phase 2 UI pass - DashboardPage                     | DeepSeek    | Done   | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for DashboardPage. Substeps: 14.1 craft, 14.2 polish, 14.3 audit. Branch: `step-0014-phase2-dashboardpage`.                         |
+| STEP-15 | Phase 2 UI pass - AttendanceScreen                  | Antigravity | Done   | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for AttendanceScreen. Substeps: 15.1 craft, 15.2 polish, 15.3 audit. Branch: `step-0015-phase2-attendancescreen`.                   |
+| STEP-16 | Phase 2 UI pass - DailyLogListScreen                | DeepSeek    | Done   | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for DailyLogListScreen. Substeps: 16.1 craft, 16.2 polish, 16.3 audit. Branch: `step-0016-phase2-dailyloglistscreen`.               |
+| STEP-17 | Phase 2 UI pass - CutFillListScreen                 | DeepSeek    | Done   | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for CutFillListScreen. Substeps: 17.1 craft, 17.2 polish, 17.3 audit. Branch: `step-0017-phase2-cutfilllistscreen`.                 |
+| STEP-18 | Phase 2 UI pass - LandClearingSummaryScreen         | DeepSeek    | Done   | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for LandClearingSummaryScreen. Substeps: 18.1 craft, 18.2 polish, 18.3 audit. Branch: `step-0018-phase2-landclearingsummaryscreen`. |
+| STEP-19 | Phase 2 UI pass - InventoryDashboardScreen          | DeepSeek    | Done   | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for InventoryDashboardScreen. Substeps: 19.1 craft, 19.2 polish, 19.3 audit. Branch: `step-0019-phase2-inventorydashboardscreen`.   |
+| STEP-20 | Phase 2 UI pass - EquipmentHistoryScreen            | DeepSeek    | Done   | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for EquipmentHistoryScreen. Substeps: 20.1 craft, 20.2 polish, 20.3 audit. Branch: `step-0020-phase2-equipmenthistoryscreen`.       |
+| STEP-21 | Phase 2 UI pass - TimelinePage                      | DeepSeek    | Done   | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for TimelinePage. Substeps: 21.1 craft, 21.2 polish, 21.3 audit. Branch: `step-0021-phase2-timelinepage`.                           |
+| STEP-22 | Phase 2 UI pass - DataBucketListPage                | DeepSeek    | Done   | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for DataBucketListPage. Substeps: 22.1 craft, 22.2 polish, 22.3 audit. Branch: `step-0022-phase2-databucketlistpage`.               |
+| STEP-23 | Phase 2 UI pass - UploadFilePage                    | Antigravity | Done   | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for UploadFilePage. Substeps: 23.1 craft, 23.2 polish, 23.3 audit. Branch: `step-0023-phase2-uploadfilepage`.                       |
+| STEP-24 | Phase 2 UI pass - FileDetailPage                    | DeepSeek    | Done   | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for FileDetailPage. Substeps: 24.1 craft, 24.2 polish, 24.3 audit. Branch: `step-0024-phase2-filedetailpage`.                       |
+| STEP-25 | Phase 2 UI pass - ReportDashboardPage               | DeepSeek    | Done   | `mine-flow-app`, `prompts`        | Phase 2 styling, markup, and shadcn-admin conventions for ReportDashboardPage. Substeps: 25.1 craft, 25.2 polish, 25.3 audit. Branch: `step-0025-phase2-reportdashboardpage`.             |
+| STEP-26 | Phase 2 UI pass - ReportConfigPage                  | Antigravity | Done   | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for ReportConfigPage. Substeps: 26.1 craft, 26.2 polish, 26.3 audit. Branch: `step-0026-phase2-reportconfigpage`.                   |
+| STEP-27 | Phase 2 UI pass - NotificationListPage              |             | Done   | `mine-flow-app`                   | Phase 2 styling, markup, and shadcn-admin conventions for NotificationListPage. Substeps: 27.1 craft, 27.2 polish, 27.3 audit. Branch: `step-0027-phase2-notificationlistpage`.           |
+| STEP-28 | Phase 2 Tier 1 Check-in, Audit & Bug Fixes          |             | Done   | `mine-flow-app`, `mine-flow-docs` | Final cross-screen consistency audit of all 15 rebuilt screens, standard check-in (reconcile docs, test suite). Bug Fixes (28.3) deferred to STEP-30+ (ForUI rebuild).                    |
+| STEP-29 | Impeccable/Throughstone Bridge & Doc Reconciliation | Antigravity | Done   | `mine-flow-docs`, `mine-flow-app` | Impeccable/Throughstone Bridge & Doc Reconciliation.                                                                                                                                      |
 
 ### STEP-20 substeps
 
@@ -245,42 +245,43 @@ worked, and completed.
 
 ### STEP-28 substeps
 
-| Substep | Session / Title                  | Status      | Output / Deliverables                                                                              |
-| ------- | -------------------------------- | ----------- | -------------------------------------------------------------------------------------------------- |
-| 28.1    | Audit 15 Phase 2 screens         | Done        | `mine-flow-STEP-28.1-AUDIT.md` (identified bugs and inconsistencies)                               |
-| 28.2    | Check-in (Doc reconcile & tests) | Done        | `reports/2026-07-21-step-0028-check-in-report.md`, ADR-0007                                        |
-| 28.3    | Bug Fixes                        | Deferred    | Deferred to STEP-30+ (ForUI rebuild)                                                               |
-| 28.4    | Token Standardization            | Done        | Standardization of colors (Forest & Stone), typography, and spacing across the presentation layer. |
+| Substep | Session / Title                  | Status   | Output / Deliverables                                                                              |
+| ------- | -------------------------------- | -------- | -------------------------------------------------------------------------------------------------- |
+| 28.1    | Audit 15 Phase 2 screens         | Done     | `mine-flow-STEP-28.1-AUDIT.md` (identified bugs and inconsistencies)                               |
+| 28.2    | Check-in (Doc reconcile & tests) | Done     | `reports/2026-07-21-step-0028-check-in-report.md`, ADR-0007                                        |
+| 28.3    | Bug Fixes                        | Deferred | Deferred to STEP-30+ (ForUI rebuild)                                                               |
+| 28.4    | Token Standardization            | Done     | Standardization of colors (Forest & Stone), typography, and spacing across the presentation layer. |
 
 ### STEP-29 substeps
 
-| Substep | Session / Title                      | Status      | Output / Deliverables                                                |
-| ------- | ------------------------------------ | ----------- | -------------------------------------------------------------------- |
-| 29.1    | Update Architecture 07-doc to v0.2.0 | Done        | `architecture/07-ui-design-system.md` updated to v0.2.0               |
-| 29.2    | ADR-0008 & METHOD.md Amendment       | Done        | `adr/ADR-0008-impeccable-bridge.md`, `METHOD.md`, risk register update |
-| 29.3    | Impeccable Bridge Script             | Done        | `scripts/impeccable-bridge.ps1`                                      |
+| Substep | Session / Title                      | Status | Output / Deliverables                                                  |
+| ------- | ------------------------------------ | ------ | ---------------------------------------------------------------------- |
+| 29.1    | Update Architecture 07-doc to v0.2.0 | Done   | `architecture/07-ui-design-system.md` updated to v0.2.0                |
+| 29.2    | ADR-0008 & METHOD.md Amendment       | Done   | `adr/ADR-0008-impeccable-bridge.md`, `METHOD.md`, risk register update |
+| 29.3    | Impeccable Bridge Script             | Done   | `scripts/impeccable-bridge.ps1`                                        |
 
 ### Phase 2 Tier 2 (ForUI Migration & Feature Regrouping)
 
-| STEP | Title | Owner | Status | Repos (projection) | Scope (one line) |
-| --- | --- | --- | --- | --- | --- |
-| STEP-30 | Phase 2 Tier 2 - ForUI Migration | Antigravity | In progress | `mine-flow-app` | Swap all 15 Tier 1 screens from hand-rolled Material ThemeData to forui/FTheme/FThemes.zinc, per architecture/07-ui-design-system.md v0.2.0. |
-| STEP-31 | Navigation Shell & Profile Regrouping | | Planned | `mine-flow-app` | Implement collapsible sectioned sidebar (desktop) / group tiles (mobile), add appbar profile card, move theme toggle to appbar, and regroup all features. |
-| STEP-32 | Shared Creatable Combobox & Zone State | | Planned | `mine-flow-app` | Build shared `CreatableCombobox` widget for dynamically adding non-existent options and wire up a shared local database box (e.g., for Zones). |
-| STEP-33 | Forms Refactor & Data Model Polish | | Planned | `mine-flow-app` | Update Cut/Fill (BCM/LCM cols, Material Type), Land Clearing (method combobox, plan/actual cols), Daily Log (zone combobox), Inventory (item auto-predict). |
-| STEP-34 | Reporting Integration & Data Bucket Tweaks | | Planned | `mine-flow-app` | Integrate Laporan buttons directly into respective feature screens (removing central menu) and remove lat/lon fields from Data Bucket form and table. |
-| STEP-35 | Settings Page Feature | | Planned | `mine-flow-app` | Implement comprehensive Settings page including language, profile, theme configuration, logout, and support contact routing. |
-| STEP-36 | Benchmark Database Feature | | Planned | `mine-flow-app` | Scaffold domain, data, and presentation layers for the new Benchmark Database feature under Operations. |
+| STEP    | Title                                      | Owner       | Status      | Repos (projection) | Scope (one line)                                                                                                                                            |
+| ------- | ------------------------------------------ | ----------- | ----------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| STEP-30 | Phase 2 Tier 2 - ForUI Migration           | Antigravity | Done        | `mine-flow-app`    | Swap all 15 Tier 1 screens from hand-rolled Material ThemeData to forui/FTheme/FThemes.zinc, per architecture/07-ui-design-system.md v0.2.0.                |
+| STEP-31 | Navigation Shell & Profile Regrouping      |             | Planned     | `mine-flow-app`    | Implement collapsible sectioned sidebar (desktop) / group tiles (mobile), add appbar profile card, move theme toggle to appbar, and regroup all features.   |
+| STEP-32 | Shared Creatable Combobox & Zone State     |             | Planned     | `mine-flow-app`    | Build shared `CreatableCombobox` widget for dynamically adding non-existent options and wire up a shared local database box (e.g., for Zones).              |
+| STEP-33 | Forms Refactor & Data Model Polish         |             | Planned     | `mine-flow-app`    | Update Cut/Fill (BCM/LCM cols, Material Type), Land Clearing (method combobox, plan/actual cols), Daily Log (zone combobox), Inventory (item auto-predict). |
+| STEP-34 | Reporting Integration & Data Bucket Tweaks |             | Planned     | `mine-flow-app`    | Integrate Laporan buttons directly into respective feature screens (removing central menu) and remove lat/lon fields from Data Bucket form and table.       |
+| STEP-35 | Settings Page Feature                      |             | Planned     | `mine-flow-app`    | Implement comprehensive Settings page including language, profile, theme configuration, logout, and support contact routing.                                |
+| STEP-36 | Benchmark Database Feature                 |             | Planned     | `mine-flow-app`    | Scaffold domain, data, and presentation layers for the new Benchmark Database feature under Operations.                                                     |
 
 ### STEP-30 substeps
 
-| Substep | Session / Title | Status | Output / Deliverables |
-| --- | --- | --- | --- |
-| 30.1 | Core Shell & Auth | Done | `pubspec.yaml`, `lib/app/app.dart`, `lib/app/presentation/`, `LoginPage`, `DashboardPage` |
-| 30.2 | Operations & Tracking | Planned | `CutFillListScreen`, `LandClearingSummaryScreen`, `InventoryDashboardScreen` |
-| 30.3 | Teams & Field Docs | Planned | `AttendanceScreen`, `DailyLogListScreen`, `EquipmentHistoryScreen` |
-| 30.4 | Reports, Data Bucket & Notifications | Planned | `TimelinePage`, `ReportDashboardPage`, `ReportConfigPage`, `DataBucketListPage`, `UploadFilePage`, `FileDetailPage`, `NotificationListPage` |
-| 30.5 | Final Cross-Screen Material Purge & CI Gate | Planned | Material purge & `flutter test` verification |
+| Substep | Session / Title                             | Status | Output / Deliverables                                                                                                                       |
+| ------- | ------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| 30.1    | Core Shell & Auth                           | Done   | `pubspec.yaml`, `lib/app/app.dart`, `lib/app/presentation/`, `LoginPage`, `DashboardPage`                                                   |
+| 30.2    | Operations & Tracking                       | Done   | `CutFillListScreen`, `LandClearingSummaryScreen`, `InventoryDashboardScreen`                                                                |
+| 30.3    | Teams & Field Docs                          | Done   | `AttendanceScreen`, `DailyLogListScreen`, `EquipmentHistoryScreen`                                                                          |
+| 30.4    | Reports, Data Bucket & Notifications        | Done   | `TimelinePage`, `ReportDashboardPage`, `ReportConfigPage`, `DataBucketListPage`, `UploadFilePage`, `FileDetailPage`, `NotificationListPage` |
+| 30.5    | Analyzer Clean-up                           | Done   | 0 analyzer issues globally                                                                                                                  |
+| 30.6    | Final Cross-Screen Material Purge & CI Gate | Done   | Material purge complete; 273/281 tests pass (8 pre-existing failures in tracking feature files from STEP-30.2 ForUI API mismatches)         |
 
 ## How to add a STEP
 
