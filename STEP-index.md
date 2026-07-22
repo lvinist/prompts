@@ -276,7 +276,7 @@ worked, and completed.
 
 | Substep | Session / Title | Status | Output / Deliverables |
 | --- | --- | --- | --- |
-| 30.1 | Core Shell & Auth | In progress | `pubspec.yaml`, `lib/app/app.dart`, `lib/app/presentation/`, `LoginPage`, `DashboardPage` |
+| 30.1 | Core Shell & Auth | Done | `pubspec.yaml`, `lib/app/app.dart`, `lib/app/presentation/`, `LoginPage`, `DashboardPage` |
 | 30.2 | Operations & Tracking | Planned | `CutFillListScreen`, `LandClearingSummaryScreen`, `InventoryDashboardScreen` |
 | 30.3 | Teams & Field Docs | Planned | `AttendanceScreen`, `DailyLogListScreen`, `EquipmentHistoryScreen` |
 | 30.4 | Reports, Data Bucket & Notifications | Planned | `TimelinePage`, `ReportDashboardPage`, `ReportConfigPage`, `DataBucketListPage`, `UploadFilePage`, `FileDetailPage`, `NotificationListPage` |
