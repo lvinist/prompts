@@ -264,13 +264,23 @@ worked, and completed.
 
 | STEP | Title | Owner | Status | Repos (projection) | Scope (one line) |
 | --- | --- | --- | --- | --- | --- |
-| STEP-30 | Phase 2 Tier 2 - ForUI Migration | | Planned | `mine-flow-app` | Swap all 15 Tier 1 screens from hand-rolled Material ThemeData to forui/FTheme/FThemes.zinc, per architecture/07-ui-design-system.md v0.2.0. |
+| STEP-30 | Phase 2 Tier 2 - ForUI Migration | Antigravity | In progress | `mine-flow-app` | Swap all 15 Tier 1 screens from hand-rolled Material ThemeData to forui/FTheme/FThemes.zinc, per architecture/07-ui-design-system.md v0.2.0. |
 | STEP-31 | Navigation Shell & Profile Regrouping | | Planned | `mine-flow-app` | Implement collapsible sectioned sidebar (desktop) / group tiles (mobile), add appbar profile card, move theme toggle to appbar, and regroup all features. |
 | STEP-32 | Shared Creatable Combobox & Zone State | | Planned | `mine-flow-app` | Build shared `CreatableCombobox` widget for dynamically adding non-existent options and wire up a shared local database box (e.g., for Zones). |
 | STEP-33 | Forms Refactor & Data Model Polish | | Planned | `mine-flow-app` | Update Cut/Fill (BCM/LCM cols, Material Type), Land Clearing (method combobox, plan/actual cols), Daily Log (zone combobox), Inventory (item auto-predict). |
 | STEP-34 | Reporting Integration & Data Bucket Tweaks | | Planned | `mine-flow-app` | Integrate Laporan buttons directly into respective feature screens (removing central menu) and remove lat/lon fields from Data Bucket form and table. |
 | STEP-35 | Settings Page Feature | | Planned | `mine-flow-app` | Implement comprehensive Settings page including language, profile, theme configuration, logout, and support contact routing. |
 | STEP-36 | Benchmark Database Feature | | Planned | `mine-flow-app` | Scaffold domain, data, and presentation layers for the new Benchmark Database feature under Operations. |
+
+### STEP-30 substeps
+
+| Substep | Session / Title | Status | Output / Deliverables |
+| --- | --- | --- | --- |
+| 30.1 | Core Shell & Auth | In progress | `pubspec.yaml`, `lib/app/app.dart`, `lib/app/presentation/`, `LoginPage`, `DashboardPage` |
+| 30.2 | Operations & Tracking | Planned | `CutFillListScreen`, `LandClearingSummaryScreen`, `InventoryDashboardScreen` |
+| 30.3 | Teams & Field Docs | Planned | `AttendanceScreen`, `DailyLogListScreen`, `EquipmentHistoryScreen` |
+| 30.4 | Reports, Data Bucket & Notifications | Planned | `TimelinePage`, `ReportDashboardPage`, `ReportConfigPage`, `DataBucketListPage`, `UploadFilePage`, `FileDetailPage`, `NotificationListPage` |
+| 30.5 | Final Cross-Screen Material Purge & CI Gate | Planned | Material purge & `flutter test` verification |
 
 ## How to add a STEP
 
