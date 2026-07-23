@@ -265,7 +265,7 @@ worked, and completed.
 | STEP    | Title                                      | Owner       | Status      | Repos (projection) | Scope (one line)                                                                                                                                            |
 | ------- | ------------------------------------------ | ----------- | ----------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | STEP-30 | Phase 2 Tier 2 - ForUI Migration           | Antigravity | Done        | `mine-flow-app`    | Swap all 15 Tier 1 screens from hand-rolled Material ThemeData to forui/FTheme/FThemes.zinc, per architecture/07-ui-design-system.md v0.2.0.                |
-| STEP-31 | Navigation Shell & Profile Regrouping      |             | Planned     | `mine-flow-app`    | Implement collapsible sectioned sidebar (desktop) / group tiles (mobile), add appbar profile card, move theme toggle to appbar, and regroup all features.   |
+| STEP-31 | Navigation Shell & Profile Regrouping      | Antigravity | Done        | `mine-flow-app`    | Implement collapsible sectioned sidebar (desktop) / group tiles (mobile), add appbar profile card, move theme toggle to appbar, and regroup all features.   |
 | STEP-32 | Shared Creatable Combobox & Zone State     |             | Planned     | `mine-flow-app`    | Build shared `CreatableCombobox` widget for dynamically adding non-existent options and wire up a shared local database box (e.g., for Zones).              |
 | STEP-33 | Forms Refactor & Data Model Polish         |             | Planned     | `mine-flow-app`    | Update Cut/Fill (BCM/LCM cols, Material Type), Land Clearing (method combobox, plan/actual cols), Daily Log (zone combobox), Inventory (item auto-predict). |
 | STEP-34 | Reporting Integration & Data Bucket Tweaks |             | Planned     | `mine-flow-app`    | Integrate Laporan buttons directly into respective feature screens (removing central menu) and remove lat/lon fields from Data Bucket form and table.       |
@@ -282,6 +282,16 @@ worked, and completed.
 | 30.4    | Reports, Data Bucket & Notifications        | Done   | `TimelinePage`, `ReportDashboardPage`, `ReportConfigPage`, `DataBucketListPage`, `UploadFilePage`, `FileDetailPage`, `NotificationListPage` |
 | 30.5    | Analyzer Clean-up                           | Done   | 0 analyzer issues globally                                                                                                                  |
 | 30.6    | Final Cross-Screen Material Purge & CI Gate | Done   | Material purge complete; 273/281 tests pass (8 pre-existing failures in tracking feature files from STEP-30.2 ForUI API mismatches)         |
+
+### STEP-31 substeps
+
+| Substep | Session / Title                        | Status | Output / Deliverables                                                                                                                                                                           |
+| ------- | -------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 31.1    | Shell Routing & Scaffolding            | Done   | `lib/app/router.dart` (StatefulShellRoute), `lib/app/presentation/pages/app_shell.dart`                                                                                                         |
+| 31.2    | Navigation Shell UI (Desktop & Mobile) | Done   | Responsive ForUI sidebar with 5 nav items, profile card & theme toggle; FBottomNavigationBar with kebab menu sheet; `lib/app/presentation/pages/app_shell.dart`; `test/app/app_shell_test.dart` |
+| 31.3    | Dashboard Cleanup & Regrouping Wiring  | Done   | Removal/update of `dashboard_page.dart`, wiring the 3 exact groupings                                                                                                                           |
+| 31.4    | Test Suite Verification & Fixes        | Done   | Updated AppShell tests (7 tests), added router tests (6 tests), all AppShell+router tests pass. Pre-existing failures (2 attendance, 4 equipment_history) remain unchanged.                     |
+| 31.5    | Global App Header                      | Done   | Implement Shadcn Admin style global header for Desktop (breadcrumb, search, theme, avatar) and Search-centric header for Mobile (search, theme, avatar)                                         |
 
 ## How to add a STEP
 
