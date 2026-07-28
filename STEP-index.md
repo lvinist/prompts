@@ -262,48 +262,48 @@ worked, and completed.
 
 ### Phase 2 Tier 2 (ForUI Migration & Feature Regrouping)
 
-| STEP    | Title                                      | Owner       | Status  | Repos (projection) | Scope (one line)                                                                                                                                            |
-| ------- | ------------------------------------------ | ----------- | ------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| STEP-30 | Phase 2 Tier 2 - ForUI Migration           | Antigravity | Done    | `mine-flow-app`    | Swap all 15 Tier 1 screens from hand-rolled Material ThemeData to forui/FTheme/FThemes.zinc, per architecture/07-ui-design-system.md v0.2.0.                |
-| STEP-31 | Navigation Shell & Profile Regrouping      | Antigravity | Done    | `mine-flow-app`    | Implement collapsible sectioned sidebar (desktop) / group tiles (mobile), add appbar profile card, move theme toggle to appbar, and regroup all features.   |
-| STEP-32 | Shared Creatable Combobox & Zone State     | Antigravity | Done    | `mine-flow-app`    | Build shared `CreatableCombobox` widget for dynamically adding non-existent options and wire up a shared local database box (e.g., for Zones).              |
-| STEP-33 | Forms Refactor & Data Model Polish         | DeepSeek    | Done    | `mine-flow-app`    | Update Cut/Fill (BCM/LCM cols, Material Type), Land Clearing (method combobox, plan/actual cols), Daily Log (zone combobox), Inventory (item auto-predict). |
-| STEP-34 | Reporting Integration & Data Bucket Tweaks | Antigravity | Done    | `mine-flow-app`    | Integrate Laporan buttons directly into respective feature screens (removing central menu) and remove lat/lon fields from Data Bucket form and table.       |
-| STEP-35 | Settings Page Feature                      |             | Done    | `mine-flow-app`    | Implement comprehensive Settings page including language, profile, theme configuration, logout, and support contact routing.                                |
-| STEP-36 | Benchmark Database Feature                 | DeepSeek    | Done    | `mine-flow-app`    | Scaffold domain, data, and presentation layers for the new Benchmark Database feature under Operations.                                                     |
-| STEP-37 | Residual Impeccable Material Purge         | Gemini      | Done    | `mine-flow-app`    | Replace remaining `Card`, `ElevatedButton`, `TextButton`, `MaterialBanner` with ForUI equivalents in Equipment, Timeline, Notifications, and Data Bucket features. |
-| STEP-38 | Phase 2 Tier 2 UI/UX Bug Fixes             | Gemini 3.1 Pro High | Planned | `mine-flow-app`    | Fix 19 UI/UX bugs: FButton appbar consistency, Cut/Fill form labels/layout, Land Clearing tabs, Inventory merged field, Language config, Attendance form extraction, Breadcrumbs, Benchmark nav, Equipment Check mobile layout. |
+| STEP    | Title                                      | Owner               | Status | Repos (projection) | Scope (one line)                                                                                                                                                                                                                |
+| ------- | ------------------------------------------ | ------------------- | ------ | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| STEP-30 | Phase 2 Tier 2 - ForUI Migration           | Antigravity         | Done   | `mine-flow-app`    | Swap all 15 Tier 1 screens from hand-rolled Material ThemeData to forui/FTheme/FThemes.zinc, per architecture/07-ui-design-system.md v0.2.0.                                                                                    |
+| STEP-31 | Navigation Shell & Profile Regrouping      | Antigravity         | Done   | `mine-flow-app`    | Implement collapsible sectioned sidebar (desktop) / group tiles (mobile), add appbar profile card, move theme toggle to appbar, and regroup all features.                                                                       |
+| STEP-32 | Shared Creatable Combobox & Zone State     | Antigravity         | Done   | `mine-flow-app`    | Build shared `CreatableCombobox` widget for dynamically adding non-existent options and wire up a shared local database box (e.g., for Zones).                                                                                  |
+| STEP-33 | Forms Refactor & Data Model Polish         | DeepSeek            | Done   | `mine-flow-app`    | Update Cut/Fill (BCM/LCM cols, Material Type), Land Clearing (method combobox, plan/actual cols), Daily Log (zone combobox), Inventory (item auto-predict).                                                                     |
+| STEP-34 | Reporting Integration & Data Bucket Tweaks | Antigravity         | Done   | `mine-flow-app`    | Integrate Laporan buttons directly into respective feature screens (removing central menu) and remove lat/lon fields from Data Bucket form and table.                                                                           |
+| STEP-35 | Settings Page Feature                      |                     | Done   | `mine-flow-app`    | Implement comprehensive Settings page including language, profile, theme configuration, logout, and support contact routing.                                                                                                    |
+| STEP-36 | Benchmark Database Feature                 | DeepSeek            | Done   | `mine-flow-app`    | Scaffold domain, data, and presentation layers for the new Benchmark Database feature under Operations.                                                                                                                         |
+| STEP-37 | Residual Impeccable Material Purge         | Gemini              | Done   | `mine-flow-app`    | Replace remaining `Card`, `ElevatedButton`, `TextButton`, `MaterialBanner` with ForUI equivalents in Equipment, Timeline, Notifications, and Data Bucket features.                                                              |
+| STEP-38 | Phase 2 Tier 2 UI/UX Bug Fixes             | Gemini 3.1 Pro High | Done   | `mine-flow-app`    | Fix 19 UI/UX bugs: FButton appbar consistency, Cut/Fill form labels/layout, Land Clearing tabs, Inventory merged field, Language config, Attendance form extraction, Breadcrumbs, Benchmark nav, Equipment Check mobile layout. |
 
 ### STEP-32 substeps
 
-| Substep  | Session / Title                                      | Status | Output / Deliverables                                                                                                    |
-| -------- | ---------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------ |
-| 32.2.F1  | Resolve hardcoded colors in `creatable_combobox.dart` | Done   | `Colors.black` → `theme.colors.foreground`; `Colors.transparent` → semantic muted/background tokens; zero raw colors remaining |
+| Substep | Session / Title                                       | Status | Output / Deliverables                                                                                                          |
+| ------- | ----------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| 32.2.F1 | Resolve hardcoded colors in `creatable_combobox.dart` | Done   | `Colors.black` → `theme.colors.foreground`; `Colors.transparent` → semantic muted/background tokens; zero raw colors remaining |
 
 ### STEP-33 substeps
 
-| Substep  | Session / Title                   | Status | Output / Deliverables                                                                                                     |
-| -------- | --------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------- |
-| 33.1     | Data Model & Repository Polish    | Done   | Updated entities, models, Supabase sync mappings, and Hive adapters for Cut/Fill, Land Clearing, Daily Log, and Inventory |
-| 33.2     | Operations Tracking UI Refactor   | Done   | Updated `CutFillListScreen`, `LandClearingSummaryScreen` and their entry forms                                            |
-| 33.3     | Daily Log & Inventory UI Refactor | Done   | Integrated `CreatableCombobox` for Daily Log Zone, implemented auto-predict for Inventory item names                      |
-| 33.4     | Tests & Verification              | Done   | E2E and Integration test fixes for the updated data shapes and UI elements                                                |
-| 33.1.F1  | Verify & reconcile DoD in `mine-flow-STEP-33-PLAN.md` | Done   | All 6 DoD items verified against codebase with evidence citations; no unchecked boxes remain                              |
-| 33.3.F1  | Purge Material from `daily_log_form_screen.dart`      | Done   | `Card` → `FCard`; `ElevatedButton` removed; zero Material container/button references remain                              |
+| Substep | Session / Title                                       | Status | Output / Deliverables                                                                                                     |
+| ------- | ----------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------- |
+| 33.1    | Data Model & Repository Polish                        | Done   | Updated entities, models, Supabase sync mappings, and Hive adapters for Cut/Fill, Land Clearing, Daily Log, and Inventory |
+| 33.2    | Operations Tracking UI Refactor                       | Done   | Updated `CutFillListScreen`, `LandClearingSummaryScreen` and their entry forms                                            |
+| 33.3    | Daily Log & Inventory UI Refactor                     | Done   | Integrated `CreatableCombobox` for Daily Log Zone, implemented auto-predict for Inventory item names                      |
+| 33.4    | Tests & Verification                                  | Done   | E2E and Integration test fixes for the updated data shapes and UI elements                                                |
+| 33.1.F1 | Verify & reconcile DoD in `mine-flow-STEP-33-PLAN.md` | Done   | All 6 DoD items verified against codebase with evidence citations; no unchecked boxes remain                              |
+| 33.3.F1 | Purge Material from `daily_log_form_screen.dart`      | Done   | `Card` → `FCard`; `ElevatedButton` removed; zero Material container/button references remain                              |
 
 ### STEP-30 substeps
 
-| Substep | Session / Title                             | Status | Output / Deliverables                                                                                                                       |
-| ------- | ------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| 30.1    | Core Shell & Auth                           | Done   | `pubspec.yaml`, `lib/app/app.dart`, `lib/app/presentation/`, `LoginPage`, `DashboardPage`                                                   |
-| 30.2    | Operations & Tracking                       | Done   | `CutFillListScreen`, `LandClearingSummaryScreen`, `InventoryDashboardScreen`                                                                |
-| 30.3    | Teams & Field Docs                          | Done   | `AttendanceScreen`, `DailyLogListScreen`, `EquipmentHistoryScreen`                                                                          |
-| 30.4    | Reports, Data Bucket & Notifications        | Done   | `TimelinePage`, `ReportDashboardPage`, `ReportConfigPage`, `DataBucketListPage`, `UploadFilePage`, `FileDetailPage`, `NotificationListPage` |
-| 30.5    | Analyzer Clean-up                           | Done   | 0 analyzer issues globally                                                                                                                  |
-| 30.6    | Final Cross-Screen Material Purge & CI Gate | Done   | Material purge complete; 273/281 tests pass (8 pre-existing failures in tracking feature files from STEP-30.2 ForUI API mismatches)         |
-| 30.6.F1 | Purge Material from Theme & Crew Roster     | Done   | `app_theme.dart` ThemeData purge, `crew_roster_item.dart` FCard/FButton swap, per-screen visual check verified                             |
-| 30.6.F3 | Correct ForUI theme variant (FTheme.neutral)| Done   | API correction confirmed forui 0.24.x uses `FTheme.neutral`, documentation updated                                                          |
-| 30.6.F2 | Purge custom color palette from `app_theme.dart` | Done | `notification_banner.dart` updated to ForUI `destructive` tokens, zero-consumer `app_theme.dart` deleted                                    |
+| Substep | Session / Title                                  | Status | Output / Deliverables                                                                                                                       |
+| ------- | ------------------------------------------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| 30.1    | Core Shell & Auth                                | Done   | `pubspec.yaml`, `lib/app/app.dart`, `lib/app/presentation/`, `LoginPage`, `DashboardPage`                                                   |
+| 30.2    | Operations & Tracking                            | Done   | `CutFillListScreen`, `LandClearingSummaryScreen`, `InventoryDashboardScreen`                                                                |
+| 30.3    | Teams & Field Docs                               | Done   | `AttendanceScreen`, `DailyLogListScreen`, `EquipmentHistoryScreen`                                                                          |
+| 30.4    | Reports, Data Bucket & Notifications             | Done   | `TimelinePage`, `ReportDashboardPage`, `ReportConfigPage`, `DataBucketListPage`, `UploadFilePage`, `FileDetailPage`, `NotificationListPage` |
+| 30.5    | Analyzer Clean-up                                | Done   | 0 analyzer issues globally                                                                                                                  |
+| 30.6    | Final Cross-Screen Material Purge & CI Gate      | Done   | Material purge complete; 273/281 tests pass (8 pre-existing failures in tracking feature files from STEP-30.2 ForUI API mismatches)         |
+| 30.6.F1 | Purge Material from Theme & Crew Roster          | Done   | `app_theme.dart` ThemeData purge, `crew_roster_item.dart` FCard/FButton swap, per-screen visual check verified                              |
+| 30.6.F3 | Correct ForUI theme variant (FTheme.neutral)     | Done   | API correction confirmed forui 0.24.x uses `FTheme.neutral`, documentation updated                                                          |
+| 30.6.F2 | Purge custom color palette from `app_theme.dart` | Done   | `notification_banner.dart` updated to ForUI `destructive` tokens, zero-consumer `app_theme.dart` deleted                                    |
 
 ### STEP-31 substeps
 
@@ -317,55 +317,56 @@ worked, and completed.
 
 ### STEP-34 substeps
 
-| Substep  | Session / Title                                      | Status | Output / Deliverables                                                                                                                                  |
-| -------- | ---------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 34.1     | Domain & Data Layer Refactor                         | Done   | Updated entity, models, Hive adapters, Supabase migration                                                                                              |
-| 34.2     | Data Bucket UI Refactor                              | Done   | Removed lat/lon input fields from UploadFilePage; no lat/lon existed in DataBucketListPage/FileDetailPage — verified clean                             |
-| 34.3     | Reporting Integration UI                             | Done   | Removed ReportDashboardPage and its route; added Laporan button to FAppBar of all 6 feature screens; cleaned up dead references; analyzer passes clean |
-| 34.4     | Tests & Verification                                 | Done   | 336 tests passing, `flutter analyze` clean (no issues found) — no regressions from lat/lon removal or router changes                                   |
-| 34.1.F1  | Verify & reconcile DoD in `mine-flow-STEP-34-PLAN.md` | Done   | All 6 DoD items verified against codebase with evidence citations; no unchecked boxes remain                                                           |
-| 34.2.F1  | Purge Material from Data Bucket & Reporting screens  | Done   | `file_card.dart` Card→FCard; `upload_file_page.dart` and `report_config_page.dart` TextButton/OutlinedButton→FButton; per-screen visual checks verified |
+| Substep | Session / Title                                       | Status | Output / Deliverables                                                                                                                                   |
+| ------- | ----------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 34.1    | Domain & Data Layer Refactor                          | Done   | Updated entity, models, Hive adapters, Supabase migration                                                                                               |
+| 34.2    | Data Bucket UI Refactor                               | Done   | Removed lat/lon input fields from UploadFilePage; no lat/lon existed in DataBucketListPage/FileDetailPage — verified clean                              |
+| 34.3    | Reporting Integration UI                              | Done   | Removed ReportDashboardPage and its route; added Laporan button to FAppBar of all 6 feature screens; cleaned up dead references; analyzer passes clean  |
+| 34.4    | Tests & Verification                                  | Done   | 336 tests passing, `flutter analyze` clean (no issues found) — no regressions from lat/lon removal or router changes                                    |
+| 34.1.F1 | Verify & reconcile DoD in `mine-flow-STEP-34-PLAN.md` | Done   | All 6 DoD items verified against codebase with evidence citations; no unchecked boxes remain                                                            |
+| 34.2.F1 | Purge Material from Data Bucket & Reporting screens   | Done   | `file_card.dart` Card→FCard; `upload_file_page.dart` and `report_config_page.dart` TextButton/OutlinedButton→FButton; per-screen visual checks verified |
 
 ### STEP-35 substeps
 
-| Substep  | Session / Title                                      | Status | Output / Deliverables                                                                                                                  |
-| -------- | ---------------------------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| 35.1     | Domain & Data Layer for Settings                     | Done   | `SettingsRepository`, `SettingsEntity`, `SettingsRepositoryImpl`, `SettingsLocalDatasource`                                            |
-| 35.2     | State Management & App Wiring                        | Done   | `SettingsCubit`, `app.dart` integration                                                                                                |
-| 35.3     | Settings Page UI Shell & Integrations                | Done   | `SettingsPage`, router entry at `/settings`                                                                                            |
-| 35.4     | Verification & Polish                                | Done   | 13 settings tests passing, `flutter analyze` clean                                                                                     |
-| 35.2.F1  | Verify & reconcile DoD in `mine-flow-STEP-35-PLAN.md` | Done   | All 6 DoD items verified against codebase with evidence citations; no unchecked boxes remain                                           |
+| Substep | Session / Title                                       | Status | Output / Deliverables                                                                        |
+| ------- | ----------------------------------------------------- | ------ | -------------------------------------------------------------------------------------------- |
+| 35.1    | Domain & Data Layer for Settings                      | Done   | `SettingsRepository`, `SettingsEntity`, `SettingsRepositoryImpl`, `SettingsLocalDatasource`  |
+| 35.2    | State Management & App Wiring                         | Done   | `SettingsCubit`, `app.dart` integration                                                      |
+| 35.3    | Settings Page UI Shell & Integrations                 | Done   | `SettingsPage`, router entry at `/settings`                                                  |
+| 35.4    | Verification & Polish                                 | Done   | 13 settings tests passing, `flutter analyze` clean                                           |
+| 35.2.F1 | Verify & reconcile DoD in `mine-flow-STEP-35-PLAN.md` | Done   | All 6 DoD items verified against codebase with evidence citations; no unchecked boxes remain |
 
 ### STEP-36 substeps
 
-| Substep | Session / Title                    | Status  | Output / Deliverables                                                                                                         |
-| ------- | ---------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| 36.1    | Benchmark Domain, Data Layer & CRS | Done    | `lib/features/benchmark/domain/`, `lib/features/benchmark/data/`, `lib/core/utils/crs_utils.dart`, `test/features/benchmark/` |
-| 36.2    | Benchmark UI & BLoC                | Done    | `lib/features/benchmark/presentation/`                                                                                        |
-| 36.3    | Offline Sync & Verification        | Done    | `SyncRegistrar` implementation, unit/widget tests                                                                             |
+| Substep | Session / Title                    | Status | Output / Deliverables                                                                                                         |
+| ------- | ---------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| 36.1    | Benchmark Domain, Data Layer & CRS | Done   | `lib/features/benchmark/domain/`, `lib/features/benchmark/data/`, `lib/core/utils/crs_utils.dart`, `test/features/benchmark/` |
+| 36.2    | Benchmark UI & BLoC                | Done   | `lib/features/benchmark/presentation/`                                                                                        |
+| 36.3    | Offline Sync & Verification        | Done   | `SyncRegistrar` implementation, unit/widget tests                                                                             |
 
 ### STEP-37 substeps
 
-| Substep | Session / Title                        | Status  | Output / Deliverables                                                                                                     |
-| ------- | -------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------- |
-| 37.1    | Equipment Check Feature Purge          | Done    | `equipment_check_form_screen.dart` (ElevatedButton→FButton), `sop_checklist_item_card.dart` (Card→Container), `equipment_check_card.dart` (TextButton→FButton) |
-| 37.2    | Timeline Feature Purge                 | Done    | `milestone_card.dart` (Card→Container + InkWell preserved)                                                                |
-| 37.3    | Notifications Feature Purge            | Done    | `notification_list_page.dart` (TextButton→FButton), `notification_banner.dart` (MaterialBanner→Container + FButton)       |
-| 37.4    | Data Bucket Feature Purge              | Done    | `file_detail_page.dart` (TextButton in AlertDialog→FButton ghost/destructive)                                             |
-| 37.5    | Final Verification & Analyzer Gate     | Done    | `flutter analyze` clean, `flutter test` zero new failures, manual spot-check all 7 widgets                                |
+| Substep | Session / Title                    | Status | Output / Deliverables                                                                                                                                          |
+| ------- | ---------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 37.1    | Equipment Check Feature Purge      | Done   | `equipment_check_form_screen.dart` (ElevatedButton→FButton), `sop_checklist_item_card.dart` (Card→Container), `equipment_check_card.dart` (TextButton→FButton) |
+| 37.2    | Timeline Feature Purge             | Done   | `milestone_card.dart` (Card→Container + InkWell preserved)                                                                                                     |
+| 37.3    | Notifications Feature Purge        | Done   | `notification_list_page.dart` (TextButton→FButton), `notification_banner.dart` (MaterialBanner→Container + FButton)                                            |
+| 37.4    | Data Bucket Feature Purge          | Done   | `file_detail_page.dart` (TextButton in AlertDialog→FButton ghost/destructive)                                                                                  |
+| 37.5    | Final Verification & Analyzer Gate | Done   | `flutter analyze` clean, `flutter test` zero new failures, manual spot-check all 7 widgets                                                                     |
 
 ### STEP-38 substeps
 
-| Substep | Session / Title                                  | Status  | Output / Deliverables                                                                       |
-| ------- | ------------------------------------------------ | ------- | ------------------------------------------------------------------------------------------- |
-| 38.1    | Button and AppBar Consistency                    | Planned | FButton with icon+label in FAppBar on all list screens; Laporan icon button; upload form appbar fix |
-| 38.2    | Cut/Fill and Land Clearing Form Fixes            | Planned | BCM/LCM label/unit fix, 2-col layout, remove steppers, CreatableCombobox for Zona and Metode Clearing |
-| 38.3    | Language Configuration Fix                       | Planned | Locale wired from SettingsCubit to MaterialApp.router; SettingsEntity locale field          |
-| 38.4    | Inventory Form and Land Clearing Tab Layout      | Planned | Inventory merged Jumlah+Satuan row; Land Clearing Plan/Actual tab layout                    |
-| 38.5    | Breadcrumbs and Benchmark Navigation Fix         | Planned | Segment labels title-cased; Benchmark route corrected to /operations/benchmark-db; sidebar entry added |
-| 38.6    | Attendance Form Extraction                       | Planned | AttendanceFormPage (new), standalone route, shows name and position                         |
-| 38.7    | Equipment Check Mobile Layout Fix                | Planned | Overflow fixed on narrow mobile; all controls reachable                                     |
+| Substep | Session / Title                             | Status | Output / Deliverables                                                                                  |
+| ------- | ------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------ |
+| 38.1    | Button and AppBar Consistency               | Done   | FButton with icon+label in FAppBar on all list screens; Laporan icon button; upload form appbar fix    |
+| 38.2    | Cut/Fill and Land Clearing Form Fixes       | Done   | BCM/LCM label/unit fix, 2-col layout, remove steppers, CreatableCombobox for Zona and Metode Clearing  |
+| 38.3    | Language Configuration Fix                  | Done   | Locale wired from SettingsCubit to MaterialApp.router; SettingsEntity locale field                     |
+| 38.4    | Inventory Form and Land Clearing Tab Layout | Done   | Inventory merged Jumlah+Satuan row; Land Clearing Plan/Actual tab layout                               |
+| 38.5    | Breadcrumbs and Benchmark Navigation Fix    | Done   | Segment labels title-cased; Benchmark route corrected to /operations/benchmark-db; sidebar entry added |
+| 38.6    | Attendance Form Extraction                  | Done   | AttendanceFormPage (new), standalone route at /teams/attendance/form, shows employee name and position |
+| 38.7    | Equipment Check Mobile Layout Fix           | Done   | Overflow fixed on narrow mobile; all controls reachable                                                |
 
 ## How to add a STEP
 
 See `prompts/README.md` for the authoring recipe.
+| 39      | Phase 2 Tier 2 Check-in, Reconciliation & Regression Fixes | Planned | |
