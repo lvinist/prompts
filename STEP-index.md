@@ -369,4 +369,4 @@ worked, and completed.
 ## How to add a STEP
 
 See `prompts/README.md` for the authoring recipe.
-| 39      | Phase 2 Tier 2 Check-in, Reconciliation & Regression Fixes | Planned | |
+| 39      | Phase 2 Tier 2 Check-in, Reconciliation & Regression Fixes | In progress | |
