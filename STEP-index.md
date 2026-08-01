@@ -273,6 +273,8 @@ worked, and completed.
 | STEP-36 | Benchmark Database Feature                 | DeepSeek            | Done   | `mine-flow-app`    | Scaffold domain, data, and presentation layers for the new Benchmark Database feature under Operations.                                                                                                                         |
 | STEP-37 | Residual Impeccable Material Purge         | Gemini              | Done   | `mine-flow-app`    | Replace remaining `Card`, `ElevatedButton`, `TextButton`, `MaterialBanner` with ForUI equivalents in Equipment, Timeline, Notifications, and Data Bucket features.                                                              |
 | STEP-38 | Phase 2 Tier 2 UI/UX Bug Fixes             | Gemini 3.1 Pro High | Done   | `mine-flow-app`    | Fix 19 UI/UX bugs: FButton appbar consistency, Cut/Fill form labels/layout, Land Clearing tabs, Inventory merged field, Language config, Attendance form extraction, Breadcrumbs, Benchmark nav, Equipment Check mobile layout. |
+| STEP-39 | Phase 2 Tier 2 Check-in, Reconciliation & Regression Fixes | Antigravity | Done | `mine-flow-docs`, `mine-flow-app`, `prompts` | Formal check-in, tests, UI drift ADRs, and missing low-battery sync logic implementation. |
+| STEP-40 | Phase 2 Tier 2 Check-in Test Suite Bug Fixes | Antigravity | Planned | `mine-flow-app` | Fix 7 test failures uncovered in Phase 2 Tier 2 check-in. |
 
 ### STEP-32 substeps
 
@@ -369,4 +371,3 @@ worked, and completed.
 ## How to add a STEP
 
 See `prompts/README.md` for the authoring recipe.
-| 39      | Phase 2 Tier 2 Check-in, Reconciliation & Regression Fixes | In progress | |
