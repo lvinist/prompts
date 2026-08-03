@@ -274,7 +274,7 @@ worked, and completed.
 | STEP-37 | Residual Impeccable Material Purge         | Gemini              | Done   | `mine-flow-app`    | Replace remaining `Card`, `ElevatedButton`, `TextButton`, `MaterialBanner` with ForUI equivalents in Equipment, Timeline, Notifications, and Data Bucket features.                                                              |
 | STEP-38 | Phase 2 Tier 2 UI/UX Bug Fixes             | Gemini 3.1 Pro High | Done   | `mine-flow-app`    | Fix 19 UI/UX bugs: FButton appbar consistency, Cut/Fill form labels/layout, Land Clearing tabs, Inventory merged field, Language config, Attendance form extraction, Breadcrumbs, Benchmark nav, Equipment Check mobile layout. |
 | STEP-39 | Phase 2 Tier 2 Check-in, Reconciliation & Regression Fixes | Antigravity | Done | `mine-flow-docs`, `mine-flow-app`, `prompts` | Formal check-in, tests, UI drift ADRs, and missing low-battery sync logic implementation. |
-| STEP-40 | Phase 2 Tier 2 Check-in Test Suite Bug Fixes | Antigravity | Planned | `mine-flow-app` | Fix 7 test failures uncovered in Phase 2 Tier 2 check-in. |
+| STEP-40 | Phase 2 Tier 2 Check-in Test Suite Bug Fixes | Antigravity | Done | `mine-flow-app` | Fix 8 test failures (7 from STEP-39 check-in + 1 new smoke-test regression): FTheme wrapper gaps, AttendanceScreen FormPage migration, and SyncQueueManager retry timing race. |
 
 ### STEP-32 substeps
 
@@ -367,6 +367,16 @@ worked, and completed.
 | 38.5    | Breadcrumbs and Benchmark Navigation Fix    | Done   | Segment labels title-cased; Benchmark route corrected to /operations/benchmark-db; sidebar entry added |
 | 38.6    | Attendance Form Extraction                  | Done   | AttendanceFormPage (new), standalone route at /teams/attendance/form, shows employee name and position |
 | 38.7    | Equipment Check Mobile Layout Fix           | Done   | Overflow fixed on narrow mobile; all controls reachable                                                |
+
+### STEP-40 substeps
+
+| Substep | Session / Title                                                         | Status  | Output / Deliverables                                                                         |
+| ------- | ----------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------- |
+| 40.1    | Fix `FTheme` wrappers in `daily_log_screen_test.dart` (4 form failures) | Done    | 4 `DailyLogFormScreen` widget tests green                                                     |
+| 40.2    | Migrate 2 `AttendanceScreen` tests to `AttendanceFormPage`              | Done    | 2 attendance widget tests green (targeting correct screen post-STEP-38 extraction)            |
+| 40.3    | Fix `SyncQueueManager` retry test timing race                           | Done    | `handles retries and marks failed items after exceeding max retries` integration test green   |
+| 40.4    | Fix smoke test `widget_test.dart` `FAccessibilityScope` crash           | Done    | `app launches without crashing` smoke test green                                              |
+| 40.5    | Full verification and close                                             | Done    | `flutter test` 0 failures, `flutter analyze` clean, STEP archived                            |
 
 ## How to add a STEP
 
