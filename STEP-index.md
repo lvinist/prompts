@@ -276,6 +276,19 @@ worked, and completed.
 | STEP-39 | Phase 2 Tier 2 Check-in, Reconciliation & Regression Fixes | Antigravity | Done | `mine-flow-docs`, `mine-flow-app`, `prompts` | Formal check-in, tests, UI drift ADRs, and missing low-battery sync logic implementation. |
 | STEP-40 | Phase 2 Tier 2 Check-in Test Suite Bug Fixes | Antigravity | Done | `mine-flow-app` | Fix 8 test failures (7 from STEP-39 check-in + 1 new smoke-test regression): FTheme wrapper gaps, AttendanceScreen FormPage migration, and SyncQueueManager retry timing race. |
 
+## Phase 3 — Release Readiness, Integration & Scale
+
+> Phase 3 opens with the release-readiness baseline. Multi-site support, automated imports,
+> full offline expansion, and analytics remain deliberately unplanned until staging and
+> release-readiness evidence proves the current single-site baseline.
+
+| STEP    | Title                                             | Owner | Status  | Repos (projection)                  | Scope (one line) |
+| ------- | ------------------------------------------------- | ----- | ------- | ----------------------------------- | ---------------- |
+| STEP-41 | Release-Readiness Reconciliation & Contract Baseline |       | Planned | `mine-flow-app`, `mine-flow-docs`   | Inventory the actual release gaps against the architecture and Phase 2 record; make Supabase generated-type regeneration/compile checks and Indonesian localization checks reproducible. Establish the implementation/test evidence required by the later staging and release-control STEPs without changing release architecture. |
+| STEP-42 | Staging Environment & Promotion Pipeline          |       | Planned | `mine-flow-app`, `mine-flow-docs`   | Provision and document a separate high-parity staging Supabase/configuration path with synthetic seed data, CI deployment, and explicit rollback/release procedures. Verify staging on the Android and web delivery paths before any production release work. |
+| STEP-43 | Security, Privacy & Release-Control Baseline      |       | Planned | `mine-flow-app`, `mine-flow-docs`   | Verify and remediate the pre-release security and privacy controls: RLS/authorization behavior, account lifecycle, privacy notice and retention handling, secrets posture, backups, and a restore fire-drill record. Add appropriate authorization, migration/data, and operational evidence without treating legal review as completed. |
+| STEP-44 | Release-Candidate E2E & Runtime Design Review     |       | Planned | `mine-flow-app`, `mine-flow-docs`   | Execute critical Android and web journeys against staging, including field-critical offline/sync behavior, and capture the required runtime Impeccable design-review evidence for responsive, accessible, localized UI states. Resolve or explicitly carry forward findings before considering a production release. |
+
 ### STEP-32 substeps
 
 | Substep | Session / Title                                       | Status | Output / Deliverables                                                                                                          |
