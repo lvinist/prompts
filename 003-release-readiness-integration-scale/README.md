@@ -15,5 +15,6 @@ STEP numbers are global (they don't reset per phase).
 
 | STEP | Title | Substeps | Archived |
 |------|-------|----------|----------|
+| STEP-41 | Release-Readiness Reconciliation & Contract Baseline | 41.1, 41.2, 41.3, 41.4 | 2026-08-06 |
 
 <!-- Add a row when a STEP's folder is moved into this phase on completion. -->

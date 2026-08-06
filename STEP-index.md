@@ -284,7 +284,7 @@ worked, and completed.
 
 | STEP    | Title                                             | Owner | Status  | Repos (projection)                  | Scope (one line) |
 | ------- | ------------------------------------------------- | ----- | ------- | ----------------------------------- | ---------------- |
-| STEP-41 | Release-Readiness Reconciliation & Contract Baseline | Antigravity | In progress | `mine-flow-app`, `mine-flow-docs`   | Inventory the actual release gaps against the architecture and Phase 2 record; make Supabase generated-type regeneration/compile checks and Indonesian localization checks reproducible. Establish the implementation/test evidence required by the later staging and release-control STEPs without changing release architecture. |
+| STEP-41 | Release-Readiness Reconciliation & Contract Baseline | Antigravity | Done | `mine-flow-app`, `mine-flow-docs`   | Inventory the actual release gaps against the architecture and Phase 2 record; make Supabase generated-type regeneration/compile checks and Indonesian localization checks reproducible. Establish the implementation/test evidence required by the later staging and release-control STEPs without changing release architecture. |
 | STEP-42 | Staging Environment & Promotion Pipeline          |       | Planned | `mine-flow-app`, `mine-flow-docs`   | Provision and document a separate high-parity staging Supabase/configuration path with synthetic seed data, CI deployment, and explicit rollback/release procedures. Verify staging on the Android and web delivery paths before any production release work. |
 | STEP-43 | Security, Privacy & Release-Control Baseline      |       | Planned | `mine-flow-app`, `mine-flow-docs`   | Verify and remediate the pre-release security and privacy controls: RLS/authorization behavior, account lifecycle, privacy notice and retention handling, secrets posture, backups, and a restore fire-drill record. Add appropriate authorization, migration/data, and operational evidence without treating legal review as completed. |
 | STEP-44 | Release-Candidate E2E & Runtime Design Review     |       | Planned | `mine-flow-app`, `mine-flow-docs`   | Execute critical Android and web journeys against staging, including field-critical offline/sync behavior, and capture the required runtime Impeccable design-review evidence for responsive, accessible, localized UI states. Resolve or explicitly carry forward findings before considering a production release. |
@@ -293,10 +293,10 @@ worked, and completed.
 
 | Substep | Session / Title                                              | Status  | Output / Deliverables                                                                                                              |
 | ------- | ------------------------------------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 41.1    | Release-readiness inventory and acceptance matrix            | Planned | `Code/mine-flow-docs/reports/2026-08-03-step-0041-release-readiness-reconciliation.md`                                             |
-| 41.2    | Reproducible Supabase generated-type contract gate           | Planned | Guard script (`tool/check_supabase_contracts.dart`) and CI integration                                                             |
-| 41.3    | Localization compliance baseline and regression guard        | Planned | Documented localization inventory; narrowly scoped static/test guard; tests proving locale configuration                           |
-| 41.4    | Fresh release baseline verification and reconciliation close | Planned | Updated final report; appropriate doc/version-log and risk changes; verified commands/results                                      |
+| 41.1    | Release-readiness inventory and acceptance matrix            | Done | `Code/mine-flow-docs/reports/2026-08-03-step-0041-release-readiness-reconciliation.md`                                             |
+| 41.2    | Reproducible Supabase generated-type contract gate           | Done | Guard script (`tool/check_supabase_contracts.dart`) and CI integration                                                             |
+| 41.3    | Localization compliance baseline and regression guard        | Done | Documented localization inventory; narrowly scoped static/test guard; tests proving locale configuration                           |
+| 41.4    | Fresh release baseline verification and reconciliation close | Done | Updated final report; appropriate doc/version-log and risk changes; verified commands/results                                      |
 
 ### STEP-32 substeps
 
