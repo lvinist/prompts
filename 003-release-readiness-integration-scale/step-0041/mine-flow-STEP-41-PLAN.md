@@ -2,7 +2,7 @@
 
 **Phase:** Phase 3 — Release Readiness, Integration & Scale
 **Owner:** Antigravity
-**Status:** In progress
+**Status:** In progress (41.5 audit fixes pending)
 **Date:** 2026-08-06
 **Branch:** `step-0041-release-readiness-baseline`
 **Repos (projection):** `mine-flow-app`, `mine-flow-docs`, `prompts` (completion archive only)
@@ -59,7 +59,8 @@ This STEP converts those known gaps into an evidence-backed baseline that later 
 | 41.1 | Verify inventory report and repository baseline | Updated/completed draft at `Code/mine-flow-docs/reports/2026-08-03-step-0041-release-readiness-reconciliation.md` | Clean worktrees (confirmed) | None — state is known |
 | 41.2 | Verify and document Supabase contract gate | Verified `tool/check_supabase_contracts.dart`; updated Doc 11 if needed; report rows updated | 41.1 baseline confirmed | Live generation unverified until STEP-42 |
 | 41.3 | Localization compliance baseline and regression guard | `lib/l10n/app_id.arb`, `lib/l10n/app_en.arb`, `l10n.yaml`, `tool/check_l10n_baseline.dart`, focused tests | 41.1 identifies localization gap | Whether `generate: true` without `l10n.yaml` causes build issues (check first before creating) |
-| 41.4 | Fresh baseline verification and reconciliation close | Fresh `flutter test` / `analyze` results; finalized report; risk register rows; STEP archived | 41.2–41.3 complete | Build smoke gate requires `--dart-define` secrets → record as Unverified |
+| 41.4 | Fresh baseline verification and reconciliation close | Updated final report; appropriate doc/version-log and risk changes; verified commands/results | 41.2–41.3 complete | Build smoke gate requires `--dart-define` secrets → record as Unverified |
+| 41.5 | Audit Fix — Guard Correctness & CI Hardening | Fixed `tool/check_l10n_baseline.dart` (regex, endsWith, ghost comment), `tool/check_supabase_contracts.dart` (porcelain parser), `ci.yml` (fetch-depth: 2), double-quote fixture test, report closure | 41.4 archived | None — fixes are narrowly scoped to post-impl audit findings |
 
 ## Test plan
 
@@ -91,4 +92,5 @@ This STEP converts those known gaps into an evidence-backed baseline that later 
 - [x] Fresh `dart format`, `flutter analyze`, `flutter test` results are recorded in the reconciliation report with actual counts.
 - [x] The reconciliation report is complete: evidence-backed matrix rows, contract/l10n baselines, explicit STEPs 42/43/44 handoffs.
 - [x] Architecture docs, CI, README, and `registries/risks.yml` match verified reality.
-- [x] STEP review passed; `prompts/STEP-index.md` updated; STEP archived to `prompts/`.
+- [ ] **41.5:** l10n guard regex fixed (ISSUE-4), CI fetch-depth hardened (ISSUE-8), guard robustness fixes (ISSUE-1/5/6), double-quote test added, report appended.
+- [ ] STEP review passed; `prompts/STEP-index.md` updated; STEP archived to `prompts/`.
