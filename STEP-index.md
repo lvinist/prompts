@@ -297,7 +297,7 @@ worked, and completed.
 | 41.2    | Reproducible Supabase generated-type contract gate           | Done | Guard script (`tool/check_supabase_contracts.dart`) and CI integration                                                             |
 | 41.3    | Localization compliance baseline and regression guard        | Done | Documented localization inventory; narrowly scoped static/test guard; tests proving locale configuration                           |
 | 41.4    | Fresh release baseline verification and reconciliation close | Done    | Updated final report; appropriate doc/version-log and risk changes; verified commands/results                                      |
-| 41.5    | Audit Fix — Guard Correctness & CI Hardening                 | Planned | Fix l10n regex (ISSUE-4), CI fetch-depth (ISSUE-8), porcelain parser (ISSUE-1), endsWith (ISSUE-5), ghost comment (ISSUE-6); add double-quote test; append report closure section |
+| 41.5 | Audit Fix — Guard Correctness & CI Hardening | Done | Fixed ISSUE-4 (l10n regex catches double-quoted strings), ISSUE-8 (CI fetch-depth), ISSUE-1/5/6 (guard robustness); 3 l10n tests, 3 contract tests passing |
 
 ### STEP-32 substeps
 
