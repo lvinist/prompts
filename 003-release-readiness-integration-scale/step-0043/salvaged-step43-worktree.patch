@@ -1,0 +1,974 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 30b06b5..6b2c1a2 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -27,10 +27,16 @@ jobs:
+         with:
+           fetch-depth: 2
+ 
++      - name: Set up JDK 17
++        uses: actions/setup-java@v4
++        with:
++          java-version: '17'
++          distribution: 'temurin'
++
+       - name: Setup Flutter
+         uses: subosito/flutter-action@v2
+         with:
+-          flutter-version: "3.32.x"
++          flutter-version: "3.47.0"
+           channel: stable
+           cache: true
+ 
+@@ -69,10 +75,16 @@ jobs:
+       - name: Checkout
+         uses: actions/checkout@v4
+ 
++      - name: Set up JDK 17
++        uses: actions/setup-java@v4
++        with:
++          java-version: '17'
++          distribution: 'temurin'
++
+       - name: Setup Flutter
+         uses: subosito/flutter-action@v2
+         with:
+-          flutter-version: "3.x"
++          flutter-version: "3.47.0"
+           channel: stable
+           cache: true
+ 
+diff --git a/android/app/build.gradle.kts b/android/app/build.gradle.kts
+index fb51e7a..b1a1908 100644
+--- a/android/app/build.gradle.kts
++++ b/android/app/build.gradle.kts
+@@ -19,7 +19,7 @@ android {
+         applicationId = "com.mineflow.mine_flow"
+         // You can update the following values to match your application needs.
+         // For more information, see: https://flutter.dev/to/review-gradle-config.
+-        minSdk = flutter.minSdkVersion
++        minSdk = 23 // flutter_secure_storage v11 requires minSdk >= 23 (STEP-43, RISK-0008)
+         targetSdk = flutter.targetSdkVersion
+         versionCode = flutter.versionCode
+         versionName = flutter.versionName
+diff --git a/android/settings.gradle.kts b/android/settings.gradle.kts
+index c21f0c5..b28021a 100644
+--- a/android/settings.gradle.kts
++++ b/android/settings.gradle.kts
+@@ -19,8 +19,8 @@ pluginManagement {
+ 
+ plugins {
+     id("dev.flutter.flutter-plugin-loader") version "1.0.0"
+-    id("com.android.application") version "9.0.1" apply false
+-    id("org.jetbrains.kotlin.android") version "2.3.20" apply false
++    id("com.android.application") version "9.1.0" apply false
++    id("org.jetbrains.kotlin.android") version "2.4.0" apply false
+ }
+ 
+ include(":app")
+diff --git a/lib/core/init/app_initializer.dart b/lib/core/init/app_initializer.dart
+index 792d412..110ab9e 100644
+--- a/lib/core/init/app_initializer.dart
++++ b/lib/core/init/app_initializer.dart
+@@ -22,7 +22,7 @@
+ ///    in `router.dart` until a real DI container lands.
+ library;
+ 
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/core/network/connectivity_service.dart';
+ import 'package:mine_flow/core/network/network_info.dart';
+ import 'package:mine_flow/core/offline/adapters/sync_queue_item_adapter.dart';
+@@ -140,7 +140,7 @@ class AppInitializer {
+     _registerHiveAdapters();
+ 
+     // --- 2. Open boxes ---
+-    final dataBucketBox = await Hive.openBox<Map<String, dynamic>>(
++    final dataBucketBox = await Hive.openBox<Map>(
+       'data_bucket_files',
+     );
+     final syncQueueBox = await Hive.openBox<SyncQueueItem>('sync_queue');
+@@ -310,7 +310,7 @@ class AppInitializer {
+     );
+ 
+     // Benchmark
+-    final benchmarkBox = await Hive.openBox<Map<String, dynamic>>('benchmarks');
++    final benchmarkBox = await Hive.openBox<Map>('benchmarks');
+     final benchmarkLocalDataSource = BenchmarkLocalDataSourceImpl(
+       hiveBox: benchmarkBox,
+     );
+diff --git a/lib/core/offline/adapters/model_adapters.dart b/lib/core/offline/adapters/model_adapters.dart
+index b7387a7..b4d076e 100644
+--- a/lib/core/offline/adapters/model_adapters.dart
++++ b/lib/core/offline/adapters/model_adapters.dart
+@@ -1,5 +1,5 @@
+ import 'dart:convert';
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/core/data/models/models.dart';
+ 
+ /// Hive TypeAdapter for [AttendanceRecordModel] (typeId: 1)
+diff --git a/lib/core/offline/adapters/sync_queue_item_adapter.dart b/lib/core/offline/adapters/sync_queue_item_adapter.dart
+index ceeeb05..18e5c56 100644
+--- a/lib/core/offline/adapters/sync_queue_item_adapter.dart
++++ b/lib/core/offline/adapters/sync_queue_item_adapter.dart
+@@ -1,5 +1,5 @@
+ import 'dart:convert';
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/core/offline/models/sync_queue_item.dart';
+ 
+ /// Hive TypeAdapter for [SyncAction] enum (typeId: 11)
+diff --git a/lib/core/offline/adapters/timeline_milestone_adapter.dart b/lib/core/offline/adapters/timeline_milestone_adapter.dart
+index 226398b..2acfb73 100644
+--- a/lib/core/offline/adapters/timeline_milestone_adapter.dart
++++ b/lib/core/offline/adapters/timeline_milestone_adapter.dart
+@@ -1,5 +1,5 @@
+ import 'dart:convert';
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/features/timeline/data/models/timeline_milestone_model.dart';
+ 
+ /// Hive TypeAdapter for [TimelineMilestoneModel] (typeId: 14).
+diff --git a/lib/core/offline/hive_cache_repository.dart b/lib/core/offline/hive_cache_repository.dart
+index 19315fb..7ec1908 100644
+--- a/lib/core/offline/hive_cache_repository.dart
++++ b/lib/core/offline/hive_cache_repository.dart
+@@ -1,4 +1,4 @@
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ 
+ /// Generic Clean Architecture local cache repository wrapping a Hive [Box].
+ /// Provides typed local read/write/delete operations for cached models.
+diff --git a/lib/core/offline/hive_service.dart b/lib/core/offline/hive_service.dart
+index 70eecb6..bcf8c90 100644
+--- a/lib/core/offline/hive_service.dart
++++ b/lib/core/offline/hive_service.dart
+@@ -1,6 +1,6 @@
+ import 'dart:async';
+ import 'package:flutter/foundation.dart';
+-import 'package:hive_flutter/hive_flutter.dart';
++import 'package:hive_ce_flutter/hive_ce_flutter.dart';
+ import 'package:logging/logging.dart';
+ import 'package:mine_flow/core/data/models/models.dart';
+ import 'package:mine_flow/core/offline/adapters/model_adapters.dart';
+diff --git a/lib/core/security/secure_storage_service.dart b/lib/core/security/secure_storage_service.dart
+index 8cffb5c..c0da907 100644
+--- a/lib/core/security/secure_storage_service.dart
++++ b/lib/core/security/secure_storage_service.dart
+@@ -4,7 +4,9 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+ ///
+ /// Follows Doc 15 — Native App Architecture (§2.2 Security & Token Storage)
+ /// and Doc 16 — Identity & Auth (§6 Sessions & Tokens).
+-/// On Android, uses Android Keystore with `encryptedSharedPreferences: true`.
++/// On Android (minSdk 23+), uses Android Keystore-backed encrypted storage
++/// (flutter_secure_storage v11 — encryptedSharedPreferences removed; Keystore
++/// is always used at minSdk 23+, providing hardware-backed encryption).
+ /// On iOS, uses Keychain with accessibility `first_unlock`.
+ class SecureStorageService {
+   final FlutterSecureStorage _storage;
+@@ -20,7 +22,7 @@ class SecureStorageService {
+     : _storage =
+           storage ??
+           const FlutterSecureStorage(
+-            aOptions: AndroidOptions(encryptedSharedPreferences: true),
++            aOptions: AndroidOptions(),
+             iOptions: IOSOptions(
+               accessibility: KeychainAccessibility.first_unlock,
+             ),
+diff --git a/lib/features/attendance/data/adapters/attendance_record_dto_adapter.dart b/lib/features/attendance/data/adapters/attendance_record_dto_adapter.dart
+index 1ec908e..e83120a 100644
+--- a/lib/features/attendance/data/adapters/attendance_record_dto_adapter.dart
++++ b/lib/features/attendance/data/adapters/attendance_record_dto_adapter.dart
+@@ -1,5 +1,5 @@
+ import 'dart:convert';
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/features/attendance/data/models/attendance_record_dto.dart';
+ 
+ /// Hive TypeAdapter for [AttendanceRecordDto] (typeId: 21)
+diff --git a/lib/features/benchmark/data/datasources/benchmark_local_datasource.dart b/lib/features/benchmark/data/datasources/benchmark_local_datasource.dart
+index 733bff4..db9d886 100644
+--- a/lib/features/benchmark/data/datasources/benchmark_local_datasource.dart
++++ b/lib/features/benchmark/data/datasources/benchmark_local_datasource.dart
+@@ -1,4 +1,4 @@
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/features/benchmark/data/models/benchmark_model.dart';
+ 
+ /// Local data source providing Hive-backed offline caching for benchmark data.
+@@ -25,13 +25,13 @@ abstract class BenchmarkLocalDataSource {
+ /// Concrete implementation of [BenchmarkLocalDataSource] backed by a Hive box.
+ ///
+ /// Serializes [BenchmarkModel] to/from JSON maps stored in a
+-/// `Box<Map<String, dynamic>>` — avoids needing a Hive TypeAdapter per
++/// `Box<Map>` — avoids needing a Hive TypeAdapter per
+ /// the project convention (see DataBucketLocalDataSourceImpl).
+ class BenchmarkLocalDataSourceImpl implements BenchmarkLocalDataSource {
+-  final Box<Map<String, dynamic>> _hiveBox;
++  final Box<Map> _hiveBox;
+ 
+   /// Creates a [BenchmarkLocalDataSourceImpl] with the given [Hive] box.
+-  BenchmarkLocalDataSourceImpl({required this._hiveBox});
++  BenchmarkLocalDataSourceImpl({required Box<Map> hiveBox}) : _hiveBox = hiveBox;
+ 
+   @override
+   List<BenchmarkModel> getBenchmarks() {
+diff --git a/lib/features/daily_log/data/adapters/daily_log_dto_adapter.dart b/lib/features/daily_log/data/adapters/daily_log_dto_adapter.dart
+index 80310c9..ba14b7a 100644
+--- a/lib/features/daily_log/data/adapters/daily_log_dto_adapter.dart
++++ b/lib/features/daily_log/data/adapters/daily_log_dto_adapter.dart
+@@ -1,5 +1,5 @@
+ import 'dart:convert';
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/features/daily_log/data/models/daily_log_dto.dart';
+ 
+ /// Hive TypeAdapter for [DailyLogDto] (typeId: 22)
+diff --git a/lib/features/data_bucket/data/datasources/data_bucket_local_datasource.dart b/lib/features/data_bucket/data/datasources/data_bucket_local_datasource.dart
+index b988d4e..d0567b3 100644
+--- a/lib/features/data_bucket/data/datasources/data_bucket_local_datasource.dart
++++ b/lib/features/data_bucket/data/datasources/data_bucket_local_datasource.dart
+@@ -1,4 +1,4 @@
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/features/data_bucket/data/models/geospatial_file_model.dart';
+ 
+ /// Local data source providing Hive-backed offline caching for geospatial file metadata.
+@@ -27,7 +27,7 @@ abstract class DataBucketLocalDataSource {
+ 
+ /// Concrete implementation of [DataBucketLocalDataSource] backed by a Hive box.
+ class DataBucketLocalDataSourceImpl implements DataBucketLocalDataSource {
+-  final Box<Map<String, dynamic>> hiveBox;
++  final Box<Map> hiveBox;
+ 
+   DataBucketLocalDataSourceImpl({required this.hiveBox});
+ 
+diff --git a/lib/features/data_bucket/data/models/hive/geospatial_file_hive_adapter.dart b/lib/features/data_bucket/data/models/hive/geospatial_file_hive_adapter.dart
+index 0c44b8e..906857d 100644
+--- a/lib/features/data_bucket/data/models/hive/geospatial_file_hive_adapter.dart
++++ b/lib/features/data_bucket/data/models/hive/geospatial_file_hive_adapter.dart
+@@ -1,5 +1,5 @@
+ import 'dart:convert';
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/features/data_bucket/data/models/geospatial_file_model.dart';
+ 
+ /// Hive TypeAdapter for [GeospatialFileModel] (typeId: 13)
+diff --git a/lib/features/data_bucket/presentation/pages/upload_file_page.dart b/lib/features/data_bucket/presentation/pages/upload_file_page.dart
+index 1ce7428..3176b87 100644
+--- a/lib/features/data_bucket/presentation/pages/upload_file_page.dart
++++ b/lib/features/data_bucket/presentation/pages/upload_file_page.dart
+@@ -105,7 +105,7 @@ class _UploadFileFormState extends State<_UploadFileForm> {
+ 
+   Future<void> _pickFile() async {
+     try {
+-      final result = await FilePicker.platform.pickFiles(
++      final result = await FilePicker.pickFiles(
+         type: FileType.custom,
+         allowedExtensions: [
+           'shp',
+diff --git a/lib/features/equipment_check/data/adapters/equipment_check_dto_adapter.dart b/lib/features/equipment_check/data/adapters/equipment_check_dto_adapter.dart
+index 2fb9394..a3748bf 100644
+--- a/lib/features/equipment_check/data/adapters/equipment_check_dto_adapter.dart
++++ b/lib/features/equipment_check/data/adapters/equipment_check_dto_adapter.dart
+@@ -1,5 +1,5 @@
+ import 'dart:convert';
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/features/equipment_check/data/models/equipment_check_dto.dart';
+ 
+ /// Hive TypeAdapter for [EquipmentCheckDto] (typeId: 23)
+diff --git a/lib/features/notifications/data/datasources/notification_local_datasource.dart b/lib/features/notifications/data/datasources/notification_local_datasource.dart
+index e9d87a4..3b2c388 100644
+--- a/lib/features/notifications/data/datasources/notification_local_datasource.dart
++++ b/lib/features/notifications/data/datasources/notification_local_datasource.dart
+@@ -1,7 +1,7 @@
+ /// Local (Hive-backed) storage for in-app notifications.
+ library;
+ 
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/features/notifications/data/models/app_notification_model.dart';
+ 
+ /// Persistence layer for [AppNotificationModel]s.
+@@ -12,12 +12,12 @@ import 'package:mine_flow/features/notifications/data/models/app_notification_mo
+ class NotificationLocalDataSource {
+   static const _boxName = 'notifications';
+ 
+-  Box<Map<String, dynamic>>? _box;
++  Box<Map>? _box;
+ 
+   /// Ensures the Hive box is open.
+-  Future<Box<Map<String, dynamic>>> _ensureBox() async {
++  Future<Box<Map>> _ensureBox() async {
+     if (_box == null || !_box!.isOpen) {
+-      _box = await Hive.openBox<Map<String, dynamic>>(_boxName);
++      _box = await Hive.openBox<Map>(_boxName);
+     }
+     return _box!;
+   }
+diff --git a/lib/features/notifications/data/models/app_notification_model_adapter.dart b/lib/features/notifications/data/models/app_notification_model_adapter.dart
+index c0a57ee..42ff04b 100644
+--- a/lib/features/notifications/data/models/app_notification_model_adapter.dart
++++ b/lib/features/notifications/data/models/app_notification_model_adapter.dart
+@@ -2,7 +2,7 @@
+ library;
+ 
+ import 'dart:convert';
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/features/notifications/data/models/app_notification_model.dart';
+ 
+ class AppNotificationModelAdapter extends TypeAdapter<AppNotificationModel> {
+diff --git a/lib/features/settings/data/datasources/settings_local_datasource.dart b/lib/features/settings/data/datasources/settings_local_datasource.dart
+index b4962e8..093f472 100644
+--- a/lib/features/settings/data/datasources/settings_local_datasource.dart
++++ b/lib/features/settings/data/datasources/settings_local_datasource.dart
+@@ -1,7 +1,7 @@
+ /// Local (Hive-backed) persistence for user settings (theme & locale).
+ library;
+ 
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ 
+ /// Persistence layer for user preference key-value pairs.
+ ///
+diff --git a/lib/main.dart b/lib/main.dart
+index 92b9934..c5bcf00 100644
+--- a/lib/main.dart
++++ b/lib/main.dart
+@@ -11,7 +11,7 @@
+ // See Doc 09 — Environments §2 Configuration & Secrets and `.env.example`.
+ 
+ import 'package:flutter/material.dart';
+-import 'package:hive_flutter/hive_flutter.dart';
++import 'package:hive_ce_flutter/hive_ce_flutter.dart';
+ import 'package:mine_flow/app/app.dart';
+ import 'package:mine_flow/core/constants/app_constants.dart';
+ import 'package:mine_flow/core/init/app_initializer.dart';
+diff --git a/pubspec.lock b/pubspec.lock
+index 6f4c50d..881ee1e 100644
+--- a/pubspec.lock
++++ b/pubspec.lock
+@@ -117,18 +117,18 @@ packages:
+     dependency: "direct main"
+     description:
+       name: bloc
+-      sha256: e03b235924e4f509c27b5d6b2f949200e0a91149a9818b4f65eeb56662b75413
++      sha256: "106842ad6569f0b60297619e9e0b1885c2fb9bf84812935490e6c5275777804e"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "9.2.1"
++    version: "8.1.4"
+   bloc_test:
+     dependency: "direct dev"
+     description:
+       name: bloc_test
+-      sha256: "1dd549e58be35148bc22a9135962106aa29334bc1e3f285994946a1057b29d7b"
++      sha256: "165a6ec950d9252ebe36dc5335f2e6eb13055f33d56db0eeb7642768849b43d2"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "10.0.0"
++    version: "9.1.7"
+   boolean_selector:
+     dependency: transitive
+     description:
+@@ -237,10 +237,10 @@ packages:
+     dependency: "direct main"
+     description:
+       name: connectivity_plus
+-      sha256: b5e72753cf63becce2c61fd04dfe0f1c430cc5278b53a1342dc5ad839eab29ec
++      sha256: "762c99f890ca8bf87f7337236f99edd42793843bc6c3631da294a76653a54bd0"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "6.1.5"
++    version: "7.3.1"
+   connectivity_plus_platform_interface:
+     dependency: transitive
+     description:
+@@ -349,10 +349,10 @@ packages:
+     dependency: "direct main"
+     description:
+       name: file_picker
+-      sha256: "09b474c0c8117484b80cbebc043801ff91e05cfbd2874d512825c899e1754694"
++      sha256: "29cc1fdb20613876cc7afc529738c1c0f11a9ca159b010edad0c566ac330847e"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "9.2.3"
++    version: "11.0.3"
+   file_selector_linux:
+     dependency: transitive
+     description:
+@@ -397,10 +397,10 @@ packages:
+     dependency: "direct main"
+     description:
+       name: fl_chart
+-      sha256: "74959b99b92b9eebeed1a4049426fd67c4abc3c5a0f4d12e2877097d6a11ae08"
++      sha256: b938f77d042cbcd822936a7a359a7235bad8bd72070de1f827efc2cc297ac888
+       url: "https://pub.dev"
+     source: hosted
+-    version: "0.69.2"
++    version: "1.2.0"
+   flutter:
+     dependency: "direct main"
+     description: flutter
+@@ -410,10 +410,10 @@ packages:
+     dependency: "direct main"
+     description:
+       name: flutter_bloc
+-      sha256: cf51747952201a455a1c840f8171d273be009b932c75093020f9af64f2123e38
++      sha256: b594505eac31a0518bdcb4b5b79573b8d9117b193cc80cc12e17d639b10aa27a
+       url: "https://pub.dev"
+     source: hosted
+-    version: "9.1.1"
++    version: "8.1.6"
+   flutter_lints:
+     dependency: "direct dev"
+     description:
+@@ -439,50 +439,50 @@ packages:
+     dependency: "direct main"
+     description:
+       name: flutter_secure_storage
+-      sha256: "9cad52d75ebc511adfae3d447d5d13da15a55a92c9410e50f67335b6d21d16ea"
++      sha256: "15e8c8fe269fdf7d469b23008ab3df521c8b826ed345820532364c31bdebace6"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "9.2.4"
+-  flutter_secure_storage_linux:
++    version: "11.0.0"
++  flutter_secure_storage_darwin:
+     dependency: transitive
+     description:
+-      name: flutter_secure_storage_linux
+-      sha256: be76c1d24a97d0b98f8b54bce6b481a380a6590df992d0098f868ad54dc8f688
++      name: flutter_secure_storage_darwin
++      sha256: ac6d76a752de0cd738334eb4b21743fc4943f449f5b6e308f18838b048c02ac0
+       url: "https://pub.dev"
+     source: hosted
+-    version: "1.2.3"
+-  flutter_secure_storage_macos:
++    version: "0.4.0"
++  flutter_secure_storage_linux:
+     dependency: transitive
+     description:
+-      name: flutter_secure_storage_macos
+-      sha256: "6c0a2795a2d1de26ae202a0d78527d163f4acbb11cde4c75c670f3a0fc064247"
++      name: flutter_secure_storage_linux
++      sha256: "76fa9c841b3b1619fc5b5bc36efc7d158fa2356f223b6caeb1d0c80a54168546"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "3.1.3"
++    version: "3.0.2"
+   flutter_secure_storage_platform_interface:
+     dependency: transitive
+     description:
+       name: flutter_secure_storage_platform_interface
+-      sha256: cf91ad32ce5adef6fba4d736a542baca9daf3beac4db2d04be350b87f69ac4a8
++      sha256: "788060052712555182aba55ecb5f8b6e5cb9cfe8f776c83249a61fe3ce877db4"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "1.1.2"
++    version: "2.0.3"
+   flutter_secure_storage_web:
+     dependency: transitive
+     description:
+       name: flutter_secure_storage_web
+-      sha256: f4ebff989b4f07b2656fb16b47852c0aab9fed9b4ec1c70103368337bc1886a9
++      sha256: "073a62b3aeb866ab4ce795f960413948e51e5a42a9b0c8333b6daf5bb3208a1c"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "1.2.1"
++    version: "2.1.1"
+   flutter_secure_storage_windows:
+-    dependency: transitive
++    dependency: "direct overridden"
+     description:
+       name: flutter_secure_storage_windows
+-      sha256: b20b07cb5ed4ed74fc567b78a72936203f587eba460af1df11281c9326cd3709
++      sha256: ff32af20f70a8d0e59b2938fc92de35b54a74671041c814275afd80e27df9f21
+       url: "https://pub.dev"
+     source: hosted
+-    version: "3.1.2"
++    version: "4.0.0"
+   flutter_test:
+     dependency: "direct dev"
+     description: flutter
+@@ -497,18 +497,18 @@ packages:
+     dependency: "direct main"
+     description:
+       name: forui
+-      sha256: "3fd49f758af004ec1af867b4f6b9786e4b83b961057be51f1c29f273f449cb55"
++      sha256: bf2a76293044ec8fbe8869032a67e79b6dfb12a471c9c3ecacb45626e69744d2
+       url: "https://pub.dev"
+     source: hosted
+-    version: "0.24.3"
++    version: "0.25.0"
+   forui_assets:
+     dependency: transitive
+     description:
+       name: forui_assets
+-      sha256: "95f11ad6f0d560a91971388f13ebf7beb77a631f9bb6ba5ab7b3454ac3acda96"
++      sha256: "43b219f28399786b8ac51c01048f583b3155c0e39ac163845b1e73c959240139"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "0.24.0"
++    version: "0.25.0"
+   frontend_server_client:
+     dependency: transitive
+     description:
+@@ -521,10 +521,10 @@ packages:
+     dependency: transitive
+     description:
+       name: functions_client
+-      sha256: e9685e9ab852a8b8e0579c867f6c9155da27317b294b3df796a536b8b8e0d253
++      sha256: "931e822688d2e97867b2300e2fdbb08c9db73f8653fc83efc7a259d2e0cca769"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "2.6.4"
++    version: "2.7.1"
+   glob:
+     dependency: transitive
+     description:
+@@ -537,10 +537,10 @@ packages:
+     dependency: "direct main"
+     description:
+       name: go_router
+-      sha256: b453934c36e289cef06525734d1e676c1f91da9e22e2017d9dcab6ce0f999175
++      sha256: d7a3576cb312649eaa51f2356450aed686085fb58fcdebda5b359aa951eef7ea
+       url: "https://pub.dev"
+     source: hosted
+-    version: "15.1.3"
++    version: "17.5.0"
+   google_identity_services_web:
+     dependency: transitive
+     description:
+@@ -569,10 +569,10 @@ packages:
+     dependency: transitive
+     description:
+       name: gotrue
+-      sha256: "360bba9606e58d5acc59a033ab64ae3cf571a6868f7a7267cb8e9a204b7bf1b2"
++      sha256: f6f42ea035953b2439664c1afb46630460edbb917093843a3a0618bfa45619f6
+       url: "https://pub.dev"
+     source: hosted
+-    version: "2.26.0"
++    version: "2.27.1"
+   graphs:
+     dependency: transitive
+     description:
+@@ -589,22 +589,22 @@ packages:
+       url: "https://pub.dev"
+     source: hosted
+     version: "2.2.0"
+-  hive:
++  hive_ce:
+     dependency: "direct main"
+     description:
+-      name: hive
+-      sha256: "8dcf6db979d7933da8217edcec84e9df1bdb4e4edc7fc77dbd5aa74356d6d941"
++      name: hive_ce
++      sha256: "8e9980e68643afb1e765d3af32b47996552a64e190d03faf622cea07c1294418"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "2.2.3"
+-  hive_flutter:
++    version: "2.19.3"
++  hive_ce_flutter:
+     dependency: "direct main"
+     description:
+-      name: hive_flutter
+-      sha256: dca1da446b1d808a51689fb5d0c6c9510c0a2ba01e22805d492c73b68e33eecc
++      name: hive_ce_flutter
++      sha256: "2677e95a333ff15af43ccd06af7eb7abbf1a4f154ea071997f3de4346cae913a"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "1.1.0"
++    version: "2.3.4"
+   hooks:
+     dependency: transitive
+     description:
+@@ -725,6 +725,14 @@ packages:
+       url: "https://pub.dev"
+     source: hosted
+     version: "1.0.5"
++  isolate_channel:
++    dependency: transitive
++    description:
++      name: isolate_channel
++      sha256: a9d3d620695bc984244dafae00b95e4319d6974b2d77f4b9e1eb4f2efe099094
++      url: "https://pub.dev"
++    source: hosted
++    version: "0.6.1"
+   jni:
+     dependency: transitive
+     description:
+@@ -741,14 +749,6 @@ packages:
+       url: "https://pub.dev"
+     source: hosted
+     version: "1.0.1"
+-  js:
+-    dependency: transitive
+-    description:
+-      name: js
+-      sha256: f2c445dce49627136094980615a031419f7f3eb393237e4ecd97ac15dea343f3
+-      url: "https://pub.dev"
+-    source: hosted
+-    version: "0.6.7"
+   json_annotation:
+     dependency: transitive
+     description:
+@@ -757,14 +757,6 @@ packages:
+       url: "https://pub.dev"
+     source: hosted
+     version: "4.12.0"
+-  jwt_decode:
+-    dependency: transitive
+-    description:
+-      name: jwt_decode
+-      sha256: d2e9f68c052b2225130977429d30f187aa1981d789c76ad104a32243cfdebfbb
+-      url: "https://pub.dev"
+-    source: hosted
+-    version: "0.3.1"
+   leak_tracker:
+     dependency: transitive
+     description:
+@@ -1041,10 +1033,10 @@ packages:
+     dependency: transitive
+     description:
+       name: postgrest
+-      sha256: "10e3f195e131eec944fa872644aed89b33b5be998f3fc77c87325db3927bc646"
++      sha256: b7f957273ba6a1c26cefa987ac524f4138e9ab7542fbb9e6abdfddacb9895a21
+       url: "https://pub.dev"
+     source: hosted
+-    version: "2.8.0"
++    version: "2.9.1"
+   printing:
+     dependency: "direct main"
+     description:
+@@ -1097,10 +1089,10 @@ packages:
+     dependency: transitive
+     description:
+       name: realtime_client
+-      sha256: "0cfbe0047e2591eba348938e9b4e620d5b1a8df6c374757e8eb8645252b8387f"
++      sha256: ff731ce21fd775e0d7accfb1eaccdcf47b687610720822ba8b9fd8f5bccb2bd9
+       url: "https://pub.dev"
+     source: hosted
+-    version: "2.11.0"
++    version: "2.13.0"
+   record_use:
+     dependency: transitive
+     description:
+@@ -1109,22 +1101,6 @@ packages:
+       url: "https://pub.dev"
+     source: hosted
+     version: "0.6.0"
+-  retry:
+-    dependency: transitive
+-    description:
+-      name: retry
+-      sha256: "822e118d5b3aafed083109c72d5f484c6dc66707885e07c0fbcb8b986bba7efc"
+-      url: "https://pub.dev"
+-    source: hosted
+-    version: "3.1.2"
+-  rxdart:
+-    dependency: transitive
+-    description:
+-      name: rxdart
+-      sha256: "5c3004a4a8dbb94bd4bf5412a4def4acdaa12e12f269737a5751369e12d1a962"
+-      url: "https://pub.dev"
+-    source: hosted
+-    version: "0.28.0"
+   shared_preferences:
+     dependency: transitive
+     description:
+@@ -1254,10 +1230,10 @@ packages:
+     dependency: transitive
+     description:
+       name: storage_client
+-      sha256: "221263cfbe0c01575b7d7fe7543e44abff380eb4d38d936372844a1caa85ba12"
++      sha256: b16aaaadcef812fda31fca056f50fb3485afe64f94e5d537d30f485ed55dec5e
+       url: "https://pub.dev"
+     source: hosted
+-    version: "2.6.0"
++    version: "2.8.0"
+   stream_channel:
+     dependency: transitive
+     description:
+@@ -1294,18 +1270,26 @@ packages:
+     dependency: transitive
+     description:
+       name: supabase
+-      sha256: "3879996256325fcc9abb03b62b12c07e4eaae2e008e1bf043cc1525184159a43"
++      sha256: eeea4f5edefd95977aa16045c3c4c8020aa31c87818669b8eb887ccb68805964
+       url: "https://pub.dev"
+     source: hosted
+-    version: "2.14.0"
++    version: "2.16.0"
++  supabase_common:
++    dependency: transitive
++    description:
++      name: supabase_common
++      sha256: a7961a44953cf8d9da049381fc3377516348255042fbb12b9d4f8540816f2fe9
++      url: "https://pub.dev"
++    source: hosted
++    version: "0.1.2"
+   supabase_flutter:
+     dependency: "direct main"
+     description:
+       name: supabase_flutter
+-      sha256: c9916c1cd512ebf3107ec0f83c9dca13d2e1e789629c2a5df896586bff46ce5f
++      sha256: "0ef08709e72ef15b98b3b935864cc8e84b12ecc374e31091edd8be4e16e125c7"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "2.16.0"
++    version: "2.17.1"
+   term_glyph:
+     dependency: transitive
+     description:
+@@ -1539,5 +1523,5 @@ packages:
+     source: hosted
+     version: "2.1.1"
+ sdks:
+-  dart: ">=3.12.2 <4.0.0"
++  dart: ">=3.12.0 <4.0.0"
+   flutter: ">=3.44.0"
+diff --git a/pubspec.yaml b/pubspec.yaml
+index 1134ac8..61c3e36 100644
+--- a/pubspec.yaml
++++ b/pubspec.yaml
+@@ -8,7 +8,7 @@ publish_to: "none"
+ version: 0.1.0+1
+ 
+ environment:
+-  sdk: ">=3.12.2 <4.0.0"
++  sdk: ">=3.12.0 <4.0.0"
+ 
+ # Architecture references:
+ #   Doc 03 — Architecture Overview & Component Boundaries
+@@ -20,24 +20,27 @@ dependencies:
+     sdk: flutter
+ 
+   # --- State management (Doc 15: BLoC pattern) ---
+-  flutter_bloc: ^9.1.1
++  flutter_bloc: ^8.1.6
+   equatable: ^2.0.7 # Value equality for BLoC states & events
+ 
+   # --- Navigation ---
+-  go_router: ^15.1.2
++  go_router: ^17.3.0
+ 
+   # --- Backend: Supabase (Doc 03: App ↔ Supabase boundary) ---
+-  supabase_flutter: ^2.9.2
++  supabase_flutter: ^2.17.1
+ 
+-  # --- Offline storage (ADR-0001: Hive selected over SQLite/sqflite) ---
+-  hive: ^2.2.3
+-  hive_flutter: ^1.1.0
++  # --- Offline storage (ADR-0001: hive_ce is the community-maintained successor
++  # to the abandoned hive package. Migrated in STEP-43. See RISK-0007.) ---
++  hive_ce: ^2.19.3
++  hive_ce_flutter: ^2.3.4
+ 
+   # --- Secure token storage (Doc 15: flutter_secure_storage + Android Keystore) ---
+-  flutter_secure_storage: ^9.2.4
++  # NOTE: Upgraded from ^9.2.4 directly to ^11.0.0 (STEP-43). Dev environment only.
++  # minSdk raised to 23 per v11 requirement. See RISK-0008.
++  flutter_secure_storage: ^11.0.0
+ 
+   # --- Connectivity for background sync trigger (Doc 15: event-based sync) ---
+-  connectivity_plus: ^6.1.4
++  connectivity_plus: ^7.3.1
+ 
+   # --- Google Drive REST API (Doc 03: App ↔ Google Drive boundary) ---
+   googleapis: ^14.0.0
+@@ -45,7 +48,9 @@ dependencies:
+   http: ^1.2.2 # Underlying HTTP client used by googleapis
+ 
+   # --- File picker for geospatial file uploads (STEP-8) ---
+-  file_picker: ^9.0.0
++  # NOTE: Upgraded from ^9.0.0 to ^11.0.3. API breaking change: FilePicker.platform.*
++  # replaced with static FilePicker.* calls. Migrated in STEP-43.
++  file_picker: ^11.0.3
+ 
+   # --- Open external links (STEP-8: Drive links) ---
+   url_launcher: ^6.3.1
+@@ -76,10 +81,10 @@ dependencies:
+   # --- Utilities ---
+   path_provider: ^2.1.5 # Required by Hive for storage path on device
+   uuid: ^4.5.1 # For generating offline record UUIDs before sync
+-  fl_chart: 0.69.2
++  fl_chart: ^1.2.0
+ 
+   bloc: any
+-  forui: ^0.24.2
++  forui: ^0.25.0
+   battery_plus: ^7.1.1
+ dev_dependencies:
+   flutter_test:
+@@ -92,11 +97,22 @@ dev_dependencies:
+   # Note: hive_generator 2.x has an incompatible dep chain with build_runner 2.4+.
+   # For the MVP, Hive TypeAdapters are written manually (simpler for a small
+   # number of models). Re-evaluate when hive 3.x / isar becomes stable.
+-  build_runner: ^2.3.0
++  build_runner: ^2.4.0
+ 
+   # --- Testing / mocking (Test Strategy: mocktail for mocking at boundaries) ---
+   mocktail: ^1.0.4
+-  bloc_test: ^10.0.0
++  bloc_test: ^9.1.5
++
++# Dependency overrides to resolve transitive win32 version conflict (STEP-43):
++# flutter_secure_storage ^11.0.0 pulls in flutter_secure_storage_windows ^4.2.2
++# which requires win32 ^6.0.1, conflicting with file_picker ^11.0.3 (uses win32 ^5.9.0).
++# win32 v6 renamed APIs (GUID.createInstance, TEXT, HRESULT) used by file_picker's
++# Windows implementation, so a raw win32 override breaks test compilation.
++# Fix: override flutter_secure_storage_windows to 4.0.0 (win32 ^5.x compatible).
++# Android target: Windows FFI code is never executed in production or in unit tests;
++# this only affects Windows desktop support, which is out of scope. (STEP-43, RISK-0008)
++dependency_overrides:
++  flutter_secure_storage_windows: 4.0.0
+ 
+ flutter:
+   uses-material-design: true
+diff --git a/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart b/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart
+index 3084e30..046d5ba 100644
+--- a/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart
++++ b/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart
+@@ -2,7 +2,7 @@ import 'dart:async';
+ import 'dart:io';
+ 
+ import 'package:flutter_test/flutter_test.dart';
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/core/network/network_info.dart';
+ import 'package:mine_flow/core/offline/adapters/sync_queue_item_adapter.dart';
+ import 'package:mine_flow/core/offline/hive_cache_repository.dart';
+@@ -53,7 +53,7 @@ void main() {
+   final fixedDate = DateTime(2026, 7, 18, 8, 0, 0);
+ 
+   late Directory tempDir;
+-  late Box<Map<String, dynamic>> localBox;
++  late Box<Map> localBox;
+   late Box<SyncQueueItem> queueBox;
+   late HiveCacheRepository<SyncQueueItem> queueRepo;
+   late MockNetworkInfo mockNetworkInfo;
+@@ -76,7 +76,7 @@ void main() {
+       Hive.registerAdapter(SyncStatusAdapter());
+     }
+ 
+-    localBox = await Hive.openBox<Map<String, dynamic>>(
++    localBox = await Hive.openBox<Map>(
+       'test_db_${DateTime.now().millisecondsSinceEpoch}',
+     );
+     queueBox = await Hive.openBox<SyncQueueItem>(
+diff --git a/test/features/tracking/data/repositories/tracking_repository_impl_test.dart b/test/features/tracking/data/repositories/tracking_repository_impl_test.dart
+index 72b3a2f..8012e6e 100644
+--- a/test/features/tracking/data/repositories/tracking_repository_impl_test.dart
++++ b/test/features/tracking/data/repositories/tracking_repository_impl_test.dart
+@@ -1,7 +1,7 @@
+ import 'dart:io';
+ 
+ import 'package:flutter_test/flutter_test.dart';
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/core/data/models/cut_fill_record_model.dart';
+ import 'package:mine_flow/core/data/models/inventory_item_model.dart'
+     as core_models;
+diff --git a/test/features/zone/data/datasources/zone_local_datasource_test.dart b/test/features/zone/data/datasources/zone_local_datasource_test.dart
+index 931dfa9..69f6788 100644
+--- a/test/features/zone/data/datasources/zone_local_datasource_test.dart
++++ b/test/features/zone/data/datasources/zone_local_datasource_test.dart
+@@ -1,7 +1,7 @@
+ import 'dart:io';
+ 
+ import 'package:flutter_test/flutter_test.dart';
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/core/data/models/zone_model.dart';
+ import 'package:mine_flow/core/offline/adapters/model_adapters.dart';
+ import 'package:mine_flow/core/offline/hive_cache_repository.dart';
+diff --git a/test/features/zone/data/repositories/zone_repository_impl_test.dart b/test/features/zone/data/repositories/zone_repository_impl_test.dart
+index 14c1278..f5ff1bf 100644
+--- a/test/features/zone/data/repositories/zone_repository_impl_test.dart
++++ b/test/features/zone/data/repositories/zone_repository_impl_test.dart
+@@ -1,7 +1,7 @@
+ import 'dart:io';
+ 
+ import 'package:flutter_test/flutter_test.dart';
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/core/data/models/zone_model.dart';
+ import 'package:mine_flow/core/domain/entities/zone_entity.dart';
+ import 'package:mine_flow/core/network/network_info.dart';
+diff --git a/test/integration/attendance_daily_log_sync_test.dart b/test/integration/attendance_daily_log_sync_test.dart
+index 94489d1..a49d3ae 100644
+--- a/test/integration/attendance_daily_log_sync_test.dart
++++ b/test/integration/attendance_daily_log_sync_test.dart
+@@ -2,7 +2,7 @@ import 'dart:async';
+ import 'dart:io';
+ 
+ import 'package:flutter_test/flutter_test.dart';
+-import 'package:hive_flutter/hive_flutter.dart';
++import 'package:hive_ce_flutter/hive_ce_flutter.dart';
+ import 'package:mine_flow/core/network/network_info.dart';
+ import 'package:mine_flow/core/offline/adapters/sync_queue_item_adapter.dart';
+ import 'package:mine_flow/core/offline/hive_cache_repository.dart';
+diff --git a/test/integration/equipment_check_sync_test.dart b/test/integration/equipment_check_sync_test.dart
+index 2ce612b..22df91b 100644
+--- a/test/integration/equipment_check_sync_test.dart
++++ b/test/integration/equipment_check_sync_test.dart
+@@ -2,7 +2,7 @@ import 'dart:async';
+ import 'dart:io';
+ 
+ import 'package:flutter_test/flutter_test.dart';
+-import 'package:hive_flutter/hive_flutter.dart';
++import 'package:hive_ce_flutter/hive_ce_flutter.dart';
+ import 'package:mine_flow/core/network/network_info.dart';
+ import 'package:mine_flow/core/offline/adapters/sync_queue_item_adapter.dart';
+ import 'package:mine_flow/core/offline/hive_cache_repository.dart';
+diff --git a/test/unit/attendance_repository_test.dart b/test/unit/attendance_repository_test.dart
+index ecd6369..0dfd938 100644
+--- a/test/unit/attendance_repository_test.dart
++++ b/test/unit/attendance_repository_test.dart
+@@ -1,5 +1,5 @@
+ import 'package:flutter_test/flutter_test.dart';
+-import 'package:hive_flutter/hive_flutter.dart';
++import 'package:hive_ce_flutter/hive_ce_flutter.dart';
+ import 'package:mine_flow/core/network/network_info.dart';
+ import 'package:mine_flow/core/offline/adapters/sync_queue_item_adapter.dart';
+ import 'package:mine_flow/core/offline/hive_cache_repository.dart';
+diff --git a/test/unit/daily_log_repository_test.dart b/test/unit/daily_log_repository_test.dart
+index b30f8cf..d415de0 100644
+--- a/test/unit/daily_log_repository_test.dart
++++ b/test/unit/daily_log_repository_test.dart
+@@ -1,5 +1,5 @@
+ import 'package:flutter_test/flutter_test.dart';
+-import 'package:hive_flutter/hive_flutter.dart';
++import 'package:hive_ce_flutter/hive_ce_flutter.dart';
+ import 'package:mine_flow/core/network/network_info.dart';
+ import 'package:mine_flow/core/offline/adapters/sync_queue_item_adapter.dart';
+ import 'package:mine_flow/core/offline/hive_cache_repository.dart';
+diff --git a/test/unit/equipment_check_repository_test.dart b/test/unit/equipment_check_repository_test.dart
+index e62d82f..f9c27e3 100644
+--- a/test/unit/equipment_check_repository_test.dart
++++ b/test/unit/equipment_check_repository_test.dart
+@@ -1,5 +1,5 @@
+ import 'package:flutter_test/flutter_test.dart';
+-import 'package:hive_flutter/hive_flutter.dart';
++import 'package:hive_ce_flutter/hive_ce_flutter.dart';
+ import 'package:mine_flow/core/network/network_info.dart';
+ import 'package:mine_flow/core/offline/adapters/sync_queue_item_adapter.dart';
+ import 'package:mine_flow/core/offline/hive_cache_repository.dart';
+diff --git a/test/widget_test.dart b/test/widget_test.dart
+index 91ef9ea..88276c3 100644
+--- a/test/widget_test.dart
++++ b/test/widget_test.dart
+@@ -7,7 +7,7 @@
+ import 'dart:io';
+ 
+ import 'package:flutter_test/flutter_test.dart';
+-import 'package:hive/hive.dart';
++import 'package:hive_ce/hive_ce.dart';
+ import 'package:mine_flow/app/app.dart';
+ 
+ void main() {
