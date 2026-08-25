@@ -285,11 +285,22 @@ worked, and completed.
 | STEP    | Title                                             | Owner | Status  | Repos (projection)                  | Scope (one line) |
 | ------- | ------------------------------------------------- | ----- | ------- | ----------------------------------- | ---------------- |
 | STEP-41 | Release-Readiness Reconciliation & Contract Baseline | Antigravity | Done | `mine-flow-app`, `mine-flow-docs`   | Inventory the actual release gaps against the architecture and Phase 2 record; make Supabase generated-type regeneration/compile checks and Indonesian localization checks reproducible. Establish the implementation/test evidence required by the later staging and release-control STEPs without changing release architecture. |
-| STEP-42 | Staging Environment & Promotion Pipeline          | Gemini 3.1 Pro High | Deferred | `mine-flow-app`, `mine-flow-docs`   | **Deferred to STEP-46** — blocked by Flutter 3.47 upgrade (STEP-43). All substep prompts preserved in `Upcoming Prompts/`. Provision and document a separate high-parity staging Supabase/configuration path with synthetic seed data, CI deployment, and explicit rollback/release procedures. |
+| STEP-42 | Staging Environment & Promotion Pipeline          | Gemini 3.1 Pro High | In progress | `mine-flow-app`, `mine-flow-docs`   | Provision and document a separate high-parity staging Supabase/configuration path with synthetic seed data, CI deployment, and explicit rollback/release procedures. Branch: `step-0042-staging-pipeline`. |
 | STEP-43 | Flutter 3.47 Upgrade & Dependency Overhaul        | Antigravity (Claude Sonnet 4.6 Thinking) | Done | `mine-flow-app`, `mine-flow-docs`, `prompts` | Upgrade Flutter SDK to 3.47.0 / Dart 3.13 in CI; fix broken `flutter_bloc ^9.1.1` constraint; upgrade all outdated packages; migrate Hive → hive_ce; fix Android build chain (AGP 9.1.0, KGP 2.4.0); update risks register. Resolves the broken Android CI build. |
-| STEP-44 | Security, Privacy & Release-Control Baseline      | (formerly STEP-43) | Planned | `mine-flow-app`, `mine-flow-docs`   | Verify and remediate the pre-release security and privacy controls: RLS/authorization behavior, account lifecycle, privacy notice and retention handling, secrets posture, backups, and a restore fire-drill record. Add appropriate authorization, migration/data, and operational evidence without treating legal review as completed. |
-| STEP-45 | Release-Candidate E2E & Runtime Design Review     | (formerly STEP-44) | Planned | `mine-flow-app`, `mine-flow-docs`   | Execute critical Android and web journeys against staging, including field-critical offline/sync behavior, and capture the required runtime Impeccable design-review evidence for responsive, accessible, localized UI states. Resolve or explicitly carry forward findings before considering a production release. |
-| STEP-46 | Staging Environment & Promotion Pipeline          | (formerly STEP-42) | Planned | `mine-flow-app`, `mine-flow-docs`   | All STEP-42 content and substep prompts transferred here. Provision and document a separate high-parity staging Supabase/configuration path with synthetic seed data, CI deployment, and explicit rollback/release procedures. Verify staging on the Android and web delivery paths before any production release work. |
+| STEP-44 | Security, Privacy & Release-Control Baseline      | | Planned | `mine-flow-app`, `mine-flow-docs`   | Verify and remediate the pre-release security and privacy controls: RLS/authorization behavior, account lifecycle, privacy notice and retention handling, secrets posture, backups, and a restore fire-drill record. Add appropriate authorization, migration/data, and operational evidence without treating legal review as completed. |
+| STEP-45 | Release-Candidate E2E & Runtime Design Review     | | Planned | `mine-flow-app`, `mine-flow-docs`   | Execute critical Android and web journeys against staging, including field-critical offline/sync behavior, and capture the required runtime Impeccable design-review evidence for responsive, accessible, localized UI states. Resolve or explicitly carry forward findings before considering a production release. |
+
+### STEP-42 substeps
+
+| Substep | Session / Title | Status | Output / Deliverables |
+| ------- | --------------- | ------ | --------------------- |
+| 42.1 | Supabase CLI install, link & migrations | Done | `supabase/config.toml` committed; migration renamed; seed.sql patched |
+| 42.2 | Generated types commit & contract guard hardening | Done | `lib/core/data/models/generated/database.dart` committed; `check_supabase_contracts.dart` hardened |
+| 42.3 | Staging GCP service account & GitHub Secrets | Done | `.env.example` updated with `SUPABASE_PROJECT_REF` and `STAGING_*` keys |
+| 42.4 | `deploy-staging` CI job | Planned | `deploy-staging` job in `ci.yml`; Flutter Web builds and deploys to staging Pages slot |
+| 42.5 | `deploy-production` job & manual gate | Planned | `deploy-production` job in `ci.yml` with production environment review gate |
+| 42.6 | Seed data audit & patch | Planned | `supabase/seed.sql` patched for STEP-33/36/38 additions |
+| 42.7 | Runbooks, ADR, doc updates & STEP close | Planned | `staging-provision.md`, `release-procedure.md`, ADR-0011, Doc 08/09 v0.2.0, RISK-0005 |
 
 ### STEP-43 substeps
 
@@ -304,8 +315,8 @@ worked, and completed.
 | 43.7 | forui + fl_chart Upgrade | Done | forui `^0.24.2` → `^0.26.0` (0.26 required: 0.24/0.25 wrap FTextField in MergeSemantics, tripping flutter/flutter#191095 semantics regression on 3.47); fl_chart → `^1.2.0`. Test finders moved TextField → EditableText; inventory entry suffix dropdown wrapped in Flutter material-localizations scope |
 | 43.8 | go_router v17 Compatibility | Done | Verified v16→v17 breaking changes (observer only); `lib/app/router.dart` unchanged; `flutter analyze` 0 issues |
 | 43.9 | Full Verification Gate | Done | `flutter pub get` exit 0; `flutter analyze` 0 errors/warnings; guards pass; **435/435 tests**; `flutter build apk --debug` exit 0 (Windows Kotlin workaround in gradle.properties) |
-| 43.10 | Risk Register & Doc Updates | Done | RISK-0005 through RISK-0008 added to `risks.yml`; audit report updated with STEP-43 resolution evidence |
-| 43.11 | STEP Close & Index Update | Done | STEP-42 → Deferred→STEP-46; STEP-43 → Done (re-executed from salvaged worktree after phantom close — original session archived false evidence, see step-0043/README correction); STEP-44/45/46 added; substep table corrected with real evidence |
+| 43.10 | Risk Register & Doc Updates | Done | RISK-0005 through RISK-0008 added to `registries/risks.yml` (fl_chart v2.x, flutter#191095/forui 0.26 workaround, hive_ce fork, flutter_secure_storage v11 + win32 override); upgrade report at `reports/2026-08-25-step-0043-upgrade-report.md`. Fixed 2026-08-25: entries were absent on disk; added retroactively. |
+| 43.11 | STEP-42 Rebase & Close | Done | Clean 3-commit `step-0042-staging-pipeline` rebased on master (STEP-43 base); full verification gates pass; force-pushed; STEP-42 In progress |
 
 ### STEP-41 substeps
 
