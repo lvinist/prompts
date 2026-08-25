@@ -39,7 +39,8 @@ Branch: `step-0043-flutter-upgrade` (from master @ 9277507), 4 commits:
 - `flutter pub get` exit 0 on regenerated lock against fresh master base
 - `flutter analyze`: 0 errors / 0 warnings (20 pre-existing infos)
 - Guards: check_supabase_contracts ✓, check_l10n_baseline ✓
-- `flutter test`: **435/435 pass**
+- `flutter test`: **434/434 pass** (re-run and confirmed during 2026-08-25
+  housekeeping; an earlier version of this README said 435 — correct total is 434)
 - `flutter build apk --debug`: exit 0 (187 MB artifact)
 - Local toolchain upgraded to Flutter 3.47.1 / Dart 3.13.1 (CI pins 3.47.0)
 
