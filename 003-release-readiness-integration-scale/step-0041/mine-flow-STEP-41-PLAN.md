@@ -2,7 +2,7 @@
 
 **Phase:** Phase 3 — Release Readiness, Integration & Scale
 **Owner:** Antigravity
-**Status:** In progress (41.5 audit fixes pending)
+**Status:** Done
 **Date:** 2026-08-06
 **Branch:** `step-0041-release-readiness-baseline`
 **Repos (projection):** `mine-flow-app`, `mine-flow-docs`, `prompts` (completion archive only)
@@ -92,5 +92,5 @@ This STEP converts those known gaps into an evidence-backed baseline that later 
 - [x] Fresh `dart format`, `flutter analyze`, `flutter test` results are recorded in the reconciliation report with actual counts.
 - [x] The reconciliation report is complete: evidence-backed matrix rows, contract/l10n baselines, explicit STEPs 42/43/44 handoffs.
 - [x] Architecture docs, CI, README, and `registries/risks.yml` match verified reality.
-- [ ] **41.5:** l10n guard regex fixed (ISSUE-4), CI fetch-depth hardened (ISSUE-8), guard robustness fixes (ISSUE-1/5/6), double-quote test added, report appended.
-- [ ] STEP review passed; `prompts/STEP-index.md` updated; STEP archived to `prompts/`.
+- [x] **41.5:** l10n guard regex fixed (ISSUE-4), CI fetch-depth hardened (ISSUE-8), guard robustness fixes (ISSUE-1/5/6), double-quote test added, report appended.
+- [x] STEP review passed; `prompts/STEP-index.md` updated; STEP archived to `prompts/`.
