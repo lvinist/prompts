@@ -295,7 +295,7 @@ worked, and completed.
 | Substep | Session / Title | Status | Output / Deliverables |
 | ------- | --------------- | ------ | --------------------- |
 | 42.1 | Supabase CLI install, link & migrations | Done | `supabase/config.toml` committed; migration renamed; seed.sql patched |
-| 42.2 | Generated types commit & contract guard hardening | Done | `lib/core/data/models/generated/database.dart` committed; `check_supabase_contracts.dart` hardened |
+| 42.2 | Generated types commit & contract guard hardening | Done | `supabase/types/database.ts` committed (real `gen types --lang typescript` output; Dart typegen removed from CLI, supabase/cli#6230); stub `database.dart` deleted; guard hardened with stub-rejection content checks; 435/435 tests |
 | 42.3 | Staging GCP service account & GitHub Secrets | Done | `.env.example` updated with `SUPABASE_PROJECT_REF` and `STAGING_*` keys |
 | 42.4 | `deploy-staging` CI job | Planned | `deploy-staging` job in `ci.yml`; Flutter Web builds and deploys to staging Pages slot |
 | 42.5 | `deploy-production` job & manual gate | Planned | `deploy-production` job in `ci.yml` with production environment review gate |
