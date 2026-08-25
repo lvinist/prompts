@@ -43,6 +43,17 @@ Branch: `step-0043-flutter-upgrade` (from master @ 9277507), 4 commits:
 - `flutter build apk --debug`: exit 0 (187 MB artifact)
 - Local toolchain upgraded to Flutter 3.47.1 / Dart 3.13.1 (CI pins 3.47.0)
 
+## STEP-43.0 housekeeping notes (added 2026-08-25)
+
+- Broken baseline: the pre-upgrade `flutter pub get` failure on
+  `flutter_bloc ^9.1.1` was observed during the original attempt, but the exact
+  resolution error was not preserved. The baseline state is reproducible via the
+  `archive/step-0042-brute-force-attempt` tag (`e7f1951`, pushed to origin) —
+  master itself has since moved past it to the fixed state.
+- Substep 43.0 task 5 (interim STEP-index flip to `In progress`) was
+  intentionally superseded by commit `97e1502`, which corrected the phantom
+  close directly with real verification evidence; no interim-status commit exists.
+
 ## Deferred
 
 - STEP-42 (Staging Pipeline) → deferred to STEP-46
