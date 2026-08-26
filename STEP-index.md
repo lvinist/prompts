@@ -310,7 +310,7 @@ worked, and completed.
 | ------- | ------------------------------------------------------- | ------- | --------------------------------------------------------------------------- |
 | 46.1    | Pass 1a — Code-level static scan (all 24 screens)       | Done | `prompts/003-release-readiness-integration-scale/step-0046/mine-flow-STEP-46.1-FINDINGS.md` — 125 candidates (P1 53 / P2 52 / P3 20); `flutter analyze` 0 issues, 435/435 tests, l10n guard OK |
 | 46.2    | Pass 1b — Screenshot visual review (all 24 screens)     | Done | `prompts/003-release-readiness-integration-scale/step-0046/mine-flow-STEP-46.2-FINDINGS.md` + screenshots |
-| 46.3    | Pass 2 — Strong-model confirmation & finding register    | Planned | `prompts/003-release-readiness-integration-scale/step-0046/mine-flow-STEP-46.3-FINDINGS.md`              |
+| 46.3    | Pass 2 — Strong-model confirmation & finding register    | Done | `prompts/003-release-readiness-integration-scale/step-0046/mine-flow-STEP-46.3-FINDINGS.md` — 97 confirmed (P1 46 / P2 38 / P3 13), 6 rejected, 6 needs-runtime (→ STEP-45) from 175 raw candidates |
 | 46.4    | Remediation implementation                              | Planned | Code fixes on `step-0046-ui-ux-audit`; all confirmed P1+P2+P3 findings fixed; `flutter analyze` 0 issues; `flutter test` ≥ 434 passing |
 
 ### STEP-42 substeps
