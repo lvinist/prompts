@@ -289,7 +289,7 @@ worked, and completed.
 | STEP-43 | Flutter 3.47 Upgrade & Dependency Overhaul        | Antigravity (Claude Sonnet 4.6 Thinking) | Done | `mine-flow-app`, `mine-flow-docs`, `prompts` | Upgrade Flutter SDK to 3.47.0 / Dart 3.13 in CI; fix broken `flutter_bloc ^9.1.1` constraint; upgrade all outdated packages; migrate Hive → hive_ce; fix Android build chain (AGP 9.1.0, KGP 2.4.0); update risks register. Resolves the broken Android CI build. |
 | STEP-44 | Security, Privacy & Release-Control Baseline      | Antigravity (Claude Sonnet 4.6 Thinking) | Done | `mine-flow-docs`   | Verify and remediate the pre-release security and privacy controls: RLS/authorization behavior, account lifecycle, privacy notice and retention handling, secrets posture, backups, and a restore fire-drill record. Add appropriate authorization, migration/data, and operational evidence without treating legal review as completed. |
 | STEP-45 | Release-Candidate E2E & Runtime Design Review     | | Planned | `mine-flow-app`, `mine-flow-docs`   | Execute critical Android and web journeys against staging, including field-critical offline/sync behavior, and capture the required runtime Impeccable design-review evidence for responsive, accessible, localized UI states. Resolve or explicitly carry forward findings before considering a production release. |
-| STEP-46 | Comprehensive UI/UX Audit — All Current Screens   | | Planned | `mine-flow-app`, `prompts`          | Two-pass audit (code-level static scan + screenshot visual review) of all 24 current screens against DESIGN.md and overview.md capabilities; strong-model confirmation; remediation of all confirmed findings. Runs pre-staging; findings feed STEP-45. Branch: `step-0046-ui-ux-audit`. |
+| STEP-46 | Comprehensive UI/UX Audit — All Current Screens   | Hermes (Claude Opus 5 Thinking) | In progress | `mine-flow-app`, `prompts`          | Two-pass audit (code-level static scan + screenshot visual review) of all 24 current screens against DESIGN.md and overview.md capabilities; strong-model confirmation; remediation of all confirmed findings. Runs pre-staging; findings feed STEP-45. Branch: `step-0046-ui-ux-audit`. |
 
 ### STEP-44 substeps
 
@@ -308,9 +308,9 @@ worked, and completed.
 
 | Substep | Session / Title                                         | Status  | Output / Deliverables                                                       |
 | ------- | ------------------------------------------------------- | ------- | --------------------------------------------------------------------------- |
-| 46.1    | Pass 1a — Code-level static scan (all 24 screens)       | Planned | `prompts/003-phase3/step-0046/mine-flow-STEP-46.1-FINDINGS.md`              |
-| 46.2    | Pass 1b — Screenshot visual review (all 24 screens)     | Planned | `prompts/003-phase3/step-0046/mine-flow-STEP-46.2-FINDINGS.md` + screenshots |
-| 46.3    | Pass 2 — Strong-model confirmation & finding register    | Planned | `prompts/003-phase3/step-0046/mine-flow-STEP-46.3-FINDINGS.md`              |
+| 46.1    | Pass 1a — Code-level static scan (all 24 screens)       | Planned | `prompts/003-release-readiness-integration-scale/step-0046/mine-flow-STEP-46.1-FINDINGS.md`              |
+| 46.2    | Pass 1b — Screenshot visual review (all 24 screens)     | Planned | `prompts/003-release-readiness-integration-scale/step-0046/mine-flow-STEP-46.2-FINDINGS.md` + screenshots |
+| 46.3    | Pass 2 — Strong-model confirmation & finding register    | Planned | `prompts/003-release-readiness-integration-scale/step-0046/mine-flow-STEP-46.3-FINDINGS.md`              |
 | 46.4    | Remediation implementation                              | Planned | Code fixes on `step-0046-ui-ux-audit`; all confirmed P1+P2+P3 findings fixed; `flutter analyze` 0 issues; `flutter test` ≥ 434 passing |
 
 ### STEP-42 substeps
