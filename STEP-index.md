@@ -285,7 +285,7 @@ worked, and completed.
 | STEP    | Title                                             | Owner | Status  | Repos (projection)                  | Scope (one line) |
 | ------- | ------------------------------------------------- | ----- | ------- | ----------------------------------- | ---------------- |
 | STEP-41 | Release-Readiness Reconciliation & Contract Baseline | Antigravity | Done | `mine-flow-app`, `mine-flow-docs`   | Inventory the actual release gaps against the architecture and Phase 2 record; make Supabase generated-type regeneration/compile checks and Indonesian localization checks reproducible. Establish the implementation/test evidence required by the later staging and release-control STEPs without changing release architecture. |
-| STEP-42 | Staging Environment & Promotion Pipeline          | Gemini 3.1 Pro High | In progress | `mine-flow-app`, `mine-flow-docs`   | Provision and document a separate high-parity staging Supabase/configuration path with synthetic seed data, CI deployment, and explicit rollback/release procedures. Branch: `step-0042-staging-pipeline`. |
+| STEP-42 | Staging Environment & Promotion Pipeline          | Gemini 3.1 Pro High | Done | `mine-flow-app`, `mine-flow-docs`   | Provision and document a separate high-parity staging Supabase/configuration path with synthetic seed data, CI deployment, and explicit rollback/release procedures. Branch: `step-0042-staging-pipeline`. |
 | STEP-43 | Flutter 3.47 Upgrade & Dependency Overhaul        | Antigravity (Claude Sonnet 4.6 Thinking) | Done | `mine-flow-app`, `mine-flow-docs`, `prompts` | Upgrade Flutter SDK to 3.47.0 / Dart 3.13 in CI; fix broken `flutter_bloc ^9.1.1` constraint; upgrade all outdated packages; migrate Hive → hive_ce; fix Android build chain (AGP 9.1.0, KGP 2.4.0); update risks register. Resolves the broken Android CI build. |
 | STEP-44 | Security, Privacy & Release-Control Baseline      | | Planned | `mine-flow-app`, `mine-flow-docs`   | Verify and remediate the pre-release security and privacy controls: RLS/authorization behavior, account lifecycle, privacy notice and retention handling, secrets posture, backups, and a restore fire-drill record. Add appropriate authorization, migration/data, and operational evidence without treating legal review as completed. |
 | STEP-45 | Release-Candidate E2E & Runtime Design Review     | | Planned | `mine-flow-app`, `mine-flow-docs`   | Execute critical Android and web journeys against staging, including field-critical offline/sync behavior, and capture the required runtime Impeccable design-review evidence for responsive, accessible, localized UI states. Resolve or explicitly carry forward findings before considering a production release. |
@@ -295,12 +295,12 @@ worked, and completed.
 | Substep | Session / Title | Status | Output / Deliverables |
 | ------- | --------------- | ------ | --------------------- |
 | 42.1 | Supabase CLI install, link & migrations | Done | `supabase/config.toml` committed; migration renamed; seed.sql patched |
-| 42.2 | Generated types commit & contract guard hardening | Done | `supabase/types/database.ts` committed (real `gen types --lang typescript` output; Dart typegen removed from CLI, supabase/cli#6230); stub `database.dart` deleted; guard hardened with stub-rejection content checks; 435/435 tests |
+| 42.2 | Generated types commit & contract guard hardening | Done | `supabase/types/database.ts` committed (real `gen types --lang typescript` output; Dart typegen removed from CLI, supabase/cli#6230); stub `database.dart` deleted; guard hardened with stub-rejection content checks; 434/434 tests |
 | 42.3 | Staging GCP service account & GitHub Secrets | Done | `.env.example` updated with `SUPABASE_PROJECT_REF` and `STAGING_*` keys |
-| 42.4 | `deploy-staging` CI job | Planned | `deploy-staging` job in `ci.yml`; Flutter Web builds and deploys to staging Pages slot |
-| 42.5 | `deploy-production` job & manual gate | Planned | `deploy-production` job in `ci.yml` with production environment review gate |
-| 42.6 | Seed data audit & patch | Planned | `supabase/seed.sql` patched for STEP-33/36/38 additions |
-| 42.7 | Runbooks, ADR, doc updates & STEP close | Planned | `staging-provision.md`, `release-procedure.md`, ADR-0011, Doc 08/09 v0.2.0, RISK-0005 |
+| 42.4 | `deploy-staging` CI job | Done | `deploy-staging` job in `ci.yml`; Flutter Web builds and deploys to staging Pages slot; staging URL verified |
+| 42.5 | `deploy-production` job & manual gate | Done | `deploy-production` job in `ci.yml` with production environment review gate (release-published trigger) |
+| 42.6 | Seed data audit & patch | Done | `supabase/seed.sql` patched for STEP-33/36/38 additions; all 8 feature tables seeded |
+| 42.7 | Runbooks, ADR, doc updates & STEP close | Done | `staging-provision.md`, `release-procedure.md`, ADR-0011, Doc 08/09 v0.2.0, RISK-0010; merged to trunk; archived |
 
 ### STEP-43 substeps
 
