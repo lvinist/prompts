@@ -15,6 +15,11 @@ STEP numbers are global (they don't reset per phase).
 
 | STEP | Title | Substeps | Archived |
 |------|-------|----------|----------|
-| STEP-41 | Release-Readiness Reconciliation & Contract Baseline | 41.1, 41.2, 41.3, 41.4 | 2026-08-06 |
+| STEP-41 | Release-Readiness Reconciliation & Contract Baseline | 41.1, 41.2, 41.3, 41.4, 41.5 | 2026-08-06 |
+| STEP-42 | Staging Environment & Promotion Pipeline | 42.1..42.7 | 2026-08-09 |
+| STEP-43 | Flutter 3.47 Upgrade & Dependency Overhaul | 43.1..43.11 | 2026-08-25 |
+| STEP-44 | Security, Privacy & Release-Control Baseline | 44.1..44.8 | 2026-08-26 |
+| STEP-45 | Release-Candidate E2E & Runtime Design Review | 45.1..45.15 | 2026-08-27 |
+| STEP-46 | Comprehensive UI/UX Audit — All Current Screens | 46.1..46.4 | 2026-08-27 |
 
 <!-- Add a row when a STEP's folder is moved into this phase on completion. -->
