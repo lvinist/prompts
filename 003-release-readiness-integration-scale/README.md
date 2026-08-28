@@ -21,5 +21,6 @@ STEP numbers are global (they don't reset per phase).
 | STEP-44 | Security, Privacy & Release-Control Baseline | 44.1..44.8 | 2026-08-26 |
 | STEP-45 | Release-Candidate E2E & Runtime Design Review | 45.1..45.15 | 2026-08-27 |
 | STEP-46 | Comprehensive UI/UX Audit — All Current Screens | 46.1..46.4 | 2026-08-27 |
+| STEP-47 | Android Build Chain Remediation (AGP 9 / local device builds) | 47.0..47.9 | 2026-08-29 |
 
 <!-- Add a row when a STEP's folder is moved into this phase on completion. -->
