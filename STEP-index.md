@@ -288,8 +288,44 @@ worked, and completed.
 | STEP-42 | Staging Environment & Promotion Pipeline          | Gemini 3.1 Pro High | Done | `mine-flow-app`, `mine-flow-docs`   | Provision and document a separate high-parity staging Supabase/configuration path with synthetic seed data, CI deployment, and explicit rollback/release procedures. Branch: `step-0042-staging-pipeline`. |
 | STEP-43 | Flutter 3.47 Upgrade & Dependency Overhaul        | Antigravity (Claude Sonnet 4.6 Thinking) | Done | `mine-flow-app`, `mine-flow-docs`, `prompts` | Upgrade Flutter SDK to 3.47.0 / Dart 3.13 in CI; fix broken `flutter_bloc ^9.1.1` constraint; upgrade all outdated packages; migrate Hive → hive_ce; fix Android build chain (AGP 9.1.0, KGP 2.4.0); update risks register. Resolves the broken Android CI build. |
 | STEP-44 | Security, Privacy & Release-Control Baseline      | Antigravity (Claude Sonnet 4.6 Thinking) | Done | `mine-flow-docs`   | Verify and remediate the pre-release security and privacy controls: RLS/authorization behavior, account lifecycle, privacy notice and retention handling, secrets posture, backups, and a restore fire-drill record. Add appropriate authorization, migration/data, and operational evidence without treating legal review as completed. |
-| STEP-45 | Release-Candidate E2E & Runtime Design Review     | Antigravity | In progress | `mine-flow-app`, `mine-flow-docs`   | Execute critical Android and web journeys against staging, including field-critical offline/sync behavior, and capture the required runtime Impeccable design-review evidence for responsive, accessible, localized UI states. Resolve or explicitly carry forward findings before considering a production release. |
+| STEP-45 | Release-Candidate E2E & Runtime Design Review     | Antigravity | Done (runtime evidence deferred to STEP-48) | `mine-flow-app`, `mine-flow-docs`, `prompts`   | Execute critical Android and web journeys against staging, including field-critical offline/sync behavior, and capture the required runtime Impeccable design-review evidence for responsive, accessible, localized UI states. Resolve or explicitly carry forward findings before considering a production release. **Delivered:** `integration_test` harness, dual-platform CI gate, 15 journey tests (analyze 0 / format clean), ADR-0017, Doc 12 v1.1, Doc 09 v0.3.0. **Not delivered:** the runtime evidence itself — 14/15 journeys never executed (no staging credentials), all design-review items Unverified; only NR-001 resolved, NR-002..006 carried forward as RISK-0015..0019. See the corrected substep table below. |
 | STEP-46 | Comprehensive UI/UX Audit — All Current Screens   | Hermes (Claude Opus 5 Thinking) | Done | `mine-flow-app`, `prompts`, `mine-flow-docs` | Two-pass audit (code-level static scan + screenshot visual review) of all 24 current screens against DESIGN.md and overview.md capabilities; strong-model confirmation; remediation of all 97 confirmed findings. ADR-0012..0016; 6 needs-runtime items feed STEP-45. Branch `step-0046-ui-ux-audit` merged to master. |
+
+### STEP-45 substeps
+
+> **Evidence note (correction, 2026-08-28, Hermes/Claude Opus 4.8):** an earlier close marked
+> all 15 substeps `Done`. Disk evidence contradicted that — 14 of the 15 journey tests are
+> gated behind `markTestSkipped('Unverified: Staging credentials absent')` and never executed
+> against staging, and `reports/2026-08-27-step-0045-runtime-design-review.md` marks every
+> design-review item Unverified. The rows below are corrected to distinguish **test/code
+> authored** (real, committed, analyze+format clean) from **runtime evidence obtained** (not
+> obtained). `Unverified` here means the deliverable exists and is committed but has never been
+> executed against a real backend/device. **STEP-48 owns the real verification.**
+
+| Substep | Session / Title | Status | Output / Deliverables |
+| ------- | --------------- | ------ | --------------------- |
+| 45.1 | Reservation, branch & harness scaffold | Done | `integration_test/helpers/` (app harness, staging config, login, offline toggle) + `app_boots_test.dart` |
+| 45.2 | Dual-platform E2E CI gate | Done | `e2e-web` and `e2e-android` jobs in `ci.yml`, required before `deploy-staging`; Q2 decided (every push) |
+| 45.3 | Auth & session E2E journey | Unverified | `auth_journey_test.dart` authored; never run against staging (no credentials) |
+| 45.4 | Attendance & Daily Logging E2E | Unverified | `attendance_journey_test.dart`, `daily_log_journey_test.dart` authored; not run |
+| 45.5 | Cut/Fill & Land Clearing E2E | Unverified | `cut_fill_journey_test.dart`, `land_clearing_journey_test.dart` authored; not run |
+| 45.6 | Inventory & Equipment Checks E2E | Unverified | `inventory_journey_test.dart`, `equipment_check_journey_test.dart` authored; not run |
+| 45.7 | Benchmark E2E + route-registration (NR-006) | Unverified | `benchmark_journey_test.dart` authored; NR-006 not settled → RISK-0019 |
+| 45.8 | Data Bucket E2E + real Drive upload (NR-004/005) | Unverified | `data_bucket_journey_test.dart` authored; no Drive service-account creds → RISK-0017, RISK-0018 |
+| 45.9 | Reporting / PDF E2E (NR-001) | Partial — code Done, E2E Unverified | **NR-001 genuinely resolved** (config controls locked during generation); `reporting_journey_test.dart` authored but not run |
+| 45.10 | Timeline & Notifications E2E | Unverified | `timeline_journey_test.dart`, `notifications_journey_test.dart` authored; not run |
+| 45.11 | Field-critical offline/sync full journey | Partial — contract verified, staging E2E Unverified | `offline_sync_journey_test.dart`: Part A (staging) Unverified; Part B (SyncQueueManager contract: offline defer, relaunch persistence, FIFO drain, retry→fail at maxRetries, last-write-wins) is unconditional and runs on-device. Q5 conflict method documented. Blocked locally by absent creds + broken local Android build (→ STEP-47) + web integration tests unsupported |
+| 45.12 | Live RLS / authorization E2E against staging | Unverified | `rls_authorization_journey_test.dart` authored; no per-role staging accounts; STEP-44 S0 deferred row updated to Unverified |
+| 45.13 | go_router v17 deep-link validation | Unverified | `deep_link_journey_test.dart` authored; RISK-0006 remains `open` (E2E unverified) |
+| 45.14 | Runtime Impeccable design review | Unverified | `reports/2026-08-27-step-0045-runtime-design-review.md` — every item (responsive, themes, localization, a11y, NR-002, NR-003, RISK-0011) recorded Unverified; RISK-0015, RISK-0016 raised |
+| 45.15 | Findings reconciliation, docs, risks & STEP close | Done | ADR-0017; Doc 12 v1.1; Doc 09 v0.3.0; RISK-0015..0019; `reports/2026-08-27-step-0045-findings-reconciliation.md` (NR-001 resolved, NR-002..006 carried forward); archived to `003-release-readiness-integration-scale/step-0045/` |
+
+**Net outcome:** the E2E *harness, CI gate and 15 journey tests exist and are committed*
+(`flutter analyze` 0 issues, format clean). The *runtime evidence the STEP was created to
+produce does not* — 1 of 6 Needs-Runtime findings resolved (NR-001), 5 carried forward as
+RISK-0015..0019, plus RISK-0006 and RISK-0011 still open. **Phase 4 must not open until
+STEP-48 closes these.**
+
 
 ### STEP-44 substeps
 
