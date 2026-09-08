@@ -318,8 +318,8 @@ worked, and completed.
 | 49.0 | Upstream recon: clone, verify layout, map the five guards to landing sites | Done | Findings: clone verified at c815347, layout verified against UPDATING-THROUGHSTONE.md, landing-site map & 49.4 verify-loop authored (`Upcoming Prompts/mine-flow-STEP-49.0-FINDINGS.md`) |
 | 49.1 | Guards ①+② — Unverified-vs-Done honesty gate + phantom-close detection | Done | Findings: `Upcoming Prompts/mine-flow-STEP-49.1-FINDINGS.md` |
 | 49.2 | Guard ③ — credential/host-toolchain pre-flight substep guidance | Done | Findings: `Upcoming Prompts/mine-flow-STEP-49.2-FINDINGS.md` |
-| 49.3 | Guards ④+⑤ — commit-per-substep discipline + stranded-trunk recovery recipe | Planned | — |
-| 49.4 | Scaffold smoke validation (scratch init + check.sh) + CHANGELOG entry | Planned | — |
+| 49.3 | Guards ④+⑤ — commit-per-substep discipline + stranded-trunk recovery recipe | Done | Findings: `Upcoming Prompts/mine-flow-STEP-49.3-FINDINGS.md` |
+| 49.4 | Scaffold smoke validation (scratch init + check.sh) + CHANGELOG entry | Done | Findings: `Upcoming Prompts/mine-flow-STEP-49.4-FINDINGS.md` · init/check logs (`step49_smoke_init.log`, `step49_smoke_check.log`) · CHANGELOG commit `f5b7980` |
 | 49.5 | Push fork, open upstream PR, close STEP-49 | Planned | — |
 
 ### STEP-48 substeps
