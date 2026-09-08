@@ -316,7 +316,7 @@ worked, and completed.
 | # | Title | Status | Evidence |
 |---|-------|--------|----------|
 | 49.0 | Upstream recon: clone, verify layout, map the five guards to landing sites | Done | Findings: clone verified at c815347, layout verified against UPDATING-THROUGHSTONE.md, landing-site map & 49.4 verify-loop authored (`Upcoming Prompts/mine-flow-STEP-49.0-FINDINGS.md`) |
-| 49.1 | Guards ①+② — Unverified-vs-Done honesty gate + phantom-close detection | Planned | — |
+| 49.1 | Guards ①+② — Unverified-vs-Done honesty gate + phantom-close detection | Done | Findings: `Upcoming Prompts/mine-flow-STEP-49.1-FINDINGS.md` |
 | 49.2 | Guard ③ — credential/host-toolchain pre-flight substep guidance | Planned | — |
 | 49.3 | Guards ④+⑤ — commit-per-substep discipline + stranded-trunk recovery recipe | Planned | — |
 | 49.4 | Scaffold smoke validation (scratch init + check.sh) + CHANGELOG entry | Planned | — |
