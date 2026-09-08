@@ -1,0 +1,44 @@
+Throughstone check — /c/Users/Alpxalpha/AppData/Local/Temp/throughstone-smoke-494
+
+1. Duplicate STEP numbers (prompts/STEP-index.md)
+  [PASS] no duplicate STEP numbers
+
+2. Duplicate ADR numbers (adr/README.md)
+  [PASS] no duplicate ADR numbers
+
+3. Statuses valid (Planned · In progress · Done · Deferred · Abandoned · N/A)
+  [PASS] all statuses valid
+
+4. Architecture docs carry Version / Status / Version Log
+  [PASS] no architecture docs yet (nothing to check)
+
+5. ADR registry matches ADR files on disk (both directions)
+  [PASS] registry and files agree (0 ADR(s))
+
+6. Legacy local user profile fields
+  [PASS] overview.md has no legacy local user preference sections
+
+7. Workspace-root hygiene (multi-repo only)
+  [PASS] only the expected pointers / repos at the workspace root
+
+8. Architecture-session template numbering
+  [PASS] numbered architecture sessions match headings and STEP-index seed; Cross-Cutting Review is last
+
+9. Conditional-session template contract
+  [PASS] all 3 conditional template(s) expose applicability, invocation, output, next action, and complete late-follow-up bookkeeping
+
+10. Check-in cadence marker (overview.md)
+  [PASS] CHECK-IN-CADENCE is a positive integer
+
+11. Repo registry record consistency (registries/repos.yml)
+  [PASS] 2 row(s) consistent: statuses, control/gap invariants, notes on gap and N/A
+
+12. Repo registry control record (registries/repos.yml)
+  [PASS] all 2 row(s) carry a complete control record
+
+13. Repo registry file shape (registries/repos.yml)
+  [PASS] parser rules hold: no shadowed field names, single-line values, disjoint name sets
+
+Summary
+  0 fail(s), 0 warning(s)
+  RESULT: OK

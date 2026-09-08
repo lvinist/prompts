@@ -1,0 +1,48 @@
+Note: 'gh' not found — GitHub repo creation is unavailable, but manual remote URLs still work.
+
+[1mThroughstone — setup[0m
+
+[1mDetaching from the template's git history...[0m
+
+[1mRenaming {{PROJECT}} -> smoke49 ...[0m
+  created Code/smoke49-docs/overview.md (fill it in)
+  created prompts/STEP-index.md (seeded from template)
+
+[1mInitialising git...[0m
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.throughstone/project-license', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'LICENSING.md', LF will be replaced by CRLF the next time Git touches it
+  git repo: Code/smoke49-docs
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'LICENSING.md', LF will be replaced by CRLF the next time Git touches it
+  git repo: prompts
+
+[1mDone.[0m
+
+Next step:
+  Start your AI agent (Claude Code, Codex, …) in THIS folder — set its working directory
+  here, the way you normally launch it. Then send it one message:
+
+      Read AGENTS.md and follow it.
+
+  That's the whole handoff (same command for every project, every agent). It begins the
+  kickoff on its own — greets you, creates your local communication profile in
+  .throughstone/local-user.md, and helps you write the project brief (Code/smoke49-docs/overview.md)
+  right in the chat. Just describe your idea when it asks.
+
+The agent will interview you, propose a roadmap, and start the architecture STEP.
+You can delete this init.sh now — it has done its job.
+
+Recommended optional backup:
+  You can start now; your project is saved locally with Git. For backup, sharing,
+  and working from another computer, put the project on a Git host when you're ready.
+
+  GitHub, Bitbucket, GitLab, and other Git hosts all work with the generated repos.
+  If you did not set up remotes during init, create empty repos on your host, add
+  their URLs to registries/repos.yml, and push each local repo's main branch.
+
+  GitHub:
+    https://github.com/
+
+  GitHub CLI (optional; lets Throughstone create GitHub remotes for you):
+    https://cli.github.com/

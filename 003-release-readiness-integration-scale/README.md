@@ -24,5 +24,6 @@ STEP numbers are global (they don't reset per phase).
 | STEP-47 | Android Build Chain Remediation (AGP 9 / local device builds) | 47.0..47.9 | 2026-08-29 |
 | STEP-48 | Runtime Evidence — resolve STEP-45's carried-forward findings | 48.0..48.30 | 2026-09-08 |
 | STEP-50 | Phase 3 Check-in (post-STEP-47 dependency overhaul) | 50.1, 50.2 | 2026-09-08 |
+| STEP-49 | Throughstone Template Hardening (process feedback) | 49.0..49.5 | 2026-09-09 |
 
 <!-- Add a row when a STEP's folder is moved into this phase on completion. -->
