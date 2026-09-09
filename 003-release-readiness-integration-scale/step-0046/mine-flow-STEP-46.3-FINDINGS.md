@@ -947,3 +947,88 @@ These are all confirmed against source and fixed in 46.4 per PLAN decision 3 (al
 
 Note the data-correctness (CF-011/013/014), Plan/Actual model (CF-044), report-type set (CF-025–029), CRS persistence (CF-033, schema), and Lucide-vs-Material (CF-088) items each require a **product/architecture decision** (likely one or more ADRs) before implementation — 46.4 should surface these to the user rather than pick silently.
 
+
+---
+
+## Appendix — STEP-51 re-scope (2026-09-09)
+
+Appended by STEP-51.1 (branch `step-0051-ui-debt-closure`, cut from `64b054a`). The register body
+above is the 2026-08-27 STEP-46.3 record and is unchanged; this appendix records what later
+verification proved about how CF-087 and the 46.4 test tier actually landed. Sources: the
+2026-09-05 implementation audit
+(`Code/mine-flow-docs/reports/2026-09-05-step-45-47-implementation-audit.md` §F-2/§F-3) and fresh
+re-derivation on the STEP-51 branch head (2026-09-09, commands in audit §8).
+
+### CF-087 "Residual Material widgets" — what actually shipped vs. what remains
+
+**Delivered (genuinely zero at STEP-51 start, verified by anchored grep):** dialogs, buttons,
+tiles, dividers, chips, and Material icons — `Icons.` (anchored `[^A-Za-z]Icons\.`) is 0 hits in
+`lib/`; all 282 icon references are `LucideIcons.` (CF-088's migration is complete and real).
+
+**Remains (re-derived counts, branch head, 2026-09-09):**
+
+| Family | Files | Sites (hits) | forui 0.26.0 target (verified in pub cache) |
+|---|---|---|---|
+| `showSnackBar(` | 13 | 35 | `FToaster.show(context, toast: FToast(...))` — `widgets/toast/` |
+| `SnackBar(` ctor | (same 13 files) | 35 (pairs with each showSnackBar) | `FToast` |
+| `Scaffold(` | 24 | 35 | `FScaffold` — `widgets/scaffold.dart` |
+| `AppBar(` | 14 | 19 | `FHeader` root/nested — `widgets/header/` |
+| `CircularProgressIndicator(` | 22 | 25 | `FCircularProgress` — `widgets/progresses/circular_progress.dart` |
+
+Material-import footprint: **71 of 238** `lib/` files import `package:flutter/material.dart`
+(audit said 73 of 240 — drift from STEP-48/50 merges; file count changed 240→238).
+
+Counting-trap notes for anyone re-deriving: a naive `SnackBar(` grep reads **70** because every
+`showSnackBar(` contains the substring — count `showSnackBar(` (35, the true call sites) and the
+standalone `SnackBar(` constructor separately. The same trap runs the other way for
+`Scaffold(`/`AppBar(`: a naive grep reads 38/27 files because `FScaffold(` uses inflate it —
+anchored `[^A-Za-z]Scaffold\(` yields the honest 24 files / 35 sites (3 further `FScaffold(` uses
+already exist and are the reference pattern), and `[^A-Za-z]AppBar\(` yields 14 files / 19 sites.
+`Icons.` without the anchor reads 282 because every `LucideIcons.` contains it.
+
+The original register entry (CF-087, "Residual Material widgets", P3 systemic, Confirmed) named
+"dialogs, alerts/snackbars, headers, selects, buttons" as the residue. The dialog/button halves
+were swept; the snackbar/header/scaffold/progress halves were not. CF-087 was therefore roughly
+half-delivered when STEP-46 closed as "all 97 fixed", and remains **open** pending STEP-51's
+sweep substeps (51.2–51.6).
+
+### CF-043 — residual structural half
+
+STEP-48.30 (commit `bb32c92`) removed the dead `Tambah "…"` affordance by making
+`CreatableCombobox` selection-only when `onCreateNew` is null, so free-text creation of
+unenumerated methods is no longer possible at the widget level. However the register's
+structural asks — "constrain method to the enumerated set" at the data level and "use one
+shared control, not two" — remain unimplemented: two independent `CreatableCombobox<String>`
+writing the same `record.method` still exist at
+`lib/features/tracking/presentation/pages/land_clearing_entry_screen.dart:372` (Plan tab) and
+`:485` (Actual tab), both fed by `_clearingMethods` (defined `:98`). Routed to substep 51.7.
+
+### STEP-46.4 "add tests for each fix" — what the tier assignment actually produced
+
+The register assigns an explicit test tier to **82 of 97** findings, not 84: 75 "Widget test",
+3 "Widget/bloc test", 1 "Widget/integration test", 1 "Widget/route test", 1 "Static guard"
+(CF-063, self-test exists at `test/tool/check_l10n_baseline_test.dart:119`), 1
+"`flutter analyze` clean + targeted widget tests" (CF-087 itself). The remaining **15** carry
+no-test lines: 13 "No test feasible…" + 2 "No automated contrast test feasible…" (CF-075,
+CF-076). (The STEP-51 PLAN's "84 tiered / 80 Widget / 13 no-test" figures were off by two —
+it counted CF-075/076's contrast lines as tiered. Corrected here.)
+
+What actually shipped by the STEP-46 merge (`040def9`): +8 net test cases (361→369), zero new
+test files, and only **13 of 97** CF ids cited anywhere under `test/`:
+
+`CF-001, CF-002, CF-003, CF-017, CF-005, CF-015, CF-029, CF-056, CF-059, CF-032, CF-063,
+CF-078, CF-079` — citing files: `test/widget/login_page_test.dart` (CF-001/002/003/056),
+`test/widget/equipment_check_form_test.dart` (CF-017),
+`test/widget/attendance_form_page_test.dart` (CF-015),
+`test/features/settings/presentation/settings_page_test.dart` (CF-005/059),
+`test/features/notifications/presentation/pages/notification_list_page_test.dart` (CF-032),
+`test/features/data_bucket/presentation/pages/data_bucket_list_page_test.dart` (CF-029),
+`test/features/data_bucket/presentation/pages/upload_file_page_test.dart` (CF-078),
+`test/features/data_bucket/presentation/bloc/data_bucket_bloc_test.dart` (CF-079),
+`test/tool/check_l10n_baseline_test.dart` (CF-063).
+
+The prompt's own escape hatch `// TODO(STEP-46.4): test not written because …` was used **0**
+times. 23 further CF ids are cited under `integration_test/`. The fixes themselves were real
+and spot-verified by the audit; they are simply unguarded. The 46.4 debt is therefore **open**
+pending substep 51.8, which will either add CF-id-citing widget tests for the
+behaviour-carrying findings or record a per-finding reason, per decision D4.
