@@ -1032,3 +1032,63 @@ times. 23 further CF ids are cited under `integration_test/`. The fixes themselv
 and spot-verified by the audit; they are simply unguarded. The 46.4 debt is therefore **open**
 pending substep 51.8, which will either add CF-id-citing widget tests for the
 behaviour-carrying findings or record a per-finding reason, per decision D4.
+
+
+### STEP-51 close reconciliation (2026-09-10)
+
+This is the append-only close update to the STEP-51.1 re-scope above. Evidence is from
+`step-0051-ui-debt-closure` at `c6aaddc262739b0e0ba720435081673584f3d80b`; the full local
+gate and CI evidence are recorded in `step-0051/mine-flow-STEP-51.10-FINDINGS.md`.
+
+#### CF-087 — closed
+
+All four families left open by the first appendix are now at anchored zero in `lib/`:
+`showSnackBar(`/standalone `SnackBar(`, Material `Scaffold(`, Material `AppBar(`, and
+`CircularProgressIndicator(`. The previously delivered dialog/button/card/chip/icon families
+remain at zero. The residual `package:flutter/material.dart` footprint is **46 files**, reduced
+from 71; every survivor carries the standard analyzer-proven justification comment and no
+family required a new Material exception or ADR. The app has one root `FToaster`; header,
+scaffold, and progress migrations conform to Doc 07's ForUI vocabulary. **CF-087 is closed.**
+
+#### CF-043 — closed
+
+`LandClearingEntryScreen` now has one shared, selection-only method combobox above the Plan/
+Actual tabs. `_validateAndSave` rejects values outside `_clearingMethods`, including stale
+persisted values, and CF-043-citing widget tests prove both the one-control structure and the
+constraint. **CF-043 is closed.**
+
+#### STEP-46.4 coverage outcome — complete accounting, residual tests named
+
+The unique CF-id count under `test/` moved **13 → 15**: CF-014 and CF-043 were added. The
+current tree has 15 unique ids / 28 citation occurrences under `test/`, or 35 unique ids / 89
+occurrences when `integration_test/` is included.
+
+All 97 confirmed findings now have an explicit outcome:
+
+- **15 cited under `test/`:** the 13-item seed listed above, plus CF-014 and CF-043.
+- **27 not covered for a finding-specific reason:** CF-046, CF-067 (visual colour tokens);
+  CF-052, CF-082 (visual chip state/cue); CF-064 (visual focus decoration); CF-065 (layout
+  geometry); CF-072 (visual clipping); CF-080, CF-081, CF-083 (layout geometry); CF-085
+  (manual/visual motion budget); CF-087 (its static/analyzer and targeted behavior gates are
+  the tier); CF-090 (static optional copy); CF-057, CF-061, CF-062 (static copy consistency);
+  CF-075, CF-076 (pixel contrast); CF-086, CF-088, CF-089, CF-091, CF-092, CF-095, CF-096
+  (visual/token/cosmetic/format); CF-093 (removed plumbing); CF-094 (refactor/manual responsive
+  verification).
+- **55 explicitly deferred:** CF-004, CF-006–CF-013, CF-016, CF-018–CF-028, CF-030–CF-031,
+  CF-033–CF-042, CF-044–CF-045, CF-047–CF-051, CF-053–CF-055, CF-058, CF-060, CF-066,
+  CF-068–CF-071, CF-073–CF-074, CF-077, CF-084, CF-097. For each, STEP-51.8 records the
+  reason: a robust behavior-pinning test needs file-specific mocking beyond that batch; the
+  row was reclassified rather than covered by a vacuous pump/find assertion.
+
+The accounting requirement is complete, but test authorship is not overstated: among the 82
+findings with an explicit automated-test tier, **67 remain reasoned without a newly authored
+STEP-51.8 regression test**. Future risk-based test work should select from that named list;
+this close does not claim those regressions are pinned.
+
+#### Dead-file dispositions
+
+STEP-51.9 deleted the three dead feature barrels, four barrel twins, duplicate unregistered
+`GeospatialFileModelAdapter` (typeId 13), `app_nav_model.dart`, and the two owner-confirmed
+unused product widgets (`notification_badge.dart`, `report_type_card.dart`). Exact path
+references are zero. Only the registered core adapter typeId 7 remains. STEP-51.10 also
+removed the stale tracked `lib/features/all_dart_files.txt` path inventory.
