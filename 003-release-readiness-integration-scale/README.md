@@ -28,5 +28,6 @@ STEP numbers are global (they don't reset per phase).
 | STEP-51 | UI Debt Closure — CF-087 Material remainder & STEP-46.4 regression coverage | 51.1..51.10 | 2026-09-10 |
 | STEP-52 | Security Baseline re-check (post-STEP-48) | 52.1, 52.2 | 2026-09-10 |
 | STEP-53 | Dependency Maintenance — hive_ce / forui / Flutter regression follow-ups | 53.1..53.4 | 2026-09-10 |
+| STEP-54 | Multiplatform Impeccable Feature-Cohesion Critique & Polish Spec | 54.0..54.11 incl. 54.10a | 2026-09-11 |
 
 <!-- Add a row when a STEP's folder is moved into this phase on completion. -->

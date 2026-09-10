@@ -1,0 +1,903 @@
+{
+  "schema_version": "1.0.0",
+  "ledger_id": "mine-flow-step-54.5-54.8-findings",
+  "title": "mine-flow — STEP-54.5–54.8 Findings Ledger B",
+  "built": "2026-09-11",
+  "scope": "Every FC-54.* finding in STEP-54.5 through STEP-54.8.",
+  "purpose": "Validated JSON input slice (Ledger B) for STEP-54.11 consolidation; not the final master spec or STEP close.",
+  "source_findings": [
+    "mine-flow-STEP-54.5-FINDINGS.md",
+    "mine-flow-STEP-54.6-FINDINGS.md",
+    "mine-flow-STEP-54.7-FINDINGS.md",
+    "mine-flow-STEP-54.8-FINDINGS.md"
+  ],
+  "inspected_app": {
+    "branch": "step-0054-feature-cohesion-critique",
+    "head": "fe12531931eed861518b20f7323c6cf6bd0ccb8b",
+    "working_tree": "clean"
+  },
+  "accounting": {
+    "expected_finding_count": 41,
+    "actual_finding_count": 41,
+    "complete": true,
+    "duplicate_ids": [],
+    "missing_ids": [],
+    "by_substep": [
+      {
+        "substep": "54.5",
+        "source": "mine-flow-STEP-54.5-FINDINGS.md",
+        "finding_count": 13,
+        "id_range": {
+          "first": "FC-54.5-001",
+          "last": "FC-54.5-013"
+        },
+        "result": "Complete and unique."
+      },
+      {
+        "substep": "54.6",
+        "source": "mine-flow-STEP-54.6-FINDINGS.md",
+        "finding_count": 10,
+        "id_range": {
+          "first": "FC-54.6-001",
+          "last": "FC-54.6-010"
+        },
+        "result": "Complete and unique."
+      },
+      {
+        "substep": "54.7",
+        "source": "mine-flow-STEP-54.7-FINDINGS.md",
+        "finding_count": 7,
+        "id_range": {
+          "first": "FC-54.7-001",
+          "last": "FC-54.7-007"
+        },
+        "result": "Complete and unique."
+      },
+      {
+        "substep": "54.8",
+        "source": "mine-flow-STEP-54.8-FINDINGS.md",
+        "finding_count": 11,
+        "id_range": {
+          "first": "FC-54.8-001",
+          "last": "FC-54.8-011"
+        },
+        "result": "Complete and unique."
+      }
+    ],
+    "by_verdict": {
+      "Needs polish": 13,
+      "Aligned": 4,
+      "Needs restructure": 20,
+      "Unverified": 4
+    }
+  },
+  "verdict_vocabulary": [
+    "Aligned",
+    "Needs polish",
+    "Needs restructure",
+    "Unverified"
+  ],
+  "findings": {
+    "FC-54.5-001": {
+      "id": "FC-54.5-001",
+      "substep": "54.5",
+      "sequence": 1,
+      "verdict": "Needs polish",
+      "area": "Lifecycle cohesion",
+      "summary": "Returning from the check-in form triggers a `LoadAttendanceEvent` which creates a fresh `AttendanceLoaded` state, unintentionally clearing the roster's active search and status filters.",
+      "source_summary": "Returning from the check-in form triggers a `LoadAttendanceEvent` which creates a fresh `AttendanceLoaded` state, unintentionally clearing the roster's active search and status filters.",
+      "evidence": "`attendance_screen.dart:185-194`; `attendance_bloc.dart:57-63`.",
+      "evidence_status": "`attendance_screen.dart:185-194`; `attendance_bloc.dart:57-63`.",
+      "required_treatment": "Preserve the previous `searchQuery` and `statusFilter` from the current state when yielding the refreshed `AttendanceLoaded` state.",
+      "candidate_step_55_account": "55.5 Crew Attendance."
+    },
+    "FC-54.5-002": {
+      "id": "FC-54.5-002",
+      "substep": "54.5",
+      "sequence": 2,
+      "verdict": "Needs polish",
+      "area": "Status badges (Form)",
+      "summary": "While toggle chips use distinct Lucide icons (making them shape-distinguishable), the 'Hadir' (present) and 'Izin' (leave) statuses both share `theme.colors.primary` as their tint color, reducing scannability for color-reliant users.",
+      "source_summary": "While toggle chips use distinct Lucide icons (making them shape-distinguishable), the 'Hadir' (present) and 'Izin' (leave) statuses both share `theme.colors.primary` as their tint color, reducing scannability for color-reliant users.",
+      "evidence": "`status_toggle_chips.dart:50, 74`.",
+      "evidence_status": "`status_toggle_chips.dart:50, 74`.",
+      "required_treatment": "Assign a distinct semantic token or color variant for the 'leave' status so it does not visually blend with 'present'.",
+      "candidate_step_55_account": "55.5 Crew Attendance."
+    },
+    "FC-54.5-003": {
+      "id": "FC-54.5-003",
+      "substep": "54.5",
+      "sequence": 3,
+      "verdict": "Needs polish",
+      "area": "Status badges (Summary)",
+      "summary": "The attendance summary metric tiles rely entirely on color and numeric count without icons, and 'Hadir' and 'Izin' both use `theme.colors.primary`, failing color-blind accessibility guidelines.",
+      "source_summary": "The attendance summary metric tiles rely entirely on color and numeric count without icons, and 'Hadir' and 'Izin' both use `theme.colors.primary`, failing color-blind accessibility guidelines.",
+      "evidence": "`attendance_summary_card.dart:97-147`.",
+      "evidence_status": "`attendance_summary_card.dart:97-147`.",
+      "required_treatment": "Introduce icons to the summary tiles and differentiate the 'leave' color token.",
+      "candidate_step_55_account": "55.5 Crew Attendance."
+    },
+    "FC-54.5-004": {
+      "id": "FC-54.5-004",
+      "substep": "54.5",
+      "sequence": 4,
+      "verdict": "Needs polish",
+      "area": "Ergonomics (Mobile)",
+      "summary": "The status toggle chips declare only a `40dp` minimum height; the code therefore does not guarantee the rubric's 48dp mobile target, although the actual rendered hit region remains runtime-unverified.",
+      "source_summary": "The status toggle chips declare only a `40dp` minimum height; the code therefore does not guarantee the rubric's 48dp mobile target, although the actual rendered hit region remains runtime-unverified.",
+      "evidence": "`status_toggle_chips.dart:84-90`",
+      "evidence_status": "`status_toggle_chips.dart:84-90`",
+      "required_treatment": "Guarantee a minimum 48x48dp hit region and verify its rendered size on Android.",
+      "candidate_step_55_account": "55.5 Crew Attendance."
+    },
+    "FC-54.5-005": {
+      "id": "FC-54.5-005",
+      "substep": "54.5",
+      "sequence": 5,
+      "verdict": "Aligned",
+      "area": "Ergonomics (Mobile)",
+      "summary": "The primary check-in actions are directly exposed on each roster item in the form via inline toggle chips, enabling efficient single-tap check-in without navigating to a separate detail screen.",
+      "source_summary": "The primary check-in actions are directly exposed on each roster item in the form via inline toggle chips, enabling efficient single-tap check-in without navigating to a separate detail screen.",
+      "evidence": "`attendance_form_page.dart:219-239`.",
+      "evidence_status": "`attendance_form_page.dart:219-239`.",
+      "required_treatment": "Maintain inline status toggles.",
+      "candidate_step_55_account": "55.5 Crew Attendance."
+    },
+    "FC-54.5-006": {
+      "id": "FC-54.5-006",
+      "substep": "54.5",
+      "sequence": 6,
+      "verdict": "Needs restructure",
+      "area": "Ergonomics (Mobile)",
+      "summary": "The check-in form lacks a bulk action (e.g., \"Mark All Present\"); foremen must individually tap every crew member, causing fatigue on large field rosters.",
+      "source_summary": "The check-in form lacks a bulk action (e.g., \"Mark All Present\"); foremen must individually tap every crew member, causing fatigue on large field rosters.",
+      "evidence": "`attendance_form_page.dart:257-305`.",
+      "evidence_status": "`attendance_form_page.dart:257-305`. Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Implement a bulk-action affordance in the form sheet for marking the remaining un-statused roster members as present.",
+      "candidate_step_55_account": "55.5 Crew Attendance."
+    },
+    "FC-54.5-007": {
+      "id": "FC-54.5-007",
+      "substep": "54.5",
+      "sequence": 7,
+      "verdict": "Needs restructure",
+      "area": "Offline state honesty",
+      "summary": "The `AttendanceRecord` entity carries no local sync status, and the roster item consequently has no record-level state from which to distinguish synced, queued, or failed check-ins; users cannot assess whether a locally saved mark has reached the server.",
+      "source_summary": "The `AttendanceRecord` entity carries no local sync status, and the roster item consequently has no record-level state from which to distinguish synced, queued, or failed check-ins; users cannot assess whether a locally saved mark has reached the server.",
+      "evidence": "`attendance_record.dart:5-32`; `crew_roster_item.dart:13-201`",
+      "evidence_status": "`attendance_record.dart:5-32`; `crew_roster_item.dart:13-201` Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Expose sync metadata through the presentation model and render pending/failed states in `CrewRosterItem`; escalate the missing trust signal to 54.11.",
+      "candidate_step_55_account": "55.5 Crew Attendance."
+    },
+    "FC-54.5-008": {
+      "id": "FC-54.5-008",
+      "substep": "54.5",
+      "sequence": 8,
+      "verdict": "Needs restructure",
+      "area": "D1/D2 Form migration",
+      "summary": "The attendance form is pushed as a full `FScaffold` page via `context.push` rather than using the D1/D2-mandated modal side/bottom sheet adapter.",
+      "source_summary": "The attendance form is pushed as a full `FScaffold` page via `context.push` rather than using the D1/D2-mandated modal side/bottom sheet adapter.",
+      "evidence": "`attendance_screen.dart:173-184`.",
+      "evidence_status": "`attendance_screen.dart:173-184`. Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Migrate the form presentation to the universal modal sheet adapter.",
+      "candidate_step_55_account": "55.0 shared interaction contracts and 55.5 Crew Attendance."
+    },
+    "FC-54.5-009": {
+      "id": "FC-54.5-009",
+      "substep": "54.5",
+      "sequence": 9,
+      "verdict": "Needs restructure",
+      "area": "D4 Dirty intercept",
+      "summary": "The form's header dismisses directly with `context.pop()` and the page has no dirty-intercept wrapper, despite the BLoC exposing `hasUnsavedChanges`; an accidental back action can discard a batch before save.",
+      "source_summary": "The form's header dismisses directly with `context.pop()` and the page has no dirty-intercept wrapper, despite the BLoC exposing `hasUnsavedChanges`; an accidental back action can discard a batch before save.",
+      "evidence": "`attendance_form_page.dart:81-110`; `attendance_state.dart:23-43`",
+      "evidence_status": "`attendance_form_page.dart:81-110`; `attendance_state.dart:23-43` Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Wrap every dismissal path in the standard dirty-check interceptor.",
+      "candidate_step_55_account": "55.0 shared interaction contracts and 55.5 Crew Attendance."
+    },
+    "FC-54.5-010": {
+      "id": "FC-54.5-010",
+      "substep": "54.5",
+      "sequence": 10,
+      "verdict": "Needs restructure",
+      "area": "D5 Route synchronization",
+      "summary": "The `/teams/attendance/form` route deep-link receives context entirely through an in-memory `extra` payload rather than URL path/query parameters; a direct link visit defaults to the current date and loses context.",
+      "source_summary": "The `/teams/attendance/form` route deep-link receives context entirely through an in-memory `extra` payload rather than URL path/query parameters; a direct link visit defaults to the current date and loses context.",
+      "evidence": "`router.dart:364-372`.",
+      "evidence_status": "`router.dart:364-372`. Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Pass `date` and `siteId` via URL query parameters so deep links reconstruct the exact form state.",
+      "candidate_step_55_account": "55.5 Crew Attendance."
+    },
+    "FC-54.5-011": {
+      "id": "FC-54.5-011",
+      "substep": "54.5",
+      "sequence": 11,
+      "verdict": "Needs restructure",
+      "area": "D6 Contextual report",
+      "summary": "The report action navigates to a standalone `report-config` route instead of presenting a contextual `FDialog` over the roster list, breaking flow context.",
+      "source_summary": "The report action navigates to a standalone `report-config` route instead of presenting a contextual `FDialog` over the roster list, breaking flow context.",
+      "evidence": "`attendance_screen.dart:159-163`.",
+      "evidence_status": "`attendance_screen.dart:159-163`. Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Replace the standalone push with an `FDialog` that retains the roster's active filters behind it.",
+      "candidate_step_55_account": "55.0 shared interaction contracts and 55.5 Crew Attendance."
+    },
+    "FC-54.5-012": {
+      "id": "FC-54.5-012",
+      "substep": "54.5",
+      "sequence": 12,
+      "verdict": "Needs polish",
+      "area": "Residual Material",
+      "summary": "The roster item uses `CircleAvatar`, while the screen retains a documented `Material` interoperability wrapper; the avatar is the actionable visual-system holdover and should not be conflated with a justified wrapper boundary.",
+      "source_summary": "The roster item uses `CircleAvatar`, while the screen retains a documented `Material` interoperability wrapper; the avatar is the actionable visual-system holdover and should not be conflated with a justified wrapper boundary.",
+      "evidence": "`crew_roster_item.dart:48`; `attendance_screen.dart:137-143`",
+      "evidence_status": "`crew_roster_item.dart:48`; `attendance_screen.dart:137-143`",
+      "required_treatment": "Replace `CircleAvatar` with a ForUI avatar or token-styled container; preserve only documented Material interoperability wrappers.",
+      "candidate_step_55_account": "55.5 Crew Attendance."
+    },
+    "FC-54.5-013": {
+      "id": "FC-54.5-013",
+      "substep": "54.5",
+      "sequence": 13,
+      "verdict": "Unverified",
+      "area": "Runtime accessibility / responsive behavior",
+      "summary": "Static source cannot prove rendered hit targets, keyboard/focus order, screen-reader announcements, contrast, text scaling, or list state under actual Web and Android navigation.",
+      "source_summary": "Static source cannot prove rendered hit targets, keyboard/focus order, screen-reader announcements, contrast, text scaling, or list state under actual Web and Android navigation.",
+      "evidence": "`attendance_screen.dart:137-199`; `attendance_form_page.dart:81-110`",
+      "evidence_status": "`attendance_screen.dart:137-199`; `attendance_form_page.dart:81-110`",
+      "required_treatment": "Exercise both platforms during STEP-55.11 and retain the blocker until valid runtime evidence exists.",
+      "candidate_step_55_account": "55.11 runtime/a11y evidence debt."
+    },
+    "FC-54.6-001": {
+      "id": "FC-54.6-001",
+      "substep": "54.6",
+      "sequence": 1,
+      "verdict": "Needs restructure",
+      "area": "Lifecycle cohesion",
+      "summary": "List lacks a date filter completely, so date filter survival across the round-trip cannot happen. Returning triggers a list refresh but forces a full loading state, losing scroll position.",
+      "source_summary": "List lacks a date filter completely, so date filter survival across the round-trip cannot happen. Returning triggers a list refresh but forces a full loading state, losing scroll position.",
+      "evidence": "`daily_log_list_screen.dart:94-128`, `300-380`",
+      "evidence_status": "`daily_log_list_screen.dart:94-128`, `300-380` Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "STEP-55 must add the missing date filter, preserve it on return, and use background refreshing to preserve scroll.",
+      "candidate_step_55_account": "55.6 Daily Logging."
+    },
+    "FC-54.6-002": {
+      "id": "FC-54.6-002",
+      "substep": "54.6",
+      "sequence": 2,
+      "verdict": "Needs restructure",
+      "area": "Weather & Hazard Chips",
+      "summary": "Weather uses a single-value Material `ChoiceChip` selector, while the `DailyLog` domain entity has weather and notes but no hazard field; structured hazard presence/severity therefore cannot be captured.",
+      "source_summary": "Weather uses a single-value Material `ChoiceChip` selector, while the `DailyLog` domain entity has weather and notes but no hazard field; structured hazard presence/severity therefore cannot be captured.",
+      "evidence": "`weather_selector.dart:14-90`; `daily_log.dart:7-20`",
+      "evidence_status": "`weather_selector.dart:14-90`; `daily_log.dart:7-20` Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Add the agreed structured hazard model and multi-state UI, or explicitly document hazards as free-text-only scope; migrate `ChoiceChip` to a ForUI control.",
+      "candidate_step_55_account": "55.6 Daily Logging."
+    },
+    "FC-54.6-003": {
+      "id": "FC-54.6-003",
+      "substep": "54.6",
+      "sequence": 3,
+      "verdict": "Aligned",
+      "area": "Chip Accessibility",
+      "summary": "Weather chips use both an icon and a text label, providing color-independent state indication.",
+      "source_summary": "Weather chips use both an icon and a text label, providing color-independent state indication.",
+      "evidence": "`weather_selector.dart:58-82`",
+      "evidence_status": "`weather_selector.dart:58-82`",
+      "required_treatment": "Preserve icon + label pairing during ForUI migration.",
+      "candidate_step_55_account": "55.6 Daily Logging."
+    },
+    "FC-54.6-004": {
+      "id": "FC-54.6-004",
+      "substep": "54.6",
+      "sequence": 4,
+      "verdict": "Needs polish",
+      "area": "Form Ergonomics",
+      "summary": "The static field sequence is coherent and the summary/notes editors declare four and three lines, but their practical capacity and keyboard behavior cannot be established without Android runtime evidence.",
+      "source_summary": "The static field sequence is coherent and the summary/notes editors declare four and three lines, but their practical capacity and keyboard behavior cannot be established without Android runtime evidence.",
+      "evidence": "`daily_log_form_screen.dart:261-394`",
+      "evidence_status": "`daily_log_form_screen.dart:261-394`",
+      "required_treatment": "Preserve the grouping during sheet migration and verify IME insets, focus traversal, and long-note editing on Android.",
+      "candidate_step_55_account": "55.6 Daily Logging."
+    },
+    "FC-54.6-005": {
+      "id": "FC-54.6-005",
+      "substep": "54.6",
+      "sequence": 5,
+      "verdict": "Needs restructure",
+      "area": "D1/D2 Form Sheet Migration",
+      "summary": "Form is currently a full-page `FScaffold`. It must be migrated to `AppResponsiveSheet` with internal scroll boundaries (`SingleChildScrollView`), addressing the 480-600dp right side-sheet constraint on Web and draggable bottom sheet on Mobile.",
+      "source_summary": "Form is currently a full-page `FScaffold`. It must be migrated to `AppResponsiveSheet` with internal scroll boundaries (`SingleChildScrollView`), addressing the 480-600dp right side-sheet constraint on Web and draggable bottom sheet on Mobile.",
+      "evidence": "`daily_log_form_screen.dart:228-469`",
+      "evidence_status": "`daily_log_form_screen.dart:228-469` Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "STEP-55 must migrate this to `AppResponsiveSheet` bounded at 480-600dp wide on Web.",
+      "candidate_step_55_account": "55.6 Daily Logging."
+    },
+    "FC-54.6-006": {
+      "id": "FC-54.6-006",
+      "substep": "54.6",
+      "sequence": 6,
+      "verdict": "Needs restructure",
+      "area": "D4 Dirty Intercept",
+      "summary": "Both error-state and form-state back actions call `Navigator.pop()` directly, with no page-level dismissal guard; despite auto-save, the UI exposes an unsaved state and can close before a pending write completes.",
+      "source_summary": "Both error-state and form-state back actions call `Navigator.pop()` directly, with no page-level dismissal guard; despite auto-save, the UI exposes an unsaved state and can close before a pending write completes.",
+      "evidence": "`daily_log_form_screen.dart:153-169, 228-249`",
+      "evidence_status": "`daily_log_form_screen.dart:153-169, 228-249` Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Apply D4 to every close path and define how pending auto-save is flushed or confirmed during dismissal.",
+      "candidate_step_55_account": "55.6 Daily Logging."
+    },
+    "FC-54.6-007": {
+      "id": "FC-54.6-007",
+      "substep": "54.6",
+      "sequence": 7,
+      "verdict": "Needs restructure",
+      "area": "D5 Route State",
+      "summary": "`context.pushNamed` passes the whole `DailyLog` instance and repositories in `extra`, with a direct `MaterialPageRoute` fallback violating D5. This breaks deep-linking because `extra` references are lost on refresh.",
+      "source_summary": "`context.pushNamed` passes the whole `DailyLog` instance and repositories in `extra`, with a direct `MaterialPageRoute` fallback violating D5. This breaks deep-linking because `extra` references are lost on refresh.",
+      "evidence": "`daily_log_list_screen.dart:82-128`",
+      "evidence_status": "`daily_log_list_screen.dart:82-128` Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Form route must load by ID from the URL (`/:id/form`) instead of relying on `extra`, and drop `MaterialPageRoute`.",
+      "candidate_step_55_account": "55.6 Daily Logging."
+    },
+    "FC-54.6-008": {
+      "id": "FC-54.6-008",
+      "substep": "54.6",
+      "sequence": 8,
+      "verdict": "Needs restructure",
+      "area": "D6 Report Dialog",
+      "summary": "The report action pushes the standalone `report-config` route instead of opening a contextual `FDialog`.",
+      "source_summary": "The report action pushes the standalone `report-config` route instead of opening a contextual `FDialog`.",
+      "evidence": "`daily_log_list_screen.dart:178-181`",
+      "evidence_status": "`daily_log_list_screen.dart:178-181` Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Migrate to a contextual report `FDialog` preserving list state in the background.",
+      "candidate_step_55_account": "55.6 Daily Logging."
+    },
+    "FC-54.6-009": {
+      "id": "FC-54.6-009",
+      "substep": "54.6",
+      "sequence": 9,
+      "verdict": "Needs polish",
+      "area": "Material Holdovers",
+      "summary": "The feature relies heavily on Material primitives: `FloatingActionButton` and `.extended`, `MaterialPageRoute`, `Material` (wrapper), `TextFormField`, `ChoiceChip`, and `showDatePicker`.",
+      "source_summary": "The feature relies heavily on Material primitives: `FloatingActionButton` and `.extended`, `MaterialPageRoute`, `Material` (wrapper), `TextFormField`, `ChoiceChip`, and `showDatePicker`.",
+      "evidence": "`daily_log_list_screen.dart:108`, `154`, `173`, `189`; `daily_log_form_screen.dart:251`, `284`, `344`, `378`; `weather_selector.dart:58`",
+      "evidence_status": "`daily_log_list_screen.dart:108`, `154`, `173`, `189`; `daily_log_form_screen.dart:251`, `284`, `344`, `378`; `weather_selector.dart:58`",
+      "required_treatment": "STEP-55 must swap these for ForUI equivalents or properly bound interoperability.",
+      "candidate_step_55_account": "55.6 Daily Logging."
+    },
+    "FC-54.6-010": {
+      "id": "FC-54.6-010",
+      "substep": "54.6",
+      "sequence": 10,
+      "verdict": "Unverified",
+      "area": "Runtime accessibility / responsive behavior",
+      "summary": "Static inspection cannot prove bottom-sheet drag/scroll interaction, IME insets, 48dp targets, focus order, screen-reader announcements, contrast, or deep-link reconstruction on either platform.",
+      "source_summary": "Static inspection cannot prove bottom-sheet drag/scroll interaction, IME insets, 48dp targets, focus order, screen-reader announcements, contrast, or deep-link reconstruction on either platform.",
+      "evidence": "`daily_log_form_screen.dart:228-469`; `daily_log_list_screen.dart:82-129`",
+      "evidence_status": "`daily_log_form_screen.dart:228-469`; `daily_log_list_screen.dart:82-129`",
+      "required_treatment": "Verify Web and Android behavior in STEP-55.11 using valid runtime artifacts and accessibility evidence.",
+      "candidate_step_55_account": "55.11 runtime/a11y evidence debt."
+    },
+    "FC-54.7-001": {
+      "id": "FC-54.7-001",
+      "substep": "54.7",
+      "sequence": 1,
+      "verdict": "Needs restructure",
+      "area": "Detail View Lifecycle",
+      "summary": "No dedicated detail view exists; inspection records expand inline using a Material `ExpansionTile` within the list card. With up to 30 items + remarks, this creates massive list clutter and breaks deep-linkability to specific records.",
+      "source_summary": "No dedicated detail view exists; inspection records expand inline using a Material `ExpansionTile` within the list card. With up to 30 items + remarks, this creates massive list clutter and breaks deep-linkability to specific records.",
+      "evidence": "`equipment_check_card.dart:188-293`",
+      "evidence_status": "`equipment_check_card.dart:188-293` Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Extract into a dedicated Read-Only Detail Inspector (see D7 Verdict).",
+      "candidate_step_55_account": "55.7 Equipment Digital Checks."
+    },
+    "FC-54.7-002": {
+      "id": "FC-54.7-002",
+      "substep": "54.7",
+      "sequence": 2,
+      "verdict": "Needs polish",
+      "area": "Status Band Headers",
+      "summary": "Status badges manually construct a `Container` with transparency alpha and borders rather than using standard ForUI components, missing standard semantic variations.",
+      "source_summary": "Status badges manually construct a `Container` with transparency alpha and borders rather than using standard ForUI components, missing standard semantic variations.",
+      "evidence": "`equipment_check_card.dart:95-125`",
+      "evidence_status": "`equipment_check_card.dart:95-125`",
+      "required_treatment": "Replace custom container with `FBadge` using standard semantic colors.",
+      "candidate_step_55_account": "55.7 Equipment Digital Checks."
+    },
+    "FC-54.7-003": {
+      "id": "FC-54.7-003",
+      "substep": "54.7",
+      "sequence": 3,
+      "verdict": "Needs restructure",
+      "area": "Form Modality & Dirty Intercept (D1/D2/D4/D5)",
+      "summary": "The form is a full `FScaffold`; its header back action pops directly, and navigation supplies site/foreman only through `extra`, so the long checklist lacks D1/D2 modality, D4 protection, and reconstructable D5 context.",
+      "source_summary": "The form is a full `FScaffold`; its header back action pops directly, and navigation supplies site/foreman only through `extra`, so the long checklist lacks D1/D2 modality, D4 protection, and reconstructable D5 context.",
+      "evidence": "`equipment_check_form_screen.dart:106-124`; `equipment_history_screen.dart:102-109`; `router.dart:430-444`",
+      "evidence_status": "`equipment_check_form_screen.dart:106-124`; `equipment_history_screen.dart:102-109`; `router.dart:430-444` Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Migrate to the responsive sheet, guard every dismissal while checklist data is dirty, and encode necessary equipment/site context in the route.",
+      "candidate_step_55_account": "55.7 Equipment Digital Checks."
+    },
+    "FC-54.7-004": {
+      "id": "FC-54.7-004",
+      "substep": "54.7",
+      "sequence": 4,
+      "verdict": "Needs polish",
+      "area": "SOP Checklist Ergonomics",
+      "summary": "PASS/FAIL are custom `InkWell` + `Container` controls with 8dp vertical padding and no minimum constraints, so source does not guarantee the rubric's 48dp touch target; actual rendered size is runtime-unverified.",
+      "source_summary": "PASS/FAIL are custom `InkWell` + `Container` controls with 8dp vertical padding and no minimum constraints, so source does not guarantee the rubric's 48dp touch target; actual rendered size is runtime-unverified.",
+      "evidence": "`sop_checklist_item_card.dart:94-147`",
+      "evidence_status": "`sop_checklist_item_card.dart:94-147`",
+      "required_treatment": "Replace with standard ForUI selection controls or enforce 48x48dp hit regions, then measure on Android.",
+      "candidate_step_55_account": "55.7 Equipment Digital Checks."
+    },
+    "FC-54.7-005": {
+      "id": "FC-54.7-005",
+      "substep": "54.7",
+      "sequence": 5,
+      "verdict": "Needs restructure",
+      "area": "Contextual Report Navigation (D6)",
+      "summary": "\"Buat Laporan Inspeksi Peralatan\" is triggered by a Material `FloatingActionButton` that pushes the standalone `report-config` route via `extra`, abandoning current list filters.",
+      "source_summary": "\"Buat Laporan Inspeksi Peralatan\" is triggered by a Material `FloatingActionButton` that pushes the standalone `report-config` route via `extra`, abandoning current list filters.",
+      "evidence": "`equipment_history_screen.dart:413-426`",
+      "evidence_status": "`equipment_history_screen.dart:413-426` Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Migrate to a D6 contextual `FDialog` preserving list state behind it. Replace Material FABs with ForUI primary actions.",
+      "candidate_step_55_account": "55.7 Equipment Digital Checks."
+    },
+    "FC-54.7-006": {
+      "id": "FC-54.7-006",
+      "substep": "54.7",
+      "sequence": 6,
+      "verdict": "Needs polish",
+      "area": "Material Residuals",
+      "summary": "Heavy reliance on Material widgets: `TextField` in history list, `ExpansionTile`, `FloatingActionButton`, and `InkWell`.",
+      "source_summary": "Heavy reliance on Material widgets: `TextField` in history list, `ExpansionTile`, `FloatingActionButton`, and `InkWell`.",
+      "evidence": "`equipment_history_screen.dart:152`; `equipment_check_card.dart:195`",
+      "evidence_status": "`equipment_history_screen.dart:152`; `equipment_check_card.dart:195`",
+      "required_treatment": "Strip Material widgets and adopt strict ForUI equivalents (`FTextField`, `FButton`, etc.).",
+      "candidate_step_55_account": "55.7 Equipment Digital Checks."
+    },
+    "FC-54.7-007": {
+      "id": "FC-54.7-007",
+      "substep": "54.7",
+      "sequence": 7,
+      "verdict": "Unverified",
+      "area": "Accessibility & Contrast",
+      "summary": "Static source cannot establish whether alpha status treatments and failed text meet WCAG AA, whether checklist controls render at 48dp, or whether focus/screen-reader traversal remains usable through a long checklist.",
+      "source_summary": "Static source cannot establish whether alpha status treatments and failed text meet WCAG AA, whether checklist controls render at 48dp, or whether focus/screen-reader traversal remains usable through a long checklist.",
+      "evidence": "`equipment_check_card.dart:95-124`; `sop_checklist_item_card.dart:61-147`",
+      "evidence_status": "`equipment_check_card.dart:95-124`; `sop_checklist_item_card.dart:61-147`",
+      "required_treatment": "Check contrast, rendered hit regions, focus order, and semantics in the STEP-55.11 technical audit.",
+      "candidate_step_55_account": "55.11 runtime/a11y evidence debt."
+    },
+    "FC-54.8-001": {
+      "id": "FC-54.8-001",
+      "substep": "54.8",
+      "sequence": 1,
+      "verdict": "Needs restructure",
+      "area": "D1/D2/D5 Routing",
+      "summary": "The dashboard pushes `InventoryItemEntryScreen` via `MaterialPageRoute` for both creation and editing. The router lacks a `/teams/inventory/form` route, violating GoRouter URL synchronization and the D1/D2 modal sheet pattern.",
+      "source_summary": "The dashboard pushes `InventoryItemEntryScreen` via `MaterialPageRoute` for both creation and editing. The router lacks a `/teams/inventory/form` route, violating GoRouter URL synchronization and the D1/D2 modal sheet pattern.",
+      "evidence": "`inventory_dashboard_screen.dart:398-417`, `463-482`",
+      "evidence_status": "`inventory_dashboard_screen.dart:398-417`, `463-482` Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Migrate the form to the route-backed modal sheet adapter.",
+      "candidate_step_55_account": "55.8 Inventory Management."
+    },
+    "FC-54.8-002": {
+      "id": "FC-54.8-002",
+      "substep": "54.8",
+      "sequence": 2,
+      "verdict": "Needs restructure",
+      "area": "D4 Dirty Intercept",
+      "summary": "The item entry form uses `Navigator.of(context).pop()` without a `PopScope`. Unsaved edits are not intercepted and are silently discarded when the user navigates back.",
+      "source_summary": "The item entry form uses `Navigator.of(context).pop()` without a `PopScope`. Unsaved edits are not intercepted and are silently discarded when the user navigates back.",
+      "evidence": "`inventory_item_entry_screen.dart:203-205`, `295-297`",
+      "evidence_status": "`inventory_item_entry_screen.dart:203-205`, `295-297` Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Implement D4 dirty-intercept wrapper for the form.",
+      "candidate_step_55_account": "55.8 Inventory Management."
+    },
+    "FC-54.8-003": {
+      "id": "FC-54.8-003",
+      "substep": "54.8",
+      "sequence": 3,
+      "verdict": "Needs restructure",
+      "area": "D6 Report Modal",
+      "summary": "The \"Buat Laporan\" action pushes a standalone `report-config` route via `context.pushNamed`, losing the dashboard's category filter context. This conflicts with D6's contextual modal dialog pattern.",
+      "source_summary": "The \"Buat Laporan\" action pushes a standalone `report-config` route via `context.pushNamed`, losing the dashboard's category filter context. This conflicts with D6's contextual modal dialog pattern.",
+      "evidence": "`inventory_dashboard_screen.dart:116-119`",
+      "evidence_status": "`inventory_dashboard_screen.dart:116-119` Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Replace standalone routing with a contextual report `FDialog`.",
+      "candidate_step_55_account": "55.8 Inventory Management."
+    },
+    "FC-54.8-004": {
+      "id": "FC-54.8-004",
+      "substep": "54.8",
+      "sequence": 4,
+      "verdict": "Needs polish",
+      "area": "Dashboard UI",
+      "summary": "Low-stock state is color-independent because both the dashboard and item card pair destructive styling with an alert icon and explicit threshold copy, and the summary card balances aggregate metrics against item cards. However, the domain collapses zero stock and below-threshold stock into one `isLowStock` boolean, so the dashboard cannot distinguish out-of-stock from reorder-warning severity.",
+      "source_summary": "Low-stock state is color-independent because both the dashboard and item card pair destructive styling with an alert icon and explicit threshold copy, and the summary card balances aggregate metrics against item cards. However, the domain collapses zero stock and below-threshold stock into one `isLowStock` boolean, so the dashboard cannot distinguish out-of-stock from reorder-warning severity.",
+      "evidence": "`inventory_dashboard_screen.dart:267-333`; `inventory_card.dart:92-120`; `inventory_item.dart:35-37`",
+      "evidence_status": "`inventory_dashboard_screen.dart:267-333`; `inventory_card.dart:92-120`; `inventory_item.dart:35-37`",
+      "required_treatment": "Preserve the summary/detail balance, but add explicit out-of-stock vs. low/reorder states and semantic labels during STEP-55 polish.",
+      "candidate_step_55_account": "55.8 Inventory Management."
+    },
+    "FC-54.8-005": {
+      "id": "FC-54.8-005",
+      "substep": "54.8",
+      "sequence": 5,
+      "verdict": "Needs restructure",
+      "area": "Data Integrity",
+      "summary": "The dialog captures a reason and includes it in `AdjustStockEvent`, but `_onAdjustStock` calls a repository contract accepting only ID and delta; persistence clamps and overwrites quantity without creating a transaction, so the reason and adjustment history are irretrievably lost.",
+      "source_summary": "The dialog captures a reason and includes it in `AdjustStockEvent`, but `_onAdjustStock` calls a repository contract accepting only ID and delta; persistence clamps and overwrites quantity without creating a transaction, so the reason and adjustment history are irretrievably lost.",
+      "evidence": "`stock_adjustment_dialog.dart:250-263`; `inventory/inventory_bloc.dart:240-248`; `tracking_repository.dart:45-49`; `tracking_repository_impl.dart:302-315`",
+      "evidence_status": "`stock_adjustment_dialog.dart:250-263`; `inventory/inventory_bloc.dart:240-248`; `tracking_repository.dart:45-49`; `tracking_repository_impl.dart:302-315` Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "CRITICAL: Persist an immutable adjustment transaction (reason, signed delta, actor/time/idempotency metadata) and update quantity atomically.",
+      "candidate_step_55_account": "55.8 Inventory Management."
+    },
+    "FC-54.8-006": {
+      "id": "FC-54.8-006",
+      "substep": "54.8",
+      "sequence": 6,
+      "verdict": "Aligned",
+      "area": "Module Placement",
+      "summary": "Although inventory resides under `tracking`, it has dedicated `InventoryBloc`/event/state types and its load/error paths depend only on inventory repository methods; no Cut/Fill or Land Clearing presentation state leaks into this UI.",
+      "source_summary": "Although inventory resides under `tracking`, it has dedicated `InventoryBloc`/event/state types and its load/error paths depend only on inventory repository methods; no Cut/Fill or Land Clearing presentation state leaks into this UI.",
+      "evidence": "`inventory/inventory_bloc.dart:8-34, 47-68`",
+      "evidence_status": "`inventory/inventory_bloc.dart:8-34, 47-68`",
+      "required_treatment": "Accept placement for STEP-55 unless a broader module-boundary refactor is separately justified.",
+      "candidate_step_55_account": "55.8 Inventory Management."
+    },
+    "FC-54.8-007": {
+      "id": "FC-54.8-007",
+      "substep": "54.8",
+      "sequence": 7,
+      "verdict": "Needs restructure",
+      "area": "D7 Detail View",
+      "summary": "Tapping an item opens the edit form directly. The stock adjustment dialog is the only place stock changes occur, but adjustment history is not visible anywhere.",
+      "source_summary": "Tapping an item opens the edit form directly. The stock adjustment dialog is the only place stock changes occur, but adjustment history is not visible anywhere.",
+      "evidence": "`inventory_dashboard_screen.dart:397-407`",
+      "evidence_status": "`inventory_dashboard_screen.dart:397-407` Citation re-resolution: Pass — branch-head files and cited start lines resolve.",
+      "required_treatment": "Implement an item detail view (D7) to display stock history/logs instead of directly jumping to edit mode.",
+      "candidate_step_55_account": "55.8 Inventory Management."
+    },
+    "FC-54.8-008": {
+      "id": "FC-54.8-008",
+      "substep": "54.8",
+      "sequence": 8,
+      "verdict": "Needs polish",
+      "area": "Token / Material",
+      "summary": "Residual Material primitives remain: dashboard FABs, the entry form's `DropdownButtonFormField`, and adjustment-dialog `TextFormField`s.",
+      "source_summary": "Residual Material primitives remain: dashboard FABs, the entry form's `DropdownButtonFormField`, and adjustment-dialog `TextFormField`s.",
+      "evidence": "`inventory_dashboard_screen.dart:108-143`; `inventory_item_entry_screen.dart:330-361`; `stock_adjustment_dialog.dart:166-196`",
+      "evidence_status": "`inventory_dashboard_screen.dart:108-143`; `inventory_item_entry_screen.dart:330-361`; `stock_adjustment_dialog.dart:166-196`",
+      "required_treatment": "Swap residual primitives for ForUI equivalents while preserving numeric keyboard behavior.",
+      "candidate_step_55_account": "55.8 Inventory Management."
+    },
+    "FC-54.8-009": {
+      "id": "FC-54.8-009",
+      "substep": "54.8",
+      "sequence": 9,
+      "verdict": "Aligned",
+      "area": "Stock adjustment modality",
+      "summary": "Adjustment already uses `showFDialog` + `FDialog`, keeps the dashboard mounted, shows current stock/threshold and a computed next-stock preview, and offers explicit cancel/confirm actions; this is a useful contextual-dialog precedent.",
+      "source_summary": "Adjustment already uses `showFDialog` + `FDialog`, keeps the dashboard mounted, shows current stock/threshold and a computed next-stock preview, and offers explicit cancel/confirm actions; this is a useful contextual-dialog precedent.",
+      "evidence": "`inventory_dashboard_screen.dart:419-435`; `stock_adjustment_dialog.dart:43-128, 198-268`",
+      "evidence_status": "`inventory_dashboard_screen.dart:419-435`; `stock_adjustment_dialog.dart:43-128, 198-268`",
+      "required_treatment": "Preserve contextual modality while adding transaction persistence and responsive runtime tests.",
+      "candidate_step_55_account": "55.8 Inventory Management."
+    },
+    "FC-54.8-010": {
+      "id": "FC-54.8-010",
+      "substep": "54.8",
+      "sequence": 10,
+      "verdict": "Needs polish",
+      "area": "Mobile touch targets / semantics",
+      "summary": "Inventory-card adjust/delete actions explicitly remove `IconButton` constraints and padding; the delete action also lacks a tooltip/semantic label, so source does not guarantee 48dp targets or an accessible name.",
+      "source_summary": "Inventory-card adjust/delete actions explicitly remove `IconButton` constraints and padding; the delete action also lacks a tooltip/semantic label, so source does not guarantee 48dp targets or an accessible name.",
+      "evidence": "`inventory_card.dart:154-177`",
+      "evidence_status": "`inventory_card.dart:154-177`",
+      "required_treatment": "Use labelled `FIconButton`s or enforce 48x48dp semantic hit regions for both actions.",
+      "candidate_step_55_account": "55.8 Inventory Management."
+    },
+    "FC-54.8-011": {
+      "id": "FC-54.8-011",
+      "substep": "54.8",
+      "sequence": 11,
+      "verdict": "Unverified",
+      "area": "Runtime dialog / accessibility",
+      "summary": "Static code cannot prove FDialog scrim dismissal, narrow-screen sizing, numeric IME inset handling, focus order, contrast, rendered touch targets, or screen-reader announcements.",
+      "source_summary": "Static code cannot prove FDialog scrim dismissal, narrow-screen sizing, numeric IME inset handling, focus order, contrast, rendered touch targets, or screen-reader announcements.",
+      "evidence": "`stock_adjustment_dialog.dart:43-272`; `inventory_card.dart:154-177`",
+      "evidence_status": "`stock_adjustment_dialog.dart:43-272`; `inventory_card.dart:154-177`",
+      "required_treatment": "Verify Web and Android dialog behavior in STEP-55.11 with valid runtime and accessibility evidence.",
+      "candidate_step_55_account": "55.11 runtime/a11y evidence debt."
+    }
+  },
+  "restructure_citation_resolution": {
+    "FC-54.5-006": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: attendance_form_page.dart:257."
+    },
+    "FC-54.5-007": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: attendance_record.dart:5; crew_roster_item.dart:13."
+    },
+    "FC-54.5-008": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: attendance_screen.dart:173."
+    },
+    "FC-54.5-009": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: attendance_form_page.dart:81; attendance_state.dart:23."
+    },
+    "FC-54.5-010": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: router.dart:364."
+    },
+    "FC-54.5-011": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: attendance_screen.dart:159."
+    },
+    "FC-54.6-001": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: daily_log_list_screen.dart:94."
+    },
+    "FC-54.6-002": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: weather_selector.dart:14; daily_log.dart:7."
+    },
+    "FC-54.6-005": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: daily_log_form_screen.dart:228."
+    },
+    "FC-54.6-006": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: daily_log_form_screen.dart:153."
+    },
+    "FC-54.6-007": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: daily_log_list_screen.dart:82."
+    },
+    "FC-54.6-008": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: daily_log_list_screen.dart:178."
+    },
+    "FC-54.7-001": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: equipment_check_card.dart:188."
+    },
+    "FC-54.7-003": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: equipment_check_form_screen.dart:106; equipment_history_screen.dart:102; router.dart:430."
+    },
+    "FC-54.7-005": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: equipment_history_screen.dart:413."
+    },
+    "FC-54.8-001": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: inventory_dashboard_screen.dart:398."
+    },
+    "FC-54.8-002": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: inventory_item_entry_screen.dart:203."
+    },
+    "FC-54.8-003": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: inventory_dashboard_screen.dart:116."
+    },
+    "FC-54.8-005": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: stock_adjustment_dialog.dart:250; inventory/inventory_bloc.dart:240; tracking_repository.dart:45; tracking_repository_impl.dart:302."
+    },
+    "FC-54.8-007": {
+      "status": "pass",
+      "adjudication": "Branch-head files and cited start lines resolve: inventory_dashboard_screen.dart:397."
+    }
+  },
+  "cross_finding_reconciliation": [
+    {
+      "finding_ids": [
+        "FC-54.5-008",
+        "FC-54.6-005",
+        "FC-54.7-003",
+        "FC-54.8-001"
+      ],
+      "decision": "Implement one shared D1/D2 responsive-sheet and D5 route-adapter contract, while preserving feature-specific IDs and local loading requirements."
+    },
+    {
+      "finding_ids": [
+        "FC-54.5-009",
+        "FC-54.6-006",
+        "FC-54.7-003",
+        "FC-54.8-002"
+      ],
+      "decision": "Apply the universal D4 dismissal guard to every close path; Daily Logging additionally must flush or confirm pending auto-save writes."
+    },
+    {
+      "finding_ids": [
+        "FC-54.5-011",
+        "FC-54.6-008",
+        "FC-54.7-005",
+        "FC-54.8-003"
+      ],
+      "decision": "Use one contextual FDialog report architecture, preserving each feature's active list/filter context."
+    },
+    {
+      "finding_ids": [
+        "FC-54.5-004",
+        "FC-54.7-004",
+        "FC-54.8-010"
+      ],
+      "decision": "Adopt one labelled, semantic 48x48dp minimum interactive-target contract; runtime geometry remains owed by STEP-55.11."
+    },
+    {
+      "finding_ids": [
+        "FC-54.5-007"
+      ],
+      "decision": "Keep attendance sync honesty as a distinct data-trust escalation; do not merge it into generic runtime evidence debt."
+    },
+    {
+      "finding_ids": [
+        "FC-54.8-005",
+        "FC-54.8-007"
+      ],
+      "decision": "Treat immutable adjustment persistence and stock-history inspection as one integrity-backed Inventory workstream, while retaining both traceability IDs."
+    }
+  ],
+  "d7_decisions": [
+    {
+      "feature": "Crew Attendance",
+      "verdict": "no_separate_inspector",
+      "finding_ids": [
+        "FC-54.5-005"
+      ],
+      "rationale": "Inline roster status controls cover the Phase 1 field check-in workflow; historical inspection can remain in reporting.",
+      "step_55": "55.5"
+    },
+    {
+      "feature": "Daily Logging",
+      "verdict": "existing_form_read_only_mode",
+      "finding_ids": [
+        "FC-54.6-005",
+        "FC-54.6-007"
+      ],
+      "rationale": "The form already supports submitted/approved read-only behavior; migrate it to the route-backed sheet rather than add a separate inspector.",
+      "step_55": "55.6"
+    },
+    {
+      "feature": "Equipment Digital Checks",
+      "verdict": "web_inspector_mobile_full_page",
+      "finding_ids": [
+        "FC-54.7-001"
+      ],
+      "rationale": "Dense 15–30-item records need a deep-linkable read-only inspector: Web right side-sheet and Mobile full page.",
+      "step_55": "55.7"
+    },
+    {
+      "feature": "Inventory Management",
+      "verdict": "read_only_stock_history_detail",
+      "finding_ids": [
+        "FC-54.8-005",
+        "FC-54.8-007"
+      ],
+      "rationale": "A detail surface is required to separate inspection from edit and expose immutable stock-adjustment history.",
+      "step_55": "55.8"
+    }
+  ],
+  "report_decisions": [
+    {
+      "features": [
+        "Crew Attendance",
+        "Daily Logging",
+        "Equipment Digital Checks",
+        "Inventory Management"
+      ],
+      "decision": "contextual_dialog_required",
+      "finding_ids": [
+        "FC-54.5-011",
+        "FC-54.6-008",
+        "FC-54.7-005",
+        "FC-54.8-003"
+      ],
+      "step_55": "55.1 plus 55.5–55.8 integrations"
+    }
+  ],
+  "evidence_debt": [
+    {
+      "finding_ids": [
+        "FC-54.5-013"
+      ],
+      "blocker": "Attendance runtime layout, target size, contrast, focus, screen-reader output, and list restoration were not captured.",
+      "obligation": "Verify Web and Android in STEP-55.11."
+    },
+    {
+      "finding_ids": [
+        "FC-54.6-010"
+      ],
+      "blocker": "Daily Log sheet drag/scroll, IME insets, targets, focus, screen-reader output, contrast, and deep-link reconstruction were not captured.",
+      "obligation": "Verify Web and Android in STEP-55.11."
+    },
+    {
+      "finding_ids": [
+        "FC-54.7-007"
+      ],
+      "blocker": "Equipment contrast, rendered targets, focus order, and screen-reader traversal were not captured.",
+      "obligation": "Verify Web and Android in STEP-55.11."
+    },
+    {
+      "finding_ids": [
+        "FC-54.8-011"
+      ],
+      "blocker": "Inventory dialog dismissal, narrow sizing, IME handling, focus, contrast, targets, and screen-reader announcements were not captured.",
+      "obligation": "Verify Web and Android in STEP-55.11."
+    }
+  ],
+  "escalations": [
+    {
+      "finding_ids": [
+        "FC-54.5-007"
+      ],
+      "gate": "attendance_offline_sync_honesty",
+      "release_blocking": false,
+      "decision": "Expose record-level pending/failed sync metadata before claiming trustworthy offline attendance behavior."
+    },
+    {
+      "finding_ids": [
+        "FC-54.8-005"
+      ],
+      "gate": "inventory_adjustment_integrity",
+      "release_blocking": true,
+      "decision": "Persist immutable adjustment transactions and update stock atomically before release; reasons/history must not be discarded."
+    }
+  ],
+  "verification": {
+    "parsed_source_findings": {
+      "status": "pass",
+      "count": 41,
+      "by_substep": {
+        "54.5": 13,
+        "54.6": 10,
+        "54.7": 7,
+        "54.8": 11
+      }
+    },
+    "id_uniqueness_and_continuity": {
+      "status": "pass",
+      "duplicates": [],
+      "missing": []
+    },
+    "verdict_accounting": {
+      "status": "pass",
+      "by_verdict": {
+        "Needs polish": 13,
+        "Aligned": 4,
+        "Needs restructure": 20,
+        "Unverified": 4
+      }
+    },
+    "verdict_vocabulary": {
+      "status": "pass"
+    },
+    "restructure_citations": {
+      "status": "pass",
+      "checked": 20,
+      "struck": 0
+    },
+    "cross_substep_overlap": {
+      "status": "pass",
+      "adjudication_count": 6,
+      "findings_dropped": 0
+    },
+    "d7_and_report_decisions": {
+      "status": "pass"
+    },
+    "application_code_modified": false,
+    "durable_docs_modified": false,
+    "final_step_54_accounting_claimed": false
+  },
+  "limitations": [
+    "This Ledger B slice is not the final STEP-54.11 master polish specification, Doc 07 v0.5.0 bump, risk reconciliation, user review gate, or STEP close.",
+    "Source citations were checked at app head fe12531931eed861518b20f7323c6cf6bd0ccb8b; later app changes require citation re-resolution.",
+    "No new runtime evidence was added; source findings' visual, accessibility, IME, deep-link, and rendered-target blockers remain explicit."
+  ]
+}

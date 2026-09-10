@@ -1,0 +1,1167 @@
+{
+  "schema_version": "1.0.0",
+  "ledger_id": "mine-flow-step-54.9-54.10a-findings",
+  "title": "mine-flow — STEP-54.9–54.10a Findings Ledger Slice",
+  "built": "2026-09-11",
+  "scope": "Every FC-54.* finding in STEP-54.9, STEP-54.10, and STEP-54.10a.",
+  "purpose": "Verified JSON input slice for STEP-54.11 consolidation; not the final master spec or STEP close.",
+  "source_document": "mine-flow-STEP-54.9-54.10a-FINDINGS-LEDGER.md",
+  "source_findings": [
+    "mine-flow-STEP-54.9-FINDINGS.md",
+    "mine-flow-STEP-54.10-FINDINGS.md",
+    "mine-flow-STEP-54.10a-FINDINGS.md"
+  ],
+  "inspected_app": {
+    "branch": "step-0054-feature-cohesion-critique",
+    "head": "fe12531",
+    "working_tree": "clean"
+  },
+  "accounting": {
+    "expected_finding_count": 53,
+    "actual_finding_count": 53,
+    "complete": true,
+    "duplicate_ids": [],
+    "missing_ids": [],
+    "by_substep": [
+      {
+        "substep": "54.9",
+        "source": "mine-flow-STEP-54.9-FINDINGS.md",
+        "finding_count": 10,
+        "id_range": {
+          "first": "FC-54.9-001",
+          "last": "FC-54.9-010"
+        },
+        "result": "Complete and unique."
+      },
+      {
+        "substep": "54.10",
+        "source": "mine-flow-STEP-54.10-FINDINGS.md",
+        "finding_count": 24,
+        "id_range": {
+          "first": "FC-54.10-001",
+          "last": "FC-54.10-024"
+        },
+        "result": "Complete and unique."
+      },
+      {
+        "substep": "54.10a",
+        "source": "mine-flow-STEP-54.10a-FINDINGS.md",
+        "finding_count": 19,
+        "id_range": {
+          "first": "FC-54.10a-001",
+          "last": "FC-54.10a-019"
+        },
+        "result": "Complete and unique."
+      }
+    ],
+    "by_verdict_class": {
+      "Needs restructure": 18,
+      "Aligned": 12,
+      "Needs polish": 15,
+      "Unverified": 5,
+      "Escalation": 3
+    },
+    "by_exact_verdict": {
+      "Needs restructure": 18,
+      "Aligned": 12,
+      "Needs polish": 15,
+      "Unverified": 5,
+      "ESCALATION — Privacy compliance gap": 1,
+      "ESCALATION — secrets boundary": 1,
+      "ESCALATION — privacy compliance": 1
+    }
+  },
+  "verdict_vocabulary": [
+    "Aligned",
+    "Needs polish",
+    "Needs restructure",
+    "Unverified",
+    "ESCALATION — Privacy compliance gap",
+    "ESCALATION — secrets boundary",
+    "ESCALATION — privacy compliance"
+  ],
+  "findings": {
+    "FC-54.9-001": {
+      "id": "FC-54.9-001",
+      "substep": "54.9",
+      "sequence": 1,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Data Bucket: D5 form routing",
+      "summary": "The list page opens Upload and Detail pages via `Navigator.push(MaterialPageRoute(...))` rather than GoRouter named routes, even though `/tools/data-bucket/upload` and `/:id` exist.",
+      "source_summary": "The list page opens Upload and Detail pages via `Navigator.push(MaterialPageRoute(...))` rather than GoRouter named routes, even though `/tools/data-bucket/upload` and `/:id` exist. Breaks URL synchronization.",
+      "evidence": "`data_bucket_list_page.dart:320-334`, `367-379`",
+      "evidence_status": "`data_bucket_list_page.dart:320-334`, `367-379` Citation re-resolution: Pass — list still uses MaterialPageRoute at 320–334 and 367–379 while named child routes exist at router.dart:183–215.",
+      "required_treatment": "STEP-55 must migrate these to `context.push` or `context.go` to utilize GoRouter paths and support D5.",
+      "candidate_step_55_account": "55.9 Data Bucket & Work Timeline."
+    },
+    "FC-54.9-002": {
+      "id": "FC-54.9-002",
+      "substep": "54.9",
+      "sequence": 2,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Data Bucket: D1/D2 Sheet Modality & D4 Interception",
+      "summary": "The Upload form is a full-page push (`FScaffold` on mobile, no header on desktop) without a `PopScope`.",
+      "source_summary": "The Upload form is a full-page push (`FScaffold` on mobile, no header on desktop) without a `PopScope`. Selecting a large file and accidentally pressing Back discards the file silently without dirty interception.",
+      "evidence": "`upload_file_page.dart:73`, `310-336`",
+      "evidence_status": "`upload_file_page.dart:73`, `310-336` Citation re-resolution: Pass — upload remains a full FScaffold at 310–336; no PopScope is present in the file.",
+      "required_treatment": "STEP-55 must migrate Upload to a modal side-sheet (desktop) / bottom-sheet (mobile) with explicit `PopScope` dirty interception.",
+      "candidate_step_55_account": "55.9 Data Bucket & Work Timeline."
+    },
+    "FC-54.9-003": {
+      "id": "FC-54.9-003",
+      "substep": "54.9",
+      "sequence": 3,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Data Bucket: Upload Cancellation",
+      "summary": "Upload progress exists, but the back action is disabled during upload and no explicit cancellation action is available.",
+      "source_summary": "Upload progress is shown, but there is no cancellation affordance (the back button is disabled during upload: `isUploading ? null : Navigator.pop`).",
+      "evidence": "`upload_file_page.dart:328`",
+      "evidence_status": "`upload_file_page.dart:328` Citation re-resolution: Pass — upload back action remains disabled while uploading at 326–330; no cancel action is exposed.",
+      "required_treatment": "Provide an explicit cancel action for the upload state, especially crucial for large geospatial files.",
+      "candidate_step_55_account": "55.9 Data Bucket & Work Timeline."
+    },
+    "FC-54.9-004": {
+      "id": "FC-54.9-004",
+      "substep": "54.9",
+      "sequence": 4,
+      "verdict": "Aligned",
+      "verdict_class": "Aligned",
+      "area": "Data Bucket: Upload Failure Recovery",
+      "summary": "Upload errors display a toast with a \"Coba Lagi\" action that retries `_submitUpload()` without requiring the user to re-select the file, as `_fileBytes` is preserved in state.",
+      "source_summary": "Upload errors display a toast with a \"Coba Lagi\" action that retries `_submitUpload()` without requiring the user to re-select the file, as `_fileBytes` is preserved in state.",
+      "evidence": "`upload_file_page.dart:291-303`",
+      "evidence_status": "`upload_file_page.dart:291-303`",
+      "required_treatment": "Maintain this recovery pattern when migrating to sheet adapter. (Silent failure on connectivity drop / app close remains an unverified data-trust edge case).",
+      "candidate_step_55_account": "55.9 Data Bucket & Work Timeline."
+    },
+    "FC-54.9-005": {
+      "id": "FC-54.9-005",
+      "substep": "54.9",
+      "sequence": 5,
+      "verdict": "Aligned",
+      "verdict_class": "Aligned",
+      "area": "Data Bucket: File-size feedback",
+      "summary": "Enforces a `_kMaxFileSizeBytes` check before reading into memory, and displays a formatted size under the selected file icon prior to commit.",
+      "source_summary": "Enforces a `_kMaxFileSizeBytes` check before reading into memory, and displays a formatted size under the selected file icon prior to commit.",
+      "evidence": "`upload_file_page.dart:178-188`, `472-478`",
+      "evidence_status": "`upload_file_page.dart:178-188`, `472-478`",
+      "required_treatment": "Keep implementation.",
+      "candidate_step_55_account": "55.9 Data Bucket & Work Timeline."
+    },
+    "FC-54.9-006": {
+      "id": "FC-54.9-006",
+      "substep": "54.9",
+      "sequence": 6,
+      "verdict": "Aligned",
+      "verdict_class": "Aligned",
+      "area": "Data Bucket: Lifecycle Cohesion",
+      "summary": "List → Form/Detail → Back loops properly execute a `RefreshFiles()` event upon returning, avoiding stale data.",
+      "source_summary": "List → Form/Detail → Back loops properly execute a `RefreshFiles()` event upon returning, avoiding stale data.",
+      "evidence": "`data_bucket_list_page.dart:333`, `377`",
+      "evidence_status": "`data_bucket_list_page.dart:333`, `377`",
+      "required_treatment": "Ensure `RefreshFiles` behavior is preserved when shifting to GoRouter.",
+      "candidate_step_55_account": "55.9 Data Bucket & Work Timeline."
+    },
+    "FC-54.9-007": {
+      "id": "FC-54.9-007",
+      "substep": "54.9",
+      "sequence": 7,
+      "verdict": "Aligned",
+      "verdict_class": "Aligned",
+      "area": "Work Timeline: Read-only Cohesion",
+      "summary": "Timeline exposes only a date-range selector and milestone cards.",
+      "source_summary": "Timeline exposes only a date-range selector and milestone cards. There are no fake CRUD affordances or missing milestone entry forms that should exist—it acts explicitly as a read-mostly viewing surface.",
+      "evidence": "`timeline_page.dart:64-80`, `timeline_page.dart:238-275`, `milestone_card.dart:35`",
+      "evidence_status": "`timeline_page.dart:64-80`, `timeline_page.dart:238-275`, `milestone_card.dart:35`",
+      "required_treatment": "Preserve read-only intent for this release; milestone entry sheet remains deliberately excluded.",
+      "candidate_step_55_account": "55.9 Data Bucket & Work Timeline."
+    },
+    "FC-54.9-008": {
+      "id": "FC-54.9-008",
+      "substep": "54.9",
+      "sequence": 8,
+      "verdict": "Aligned",
+      "verdict_class": "Aligned",
+      "area": "Report Path (Both Features)",
+      "summary": "Deliberate absence of a report action in both Data Bucket (documented as \"no meaningful report type\") and Work Timeline.",
+      "source_summary": "Deliberate absence of a report action in both Data Bucket (documented as \"no meaningful report type\") and Work Timeline.",
+      "evidence": "`data_bucket_list_page.dart:360-362`, `timeline_page.dart:90-130`",
+      "evidence_status": "`data_bucket_list_page.dart:360-362`, `timeline_page.dart:90-130`",
+      "required_treatment": "Maintain absence as a deliberate design decision.",
+      "candidate_step_55_account": "55.9 Data Bucket & Work Timeline."
+    },
+    "FC-54.9-009": {
+      "id": "FC-54.9-009",
+      "substep": "54.9",
+      "sequence": 9,
+      "verdict": "Needs polish",
+      "verdict_class": "Needs polish",
+      "area": "Token conformance",
+      "summary": "Both features utilize `FTheme` tokens (no raw colors found) and rely on a transparent `Material` wrapper for `PopupMenuButton` interoperability, but `DataBucketListPage` still uses a Material `FloatingActionButton.extended` for the upload action, `UploadFilePage` uses Material `showDatePicker` and `InputDecorator` for the acquisition date field, and `MilestoneCard` uses `InkWell` instead of `FTappable`.",
+      "source_summary": "Both features utilize `FTheme` tokens (no raw colors found) and rely on a transparent `Material` wrapper for `PopupMenuButton` interoperability, but `DataBucketListPage` still uses a Material `FloatingActionButton.extended` for the upload action, `UploadFilePage` uses Material `showDatePicker` and `InputDecorator` for the acquisition date field, and `MilestoneCard` uses `InkWell` instead of `FTappable`. These violate the 54.1 token conformance rubric to use ForUI components.",
+      "evidence": "`data_bucket_list_page.dart:362-383`, `upload_file_page.dart:211-216`, `383-398`, `milestone_card.dart:35`",
+      "evidence_status": "`data_bucket_list_page.dart:362-383`, `upload_file_page.dart:211-216`, `383-398`, `milestone_card.dart:35`",
+      "required_treatment": "STEP-55 must replace the Material FAB with a floating `FButton`, migrate the date picker field and InkWell to ForUI equivalents (or document an explicit interoperability exception).",
+      "candidate_step_55_account": "55.9 Data Bucket & Work Timeline."
+    },
+    "FC-54.9-010": {
+      "id": "FC-54.9-010",
+      "substep": "54.9",
+      "sequence": 10,
+      "verdict": "Unverified",
+      "verdict_class": "Unverified",
+      "area": "Accessibility & Tokens",
+      "summary": "Keyboard focus and a11y contrast remain untested at runtime.",
+      "source_summary": "Keyboard focus and a11y contrast remain untested at runtime.",
+      "evidence": "`file_detail_page.dart:102`, `data_bucket_list_page.dart:84`",
+      "evidence_status": "`file_detail_page.dart:102`, `data_bucket_list_page.dart:84` Blocker remains explicit; see evidence_debt.",
+      "required_treatment": "Validate keyboard traversal and contrast ratios during runtime audit.",
+      "candidate_step_55_account": "55.11 runtime/a11y evidence debt."
+    },
+    "FC-54.10-001": {
+      "id": "FC-54.10-001",
+      "substep": "54.10",
+      "sequence": 1,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Dashboard: Tap-through absent",
+      "summary": "The four stat cards display KPI values but have no tap/navigation action.",
+      "source_summary": "The four stat cards display KPI values but have no tap/navigation action. The class comment says the page provides \"shortcuts that push on top of the shell\" for Reports, Timeline, and Notifications, but no tap-through is implemented — `_StatCard.build` returns `SizedBox > Semantics > FCard` with no `GestureDetector` or `FTappable`.",
+      "evidence": "`dashboard_page.dart:143-231`",
+      "evidence_status": "`dashboard_page.dart:143-231` Citation re-resolution: Pass — _StatCard remains presentation-only at 143–231 with no action callback.",
+      "required_treatment": "STEP-55 must wire each stat card to its respective feature: Kru Aktif → `/teams/attendance`, Volume → `/operations/cut-fill`, Pemeriksaan Alat → `/teams/equipment-check`, Notifikasi → `/notifications`.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-002": {
+      "id": "FC-54.10-002",
+      "substep": "54.10",
+      "sequence": 2,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Dashboard: KPI set missing five features",
+      "summary": "Only four KPIs are aggregated (Attendance, CutFill, EquipmentCheck, Notifications).",
+      "source_summary": "Only four KPIs are aggregated (Attendance, CutFill, EquipmentCheck, Notifications). Land Clearing, Inventory, Daily Log, Benchmark DB, and Data Bucket have no dashboard presence.",
+      "evidence": "`dashboard_cubit.dart:3-7, 50-55`; `dashboard_state.dart:10-13`",
+      "evidence_status": "`dashboard_cubit.dart:3-7, 50-55`; `dashboard_state.dart:10-13` Citation re-resolution: Pass — DashboardCubit still fetches exactly four sources at 49–55 and emits four KPI fields at 57–64.",
+      "required_treatment": "STEP-55 should decide (with the user) whether to extend the KPI set or explicitly document the four cards as intentionally scoped.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-003": {
+      "id": "FC-54.10-003",
+      "substep": "54.10",
+      "sequence": 3,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Dashboard: Error state undifferentiated from loading",
+      "summary": "`DashboardStatus.failure` produces value `'-'` — identical to the loading skeleton.",
+      "source_summary": "`DashboardStatus.failure` produces value `'-'` — identical to the loading skeleton. The `isFailure` subtitle `'Gagal memuat'` is easily missed below the large `'-'` glyph.",
+      "evidence": "`dashboard_page.dart:60-93`",
+      "evidence_status": "`dashboard_page.dart:60-93` Citation re-resolution: Pass — failure still uses the same '-' value path as loading at dashboard_page.dart:56–93.",
+      "required_treatment": "STEP-55: loading → spinner, failure → error icon + subtitle + retry action.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-004": {
+      "id": "FC-54.10-004",
+      "substep": "54.10",
+      "sequence": 4,
+      "verdict": "Needs polish",
+      "verdict_class": "Needs polish",
+      "area": "Dashboard: No refresh mechanism",
+      "summary": "`loadDashboardStats` is called once at route build.",
+      "source_summary": "`loadDashboardStats` is called once at route build. No pull-to-refresh, no timer, no BLoC reload event. KPIs go stale mid-session.",
+      "evidence": "`router.dart:142`; `dashboard_page.dart:54-131`",
+      "evidence_status": "`router.dart:142`; `dashboard_page.dart:54-131`",
+      "required_treatment": "STEP-55 should add pull-to-refresh or a scheduled refresh interval.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-005": {
+      "id": "FC-54.10-005",
+      "substep": "54.10",
+      "sequence": 5,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Dashboard: No empty/first-use state",
+      "summary": "After first boot, a user with no data sees `0` for all KPIs — indistinguishable from a day with genuine zero activity.",
+      "source_summary": "After first boot, a user with no data sees `0` for all KPIs — indistinguishable from a day with genuine zero activity. `DashboardStatus.initial` and `loading` are conflated; no first-use nudge exists.",
+      "evidence": "`dashboard_page.dart:56-58`",
+      "evidence_status": "`dashboard_page.dart:56-58` Citation re-resolution: Pass — initial/loading remain conflated at 56–58 and success zero has no first-use branch.",
+      "required_treatment": "STEP-55 should distinguish first-run zero-data; add a call-to-action card directing the user to enter their first record.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-006": {
+      "id": "FC-54.10-006",
+      "substep": "54.10",
+      "sequence": 6,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Notification center: Unreachable from Android",
+      "summary": "Notifications are only reachable through the mobile header on Dashboard; the persistent five-tab bar has no Notifications entry.",
+      "source_summary": "The bell icon lives in `_NotificationIconButton` inside `GlobalAppHeader`. On mobile, `GlobalAppHeader` is rendered only when path == `/` (dashboard). On any other shell route the header disappears. The five bottom-bar tabs include no Notifications item.",
+      "evidence": "`app_shell.dart:397-398`; `global_app_header.dart:333-345`; `app_shell.dart:47-57`",
+      "evidence_status": "`app_shell.dart:397-398`; `global_app_header.dart:333-345`; `app_shell.dart:47-57` Citation re-resolution: Pass — mobile header remains dashboard-only at app_shell.dart:397–398 and the five tabs remain 47–57.",
+      "required_treatment": "STEP-55 must provide a persistent notification entry on mobile (persistent header bell, Dashboard tab badge, or Teams group landing tile).",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-007": {
+      "id": "FC-54.10-007",
+      "substep": "54.10",
+      "sequence": 7,
+      "verdict": "Aligned",
+      "verdict_class": "Aligned",
+      "area": "Notification center: Loading/empty/error states",
+      "summary": "All three states covered: `FCircularProgress` (loading), icon+label (empty), semantic error container (error).",
+      "source_summary": "All three states covered: `FCircularProgress` (loading), icon+label (empty), semantic error container (error). Staggered entrance honors `MediaQuery.disableAnimationsOf`.",
+      "evidence": "`notification_list_page.dart:79-219, 241-301`",
+      "evidence_status": "`notification_list_page.dart:79-219, 241-301`",
+      "required_treatment": "Preserve.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-008": {
+      "id": "FC-54.10-008",
+      "substep": "54.10",
+      "sequence": 8,
+      "verdict": "Aligned",
+      "verdict_class": "Aligned",
+      "area": "Notification center: Read/unread and dismiss",
+      "summary": "`GestureDetector.onTap` marks as read; `FButton.icon` per card dismisses; \"Tutup Semua\" batch-dismisses.",
+      "source_summary": "`GestureDetector.onTap` marks as read; `FButton.icon` per card dismisses; \"Tutup Semua\" batch-dismisses. Semantic labels differentiate read vs unread.",
+      "evidence": "`notification_list_page.dart:398-404, 468-473, 141-147`",
+      "evidence_status": "`notification_list_page.dart:398-404, 468-473, 141-147`",
+      "required_treatment": "Preserve.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-009": {
+      "id": "FC-54.10-009",
+      "substep": "54.10",
+      "sequence": 9,
+      "verdict": "Needs polish",
+      "verdict_class": "Needs polish",
+      "area": "Notification center: No unread badge on entry icon",
+      "summary": "Desktop bell icon renders bare `LucideIcons.inbox` with no count badge.",
+      "source_summary": "Desktop bell icon renders bare `LucideIcons.inbox` with no count badge. Users on non-dashboard routes have no glanceable unread indicator.",
+      "evidence": "`global_app_header.dart:333-345`",
+      "evidence_status": "`global_app_header.dart:333-345`",
+      "required_treatment": "STEP-55 should add a badge overlay when `unreadCount > 0`.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-010": {
+      "id": "FC-54.10-010",
+      "substep": "54.10",
+      "sequence": 10,
+      "verdict": "Needs polish",
+      "verdict_class": "Needs polish",
+      "area": "Notification center: GestureDetector vs FTappable",
+      "summary": "Notification card tap area uses `GestureDetector` (Material-adjacent primitive).",
+      "source_summary": "Notification card tap area uses `GestureDetector` (Material-adjacent primitive). Token conformance requires `FTappable` where a ForUI equivalent exists. Hit-target at 48dp is unverified.",
+      "evidence": "`notification_list_page.dart:398`",
+      "evidence_status": "`notification_list_page.dart:398`",
+      "required_treatment": "STEP-55 should migrate tap region to `FTappable` and verify 48dp minimum touch height.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-011": {
+      "id": "FC-54.10-011",
+      "substep": "54.10",
+      "sequence": 11,
+      "verdict": "Needs polish",
+      "verdict_class": "Needs polish",
+      "area": "Notification center: Warning mapped to `secondary` token",
+      "summary": "`NotificationSeverity.warning` maps to `theme.colors.secondary` — a muted neutral on the Zinc palette, not a warning amber.",
+      "source_summary": "`NotificationSeverity.warning` maps to `theme.colors.secondary` — a muted neutral on the Zinc palette, not a warning amber. Severity differentiation is undercut visually.",
+      "evidence": "`notification_list_page.dart:328, 350`",
+      "evidence_status": "`notification_list_page.dart:328, 350`",
+      "required_treatment": "STEP-55 should use a dedicated warning token or document an explicit exception if none exists in ForUI.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-012": {
+      "id": "FC-54.10-012",
+      "substep": "54.10",
+      "sequence": 12,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Settings: Profile is read-only, no edit flow",
+      "summary": "`_ProfileCard` displays name and role as plain `Text` with no edit affordance.",
+      "source_summary": "`_ProfileCard` displays name and role as plain `Text` with no edit affordance. The rubric's lifecycle-cohesion dimension and the prompt scope clause both flag this.",
+      "evidence": "`settings_page.dart:408-453`",
+      "evidence_status": "`settings_page.dart:408-453` Citation re-resolution: Pass — profile remains display-only at settings_page.dart:408–453.",
+      "required_treatment": "STEP-55 should add a profile-edit sheet aligned with D1/D2. For this release, display name is the likely editable field; role is server-managed.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-013": {
+      "id": "FC-54.10-013",
+      "substep": "54.10",
+      "sequence": 13,
+      "verdict": "Aligned",
+      "verdict_class": "Aligned",
+      "area": "Settings: Theme toggle — all three modes",
+      "summary": "Light, Dark, System modes all present and wired to `SettingsCubit.updateThemeMode` via `_ThemeOption`.",
+      "source_summary": "Light, Dark, System modes all present and wired to `SettingsCubit.updateThemeMode` via `_ThemeOption`. Selected variant renders as `primary`; unselected as `outline`.",
+      "evidence": "`settings_page.dart:147-186`",
+      "evidence_status": "`settings_page.dart:147-186`",
+      "required_treatment": "Preserve. Runtime dark-mode verification: `Unverified`.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-014": {
+      "id": "FC-54.10-014",
+      "substep": "54.10",
+      "sequence": 14,
+      "verdict": "Aligned",
+      "verdict_class": "Aligned",
+      "area": "Settings: Locale switcher wired",
+      "summary": "English/Indonesian toggle wired to `SettingsCubit.updateLocale`; partial-translation caveat disclosed in UI copy per RISK-0004.",
+      "source_summary": "English/Indonesian toggle wired to `SettingsCubit.updateLocale`; partial-translation caveat disclosed in UI copy per RISK-0004.",
+      "evidence": "`settings_page.dart:85-135`",
+      "evidence_status": "`settings_page.dart:85-135`",
+      "required_treatment": "Runtime locale-switch effect (which strings actually update) is `Unverified` — STEP-55 should run a live test.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-015": {
+      "id": "FC-54.10-015",
+      "substep": "54.10",
+      "sequence": 15,
+      "verdict": "Needs polish",
+      "verdict_class": "Needs polish",
+      "area": "Settings: Logout dialog uses FAlert inside FDialog",
+      "summary": "`showFDialog > FDialog > FAlert` doubles the container chrome — `FDialog` provides background/border; `FAlert` adds another border-left, icon, and text layout.",
+      "source_summary": "`showFDialog > FDialog > FAlert` doubles the container chrome — `FDialog` provides background/border; `FAlert` adds another border-left, icon, and text layout. Visually heavy for a simple confirmation.",
+      "evidence": "`settings_page.dart:326-358`",
+      "evidence_status": "`settings_page.dart:326-358`",
+      "required_treatment": "STEP-55 should migrate to a plain `FDialog` with inline `Text` title and subtitle, matching the D4 dirty-intercept dialog pattern.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-016": {
+      "id": "FC-54.10-016",
+      "substep": "54.10",
+      "sequence": 16,
+      "verdict": "Needs polish",
+      "verdict_class": "Needs polish",
+      "area": "Settings: Hardcoded support contact details",
+      "summary": "Support email and WhatsApp number are hardcoded in source, not environment-configurable.",
+      "source_summary": "Support email and WhatsApp number are hardcoded in source, not environment-configurable. They will differ across staging and production.",
+      "evidence": "`settings_page.dart:226, 241, 293-299, 314`",
+      "evidence_status": "`settings_page.dart:226, 241, 293-299, 314`",
+      "required_treatment": "STEP-55 should move contact details to `AppConstants` or `.env`-sourced config.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-017": {
+      "id": "FC-54.10-017",
+      "substep": "54.10",
+      "sequence": 17,
+      "verdict": "Needs polish",
+      "verdict_class": "Needs polish",
+      "area": "Settings: CircleAvatar Material primitive",
+      "summary": "`_ProfileCard` uses `CircleAvatar` (Material); `FAvatar` is the ForUI equivalent as of forui 0.24.x+.",
+      "source_summary": "`_ProfileCard` uses `CircleAvatar` (Material); `FAvatar` is the ForUI equivalent as of forui 0.24.x+. The file's own comment acknowledges the Material import but `FAvatar` is now available.",
+      "evidence": "`settings_page.dart:417-425`",
+      "evidence_status": "`settings_page.dart:417-425`",
+      "required_treatment": "STEP-55 should replace `CircleAvatar` with `FAvatar` and remove the `flutter/material.dart` import if no other Material primitive remains.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-018": {
+      "id": "FC-54.10-018",
+      "substep": "54.10",
+      "sequence": 18,
+      "verdict": "ESCALATION — Privacy compliance gap",
+      "verdict_class": "Escalation",
+      "area": "Login: Privacy notice ABSENT (RISK-0011 / DR-0003)",
+      "summary": "Privacy notice/first-use consent is absent statically; this is a pre-release compliance gate.",
+      "source_summary": "The In-app Privacy Notice is confirmed absent. Full grep of `lib/features/auth/` for `privacy`, `privasi`, `kebijakan`, `terms`, `ketentuan` returns zero matches. `LoginPage` renders branding, email field, password field, submit button — no notice link, no consent checkbox, no first-use dialog. This confirms RISK-0011's assessment as of the current branch head. Per Doc 17 §3 and UU PDP lawful-basis posture, users must be informed before first use. Pre-release gate per `risks.yml:RISK-0011:revisit_trigger`.",
+      "evidence": "`login_page.dart:68-175`; `risks.yml:RISK-0011:297-321`; grep `lib/features/auth/` → 0 matches",
+      "evidence_status": "`login_page.dart:68-175`; `risks.yml:RISK-0011:297-321`; grep `lib/features/auth/` → 0 matches",
+      "required_treatment": "Escalating to user: this is a pre-release gate. STEP-55 must implement a first-login consent flow (modal `FDialog` or dedicated screen) displaying the privacy notice with an explicit acknowledgement action, gating dashboard access. Notice content requires a product/legal decision.",
+      "candidate_step_55_account": "55.10 pre-release privacy-consent gate; content requires product/legal approval."
+    },
+    "FC-54.10-019": {
+      "id": "FC-54.10-019",
+      "substep": "54.10",
+      "sequence": 19,
+      "verdict": "Needs polish",
+      "verdict_class": "Needs polish",
+      "area": "Login: No keyboard submit on password field",
+      "summary": "`FTextField.password` has no `textInputAction: TextInputAction.done` or `onSubmitted` callback.",
+      "source_summary": "`FTextField.password` has no `textInputAction: TextInputAction.done` or `onSubmitted` callback. Mobile users must lift off the keyboard to tap \"Masuk\" instead of pressing the keyboard's submit key.",
+      "evidence": "`login_page.dart:141-149`",
+      "evidence_status": "`login_page.dart:141-149`",
+      "required_treatment": "STEP-55 should add `textInputAction: TextInputAction.done` and wire `onSubmitted: (_) => _login(cubit)` on the password field.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-020": {
+      "id": "FC-54.10-020",
+      "substep": "54.10",
+      "sequence": 20,
+      "verdict": "Needs polish",
+      "verdict_class": "Needs polish",
+      "area": "Login: Error banner has no dismiss",
+      "summary": "Auth error banner persists until the next login attempt; no dismiss icon, no auto-clear on next keystroke.",
+      "source_summary": "Auth error banner persists until the next login attempt; no dismiss icon, no auto-clear on next keystroke. A user who mistyped their email sees a persistent red banner they cannot clear.",
+      "evidence": "`login_page.dart:109-126`",
+      "evidence_status": "`login_page.dart:109-126`",
+      "required_treatment": "STEP-55 should auto-dismiss on next field edit or provide an explicit dismiss icon, consistent with the app's toast pattern.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-021": {
+      "id": "FC-54.10-021",
+      "substep": "54.10",
+      "sequence": 21,
+      "verdict": "Needs polish",
+      "verdict_class": "Needs polish",
+      "area": "Login: Missing semantic header",
+      "summary": "The page has no `Semantics(header: true)` on the `mine-flow` title text and no form-landmark label.",
+      "source_summary": "The page has no `Semantics(header: true)` on the `mine-flow` title text and no form-landmark label. Screen readers have no clear page-title announcement or form region.",
+      "evidence": "`login_page.dart:91-97, 82-84`",
+      "evidence_status": "`login_page.dart:91-97, 82-84`",
+      "required_treatment": "STEP-55 should add `Semantics(header: true)` on the page title and a form-landmark label.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-022": {
+      "id": "FC-54.10-022",
+      "substep": "54.10",
+      "sequence": 22,
+      "verdict": "Aligned",
+      "verdict_class": "Aligned",
+      "area": "Settings: Logout flow — session terminated before route change",
+      "summary": "`AuthCubit.signOut()` is awaited before `context.go(AppRoutes.login)` (CF-004 compliance).",
+      "source_summary": "`AuthCubit.signOut()` is awaited before `context.go(AppRoutes.login)` (CF-004 compliance). Confirmation dialog prevents accidental sign-out on shared field devices.",
+      "evidence": "`settings_page.dart:361-366`",
+      "evidence_status": "`settings_page.dart:361-366`",
+      "required_treatment": "Preserve. See FC-54.10-015 for dialog presentation polish.",
+      "candidate_step_55_account": "55.10 System Utilities."
+    },
+    "FC-54.10-023": {
+      "id": "FC-54.10-023",
+      "substep": "54.10",
+      "sequence": 23,
+      "verdict": "Unverified",
+      "verdict_class": "Unverified",
+      "area": "Accessibility and visual states — all four surfaces",
+      "summary": "WCAG contrast, 48dp targets, focus traversal, text scaling, and dark-mode correctness cannot be verified statically.",
+      "source_summary": "WCAG contrast, 48dp targets, focus traversal, text scaling, and dark-mode correctness cannot be verified statically. Semantic labels are present on stat cards and notification cards; login form lacks a page-title landmark (FC-54.10-021).",
+      "evidence": "`dashboard_page.dart:40-48, 169-172`; `notification_list_page.dart:361-479`; `settings_page.dart:31-283`; `login_page.dart:68-175`",
+      "evidence_status": "`dashboard_page.dart:40-48, 169-172`; `notification_list_page.dart:361-479`; `settings_page.dart:31-283`; `login_page.dart:68-175` Blocker remains explicit; see evidence_debt.",
+      "required_treatment": "Keep `Unverified` until STEP-55.11 technical audit.",
+      "candidate_step_55_account": "55.11 runtime/a11y and locale verification; 55.10 owns implementation findings exposed by the audit."
+    },
+    "FC-54.10-024": {
+      "id": "FC-54.10-024",
+      "substep": "54.10",
+      "sequence": 24,
+      "verdict": "Unverified",
+      "verdict_class": "Unverified",
+      "area": "l10n posture — all four surfaces",
+      "summary": "All four surfaces use hardcoded Indonesian/English strings; zero `AppLocalizations` calls found across all four files.",
+      "source_summary": "All four surfaces use hardcoded Indonesian/English strings; zero `AppLocalizations` calls found across all four files. Switching the locale to English in Settings will not change any label on these surfaces (static inference). Runtime locale-switch effect is unverified.",
+      "evidence": "grep `AppLocalizations` in each file → 0 results; `risks.yml:RISK-0004`",
+      "evidence_status": "grep `AppLocalizations` in each file → 0 results; `risks.yml:RISK-0004` Blocker remains explicit; see evidence_debt.",
+      "required_treatment": "Keep within RISK-0004 boundary. STEP-55 should run a live locale-switch test and document these surfaces as confirmed unlocalized in the master spec.",
+      "candidate_step_55_account": "55.11 runtime/a11y and locale verification; 55.10 owns implementation findings exposed by the audit."
+    },
+    "FC-54.10a-001": {
+      "id": "FC-54.10a-001",
+      "substep": "54.10a",
+      "sequence": 1,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Desktop shell navigation",
+      "summary": "The entire desktop sidebar navigation is absent from the accessibility tree, so a screen-reader or keyboard-only user cannot reach any of the nine feature workflows.",
+      "source_summary": "The entire desktop sidebar navigation is absent from the accessibility tree, so a screen-reader or keyboard-only user cannot reach any of the nine feature workflows. The rubric's a11y dimension requires navigation landmarks with meaningful semantics; the app renders them visually but exposes none.",
+      "evidence": "AX tree = 4 nodes (§3.3); 11 `flt-semantics` with no nav node; `app_shell.dart:285-365`; artifacts 02/03",
+      "evidence_status": "AX tree = 4 nodes (§3.3); 11 `flt-semantics` with no nav node; `app_shell.dart:285-365`; artifacts 02/03 Citation re-resolution: Pass — desktop shell still builds the sidebar/header at app_shell.dart:300–370; runtime AX evidence remains authoritative for the missing exposure.",
+      "required_treatment": "",
+      "candidate_step_55_account": "55.10 shell accessibility implementation; 55.11 runtime verification."
+    },
+    "FC-54.10a-002": {
+      "id": "FC-54.10a-002",
+      "substep": "54.10a",
+      "sequence": 2,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Global header controls",
+      "summary": "Search, theme toggle, notifications, and profile produce no semantics in either layout, although each has a source `Semantics(label: …)`.",
+      "source_summary": "Search, theme toggle, notifications, and profile produce no semantics in either layout, although each has a source `Semantics(label: …)`. The intent exists in code but does not survive to the runtime tree, so these controls are unusable by AT.",
+      "evidence": "AX tree has no such nodes (§3.1/3.3); `global_app_header.dart:82-83,195-196,269-270,312-313,336-337,361-362,387-388`; artifacts 02/03",
+      "evidence_status": "AX tree has no such nodes (§3.1/3.3); `global_app_header.dart:82-83,195-196,269-270,312-313,336-337,361-362,387-388`; artifacts 02/03 Citation re-resolution: Pass — source Semantics wrappers still exist in global_app_header.dart; runtime AX evidence remains authoritative because they do not survive rendering.",
+      "required_treatment": "",
+      "candidate_step_55_account": "55.10 header accessibility implementation; 55.11 runtime verification."
+    },
+    "FC-54.10a-003": {
+      "id": "FC-54.10a-003",
+      "substep": "54.10a",
+      "sequence": 3,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Login form naming",
+      "summary": "The password textbox exposes an empty accessible name and the email textbox is named by its placeholder (`admin@mineflow.id`) rather than its visible label, so AT users cannot tell the fields apart (WCAG 4.1.2).",
+      "source_summary": "The password textbox exposes an empty accessible name and the email textbox is named by its placeholder (`admin@mineflow.id`) rather than its visible label, so AT users cannot tell the fields apart (WCAG 4.1.2).",
+      "evidence": "AX tree §3.1; `login_page.dart:120-149`; artifacts 01/18",
+      "evidence_status": "AX tree §3.1; `login_page.dart:120-149`; artifacts 01/18 Citation re-resolution: Pass — login fields remain at login_page.dart:128–149; runtime AX names remain authoritative.",
+      "required_treatment": "",
+      "candidate_step_55_account": "55.10 login accessibility implementation; 55.11 runtime verification."
+    },
+    "FC-54.10a-004": {
+      "id": "FC-54.10a-004",
+      "substep": "54.10a",
+      "sequence": 4,
+      "verdict": "Needs polish",
+      "verdict_class": "Needs polish",
+      "area": "Login heading",
+      "summary": "The “mine-flow” title has no heading role, so there is no page-title landmark to announce (WCAG 1.3.1/2.4.6); the dashboard does produce `heading \"Dashboard\"`, so headings work elsewhere.",
+      "source_summary": "The “mine-flow” title has no heading role, so there is no page-title landmark to announce (WCAG 1.3.1/2.4.6); the dashboard does produce `heading \"Dashboard\"`, so headings work elsewhere.",
+      "evidence": "AX tree §3.1; confirms FC-54.10-021",
+      "evidence_status": "AX tree §3.1; confirms FC-54.10-021",
+      "required_treatment": "",
+      "candidate_step_55_account": "55.10 login semantics implementation; 55.11 runtime verification."
+    },
+    "FC-54.10a-005": {
+      "id": "FC-54.10a-005",
+      "substep": "54.10a",
+      "sequence": 5,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Document language",
+      "summary": "`document.documentElement.lang = \"en\"` while every captured surface is Indonesian, so screen readers pronounce the content in the wrong language (WCAG 3.1.1).",
+      "source_summary": "`document.documentElement.lang = \"en\"` while every captured surface is Indonesian, so screen readers pronounce the content in the wrong language (WCAG 3.1.1).",
+      "evidence": "`lang` read at runtime; all artifacts",
+      "evidence_status": "`lang` read at runtime; all artifacts Citation re-resolution: Pass — runtime-only language observation; all-artifact evidence remains the citation because no app source sets the Web document language here.",
+      "required_treatment": "",
+      "candidate_step_55_account": "55.10 Web document-language correction; 55.11 runtime verification."
+    },
+    "FC-54.10a-006": {
+      "id": "FC-54.10a-006",
+      "substep": "54.10a",
+      "sequence": 6,
+      "verdict": "Needs polish",
+      "verdict_class": "Needs polish",
+      "area": "Touch-target size",
+      "summary": "Several controls are below the 48dp target: “Show password” 40×40, “Masuk” 368×44, login field rows 44 (DOM inputs 50), Settings locale buttons 44, and both logout-dialog buttons 44 (Batal 62×44, Keluar 73×44).",
+      "source_summary": "Several controls are below the 48dp target: “Show password” 40×40, “Masuk” 368×44, login field rows 44 (DOM inputs 50), Settings locale buttons 44, and both logout-dialog buttons 44 (Batal 62×44, Keluar 73×44). The Settings theme buttons (68) and support rows (46) are borderline/pass.",
+      "evidence": "Semantics rects §3.1 + Settings dump; artifacts 01/04/15",
+      "evidence_status": "Semantics rects §3.1 + Settings dump; artifacts 01/04/15",
+      "required_treatment": "",
+      "candidate_step_55_account": "Applicable STEP-55 feature slices; 55.11 target-size verification."
+    },
+    "FC-54.10a-007": {
+      "id": "FC-54.10a-007",
+      "substep": "54.10a",
+      "sequence": 7,
+      "verdict": "Aligned",
+      "verdict_class": "Aligned",
+      "area": "Mobile primary navigation",
+      "summary": "The runtime exposes exactly five labelled tabs (`Dashboard… Settings`, “Tab N of 5”) with a correct focus order, satisfying Doc 07 §4 on mobile — and standing in clear contrast to the desktop sidebar (001).",
+      "source_summary": "The runtime exposes exactly five labelled tabs (`Dashboard… Settings`, “Tab N of 5”) with a correct focus order, satisfying Doc 07 §4 on mobile — and standing in clear contrast to the desktop sidebar (001).",
+      "evidence": "AX tree §3.3; `app_shell.dart:47-57`",
+      "evidence_status": "AX tree §3.3; `app_shell.dart:47-57`",
+      "required_treatment": "",
+      "candidate_step_55_account": "Preserve in 55.10 and regression-test in 55.11."
+    },
+    "FC-54.10a-008": {
+      "id": "FC-54.10a-008",
+      "substep": "54.10a",
+      "sequence": 8,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Notifications reachability",
+      "summary": "Neither layout exposes a Notifications entry: the mobile five-item bar has no Notifications tab, and the desktop bell produces no semantics.",
+      "source_summary": "Neither layout exposes a Notifications entry: the mobile five-item bar has no Notifications tab, and the desktop bell produces no semantics. This runtime-confirms FC-54.10-006 / FC-54.1-001.",
+      "evidence": "AX trees §3.3; `app_shell.dart:397-398`; `app_shell.dart:47-57`",
+      "evidence_status": "AX trees §3.3; `app_shell.dart:397-398`; `app_shell.dart:47-57` Citation re-resolution: Pass — source reachability remains app_shell.dart:47–57,397–398; runtime AX evidence confirms neither effective entry is exposed.",
+      "required_treatment": "",
+      "candidate_step_55_account": "55.10 cross-platform notification reachability; 55.11 runtime verification."
+    },
+    "FC-54.10a-009": {
+      "id": "FC-54.10a-009",
+      "substep": "54.10a",
+      "sequence": 9,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Dashboard KPI interactivity",
+      "summary": "The four KPI cards expose no role and no action (only the group label “Statistik ringkasan”), so the promised “shortcuts” do not exist for any user; runtime-confirms FC-54.10-001.",
+      "source_summary": "The four KPI cards expose no role and no action (only the group label “Statistik ringkasan”), so the promised “shortcuts” do not exist for any user; runtime-confirms FC-54.10-001.",
+      "evidence": "AX tree §3.3; vision of artifact 02; `dashboard_page.dart:143-231`",
+      "evidence_status": "AX tree §3.3; vision of artifact 02; `dashboard_page.dart:143-231` Citation re-resolution: Pass — _StatCard remains non-actionable at dashboard_page.dart:143–231; runtime AX evidence confirms no role/action.",
+      "required_treatment": "",
+      "candidate_step_55_account": "55.10 Dashboard KPI interactivity; 55.11 runtime verification."
+    },
+    "FC-54.10a-010": {
+      "id": "FC-54.10a-010",
+      "substep": "54.10a",
+      "sequence": 10,
+      "verdict": "Needs polish",
+      "verdict_class": "Needs polish",
+      "area": "System theme reactivity",
+      "summary": "In `ThemeMode.system` the app does not re-render when the OS/browser theme changes: emulating `prefers-color-scheme: light` left the frame unchanged (mean RGB stayed dark, artifact bytes ~identical), and `app.dart:44-48` reads `PlatformDispatcher.instance.platformBrightness` inside a `BlocBuilder` that only rebuilds on a `SettingsCubit` emit.",
+      "source_summary": "In `ThemeMode.system` the app does not re-render when the OS/browser theme changes: emulating `prefers-color-scheme: light` left the frame unchanged (mean RGB stayed dark, artifact bytes ~identical), and `app.dart:44-48` reads `PlatformDispatcher.instance.platformBrightness` inside a `BlocBuilder` that only rebuilds on a `SettingsCubit` emit. A user who switches OS theme while the app is open sees no update.",
+      "evidence": "mean-RGB evidence (§2); `app.dart:44-48`; `settings_page.dart` theme modes",
+      "evidence_status": "mean-RGB evidence (§2); `app.dart:44-48`; `settings_page.dart` theme modes",
+      "required_treatment": "",
+      "candidate_step_55_account": "55.10 system-theme reactivity; 55.11 runtime verification."
+    },
+    "FC-54.10a-011": {
+      "id": "FC-54.10a-011",
+      "substep": "54.10a",
+      "sequence": 11,
+      "verdict": "Aligned",
+      "verdict_class": "Aligned",
+      "area": "Theme structural consistency",
+      "summary": "Both themes render every surface with matching structure: light artifacts average ~RGB(255,248,255) and dark ~RGB(22,14,24), with the same layout and no clipping/overlap observed at either viewport.",
+      "source_summary": "Both themes render every surface with matching structure: light artifacts average ~RGB(255,248,255) and dark ~RGB(22,14,24), with the same layout and no clipping/overlap observed at either viewport.",
+      "evidence": "artifacts 02–19; mean-RGB per artifact",
+      "evidence_status": "artifacts 02–19; mean-RGB per artifact",
+      "required_treatment": "",
+      "candidate_step_55_account": "Preserve and regression-test in 55.11."
+    },
+    "FC-54.10a-012": {
+      "id": "FC-54.10a-012",
+      "substep": "54.10a",
+      "sequence": 12,
+      "verdict": "Unverified",
+      "verdict_class": "Unverified",
+      "area": "Colour contrast",
+      "summary": "WCAG contrast ratios were not measured; artifacts exist but no ratio computation was run.",
+      "source_summary": "WCAG contrast ratios were not measured; artifacts exist but no ratio computation was run. Blocker: no contrast tooling executed in this pass — do not claim AA contrast from these PNGs.",
+      "evidence": "—",
+      "evidence_status": "— Blocker remains explicit; see evidence_debt.",
+      "required_treatment": "",
+      "candidate_step_55_account": "55.11 contrast measurement."
+    },
+    "FC-54.10a-013": {
+      "id": "FC-54.10a-013",
+      "substep": "54.10a",
+      "sequence": 13,
+      "verdict": "Unverified",
+      "verdict_class": "Unverified",
+      "area": "Motion & reduced-motion",
+      "summary": "Doc 07's 150–200ms motion and reduced-motion honouring could not be evidenced with a still-capture harness.",
+      "source_summary": "Doc 07's 150–200ms motion and reduced-motion honouring could not be evidenced with a still-capture harness. Blocker: no frame-timing/reduced-motion probe available.",
+      "evidence": "—",
+      "evidence_status": "— Blocker remains explicit; see evidence_debt.",
+      "required_treatment": "",
+      "candidate_step_55_account": "55.11 motion and reduced-motion measurement."
+    },
+    "FC-54.10a-014": {
+      "id": "FC-54.10a-014",
+      "substep": "54.10a",
+      "sequence": 14,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Form presentation (D1/D2)",
+      "summary": "The benchmark entry form renders as a full pushed page at both viewports, not the locked right-side sheet (Web, D1) or bottom sheet (Android, D2), and no scrim/modal is present — despite the route being URL-backed.",
+      "source_summary": "The benchmark entry form renders as a full pushed page at both viewports, not the locked right-side sheet (Web, D1) or bottom sheet (Android, D2), and no scrim/modal is present — despite the route being URL-backed. Corroborates FC-54.1-005; STEP-55 owns the fix.",
+      "evidence": "artifacts 07–10; `router.dart:290-299`",
+      "evidence_status": "artifacts 07–10; `router.dart:290-299` Citation re-resolution: Pass — benchmark form is still a GoRoute page builder at router.dart:290–299; runtime artifacts prove full-page presentation.",
+      "required_treatment": "",
+      "candidate_step_55_account": "55.0 responsive-sheet contract and 55.4 Benchmark integration."
+    },
+    "FC-54.10a-015": {
+      "id": "FC-54.10a-015",
+      "substep": "54.10a",
+      "sequence": 15,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Report presentation (D6)",
+      "summary": "“Reports” resolves to a standalone `/reports/config` route showing a type picker outside the shell (no sidebar/bottom bar), not the contextual `FDialog` bound to a list's `ReportType`; opening it loses the originating feature/filter context.",
+      "source_summary": "“Reports” resolves to a standalone `/reports/config` route showing a type picker outside the shell (no sidebar/bottom bar), not the contextual `FDialog` bound to a list's `ReportType`; opening it loses the originating feature/filter context. Corroborates FC-54.1-006.",
+      "evidence": "artifacts 11–14; `router.dart:489-509`",
+      "evidence_status": "artifacts 11–14; `router.dart:489-509` Citation re-resolution: Pass — report config remains a standalone type-picker/page route at router.dart:489–509; runtime artifacts prove context loss.",
+      "required_treatment": "",
+      "candidate_step_55_account": "55.1 contextual report dialog and feature integrations."
+    },
+    "FC-54.10a-016": {
+      "id": "FC-54.10a-016",
+      "substep": "54.10a",
+      "sequence": 16,
+      "verdict": "ESCALATION — secrets boundary",
+      "verdict_class": "Escalation",
+      "area": "Android run / logging",
+      "summary": "Android debug HTTP logging emitted the Supabase anon key in full; raw output was destroyed and the run stopped.",
+      "source_summary": "The Android debug run's own FINEST-level logging emitted the full 208-char Supabase anon key in cleartext (`apikey` + `Authorization` headers) on two log lines, matching `.env` `SUPABASE_ANON_KEY` by hash. Per the substep's hard boundary, the run was stopped. (Anon keys are publishable by design, but the boundary is explicit and the logging is a hygiene signal.) The raw log was destroyed; a redacted copy is kept at `.scratch-tmp/54.10a/android-run.redacted.log`.",
+      "evidence": "hash-equality check (value never printed); `.env`",
+      "evidence_status": "hash-equality check (value never printed); `.env`",
+      "required_treatment": "",
+      "candidate_step_55_account": "55.11 logging-hygiene gate before another Android evidence run, or a dedicated security ticket."
+    },
+    "FC-54.10a-017": {
+      "id": "FC-54.10a-017",
+      "substep": "54.10a",
+      "sequence": 17,
+      "verdict": "ESCALATION — privacy compliance",
+      "verdict_class": "Escalation",
+      "area": "Login consent",
+      "summary": "Runtime captures and AX output confirm the privacy notice/consent gate is absent.",
+      "source_summary": "The In-app Privacy Notice is still absent at runtime: no link, checkbox, or first-use gate on the login surface in either theme/viewport, and the AX tree exposes none — RISK-0011 / DR-0003 / Doc 17 §3 remain open and this is a pre-release gate.",
+      "evidence": "artifacts 01/17/18/19; AX tree §3.1; `risks.yml:RISK-0011`",
+      "evidence_status": "artifacts 01/17/18/19; AX tree §3.1; `risks.yml:RISK-0011`",
+      "required_treatment": "",
+      "candidate_step_55_account": "55.10 pre-release privacy-consent gate; content requires product/legal approval."
+    },
+    "FC-54.10a-018": {
+      "id": "FC-54.10a-018",
+      "substep": "54.10a",
+      "sequence": 18,
+      "verdict": "Needs polish",
+      "verdict_class": "Needs polish",
+      "area": "Header identity",
+      "summary": "The desktop header profile is hardcoded to “Pengguna” / “Foreman” for every session, while the authenticated account is a Supervisor and Settings shows the real “Alex Supervisor / Supervisor”.",
+      "source_summary": "The desktop header profile is hardcoded to “Pengguna” / “Foreman” for every session, while the authenticated account is a Supervisor and Settings shows the real “Alex Supervisor / Supervisor”. Every user is shown a wrong name and role on the shared shell.",
+      "evidence": "`global_app_header.dart:416,423`; Settings dump §2; vision of artifact 02",
+      "evidence_status": "`global_app_header.dart:416,423`; Settings dump §2; vision of artifact 02",
+      "required_treatment": "",
+      "candidate_step_55_account": "55.10 authenticated header identity."
+    },
+    "FC-54.10a-019": {
+      "id": "FC-54.10a-019",
+      "substep": "54.10a",
+      "sequence": 19,
+      "verdict": "Needs restructure",
+      "verdict_class": "Needs restructure",
+      "area": "Detector no-signal",
+      "summary": "The CanvasKit UI is invisible to the DOM/CSS detector; its only URL hit was a hidden-probe false positive.",
+      "source_summary": "The skill's mechanical detector cannot see this UI: `[]` on Dart source, and its only live hit (`wide-tracking 6.25em`) is a false positive on a hidden Flutter text-measurement `<p>`. A “no anti-patterns found” result must never be reported as design verification for this app.",
+      "evidence": "§4; CanvasKit shadow-DOM canvas proof",
+      "evidence_status": "§4; CanvasKit shadow-DOM canvas proof Citation re-resolution: Pass — runtime detector/CanvasKit finding; no branch-head source relocation is required.",
+      "required_treatment": "",
+      "candidate_step_55_account": "55.11 evidence-method constraint; not an application feature backlog item."
+    }
+  },
+  "restructure_citation_resolution": {
+    "FC-54.9-001": {
+      "status": "pass",
+      "adjudication": "list still uses MaterialPageRoute at 320–334 and 367–379 while named child routes exist at router.dart:183–215."
+    },
+    "FC-54.9-002": {
+      "status": "pass",
+      "adjudication": "upload remains a full FScaffold at 310–336; no PopScope is present in the file."
+    },
+    "FC-54.9-003": {
+      "status": "pass",
+      "adjudication": "upload back action remains disabled while uploading at 326–330; no cancel action is exposed."
+    },
+    "FC-54.10-001": {
+      "status": "pass",
+      "adjudication": "_StatCard remains presentation-only at 143–231 with no action callback."
+    },
+    "FC-54.10-002": {
+      "status": "pass",
+      "adjudication": "DashboardCubit still fetches exactly four sources at 49–55 and emits four KPI fields at 57–64."
+    },
+    "FC-54.10-003": {
+      "status": "pass",
+      "adjudication": "failure still uses the same '-' value path as loading at dashboard_page.dart:56–93."
+    },
+    "FC-54.10-005": {
+      "status": "pass",
+      "adjudication": "initial/loading remain conflated at 56–58 and success zero has no first-use branch."
+    },
+    "FC-54.10-006": {
+      "status": "pass",
+      "adjudication": "mobile header remains dashboard-only at app_shell.dart:397–398 and the five tabs remain 47–57."
+    },
+    "FC-54.10-012": {
+      "status": "pass",
+      "adjudication": "profile remains display-only at settings_page.dart:408–453."
+    },
+    "FC-54.10a-001": {
+      "status": "pass",
+      "adjudication": "desktop shell still builds the sidebar/header at app_shell.dart:300–370; runtime AX evidence remains authoritative for the missing exposure."
+    },
+    "FC-54.10a-002": {
+      "status": "pass",
+      "adjudication": "source Semantics wrappers still exist in global_app_header.dart; runtime AX evidence remains authoritative because they do not survive rendering."
+    },
+    "FC-54.10a-003": {
+      "status": "pass",
+      "adjudication": "login fields remain at login_page.dart:128–149; runtime AX names remain authoritative."
+    },
+    "FC-54.10a-005": {
+      "status": "pass",
+      "adjudication": "runtime-only language observation; all-artifact evidence remains the citation because no app source sets the Web document language here."
+    },
+    "FC-54.10a-008": {
+      "status": "pass",
+      "adjudication": "source reachability remains app_shell.dart:47–57,397–398; runtime AX evidence confirms neither effective entry is exposed."
+    },
+    "FC-54.10a-009": {
+      "status": "pass",
+      "adjudication": "_StatCard remains non-actionable at dashboard_page.dart:143–231; runtime AX evidence confirms no role/action."
+    },
+    "FC-54.10a-014": {
+      "status": "pass",
+      "adjudication": "benchmark form is still a GoRoute page builder at router.dart:290–299; runtime artifacts prove full-page presentation."
+    },
+    "FC-54.10a-015": {
+      "status": "pass",
+      "adjudication": "report config remains a standalone type-picker/page route at router.dart:489–509; runtime artifacts prove context loss."
+    },
+    "FC-54.10a-019": {
+      "status": "pass",
+      "adjudication": "runtime detector/CanvasKit finding; no branch-head source relocation is required."
+    }
+  },
+  "cross_finding_reconciliation": [
+    {
+      "finding_ids": [
+        "FC-54.10-001",
+        "FC-54.10a-009"
+      ],
+      "decision": "Confirmed and strengthened by runtime FC-54.10a-009; keep both IDs and implement one KPI-interactivity work item."
+    },
+    {
+      "finding_ids": [
+        "FC-54.10-006",
+        "FC-54.10a-008"
+      ],
+      "decision": "Confirmed and broadened by runtime FC-54.10a-008; one cross-platform notification-reachability work item owns both IDs."
+    },
+    {
+      "finding_ids": [
+        "FC-54.10-018",
+        "FC-54.10a-017"
+      ],
+      "decision": "Same compliance gap as runtime FC-54.10a-017; keep both IDs, with 54.10a supplying runtime proof."
+    },
+    {
+      "finding_ids": [
+        "FC-54.10-021",
+        "FC-54.10a-004"
+      ],
+      "decision": "Confirmed by runtime FC-54.10a-004; treat the runtime verdict as the stronger evidence and retain both IDs."
+    },
+    {
+      "finding_ids": [
+        "FC-54.10-023",
+        "FC-54.10a-001",
+        "FC-54.10a-002",
+        "FC-54.10a-003",
+        "FC-54.10a-004",
+        "FC-54.10a-006",
+        "FC-54.10a-011",
+        "FC-54.10a-012",
+        "FC-54.10a-013"
+      ],
+      "decision": "Partially closed by 54.10a: focus/semantics, touch targets, and theme structure now have verdicts; contrast and motion remain Unverified."
+    },
+    {
+      "finding_ids": [
+        "FC-54.10-024"
+      ],
+      "decision": "Static hardcoded-string finding remains; runtime locale switching was not exercised, so the runtime-effect portion remains Unverified."
+    },
+    {
+      "finding_ids": [
+        "FC-54.9-001",
+        "FC-54.9-002"
+      ],
+      "decision": "Preserve the Data Bucket /:id route and render the list beneath a Web right-side inspector or Mobile bottom-sheet inspector."
+    },
+    {
+      "finding_ids": [
+        "FC-54.9-007",
+        "FC-54.9-008"
+      ],
+      "decision": "Preserve Work Timeline as read-only and preserve the deliberate report absence; no milestone-entry sheet is required this release."
+    },
+    {
+      "finding_ids": [
+        "FC-54.10a-019"
+      ],
+      "decision": "Carry as an evidence-method constraint in the master spec and STEP-55.11 procedure, not as an application feature backlog item."
+    },
+    {
+      "finding_ids": [
+        "FC-54.10a-016"
+      ],
+      "decision": "Keep separate from the privacy-consent gate; suppress/redact authorization-header logging before another Android evidence run."
+    }
+  ],
+  "d7_decisions": [
+    {
+      "feature": "Data Bucket",
+      "verdict": "inspector_sheet",
+      "finding_ids": [
+        "FC-54.9-001",
+        "FC-54.9-002"
+      ],
+      "rationale": "Preserve /:id deep links with the list beneath a Web right-side inspector or Mobile bottom sheet.",
+      "step_55": "55.9"
+    },
+    {
+      "feature": "Work Timeline",
+      "verdict": "n_a_read_only",
+      "finding_ids": [
+        "FC-54.9-007"
+      ],
+      "rationale": "Read-mostly timeline with no justified milestone-entry form.",
+      "step_55": "55.9"
+    },
+    {
+      "feature": "Dashboard",
+      "verdict": "n_a",
+      "finding_ids": [],
+      "rationale": "Aggregate KPI display, not a record-detail surface.",
+      "step_55": "55.10"
+    },
+    {
+      "feature": "Notification Center",
+      "verdict": "no_separate_inspector",
+      "finding_ids": [
+        "FC-54.10-008"
+      ],
+      "rationale": "Each notification card is self-contained and acts as its own detail.",
+      "step_55": "55.10"
+    },
+    {
+      "feature": "Settings",
+      "verdict": "n_a",
+      "finding_ids": [],
+      "rationale": "Inline settings groups, not record detail.",
+      "step_55": "55.10"
+    },
+    {
+      "feature": "Login",
+      "verdict": "n_a",
+      "finding_ids": [],
+      "rationale": "Pre-authentication surface.",
+      "step_55": "55.10"
+    }
+  ],
+  "report_decisions": [
+    {
+      "features": [
+        "Data Bucket",
+        "Work Timeline"
+      ],
+      "decision": "deliberate_absence",
+      "finding_ids": [
+        "FC-54.9-008"
+      ],
+      "step_55": "55.9"
+    },
+    {
+      "features": [
+        "Benchmark Database and report-enabled features"
+      ],
+      "decision": "contextual_dialog_required",
+      "finding_ids": [
+        "FC-54.10a-015"
+      ],
+      "step_55": "55.1"
+    }
+  ],
+  "evidence_debt": [
+    {
+      "finding_ids": [
+        "FC-54.9-010"
+      ],
+      "blocker": "Data Bucket keyboard traversal and contrast were not run.",
+      "obligation": "Verify on Chrome and Pixel_6a in STEP-55.11."
+    },
+    {
+      "finding_ids": [
+        "FC-54.10-023"
+      ],
+      "blocker": "54.10a sampled semantics/focus, touch targets, and theme structure but did not exhaustively cover text scaling or every surface.",
+      "obligation": "Complete per-surface accessibility audit in STEP-55.11."
+    },
+    {
+      "finding_ids": [
+        "FC-54.10-024"
+      ],
+      "blocker": "Source confirms hardcoded strings, but runtime locale switching was not exercised.",
+      "obligation": "Exercise the locale toggle and record exactly which labels change."
+    },
+    {
+      "finding_ids": [
+        "FC-54.10a-012"
+      ],
+      "blocker": "No WCAG contrast measurement was run.",
+      "obligation": "Measure contrast ratios; screenshots alone are not a pass."
+    },
+    {
+      "finding_ids": [
+        "FC-54.10a-013"
+      ],
+      "blocker": "Still captures cannot measure motion timing or reduced-motion behavior.",
+      "obligation": "Measure timing and test reduced-motion handling."
+    },
+    {
+      "finding_ids": [
+        "FC-54.10a-016"
+      ],
+      "blocker": "Authenticated Android capture stopped when HTTP logging crossed the secrets boundary.",
+      "obligation": "Suppress/redact authorization-header logging, then capture the authenticated Android shell; narrow Web is not a substitute."
+    }
+  ],
+  "escalations": [
+    {
+      "finding_ids": [
+        "FC-54.10-018",
+        "FC-54.10a-017"
+      ],
+      "gate": "privacy_notice_and_consent",
+      "release_blocking": true,
+      "decision": "Implement and approve first-use privacy notice/consent before release."
+    },
+    {
+      "finding_ids": [
+        "FC-54.10a-016"
+      ],
+      "gate": "authorization_header_logging",
+      "release_blocking": false,
+      "evidence_run_blocking": true,
+      "decision": "Suppress or redact HTTP authorization-header logging before another Android evidence run."
+    }
+  ],
+  "verification": {
+    "parsed_source_findings": {
+      "status": "pass",
+      "count": 53,
+      "by_substep": {
+        "54.9": 10,
+        "54.10": 24,
+        "54.10a": 19
+      }
+    },
+    "id_uniqueness_and_continuity": {
+      "status": "pass",
+      "duplicates": [],
+      "missing": []
+    },
+    "verdict_accounting": {
+      "status": "pass",
+      "by_class": {
+        "Needs restructure": 18,
+        "Aligned": 12,
+        "Needs polish": 15,
+        "Unverified": 5,
+        "Escalation": 3
+      }
+    },
+    "verdict_vocabulary": {
+      "status": "pass"
+    },
+    "restructure_citations": {
+      "status": "pass",
+      "checked": 18,
+      "struck": 0
+    },
+    "cross_substep_overlap": {
+      "status": "pass",
+      "adjudication_count": 10,
+      "findings_dropped": 0
+    },
+    "d7_and_report_decisions": {
+      "status": "pass"
+    },
+    "application_code_modified": false,
+    "durable_docs_modified": false,
+    "final_step_54_accounting_claimed": false
+  },
+  "limitations": [
+    "This slice is not the final STEP-54.11 master polish specification, Doc 07 v0.5.0 bump, risk reconciliation, user review gate, or STEP close.",
+    "Source was checked at app head fe12531; later app changes require citation re-resolution.",
+    "Android authenticated-shell evidence remains blocked by FC-54.10a-016.",
+    "Contrast, motion/reduced-motion, comprehensive text scaling, and runtime locale switching remain explicit evidence debt.",
+    "The CanvasKit UI is invisible to the DOM/CSS detector; a clean detector result is not design verification."
+  ]
+}

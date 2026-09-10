@@ -1,0 +1,594 @@
+{
+  "schema_version": "1.0.0",
+  "ledger_id": "mine-flow-step-54.0-54.4-findings",
+  "title": "mine-flow — STEP-54.0–54.4 Findings Ledger Slice",
+  "built": "2026-09-11",
+  "scope": "STEP-54.0 pre-flight plus every FC-54.* finding in STEP-54.1–54.4",
+  "purpose": "Verified input slice for STEP-54.11 consolidation; not the final master spec or STEP close.",
+  "source_document": "mine-flow-STEP-54.0-54.4-FINDINGS-LEDGER.md",
+  "inspected_app": {
+    "branch": "step-0054-feature-cohesion-critique",
+    "head": "fe12531931eed861518b20f7323c6cf6bd0ccb8b",
+    "working_tree": "clean"
+  },
+  "preflight_54_0": {
+    "finding_count": 0,
+    "intentional_no_findings": true,
+    "baseline": {
+      "app_master_fast_forwarded_to": "fe12531",
+      "docs_main_fast_forwarded_to": "891ce66",
+      "step_53_evidence_archive_commit": "bc77632",
+      "analysis_issue_count": 0,
+      "format_changed_file_count": 0,
+      "tests_passed": 550,
+      "tests_skipped": 5,
+      "step_54_branches_cut": true
+    }
+  },
+  "accounting": {
+    "expected_finding_count": 33,
+    "actual_finding_count": 33,
+    "complete": true,
+    "duplicate_ids": [],
+    "missing_ids": [],
+    "by_substep": [
+      {
+        "substep": "54.0",
+        "source": "mine-flow-STEP-54.0-FINDINGS.md",
+        "finding_count": 0,
+        "id_range": null,
+        "result": "Pre-flight record accounted for; intentionally defines no critique IDs."
+      },
+      {
+        "substep": "54.1",
+        "source": "mine-flow-STEP-54.1-FINDINGS.md",
+        "finding_count": 10,
+        "id_range": {
+          "first": "FC-54.1-001",
+          "last": "FC-54.1-010"
+        },
+        "result": "Complete and unique."
+      },
+      {
+        "substep": "54.2",
+        "source": "mine-flow-STEP-54.2-FINDINGS.md",
+        "finding_count": 7,
+        "id_range": {
+          "first": "FC-54.2-001",
+          "last": "FC-54.2-007"
+        },
+        "result": "Complete and unique."
+      },
+      {
+        "substep": "54.3",
+        "source": "mine-flow-STEP-54.3-FINDINGS.md",
+        "finding_count": 7,
+        "id_range": {
+          "first": "FC-54.3-001",
+          "last": "FC-54.3-007"
+        },
+        "result": "Complete and unique."
+      },
+      {
+        "substep": "54.4",
+        "source": "mine-flow-STEP-54.4-FINDINGS.md",
+        "finding_count": 9,
+        "id_range": {
+          "first": "FC-54.4-001",
+          "last": "FC-54.4-009"
+        },
+        "result": "Complete and unique."
+      }
+    ],
+    "by_verdict": {
+      "Aligned": 2,
+      "Needs polish": 12,
+      "Needs restructure": 14,
+      "Unverified": 5
+    }
+  },
+  "verdict_vocabulary": [
+    "Aligned",
+    "Needs polish",
+    "Needs restructure",
+    "Unverified"
+  ],
+  "findings": {
+    "FC-54.1-001": {
+      "id": "FC-54.1-001",
+      "substep": "54.1",
+      "sequence": 1,
+      "verdict": "Needs restructure",
+      "area": "Mobile shell/header",
+      "summary": "The mobile shell renders the global header only on `/`, leaving group landings without the global controls available on the dashboard.",
+      "evidence_status": "Re-resolved: `app_shell.dart:383-423`; `group_landing_page.dart:23-79`.",
+      "candidate_step_55_account": "55.10 shell/header implementation."
+    },
+    "FC-54.1-002": {
+      "id": "FC-54.1-002",
+      "substep": "54.1",
+      "sequence": 2,
+      "verdict": "Needs polish",
+      "area": "Desktop sidebar state",
+      "summary": "Exact/prefix route matching does not provide a selected parent state on `/tools`, `/operations`, or `/teams`.",
+      "evidence_status": "Source citation retained from finding; no restructure re-check required.",
+      "candidate_step_55_account": "55.10 parent/group active-state acceptance criterion."
+    },
+    "FC-54.1-003": {
+      "id": "FC-54.1-003",
+      "substep": "54.1",
+      "sequence": 3,
+      "verdict": "Aligned",
+      "area": "Mobile primary navigation",
+      "summary": "The bottom bar exposes exactly the five Doc 07 destinations and delegates feature reachability to group landings.",
+      "evidence_status": "Source citation retained from finding.",
+      "candidate_step_55_account": "Preserve and regression-test in 55.10/55.11."
+    },
+    "FC-54.1-004": {
+      "id": "FC-54.1-004",
+      "substep": "54.1",
+      "sequence": 4,
+      "verdict": "Needs polish",
+      "area": "Desktop sidebar collapse",
+      "summary": "The sidebar can animate to zero width, but the collapsed state depends on the header toggle and lacks a persistent rail affordance.",
+      "evidence_status": "Source citation retained; runtime keyboard/visual behavior remains unverified.",
+      "candidate_step_55_account": "55.10 interaction polish; 55.11 runtime keyboard/focus check."
+    },
+    "FC-54.1-005": {
+      "id": "FC-54.1-005",
+      "substep": "54.1",
+      "sequence": 5,
+      "verdict": "Needs restructure",
+      "area": "D5 form routing",
+      "summary": "Several features either lack form routes or bypass existing GoRouter routes with `MaterialPageRoute`, so URL-backed form/detail reconstruction is incomplete.",
+      "evidence_status": "Re-resolved from the finding body and §5 route table; the original evidence cell says only “Citations in the Finding column.”",
+      "candidate_step_55_account": "55.0 route adapter plus the applicable feature substeps 55.2–55.9."
+    },
+    "FC-54.1-006": {
+      "id": "FC-54.1-006",
+      "substep": "54.1",
+      "sequence": 6,
+      "verdict": "Needs restructure",
+      "area": "D6 report navigation",
+      "summary": "Report actions push a standalone route with `ReportType` in `state.extra`, and refresh can fall back to the type picker instead of preserving feature context.",
+      "evidence_status": "Re-resolved: `router.dart:483-508`; representative callers still resolve.",
+      "candidate_step_55_account": "55.1 shared report dialog plus feature integrations."
+    },
+    "FC-54.1-007": {
+      "id": "FC-54.1-007",
+      "substep": "54.1",
+      "sequence": 7,
+      "verdict": "Needs polish",
+      "area": "Token boundary",
+      "summary": "Shell surfaces intentionally retain a narrow documented Material interoperability boundary that new sheet/dialog work must not expand.",
+      "evidence_status": "Source citation retained from finding.",
+      "candidate_step_55_account": "55.0/55.10 constraint; verify in 55.11 token sweep."
+    },
+    "FC-54.1-008": {
+      "id": "FC-54.1-008",
+      "substep": "54.1",
+      "sequence": 8,
+      "verdict": "Needs polish",
+      "area": "Localization",
+      "summary": "Shell, navigation, group, and header strings remain hardcoded and therefore do not follow locale changes consistently.",
+      "evidence_status": "Source citation retained from finding; already within RISK-0004.",
+      "candidate_step_55_account": "55.10; reconcile with RISK-0004 rather than opening a duplicate risk."
+    },
+    "FC-54.1-009": {
+      "id": "FC-54.1-009",
+      "substep": "54.1",
+      "sequence": 9,
+      "verdict": "Unverified",
+      "area": "Accessibility/visual states",
+      "summary": "Static semantics do not prove contrast, target size, focus order, text scaling, reduced motion, or dark-mode quality.",
+      "evidence_status": "Blocker retained: no valid runtime artifact in 54.1.",
+      "candidate_step_55_account": "55.11 runtime/a11y evidence debt."
+    },
+    "FC-54.1-010": {
+      "id": "FC-54.1-010",
+      "substep": "54.1",
+      "sequence": 10,
+      "verdict": "Unverified",
+      "area": "Responsive boundary",
+      "summary": "Source uses a consistent 800dp branch, but behavior at and around the breakpoint is not proven at runtime.",
+      "evidence_status": "Blocker retained: no runtime width sweep in 54.1.",
+      "candidate_step_55_account": "55.11 test immediately below/at/above 800dp."
+    },
+    "FC-54.2-001": {
+      "id": "FC-54.2-001",
+      "substep": "54.2",
+      "sequence": 1,
+      "verdict": "Needs restructure",
+      "area": "Cut/fill report / D6",
+      "summary": "The cut/fill report action opens the standalone report route and does not carry the active date/zone filters.",
+      "evidence_status": "Re-resolved: `cut_fill_list_screen.dart:133-136`; `report_config_page.dart:40-48`.",
+      "candidate_step_55_account": "55.1 and 55.2."
+    },
+    "FC-54.2-002": {
+      "id": "FC-54.2-002",
+      "substep": "54.2",
+      "sequence": 2,
+      "verdict": "Needs restructure",
+      "area": "Cut/fill form / D1–D2",
+      "summary": "Create and edit open a full `MaterialPageRoute` form rather than the responsive sheet contract.",
+      "evidence_status": "Re-resolved: `cut_fill_list_screen.dart:146-168,407-417`.",
+      "candidate_step_55_account": "55.0 and 55.2."
+    },
+    "FC-54.2-003": {
+      "id": "FC-54.2-003",
+      "substep": "54.2",
+      "sequence": 3,
+      "verdict": "Needs restructure",
+      "area": "Cut/fill route / D5",
+      "summary": "The router has `/operations/cut-fill` but no create/edit form child route.",
+      "evidence_status": "Re-resolved: `router.dart:257-267`.",
+      "candidate_step_55_account": "55.0 route contract and 55.2 implementation."
+    },
+    "FC-54.2-004": {
+      "id": "FC-54.2-004",
+      "substep": "54.2",
+      "sequence": 4,
+      "verdict": "Needs restructure",
+      "area": "Cut/fill dirty guard / D4",
+      "summary": "The BLoC tracks unsaved changes, but visible dismiss controls pop directly and the form has no `PopScope`/`WillPopScope` guard.",
+      "evidence_status": "Re-resolved: `cut_fill_bloc.dart:94-103,211-220`; `cut_fill_form_screen.dart:180-185,253-259`; whole-file guard scan returned none.",
+      "candidate_step_55_account": "55.0 universal guard and 55.2 wiring."
+    },
+    "FC-54.2-005": {
+      "id": "FC-54.2-005",
+      "substep": "54.2",
+      "sequence": 5,
+      "verdict": "Needs polish",
+      "area": "Cut/fill tokens",
+      "summary": "The cut/fill list/form retain Material FAB, date picker, and text-field primitives outside the target ForUI vocabulary.",
+      "evidence_status": "Source citation retained from finding.",
+      "candidate_step_55_account": "55.2 token cleanup."
+    },
+    "FC-54.2-006": {
+      "id": "FC-54.2-006",
+      "substep": "54.2",
+      "sequence": 6,
+      "verdict": "Aligned",
+      "area": "Cut/fill D7",
+      "summary": "Scalar cut/fill records can continue opening edit directly; a separate read-only inspector is not justified.",
+      "evidence_status": "Source citation retained from finding.",
+      "candidate_step_55_account": "Preserve as the D7 “no inspector” decision in 55.2."
+    },
+    "FC-54.2-007": {
+      "id": "FC-54.2-007",
+      "substep": "54.2",
+      "sequence": 7,
+      "verdict": "Unverified",
+      "area": "Cut/fill accessibility",
+      "summary": "Static labels do not prove touch targets, contrast, or focus behavior.",
+      "evidence_status": "Blocker retained: no runtime artifact in 54.2.",
+      "candidate_step_55_account": "55.11 runtime/a11y evidence debt."
+    },
+    "FC-54.3-001": {
+      "id": "FC-54.3-001",
+      "substep": "54.3",
+      "sequence": 1,
+      "verdict": "Needs restructure",
+      "area": "Land-clearing form / D1–D5",
+      "summary": "Create/edit use `MaterialPageRoute` and the form has no URL-backed sheet or dirty-dismiss guard.",
+      "evidence_status": "Re-resolved: `land_clearing_list_screen.dart:145-168,404-427`; `land_clearing_entry_screen.dart:247-268`; whole-file guard scan returned none.",
+      "candidate_step_55_account": "55.0 and 55.3."
+    },
+    "FC-54.3-002": {
+      "id": "FC-54.3-002",
+      "substep": "54.3",
+      "sequence": 2,
+      "verdict": "Needs polish",
+      "area": "Plan/Actual tab state",
+      "summary": "`DefaultTabController`/`TabBar` state is local, so form reconstruction does not retain the selected Plan/Actual tab.",
+      "evidence_status": "Source citation retained. Treat as form-state preservation, not as a substitute for the missing form route in FC-54.3-001.",
+      "candidate_step_55_account": "55.3; choose a stable route/query or explicit restoration contract."
+    },
+    "FC-54.3-003": {
+      "id": "FC-54.3-003",
+      "substep": "54.3",
+      "sequence": 3,
+      "verdict": "Needs polish",
+      "area": "Shared method combobox",
+      "summary": "The selection-only CF-043 contract is preserved, but the shared combobox always renders an inline list rather than adapting to mobile.",
+      "evidence_status": "Static structure resolves at `creatable_combobox.dart:319-362`; keyboard-occlusion impact remains unverified.",
+      "candidate_step_55_account": "55.3 platform adaptation; verify occlusion in 55.11 before claiming a runtime defect."
+    },
+    "FC-54.3-004": {
+      "id": "FC-54.3-004",
+      "substep": "54.3",
+      "sequence": 4,
+      "verdict": "Needs restructure",
+      "area": "Land-clearing report / D6",
+      "summary": "The report action pushes the standalone report route and does not preserve list filters.",
+      "evidence_status": "Re-resolved: `land_clearing_list_screen.dart:128-135`.",
+      "candidate_step_55_account": "55.1 and 55.3."
+    },
+    "FC-54.3-005": {
+      "id": "FC-54.3-005",
+      "substep": "54.3",
+      "sequence": 5,
+      "verdict": "Needs polish",
+      "area": "Land-clearing tokens",
+      "summary": "Form/list surfaces retain Material tabs, date pickers, FABs, and text fields outside the target component vocabulary.",
+      "evidence_status": "Source citation retained from finding.",
+      "candidate_step_55_account": "55.3 token cleanup."
+    },
+    "FC-54.3-006": {
+      "id": "FC-54.3-006",
+      "substep": "54.3",
+      "sequence": 6,
+      "verdict": "Needs restructure",
+      "area": "Land-clearing D7",
+      "summary": "A record tap opens the mixed Plan/Actual edit form directly, so the critique selects a read-only inspector before edit.",
+      "evidence_status": "Re-resolved: `land_clearing_list_screen.dart:400-427`. The original role-specific rationale (“field workers only…”) is not established by this citation and must not be carried forward as fact.",
+      "candidate_step_55_account": "55.3 inspector-sheet implementation, justified by inspection/edit separation and accidental-edit risk."
+    },
+    "FC-54.3-007": {
+      "id": "FC-54.3-007",
+      "substep": "54.3",
+      "sequence": 7,
+      "verdict": "Unverified",
+      "area": "Land-clearing accessibility",
+      "summary": "Tabs, summary cards, contrast, targets, and dark mode were not exercised at runtime.",
+      "evidence_status": "Blocker retained: no runtime artifact in 54.3.",
+      "candidate_step_55_account": "55.11 runtime/a11y evidence debt."
+    },
+    "FC-54.4-001": {
+      "id": "FC-54.4-001",
+      "substep": "54.4",
+      "sequence": 1,
+      "verdict": "Needs restructure",
+      "area": "Benchmark spatial validation",
+      "summary": "Failed coordinate projection can reach submit and is persisted as latitude/longitude `0.0, 0.0`, creating a data-integrity defect.",
+      "evidence_status": "Re-resolved: `benchmark_form_screen.dart:501-518`; `benchmark_bloc.dart:540-546`.",
+      "candidate_step_55_account": "55.4 priority-zero validation fix and targeted tests."
+    },
+    "FC-54.4-002": {
+      "id": "FC-54.4-002",
+      "substep": "54.4",
+      "sequence": 2,
+      "verdict": "Needs restructure",
+      "area": "Benchmark form / D1–D2",
+      "summary": "The benchmark form is a full routed `FScaffold`, not the required Web right sheet/mobile bottom sheet.",
+      "evidence_status": "Re-resolved: `benchmark_form_screen.dart:165-195`. **Qualification:** the original claim that this necessarily obscures the shell/sidebar is not supported; the route is nested under the shell.",
+      "candidate_step_55_account": "55.0 and 55.4; carry only the sheet-contract mismatch, not the obscured-shell claim."
+    },
+    "FC-54.4-003": {
+      "id": "FC-54.4-003",
+      "substep": "54.4",
+      "sequence": 3,
+      "verdict": "Needs polish",
+      "area": "Benchmark tokens",
+      "summary": "Benchmark surfaces retain Material FAB, refresh, and dropdown primitives.",
+      "evidence_status": "Source citation retained from finding.",
+      "candidate_step_55_account": "55.4 token cleanup."
+    },
+    "FC-54.4-004": {
+      "id": "FC-54.4-004",
+      "substep": "54.4",
+      "sequence": 4,
+      "verdict": "Needs polish",
+      "area": "Benchmark dirty guard / D4",
+      "summary": "Back/cancel paths dismiss without consulting dirty state, and the form has no universal pop guard.",
+      "evidence_status": "Source citation retained: `benchmark_form_screen.dart:165-188`; whole-file guard scan returned none.",
+      "candidate_step_55_account": "55.0 guard and 55.4 wiring."
+    },
+    "FC-54.4-005": {
+      "id": "FC-54.4-005",
+      "substep": "54.4",
+      "sequence": 5,
+      "verdict": "Needs polish",
+      "area": "Benchmark touch target",
+      "summary": "The delete control is a 20dp icon in a bare gesture detector without a demonstrated 48dp target.",
+      "evidence_status": "Source citation rechecked at `benchmark_list_screen.dart:504-517`.",
+      "candidate_step_55_account": "55.4; verify target geometry in 55.11."
+    },
+    "FC-54.4-006": {
+      "id": "FC-54.4-006",
+      "substep": "54.4",
+      "sequence": 6,
+      "verdict": "Needs restructure",
+      "area": "Benchmark report / D6",
+      "summary": "Benchmark reporting pushes the standalone route instead of opening a contextual dialog.",
+      "evidence_status": "Re-resolved: `benchmark_list_screen.dart:291-294`.",
+      "candidate_step_55_account": "55.1 and 55.4."
+    },
+    "FC-54.4-007": {
+      "id": "FC-54.4-007",
+      "substep": "54.4",
+      "sequence": 7,
+      "verdict": "Needs restructure",
+      "area": "Benchmark edit route / D5",
+      "summary": "The form route exists, but edit identity is supplied only through `state.extra`, so refresh/deep-link reconstruction cannot recover the selected benchmark.",
+      "evidence_status": "Re-resolved: `benchmark_list_screen.dart:390-393`; `router.dart:287-297`.",
+      "candidate_step_55_account": "55.0 route semantics and 55.4 ID-based loading."
+    },
+    "FC-54.4-008": {
+      "id": "FC-54.4-008",
+      "substep": "54.4",
+      "sequence": 8,
+      "verdict": "Needs polish",
+      "area": "Benchmark CRS UX",
+      "summary": "CRS labels omit datum context and projection failure copy does not explain how to recover.",
+      "evidence_status": "Source citation retained from finding.",
+      "candidate_step_55_account": "55.4 copy/selector/error-state polish."
+    },
+    "FC-54.4-009": {
+      "id": "FC-54.4-009",
+      "substep": "54.4",
+      "sequence": 9,
+      "verdict": "Unverified",
+      "area": "Benchmark runtime states",
+      "summary": "Empty/error visuals, keyboard insets, target geometry, and dark-mode contrast were not exercised at runtime.",
+      "evidence_status": "Blocker retained: no runtime artifact in 54.4.",
+      "candidate_step_55_account": "55.11 runtime/a11y evidence debt."
+    }
+  },
+  "restructure_citation_resolution": {
+    "FC-54.1-001": {
+      "status": "pass",
+      "adjudication": "Branch-head citation re-resolved; finding retained."
+    },
+    "FC-54.1-005": {
+      "status": "pass_with_qualification",
+      "adjudication": "The route gaps resolve, but the original evidence cell is not self-contained; use the citations in the finding text and source route table."
+    },
+    "FC-54.1-006": {
+      "status": "pass",
+      "adjudication": "Branch-head citation re-resolved; finding retained."
+    },
+    "FC-54.2-001": {
+      "status": "pass",
+      "adjudication": "Branch-head citation re-resolved; finding retained."
+    },
+    "FC-54.2-002": {
+      "status": "pass",
+      "adjudication": "Branch-head citation re-resolved; finding retained."
+    },
+    "FC-54.2-003": {
+      "status": "pass",
+      "adjudication": "Branch-head citation re-resolved; finding retained."
+    },
+    "FC-54.2-004": {
+      "status": "pass",
+      "adjudication": "Branch-head citation re-resolved; finding retained."
+    },
+    "FC-54.3-001": {
+      "status": "pass",
+      "adjudication": "Branch-head citation re-resolved; finding retained."
+    },
+    "FC-54.3-004": {
+      "status": "pass",
+      "adjudication": "Branch-head citation re-resolved; finding retained."
+    },
+    "FC-54.3-006": {
+      "status": "pass_with_qualification",
+      "adjudication": "Direct-to-edit behavior resolves. Do not carry the uncited assertion about planner/field-worker role exclusivity into the specification."
+    },
+    "FC-54.4-001": {
+      "status": "pass",
+      "adjudication": "Branch-head citation re-resolved; finding retained."
+    },
+    "FC-54.4-002": {
+      "status": "pass_with_qualification",
+      "adjudication": "Full FScaffold versus responsive sheet resolves. Strike the unsupported “obscures the shell/sidebar” clause."
+    },
+    "FC-54.4-006": {
+      "status": "pass",
+      "adjudication": "Branch-head citation re-resolved; finding retained."
+    },
+    "FC-54.4-007": {
+      "status": "pass",
+      "adjudication": "Branch-head citation re-resolved; finding retained."
+    }
+  },
+  "cross_finding_reconciliation": [
+    {
+      "finding_ids": [
+        "FC-54.1-005",
+        "FC-54.2-003",
+        "FC-54.3-001",
+        "FC-54.4-007"
+      ],
+      "decision": "FC-54.1-005 is the umbrella D5 finding; preserve feature-specific IDs for local traceability."
+    },
+    {
+      "finding_ids": [
+        "FC-54.1-006",
+        "FC-54.2-001",
+        "FC-54.3-004",
+        "FC-54.4-006"
+      ],
+      "decision": "FC-54.1-006 is the umbrella D6 finding; preserve feature-specific IDs for each integration."
+    },
+    {
+      "finding_ids": [
+        "FC-54.2-004",
+        "FC-54.3-001",
+        "FC-54.4-004"
+      ],
+      "decision": "Adopt the universal D4 guard without inferring one shared dirty-state implementation; current feature evidence differs."
+    },
+    {
+      "finding_ids": [
+        "FC-54.4-006"
+      ],
+      "decision": "Benchmark reporting is present and must be listed as needing D6 migration; it is not a deliberate report absence."
+    },
+    {
+      "finding_ids": [
+        "FC-54.1-009",
+        "FC-54.1-010",
+        "FC-54.2-007",
+        "FC-54.3-007",
+        "FC-54.4-009"
+      ],
+      "decision": "Retain Unverified status until later runtime evidence explicitly closes each blocker."
+    }
+  ],
+  "d7_decisions": [
+    {
+      "feature": "Cut & Fill Volume Tracking",
+      "verdict": "no_separate_inspector",
+      "finding_ids": [
+        "FC-54.2-006"
+      ],
+      "step_55": "55.2"
+    },
+    {
+      "feature": "Land Clearing Tracking",
+      "verdict": "inspector_sheet",
+      "finding_ids": [
+        "FC-54.3-006"
+      ],
+      "step_55": "55.3"
+    },
+    {
+      "feature": "Benchmark Database",
+      "verdict": "inspector_sheet",
+      "finding_ids": [
+        "FC-54.4-002"
+      ],
+      "step_55": "55.4"
+    }
+  ],
+  "verification": {
+    "parsed_source_findings": {
+      "status": "pass",
+      "count": 33,
+      "by_substep": {
+        "54.1": 10,
+        "54.2": 7,
+        "54.3": 7,
+        "54.4": 9
+      }
+    },
+    "id_uniqueness_and_continuity": {
+      "status": "pass",
+      "duplicates": [],
+      "missing": []
+    },
+    "verdict_vocabulary": {
+      "status": "pass"
+    },
+    "restructure_citations": {
+      "status": "pass_with_qualifications",
+      "checked": 14,
+      "struck": 0
+    },
+    "preflight_54_0_accounted_for": {
+      "status": "pass"
+    },
+    "d7_slice_complete": {
+      "status": "pass"
+    },
+    "application_code_modified": false,
+    "final_step_54_accounting_claimed": false
+  },
+  "limitations": [
+    "This slice is not the final STEP-54.11 master polish specification, Doc 07 v0.5.0 bump, risk reconciliation, user review gate, or STEP close.",
+    "Source was checked at app head fe12531; later app changes require citation re-resolution.",
+    "No runtime evidence was added; original visual, accessibility, and runtime blockers remain explicit."
+  ]
+}
