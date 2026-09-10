@@ -302,13 +302,13 @@ worked, and completed.
 
 ### STEP-52 substeps
 
-> PLAN: `Upcoming Prompts/mine-flow-STEP-52-PLAN.md` (authored 2026-09-10).
-> Work on branch `step-0052-security-baseline-recheck`. S0 Security Baseline
+> PLAN: archived at `prompts/003-release-readiness-integration-scale/step-0052/mine-flow-STEP-52-PLAN.md` (authored 2026-09-10).
+> Work on branch `step-0052-security-baseline-recheck` (merged to `master` and `main` across repos, branch deleted). S0 Security Baseline
 > re-run from `runbooks/security-review.md` + `runbooks/security-review-s0-checklist.md`.
 
 | # | Title | Status | Evidence |
 |---|-------|--------|----------|
-| 52.1 | Security baseline surface audit & risk adjudication | Done | Findings in `Upcoming Prompts/mine-flow-STEP-52.1-FINDINGS.md`; `.env.example` updated (`6fbce5e`); `.github/workflows/ci.yml` wired (`be44843`); 11/11 tables RLS audited (FINDING-52.1-01 identified); RISK-0021 adjudicated; 34 S0 checklist rows complete |
+| 52.1 | Security baseline surface audit & risk adjudication | Done | Findings in `prompts/003-release-readiness-integration-scale/step-0052/mine-flow-STEP-52.1-FINDINGS.md`; `.env.example` updated (`6fbce5e`); `.github/workflows/ci.yml` wired (`be44843`); 11/11 tables RLS audited (FINDING-52.1-01 identified); RISK-0021 adjudicated; 34 S0 checklist rows complete |
 | 52.2 | S0 report, registry & doc updates, verification & close | Done | Published report `2026-09-10-step-0052-s0-security-baseline-report.md`; updated risks and reviews registries; bumped threat model version; tests passed and STEP closed |
 
 ### STEP-51 substeps
