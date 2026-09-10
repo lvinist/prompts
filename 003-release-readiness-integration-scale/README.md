@@ -26,5 +26,6 @@ STEP numbers are global (they don't reset per phase).
 | STEP-50 | Phase 3 Check-in (post-STEP-47 dependency overhaul) | 50.1, 50.2 | 2026-09-08 |
 | STEP-49 | Throughstone Template Hardening (process feedback) | 49.0..49.5 | 2026-09-09 |
 | STEP-51 | UI Debt Closure — CF-087 Material remainder & STEP-46.4 regression coverage | 51.1..51.10 | 2026-09-10 |
+| STEP-52 | Security Baseline re-check (post-STEP-48) | 52.1, 52.2 | 2026-09-10 |
 
 <!-- Add a row when a STEP's folder is moved into this phase on completion. -->
