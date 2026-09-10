@@ -319,8 +319,8 @@ worked, and completed.
 | # | Title | Status | Model | Evidence / deliverables |
 |---|---|---|---|---|
 | 53.1 | `hive_ce` maintenance and Dart-4 trajectory audit | Done | Gemini 3.7 Flash High | Findings in `Upcoming Prompts/mine-flow-STEP-53.1-FINDINGS.md`: hive_ce 2.19.3 (2026-02-03) verified; Dart-4 upper bound (^3.4.0) documented; RISK-0007 monitoring recommended |
-| 53.2 | Flutter #191587 / forui regression follow-up | Planned | Gemini 3.1 Pro High | Stable-release check, focused mitigation regression evidence, RISK-0009 recommendation |
-| 53.3 | Safe dependency and lockfile maintenance | Planned | Gemini 3.1 Pro High | Justified compatible updates or documented deferrals; synchronized lockfile; RISK-0020 recommendation |
+| 53.2 | Flutter #191587 / forui regression follow-up | Done | Gemini 3.1 Pro High | Findings in `Upcoming Prompts/mine-flow-STEP-53.2-FINDINGS.md`: stable fix NOT shipped (3.47.2 < fix date); 3 mitigations confirmed; 16/16 focused tests passed; no source changes; RISK-0009 monitoring recommended |
+| 53.3 | Safe dependency and lockfile maintenance | Done | Gemini 3.1 Pro High | Findings in `Upcoming Prompts/mine-flow-STEP-53.3-FINDINGS.md`: 5 direct + 7 transitive packages upgraded within declared ranges; `FakePlatformFile.lengthSync` added for file_picker_platform_interface 3.3.0 API change; 550/550 tests passed; RISK-0020 updated; zero overrides |
 | 53.4 | Verification, risk reconciliation, and STEP close | Planned | Hermes/Claude Opus 4.8 | Final gates, risk/doc reconciliation, close record, index/phase/archive updates |
 
 ### STEP-51 substeps
