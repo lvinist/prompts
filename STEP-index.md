@@ -308,7 +308,7 @@ worked, and completed.
 
 | # | Title | Status | Evidence |
 |---|-------|--------|----------|
-| 52.1 | Security baseline surface audit & risk adjudication | In progress | |
+| 52.1 | Security baseline surface audit & risk adjudication | Done | Findings in `Upcoming Prompts/mine-flow-STEP-52.1-FINDINGS.md`; `.env.example` updated (`6fbce5e`); 11/11 tables RLS verified; RISK-0021 adjudicated; 34 S0 checklist rows complete |
 | 52.2 | S0 report, registry & doc updates, verification & close | Planned | |
 
 ### STEP-51 substeps
