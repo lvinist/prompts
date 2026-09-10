@@ -333,7 +333,7 @@ worked, and completed.
 |---|-------|--------|-------|-------------------------|
 | 54.0 | Pre-flight: STEP-53 merge reconciliation & clean trunk | In progress | Hermes/Claude Opus 4.8 | Merge unmerged step-0053 branches (app `fe12531`, docs `891ce66`), verify 550/550 baseline, cut STEP-54 branch, flip index row |
 | 54.1 | Critique rubric, token vocabulary & shell/navigation foundation critique | Planned | Hermes/Claude Opus 4.8 | Rubric (dimensions, `FC-54.M-NNN` IDs, verdicts) + shell/nav critique in `Upcoming Prompts/mine-flow-STEP-54.1-FINDINGS.md` |
-| 54.2 | Operations 1 — Cut & Fill Volume Tracking critique | Planned | Gemini 3.1 Pro High | Findings in `Upcoming Prompts/mine-flow-STEP-54.2-FINDINGS.md` |
+| 54.2 | Operations 1 — Cut & Fill Volume Tracking critique | Done | Gemini 3.1 Pro High | Findings in `Upcoming Prompts/mine-flow-STEP-54.2-FINDINGS.md` |
 | 54.3 | Operations 2 — Land Clearing Tracking critique | Planned | Gemini 3.1 Pro High | Findings in `Upcoming Prompts/mine-flow-STEP-54.3-FINDINGS.md` |
 | 54.4 | Operations 3 — Benchmark Database critique | Planned | Gemini 3.1 Pro High | Findings in `Upcoming Prompts/mine-flow-STEP-54.4-FINDINGS.md` |
 | 54.5 | Teams 1 — Crew Attendance critique | Planned | Gemini 3.1 Pro High | Findings in `Upcoming Prompts/mine-flow-STEP-54.5-FINDINGS.md` |
