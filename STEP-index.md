@@ -352,8 +352,8 @@ worked, and completed.
 
 | # | Title | Status | Model | Evidence / deliverables |
 |---|---|---|---|---|
-| 55.0 | Shared responsive interaction foundation | Planned | Hermes/Claude Opus 4.8 | Shared D1–D5 sheet, dirty-dismiss, inspector, filter/calendar, status/state/accessibility primitives and route tests. |
-| 55.1 | Contextual report dialog architecture | Planned | Gemini 3.1 Pro High | Shared pre-bound report dialog/config content and compatibility handling. |
+| 55.0 | Shared responsive interaction foundation | Done | Hermes/Claude Opus 4.8 | Shared D1–D5 sheet, dirty-dismiss, inspector, filter/calendar, status/state/accessibility primitives and route tests. |
+| 55.1 | Contextual report dialog architecture | Done | Gemini 3.1 Pro High | Shared pre-bound report dialog/config content and compatibility handling. |
 | 55.2 | Cut & Fill migration and polish | Planned | Gemini 3.7 Flash High | Route-backed forms, dirty guard, contextual report, ForUI/runtime polish. |
 | 55.3 | Land Clearing migration and polish | Planned | Gemini 3.1 Pro High | Restorable Plan/Actual routes, inspector, report, selector/layout polish. |
 | 55.4 | Benchmark integrity, inspector, and polish | Planned | Gemini 3.1 Pro High | P0 projection rejection, ID routes, inspector, CRS recovery, report. |
