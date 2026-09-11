@@ -356,7 +356,7 @@ worked, and completed.
 | 55.1 | Contextual report dialog architecture | Done | Gemini 3.1 Pro High | Shared pre-bound report dialog/config content and compatibility handling. |
 | 55.2 | Cut & Fill migration and polish | Planned | Gemini 3.7 Flash High | Route-backed forms, dirty guard, contextual report, ForUI/runtime polish. |
 | 55.3 | Land Clearing migration and polish | Planned | Gemini 3.1 Pro High | Restorable Plan/Actual routes, inspector, report, selector/layout polish. |
-| 55.4 | Benchmark integrity, inspector, and polish | Planned | Gemini 3.1 Pro High | P0 projection rejection, ID routes, inspector, CRS recovery, report. |
+| 55.4 | Benchmark integrity, inspector, and polish | Done | Gemini 3.1 Pro High | P0 projection rejection, ID routes, inspector, CRS recovery, report. |
 | 55.5 | Crew Attendance workflow rebuild | Planned | Gemini 3.1 Pro High | Nullable roster draft, four choices, conditional reasons, sync truth, batch sheet/report. |
 | 55.6 | Daily Log role-aware workflow and data contract | Planned | Hermes/Claude Opus 4.8 | Tabbed review/approval, structured hazards, autosave-safe sheet/report. |
 | 55.7 | Equipment Check migration and polish | Planned | Gemini 3.7 Flash High | Long SOP sheet, Web inspector/Android detail, status controls, report. |
