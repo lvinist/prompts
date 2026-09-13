@@ -359,7 +359,7 @@ worked, and completed.
 | 55.4 | Benchmark integrity, inspector, and polish | Done | Gemini 3.1 Pro High | P0 projection rejection, ID routes, inspector, CRS recovery, report. |
 | 55.5 | Crew Attendance workflow rebuild | Planned | Gemini 3.1 Pro High | Nullable roster draft, four choices, conditional reasons, sync truth, batch sheet/report. |
 | 55.6 | Daily Log role-aware workflow and data contract | Done | Hermes/Claude Opus 4.8 | Tabbed review/approval, structured hazards, autosave-safe sheet/report. |
-| 55.7 | Equipment Check migration and polish | Planned | Gemini 3.7 Flash High | Long SOP sheet, Web inspector/Android detail, status controls, report. |
+| 55.7 | Equipment Check migration and polish | Done | Gemini 3.7 Flash High | Long SOP sheet, Web inspector/Android detail, status controls, report. |
 | 55.8 | Inventory transaction integrity and polish | Planned | Gemini 3.1 Pro High | Atomic immutable ledger, history detail, item sheets, state/report polish. |
 | 55.9 | Data Bucket and Timeline cohesion | Planned | Gemini 3.7 Flash High | Authoritative upload/detail routes, cancellation/retry, inspector; Timeline preserved. |
 | 55.10 | Shell, dashboard, notifications, settings, and auth | Planned | Gemini 3.1 Pro High | Runtime semantics, identity/breadcrumbs, privacy gate, log redaction, profile and state polish. |
