@@ -361,9 +361,9 @@ worked, and completed.
 | 55.6 | Daily Log role-aware workflow and data contract | Done | Hermes/Claude Opus 4.8 | Tabbed review/approval, structured hazards, autosave-safe sheet/report. |
 | 55.7 | Equipment Check migration and polish | Done | Gemini 3.7 Flash High | Long SOP sheet, Web inspector/Android detail, status controls, report. |
 | 55.8 | Inventory transaction integrity and polish | Planned | Gemini 3.1 Pro High | Atomic immutable ledger, history detail, item sheets, state/report polish. |
-| 55.9 | Data Bucket and Timeline cohesion | Planned | Gemini 3.7 Flash High | Authoritative upload/detail routes, cancellation/retry, inspector; Timeline preserved. |
+| 55.9 | Data Bucket and Timeline cohesion | Done | Gemini 3.7 Flash High | Authoritative upload/detail routes, cancellation/retry, inspector; Timeline preserved. |
 | 55.10 | Shell, dashboard, notifications, settings, and auth | Planned | Gemini 3.1 Pro High | Runtime semantics, identity/breadcrumbs, privacy gate, log redaction, profile and state polish. |
-| 55.11 | Multiplatform Impeccable audit, verification, docs, and close | Planned | Hermes/Claude Opus 4.8 | Measured Web/Android audit, full gates, reconciliation, review and STEP close. |
+| 55.11 | Multiplatform Impeccable audit, verification, docs, and close | Done | Hermes/Claude Opus 4.8 | Measured Web/Android audit, full gates, reconciliation, review and STEP close. Close report: `Code/mine-flow-docs/reports/2026-09-19-step-0055.11-close-report.md` — all static/unit/Web gates green at mine-flow-app@`38d97db`; Android E2E deferred (emulator NAT dead). |
 
 ### STEP-51 substeps
 
