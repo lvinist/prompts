@@ -29,5 +29,6 @@ STEP numbers are global (they don't reset per phase).
 | STEP-52 | Security Baseline re-check (post-STEP-48) | 52.1, 52.2 | 2026-09-10 |
 | STEP-53 | Dependency Maintenance — hive_ce / forui / Flutter regression follow-ups | 53.1..53.4 | 2026-09-10 |
 | STEP-54 | Multiplatform Impeccable Feature-Cohesion Critique & Polish Spec | 54.0..54.11 incl. 54.10a | 2026-09-11 |
+| STEP-55 | Cohesive UI Rebuild — Form Sheets, Contextual Report Dialogs & Impeccable Audit | 55.0..55.11 | 2026-10-09 |
 
 <!-- Add a row when a STEP's folder is moved into this phase on completion. -->
