@@ -1,0 +1,27 @@
+waiting for server to start.... done
+server started
+BEGIN
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+SET
+  set_config   
+---------------
+ authenticated
+(1 row)
+
+              set_config              
+--------------------------------------
+ 55550000-0000-4000-8000-000000000011
+(1 row)
+
+ adjust_inventory 
+------------------
+ 
+(1 row)
+
+psql:D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/resume-20261006/timestamp-red-input.sql:28: ERROR:  REGRESSION: ledger audit timestamp trusts the client clock
+CONTEXT:  PL/pgSQL function inline_code_block line 6 at RAISE
+waiting for server to shut down.... done
+server stopped

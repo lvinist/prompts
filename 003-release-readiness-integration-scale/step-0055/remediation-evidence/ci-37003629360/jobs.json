@@ -1,0 +1,587 @@
+{
+  "total_count": 6,
+  "jobs": [
+    {
+      "id": 110826731742,
+      "run_id": 37003629360,
+      "workflow_name": "ci",
+      "head_branch": "step-0055-cohesive-ui-rebuild",
+      "run_url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/runs/37003629360",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOTeN8Ys8AAAAZzcm43g",
+      "head_sha": "03180ec3c69d89531fd77fb0e9d77bd8ac59e275",
+      "url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/jobs/110826731742",
+      "html_url": "https://github.com/lvinist/mine-flow-app/actions/runs/37003629360/job/110826731742",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-02T11:54:42Z",
+      "started_at": "2026-10-02T11:54:45Z",
+      "completed_at": "2026-10-02T11:57:58Z",
+      "name": "Lint, analyze & test",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-02T11:54:45Z",
+          "completed_at": "2026-10-02T11:54:46Z"
+        },
+        {
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-02T11:54:47Z",
+          "completed_at": "2026-10-02T11:54:47Z"
+        },
+        {
+          "name": "Set up JDK 17",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-02T11:54:47Z",
+          "completed_at": "2026-10-02T11:54:48Z"
+        },
+        {
+          "name": "Setup Flutter",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-02T11:54:48Z",
+          "completed_at": "2026-10-02T11:55:04Z"
+        },
+        {
+          "name": "Get dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-02T11:55:04Z",
+          "completed_at": "2026-10-02T11:55:06Z"
+        },
+        {
+          "name": "Check Supabase Contract",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-02T11:55:06Z",
+          "completed_at": "2026-10-02T11:55:08Z"
+        },
+        {
+          "name": "Check Localization Baseline",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-02T11:55:08Z",
+          "completed_at": "2026-10-02T11:55:09Z"
+        },
+        {
+          "name": "Check formatting",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-02T11:55:09Z",
+          "completed_at": "2026-10-02T11:55:10Z"
+        },
+        {
+          "name": "Analyze",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-02T11:55:10Z",
+          "completed_at": "2026-10-02T11:55:41Z"
+        },
+        {
+          "name": "Run tests",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-02T11:55:41Z",
+          "completed_at": "2026-10-02T11:57:56Z"
+        },
+        {
+          "name": "Post Setup Flutter",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18,
+          "started_at": "2026-10-02T11:57:56Z",
+          "completed_at": "2026-10-02T11:57:57Z"
+        },
+        {
+          "name": "Post Set up JDK 17",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19,
+          "started_at": "2026-10-02T11:57:57Z",
+          "completed_at": "2026-10-02T11:57:57Z"
+        },
+        {
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20,
+          "started_at": "2026-10-02T11:57:57Z",
+          "completed_at": "2026-10-02T11:57:57Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21,
+          "started_at": "2026-10-02T11:57:57Z",
+          "completed_at": "2026-10-02T11:57:57Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/lvinist/mine-flow-app/check-runs/110826731742",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000461,
+      "runner_name": "GitHub Actions 1000000461",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 110826733489,
+      "run_id": 37003629360,
+      "workflow_name": "ci",
+      "head_branch": "step-0055-cohesive-ui-rebuild",
+      "run_url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/runs/37003629360",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOTeN8Ys8AAAAZzcm_sQ",
+      "head_sha": "03180ec3c69d89531fd77fb0e9d77bd8ac59e275",
+      "url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/jobs/110826733489",
+      "html_url": "https://github.com/lvinist/mine-flow-app/actions/runs/37003629360/job/110826733489",
+      "status": "completed",
+      "conclusion": "skipped",
+      "created_at": "2026-10-02T11:54:43Z",
+      "started_at": "2026-10-02T11:54:43Z",
+      "completed_at": "2026-10-02T11:54:42Z",
+      "name": "Deploy to Production",
+      "steps": [],
+      "check_run_url": "https://api.github.com/repos/lvinist/mine-flow-app/check-runs/110826733489",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": null,
+      "runner_name": null,
+      "runner_group_id": null,
+      "runner_group_name": null
+    },
+    {
+      "id": 110827690784,
+      "run_id": 37003629360,
+      "workflow_name": "ci",
+      "head_branch": "step-0055-cohesive-ui-rebuild",
+      "run_url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/runs/37003629360",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOTeN8Ys8AAAAZzdhbIA",
+      "head_sha": "03180ec3c69d89531fd77fb0e9d77bd8ac59e275",
+      "url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/jobs/110827690784",
+      "html_url": "https://github.com/lvinist/mine-flow-app/actions/runs/37003629360/job/110827690784",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-02T11:57:58Z",
+      "started_at": "2026-10-02T11:58:37Z",
+      "completed_at": "2026-10-02T12:27:23Z",
+      "name": "E2E Tests (Android)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-02T11:58:38Z",
+          "completed_at": "2026-10-02T11:58:40Z"
+        },
+        {
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-02T11:58:40Z",
+          "completed_at": "2026-10-02T11:58:41Z"
+        },
+        {
+          "name": "Set up JDK 17",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-02T11:58:41Z",
+          "completed_at": "2026-10-02T11:58:41Z"
+        },
+        {
+          "name": "Setup Flutter",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-02T11:58:41Z",
+          "completed_at": "2026-10-02T11:59:07Z"
+        },
+        {
+          "name": "Get dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-02T11:59:07Z",
+          "completed_at": "2026-10-02T11:59:09Z"
+        },
+        {
+          "name": "Enable KVM group perms",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-02T11:59:09Z",
+          "completed_at": "2026-10-02T11:59:09Z"
+        },
+        {
+          "name": "Run E2E tests on Android emulator",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 7,
+          "started_at": "2026-10-02T11:59:09Z",
+          "completed_at": "2026-10-02T12:27:18Z"
+        },
+        {
+          "name": "Upload Android E2E log",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-02T12:27:18Z",
+          "completed_at": "2026-10-02T12:27:19Z"
+        },
+        {
+          "name": "Upload Screenshots (Android)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-02T12:27:19Z",
+          "completed_at": "2026-10-02T12:27:20Z"
+        },
+        {
+          "name": "Post Setup Flutter",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16,
+          "started_at": "2026-10-02T12:27:20Z",
+          "completed_at": "2026-10-02T12:27:20Z"
+        },
+        {
+          "name": "Post Set up JDK 17",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-10-02T12:27:20Z",
+          "completed_at": "2026-10-02T12:27:21Z"
+        },
+        {
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18,
+          "started_at": "2026-10-02T12:27:21Z",
+          "completed_at": "2026-10-02T12:27:21Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19,
+          "started_at": "2026-10-02T12:27:21Z",
+          "completed_at": "2026-10-02T12:27:21Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/lvinist/mine-flow-app/check-runs/110827690784",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000463,
+      "runner_name": "GitHub Actions 1000000463",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 110827690820,
+      "run_id": 37003629360,
+      "workflow_name": "ci",
+      "head_branch": "step-0055-cohesive-ui-rebuild",
+      "run_url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/runs/37003629360",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOTeN8Ys8AAAAZzdhbRA",
+      "head_sha": "03180ec3c69d89531fd77fb0e9d77bd8ac59e275",
+      "url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/jobs/110827690820",
+      "html_url": "https://github.com/lvinist/mine-flow-app/actions/runs/37003629360/job/110827690820",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-02T11:57:58Z",
+      "started_at": "2026-10-02T11:58:00Z",
+      "completed_at": "2026-10-02T12:25:24Z",
+      "name": "E2E Tests (Web)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-02T11:58:01Z",
+          "completed_at": "2026-10-02T11:58:02Z"
+        },
+        {
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-02T11:58:02Z",
+          "completed_at": "2026-10-02T11:58:03Z"
+        },
+        {
+          "name": "Setup Flutter",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-02T11:58:03Z",
+          "completed_at": "2026-10-02T11:58:19Z"
+        },
+        {
+          "name": "Setup Chrome",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-02T11:58:19Z",
+          "completed_at": "2026-10-02T11:58:40Z"
+        },
+        {
+          "name": "Overwrite system Chrome with setup-chrome version",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-02T11:58:40Z",
+          "completed_at": "2026-10-02T11:58:40Z"
+        },
+        {
+          "name": "Get dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-02T11:58:40Z",
+          "completed_at": "2026-10-02T11:58:42Z"
+        },
+        {
+          "name": "Start chromedriver",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-02T11:58:42Z",
+          "completed_at": "2026-10-02T11:58:47Z"
+        },
+        {
+          "name": "Run E2E tests on Chrome (driver)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-02T11:58:47Z",
+          "completed_at": "2026-10-02T12:25:20Z"
+        },
+        {
+          "name": "Upload driver log",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-02T12:25:20Z",
+          "completed_at": "2026-10-02T12:25:21Z"
+        },
+        {
+          "name": "Upload Screenshots (Web)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-02T12:25:21Z",
+          "completed_at": "2026-10-02T12:25:21Z"
+        },
+        {
+          "name": "Post Setup Flutter",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19,
+          "started_at": "2026-10-02T12:25:21Z",
+          "completed_at": "2026-10-02T12:25:22Z"
+        },
+        {
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20,
+          "started_at": "2026-10-02T12:25:22Z",
+          "completed_at": "2026-10-02T12:25:22Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21,
+          "started_at": "2026-10-02T12:25:22Z",
+          "completed_at": "2026-10-02T12:25:22Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/lvinist/mine-flow-app/check-runs/110827690820",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000462,
+      "runner_name": "GitHub Actions 1000000462",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 110827690901,
+      "run_id": 37003629360,
+      "workflow_name": "ci",
+      "head_branch": "step-0055-cohesive-ui-rebuild",
+      "run_url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/runs/37003629360",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOTeN8Ys8AAAAZzdhblQ",
+      "head_sha": "03180ec3c69d89531fd77fb0e9d77bd8ac59e275",
+      "url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/jobs/110827690901",
+      "html_url": "https://github.com/lvinist/mine-flow-app/actions/runs/37003629360/job/110827690901",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-02T11:57:58Z",
+      "started_at": "2026-10-02T11:58:00Z",
+      "completed_at": "2026-10-02T12:04:17Z",
+      "name": "Build Android APK (smoke check)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-02T11:58:01Z",
+          "completed_at": "2026-10-02T11:58:02Z"
+        },
+        {
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-02T11:58:02Z",
+          "completed_at": "2026-10-02T11:58:03Z"
+        },
+        {
+          "name": "Set up JDK 17",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-02T11:58:03Z",
+          "completed_at": "2026-10-02T11:58:03Z"
+        },
+        {
+          "name": "Setup Flutter",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-02T11:58:03Z",
+          "completed_at": "2026-10-02T11:58:21Z"
+        },
+        {
+          "name": "Get dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-02T11:58:21Z",
+          "completed_at": "2026-10-02T11:58:23Z"
+        },
+        {
+          "name": "Build Android debug APK",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-02T11:58:23Z",
+          "completed_at": "2026-10-02T12:04:08Z"
+        },
+        {
+          "name": "Upload build log on failure",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 7,
+          "started_at": "2026-10-02T12:04:08Z",
+          "completed_at": "2026-10-02T12:04:08Z"
+        },
+        {
+          "name": "Upload APK artifact",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-02T12:04:08Z",
+          "completed_at": "2026-10-02T12:04:15Z"
+        },
+        {
+          "name": "Post Setup Flutter",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14,
+          "started_at": "2026-10-02T12:04:15Z",
+          "completed_at": "2026-10-02T12:04:16Z"
+        },
+        {
+          "name": "Post Set up JDK 17",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15,
+          "started_at": "2026-10-02T12:04:16Z",
+          "completed_at": "2026-10-02T12:04:16Z"
+        },
+        {
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16,
+          "started_at": "2026-10-02T12:04:16Z",
+          "completed_at": "2026-10-02T12:04:16Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-10-02T12:04:16Z",
+          "completed_at": "2026-10-02T12:04:16Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/lvinist/mine-flow-app/check-runs/110827690901",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000464,
+      "runner_name": "GitHub Actions 1000000464",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 110836803924,
+      "run_id": 37003629360,
+      "workflow_name": "ci",
+      "head_branch": "step-0055-cohesive-ui-rebuild",
+      "run_url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/runs/37003629360",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOTeN8Ys8AAAAZzmNpVA",
+      "head_sha": "03180ec3c69d89531fd77fb0e9d77bd8ac59e275",
+      "url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/jobs/110836803924",
+      "html_url": "https://github.com/lvinist/mine-flow-app/actions/runs/37003629360/job/110836803924",
+      "status": "completed",
+      "conclusion": "skipped",
+      "created_at": "2026-10-02T12:27:24Z",
+      "started_at": "2026-10-02T12:27:24Z",
+      "completed_at": "2026-10-02T12:27:24Z",
+      "name": "Deploy to Staging",
+      "steps": [],
+      "check_run_url": "https://api.github.com/repos/lvinist/mine-flow-app/check-runs/110836803924",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": null,
+      "runner_name": null,
+      "runner_group_id": null,
+      "runner_group_name": null
+    }
+  ]
+}

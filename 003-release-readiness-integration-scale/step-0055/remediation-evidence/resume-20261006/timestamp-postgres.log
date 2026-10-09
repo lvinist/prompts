@@ -1,0 +1,45 @@
+2026-10-06 19:19:35.805 +07 [27680] LOG:  starting PostgreSQL 17.11 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit
+2026-10-06 19:19:35.806 +07 [27680] LOG:  listening on IPv4 address "127.0.0.1", port 55456
+2026-10-06 19:19:35.884 +07 [29112] LOG:  database system was shut down at 2026-10-06 18:45:00 +07
+2026-10-06 19:19:35.920 +07 [27680] LOG:  database system is ready to accept connections
+2026-10-06 19:19:36.285 +07 [19260] ERROR:  REGRESSION: ledger audit timestamp trusts the client clock
+2026-10-06 19:19:36.285 +07 [19260] CONTEXT:  PL/pgSQL function inline_code_block line 6 at RAISE
+2026-10-06 19:19:36.285 +07 [19260] STATEMENT:  DO $$
+	DECLARE actual timestamptz;
+	BEGIN
+	 SELECT created_at INTO actual FROM public.inventory_transactions WHERE idempotency_key='timestamp-new';
+	 IF actual IS NULL OR actual < transaction_timestamp() OR actual > clock_timestamp() THEN
+	   RAISE EXCEPTION 'REGRESSION: ledger audit timestamp trusts the client clock';
+	 END IF;
+	 RAISE NOTICE 'PASS: new ledger created_at is server-authored';
+	END;
+	$$;
+2026-10-06 19:19:36.334 +07 [27680] LOG:  received fast shutdown request
+2026-10-06 19:19:36.335 +07 [27680] LOG:  aborting any active transactions
+2026-10-06 19:19:36.348 +07 [27680] LOG:  background worker "logical replication launcher" (PID 22792) exited with exit code 1
+2026-10-06 19:19:36.349 +07 [14492] LOG:  shutting down
+2026-10-06 19:19:36.349 +07 [14492] LOG:  checkpoint starting: shutdown immediate
+2026-10-06 19:19:36.381 +07 [14492] LOG:  checkpoint complete: wrote 28 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.012 s, sync=0.010 s, total=0.033 s; sync files=21, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=4 kB; lsn=0/1685DA8, redo lsn=0/1685DA8
+2026-10-06 19:19:36.398 +07 [27680] LOG:  database system is shut down
+2026-10-06 19:21:03.013 +07 [5724] LOG:  starting PostgreSQL 17.11 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit
+2026-10-06 19:21:03.014 +07 [5724] LOG:  listening on IPv4 address "127.0.0.1", port 55456
+2026-10-06 19:21:03.090 +07 [25408] LOG:  database system was shut down at 2026-10-06 19:19:36 +07
+2026-10-06 19:21:03.120 +07 [5724] LOG:  database system is ready to accept connections
+2026-10-06 19:21:03.442 +07 [5724] LOG:  received fast shutdown request
+2026-10-06 19:21:03.443 +07 [5724] LOG:  aborting any active transactions
+2026-10-06 19:21:03.456 +07 [5724] LOG:  background worker "logical replication launcher" (PID 7072) exited with exit code 1
+2026-10-06 19:21:03.456 +07 [29468] LOG:  shutting down
+2026-10-06 19:21:03.457 +07 [29468] LOG:  checkpoint starting: shutdown immediate
+2026-10-06 19:21:03.501 +07 [29468] LOG:  checkpoint complete: wrote 50 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.019 s, sync=0.020 s, total=0.045 s; sync files=41, longest=0.001 s, average=0.001 s; distance=189 kB, estimate=189 kB; lsn=0/16B5558, redo lsn=0/16B5558
+2026-10-06 19:21:03.532 +07 [5724] LOG:  database system is shut down
+2026-10-06 19:22:14.066 +07 [11708] LOG:  starting PostgreSQL 17.11 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit
+2026-10-06 19:22:14.067 +07 [11708] LOG:  listening on IPv4 address "127.0.0.1", port 55456
+2026-10-06 19:22:14.138 +07 [10100] LOG:  database system was shut down at 2026-10-06 19:21:03 +07
+2026-10-06 19:22:14.165 +07 [11708] LOG:  database system is ready to accept connections
+2026-10-06 19:22:14.396 +07 [11708] LOG:  received fast shutdown request
+2026-10-06 19:22:14.398 +07 [11708] LOG:  aborting any active transactions
+2026-10-06 19:22:14.410 +07 [11708] LOG:  background worker "logical replication launcher" (PID 780) exited with exit code 1
+2026-10-06 19:22:14.410 +07 [22416] LOG:  shutting down
+2026-10-06 19:22:14.411 +07 [22416] LOG:  checkpoint starting: shutdown immediate
+2026-10-06 19:22:14.455 +07 [22416] LOG:  checkpoint complete: wrote 52 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.019 s, sync=0.019 s, total=0.045 s; sync files=41, longest=0.002 s, average=0.001 s; distance=176 kB, estimate=176 kB; lsn=0/16E1810, redo lsn=0/16E1810
+2026-10-06 19:22:14.496 +07 [11708] LOG:  database system is shut down

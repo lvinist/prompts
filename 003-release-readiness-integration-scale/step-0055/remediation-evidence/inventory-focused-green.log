@@ -1,0 +1,24 @@
+00:00 +0: loading D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_history_screen_test.dart
+00:00 +0: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_history_screen_test.dart: InventoryHistoryScreen Substep 55.8 Widget Tests mobile history is a full page, not a draggable bottom sheet
+00:01 +1: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_item_entry_screen_test.dart: cold edit loads and saves the URL item, not a new UUID
+00:01 +2: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_item_entry_screen_test.dart: cold edit loads and saves the URL item, not a new UUID
+00:02 +3: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_item_entry_screen_test.dart: renders merged Jumlah & Satuan row with quantity input and unit dropdown
+00:02 +4: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_item_entry_screen_test.dart: renders merged Jumlah & Satuan row with quantity input and unit dropdown
+00:02 +5: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_item_entry_screen_test.dart: renders merged Jumlah & Satuan row with quantity input and unit dropdown
+00:02 +6: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_item_entry_screen_test.dart: renders merged Jumlah & Satuan row with quantity input and unit dropdown
+00:02 +7: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_item_entry_screen_test.dart: renders merged Jumlah & Satuan row with quantity input and unit dropdown
+00:02 +8: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_item_entry_screen_test.dart: renders merged Jumlah & Satuan row with quantity input and unit dropdown
+00:02 +9: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_item_entry_screen_test.dart: renders merged Jumlah & Satuan row with quantity input and unit dropdown
+00:02 +10: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_bloc_test.dart: SaveInventoryItemEvent emits saved state when repository succeeds
+00:02 +11: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_bloc_test.dart: SaveInventoryItemEvent emits error state when repository throws
+00:02 +12: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_bloc_test.dart: AdjustStockEvent adjusts stock and reloads items
+00:02 +13: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_bloc_test.dart: AdjustStockEvent emits error when adjustment throws
+00:02 +14: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_bloc_test.dart: DeleteInventoryItemEvent deletes item and reloads list when in loaded state
+00:02 +15: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_bloc_test.dart: DeleteInventoryItemEvent emits error when delete throws
+00:02 +16: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_bloc_test.dart: LoadItemNameSuggestionsEvent (auto-predict) clears suggestions when prefix is empty
+00:02 +17: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_bloc_test.dart: LoadItemNameSuggestionsEvent (auto-predict) loads suggestions from repository and emits them
+00:02 +18: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_bloc_test.dart: LoadItemNameSuggestionsEvent (auto-predict) silently ignores repository errors (no state change)
+00:02 +19: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_bloc_test.dart: LoadItemNameSuggestionsEvent (auto-predict) does nothing when not in form state
+00:02 +20: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_bloc_test.dart: FilterByCategoryEvent reloads items with selected category filter
+00:02 +21: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_bloc_test.dart: (tearDownAll)
+00:02 +21: All tests passed!

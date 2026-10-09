@@ -1,0 +1,14 @@
+Launching .step55-capture-probe.dart on Web Server in debug mode...
+Waiting for connection from debug service on Web Server...         67.3s
+.step55-capture-probe.dart is being served at http://localhost:61061
+The web-server device requires the Dart Debug Chrome extension for debugging. Consider using the Chrome or Edge devices for an improved development workflow.
+Debug service listening on ws://127.0.0.1:61562/IQu63dFL5zM=/ws
+A Dart VM Service on Web Server is available at: http://127.0.0.1:61562/IQu63dFL5zM=
+The Flutter DevTools debugger and profiler on Web Server is available at: http://127.0.0.1:61562/IQu63dFL5zM=/devtools/?uri=ws://127.0.0.1:61562/IQu63dFL5zM=/ws
+[driver] Saved screenshot: D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/probe-web-baseline-2/web-settled-0.png (12711 bytes)
+[driver] Saved screenshot: D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/probe-web-baseline-2/web-settled-1.png (12711 bytes)
+[driver] Saved screenshot: D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/probe-web-baseline-2/web-settled-2.png (12711 bytes)
+[driver] Saved screenshot: D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/probe-web-baseline-2/web-settled-3.png (12711 bytes)
+result {"result":"true","failureDetails":[],"data":{"screenshots":[{"screenshotName":"web-settled-0","bytes":[]},{"screenshotName":"web-settled-1","bytes":[]},{"screenshotName":"web-settled-2","bytes":[]},{"screenshotName":"web-settled-3","bytes":[]}]}}
+All tests passed.
+Application finished.

@@ -1,0 +1,89 @@
+Running Gradle task 'assembleDebug'...                             19.6s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...        1,033ms
+W/HWUI    ( 4514): Unknown dataspace 0
+I/Choreographer( 4514): Skipped 154 frames!  The application may be doing too much work on its main thread.
+I/WindowExtensionsImpl( 4514): Initializing Window Extensions, vendor API level=6, activity embedding enabled=true
+D/FlutterRenderer( 4514): Width is zero. 0,0
+D/FlutterJNI( 4514): Sending viewport metrics to the engine.
+W/HWUI    ( 4514): Failed to initialize 101010-2 format, error = EGL_SUCCESS
+I/Gralloc4( 4514): mapper 4.x is not supported
+I/eflow.mine_flow( 4514): Compiler allocated 5174KB to compile void android.view.ViewRootImpl.performTraversals()
+I/Choreographer( 4514): Skipped 38 frames!  The application may be doing too much work on its main thread.
+D/FlutterJNI( 4514): Sending viewport metrics to the engine.
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:63036/KE91sZFhozY=/
+VMServiceFlutterDriver: Isolate found with number: 384775607218455
+VMServiceFlutterDriver: Isolate 384775607218455 is runnable.
+VMServiceFlutterDriver: Isolate is paused at start.
+VMServiceFlutterDriver: Attempting to resume isolate
+I/flutter ( 4514): 00:00 +0: Repeated settled screenshot probe
+VMServiceFlutterDriver: Connected to Flutter application.
+I/Choreographer( 4514): Skipped 38 frames!  The application may be doing too much work on its main thread.
+I/Choreographer( 4514): Skipped 43 frames!  The application may be doing too much work on its main thread.
+I/HWUI    ( 4514): Davey! duration=979ms; Flags=1, FrameTimelineVsyncId=21636, IntendedVsync=442421274108, Vsync=443137940746, InputEventId=0, HandleInputStart=443140716500, AnimationStart=443140750600, PerformTraversalsStart=443140803700, DrawStart=443143465900, FrameDeadline=442437940774, FrameInterval=443140180900, FrameStartTime=16666666, SyncQueued=443144518800, SyncStart=443144886200, IssueDrawCommandsStart=443146201800, SwapBuffers=443159921300, FrameCompleted=443401213000, DequeueBufferDuration=3887200, QueueBufferDuration=1940000, GpuCompleted=443396921200, SwapBuffersCompleted=443401213000, DisplayPresentTime=72904454231359566, CommandSubmissionCompleted=443159921300, 
+I/flutter ( 4514): CAPTURE_PROBE android-sized-login completed 485ms
+D/ProfileInstaller( 4514): Installing profile for com.mineflow.mine_flow
+D/EGL_emulation( 4514): app_time_stats: avg=436.11ms min=95.15ms max=686.51ms count=3
+I/flutter ( 4514): CAPTURE_PROBE android-resized-0 completed 218ms
+VMServiceFlutterDriver: request_data message is taking a long time to complete...
+I/flutter ( 4514): CAPTURE_PROBE android-resized-1 TIMEOUT 5200ms
+I/flutter ( 4514): CAPTURE_PROBE android-resized-2 TIMEOUT 5200ms
+I/flutter ( 4514): CAPTURE_PROBE android-resized-3 TIMEOUT 5199ms
+I/flutter ( 4514): ══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+I/flutter ( 4514): The following TestFailure was thrown running a test:
+I/flutter ( 4514): Expected: every element(true)
+I/flutter ( 4514):   Actual: [true, true, false, false, false]
+I/flutter ( 4514):    Which: has value <false> which doesn't match true at index 2
+I/flutter ( 4514): 
+I/flutter ( 4514): When the exception was thrown, this was the stack:
+I/flutter ( 4514): #4      main.<anonymous closure> (file:///D:/AppDev/mine_flow/Code/mine-flow-app/.step55-capture-probe.dart:59:5)
+I/flutter ( 4514): <asynchronous suspension>
+I/flutter ( 4514): #5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+I/flutter ( 4514): <asynchronous suspension>
+I/flutter ( 4514): #6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+I/flutter ( 4514): <asynchronous suspension>
+I/flutter ( 4514): #7      TestWidgetsFlutterBinding._createTestCompletionHandler.<anonymous closure> (package:flutter_test/src/binding.dart:1707:12)
+I/flutter ( 4514): <asynchronous suspension>
+I/flutter ( 4514): 
+I/flutter ( 4514): This was caught by the test expectation on the following line:
+I/flutter ( 4514):   file:///D:/AppDev/mine_flow/Code/mine-flow-app/.step55-capture-probe.dart line 59
+I/flutter ( 4514): The test description was:
+I/flutter ( 4514):   Repeated settled screenshot probe
+I/flutter ( 4514): ════════════════════════════════════════════════════════════════════════════════════════════════════
+I/flutter ( 4514): 00:19 +0: Repeated settled screenshot probe [E]
+I/flutter ( 4514):   Test failed. See exception logs above.
+I/flutter ( 4514):   The test description was: Repeated settled screenshot probe
+I/flutter ( 4514):   
+I/flutter ( 4514): 00:19 +0 -1: (tearDownAll)
+D/EGL_emulation( 4514): app_time_stats: avg=16503.83ms min=16503.83ms max=16503.83ms count=1
+I/flutter ( 4514): 00:19 +1 -1: Some tests failed.
+[driver] Saved screenshot: D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/probe-android-resized/android-sized-login.png (37054 bytes)
+[driver] Saved screenshot: D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/probe-android-resized/android-resized-0.png (37054 bytes)
+Failure Details:
+Failure in method: Repeated settled screenshot probe
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞═════════════════
+The following TestFailure was thrown running a test:
+Expected: every element(true)
+  Actual: [true, true, false, false, false]
+   Which: has value <false> which doesn't match true at index 2
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///D:/AppDev/mine_flow/Code/mine-flow-app/.step55-capture-probe.dart:59:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._createTestCompletionHandler.<anonymous closure> (package:flutter_test/src/binding.dart:1707:12)
+<asynchronous suspension>
+
+This was caught by the test expectation on the following line:
+  file:///D:/AppDev/mine_flow/Code/mine-flow-app/.step55-capture-probe.dart line 59
+The test description was:
+  Repeated settled screenshot probe
+═════════════════════════════════════════════════════════════════
+
+end of failure 1
+
+
+

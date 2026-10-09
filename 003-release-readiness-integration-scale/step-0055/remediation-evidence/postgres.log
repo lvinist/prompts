@@ -1,0 +1,21 @@
+2026-10-04 19:44:45.102 +07 [23600] LOG:  starting PostgreSQL 17.11 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit
+2026-10-04 19:44:45.103 +07 [23600] LOG:  listening on IPv4 address "127.0.0.1", port 54655
+2026-10-04 19:44:45.182 +07 [15232] LOG:  database system was shut down at 2026-10-04 19:44:40 +07
+2026-10-04 19:44:45.211 +07 [23600] LOG:  database system is ready to accept connections
+2026-10-04 19:48:12.056 +07 [19256] FATAL:  role "Alpxalpha" does not exist
+2026-10-04 19:49:45.174 +07 [20440] LOG:  checkpoint starting: time
+2026-10-04 19:49:50.123 +07 [20440] LOG:  checkpoint complete: wrote 48 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.920 s, sync=0.014 s, total=4.950 s; sync files=11, longest=0.002 s, average=0.002 s; distance=296 kB, estimate=296 kB; lsn=0/15BE4F0, redo lsn=0/15BE498
+2026-10-04 19:50:32.518 +07 [22800] ERROR:  REGRESSION: crew can self-promote to supervisor
+2026-10-04 19:50:32.518 +07 [22800] CONTEXT:  PL/pgSQL function inline_code_block line 5 at RAISE
+2026-10-04 19:50:32.518 +07 [22800] STATEMENT:  DO $$
+	BEGIN
+	  BEGIN
+	    UPDATE public.users SET role='supervisor' WHERE id=auth.uid();
+	    RAISE EXCEPTION 'REGRESSION: crew can self-promote to supervisor';
+	  EXCEPTION WHEN insufficient_privilege THEN
+	    RAISE NOTICE 'PASS: crew self-promotion rejected';
+	  END;
+	END;
+	$$;
+2026-10-04 19:54:45.139 +07 [20440] LOG:  checkpoint starting: time
+2026-10-04 19:56:38.724 +07 [20440] LOG:  checkpoint complete: wrote 1040 buffers (6.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=113.144 s, sync=0.432 s, total=113.585 s; sync files=354, longest=0.004 s, average=0.002 s; distance=5039 kB, estimate=5039 kB; lsn=0/1AAA200, redo lsn=0/1AAA170

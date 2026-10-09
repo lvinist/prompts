@@ -1,0 +1,85 @@
+{
+  "total_count": 4,
+  "artifacts": [
+    {
+      "id": 11226370237,
+      "node_id": "MDg6QXJ0aWZhY3QxMTIyNjM3MDIzNw==",
+      "name": "android-screenshots",
+      "size_in_bytes": 165063,
+      "url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/artifacts/11226370237",
+      "archive_download_url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/artifacts/11226370237/zip",
+      "expired": false,
+      "digest": "sha256:2e7e879eadca79b87810d9269211ca432b72d9a9509ed36230717f148e736a40",
+      "created_at": "2026-10-02T12:27:20Z",
+      "updated_at": "2026-10-02T12:27:20Z",
+      "expires_at": "2026-10-09T12:27:19Z",
+      "workflow_run": {
+        "id": 37003629360,
+        "repository_id": 1306754146,
+        "head_repository_id": 1306754146,
+        "head_branch": "step-0055-cohesive-ui-rebuild",
+        "head_sha": "03180ec3c69d89531fd77fb0e9d77bd8ac59e275"
+      }
+    },
+    {
+      "id": 11225768343,
+      "node_id": "MDg6QXJ0aWZhY3QxMTIyNTc2ODM0Mw==",
+      "name": "web-e2e-driver-log",
+      "size_in_bytes": 32249,
+      "url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/artifacts/11225768343",
+      "archive_download_url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/artifacts/11225768343/zip",
+      "expired": false,
+      "digest": "sha256:00d755e808b475024bf6bc695880bd72aadceeb579e8b89b6553c409788a21a6",
+      "created_at": "2026-10-02T12:25:21Z",
+      "updated_at": "2026-10-02T12:25:21Z",
+      "expires_at": "2026-10-09T12:25:20Z",
+      "workflow_run": {
+        "id": 37003629360,
+        "repository_id": 1306754146,
+        "head_repository_id": 1306754146,
+        "head_branch": "step-0055-cohesive-ui-rebuild",
+        "head_sha": "03180ec3c69d89531fd77fb0e9d77bd8ac59e275"
+      }
+    },
+    {
+      "id": 11225501654,
+      "node_id": "MDg6QXJ0aWZhY3QxMTIyNTUwMTY1NA==",
+      "name": "debug-apk",
+      "size_in_bytes": 112859870,
+      "url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/artifacts/11225501654",
+      "archive_download_url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/artifacts/11225501654/zip",
+      "expired": false,
+      "digest": "sha256:6ab725ad0c168bd9b6097fb4fe406184b6eb92f74d6eefeaedb172f54da9a4c3",
+      "created_at": "2026-10-02T12:04:15Z",
+      "updated_at": "2026-10-02T12:04:15Z",
+      "expires_at": "2026-10-09T12:04:08Z",
+      "workflow_run": {
+        "id": 37003629360,
+        "repository_id": 1306754146,
+        "head_repository_id": 1306754146,
+        "head_branch": "step-0055-cohesive-ui-rebuild",
+        "head_sha": "03180ec3c69d89531fd77fb0e9d77bd8ac59e275"
+      }
+    },
+    {
+      "id": 11225109917,
+      "node_id": "MDg6QXJ0aWZhY3QxMTIyNTEwOTkxNw==",
+      "name": "android-e2e-log",
+      "size_in_bytes": 26186,
+      "url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/artifacts/11225109917",
+      "archive_download_url": "https://api.github.com/repos/lvinist/mine-flow-app/actions/artifacts/11225109917/zip",
+      "expired": false,
+      "digest": "sha256:6331f8253e009f5776c050db9e7e680db543e92bb3e421833d9a638dee308cf0",
+      "created_at": "2026-10-02T12:27:19Z",
+      "updated_at": "2026-10-02T12:27:19Z",
+      "expires_at": "2026-10-09T12:27:18Z",
+      "workflow_run": {
+        "id": 37003629360,
+        "repository_id": 1306754146,
+        "head_repository_id": 1306754146,
+        "head_branch": "step-0055-cohesive-ui-rebuild",
+        "head_sha": "03180ec3c69d89531fd77fb0e9d77bd8ac59e275"
+      }
+    }
+  ]
+}

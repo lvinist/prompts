@@ -1,0 +1,12 @@
+Candidate clone: C:\Users\Alpxalpha\AppData\Local\hermes\cache\scratch\step55-guard-candidate-2
+Fixture head: c0b2cf0ba94c828b67fd7df0913b7d9bdcd6a616
+Real push-base: 03180ec3c69d89531fd77fb0e9d77bd8ac59e275
+Exit: 0
+Supabase Contract Check
+-----------------------
+Contract artifact: supabase/types/database.ts
+Regeneration Command:
+  supabase gen types --lang typescript --linked > supabase/types/database.ts
+
+[OK] Verified no-type-shape-change receipt for 1 migration(s).
+[OK] Contract verification passed.

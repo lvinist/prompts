@@ -1,0 +1,35 @@
+Running Gradle task 'assembleDebug'...                             49.5s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...        1,210ms
+I/Gralloc4( 4955): mapper 4.x is not supported
+I/eflow.mine_flow( 4955): Compiler allocated 5174KB to compile void android.view.ViewRootImpl.performTraversals()
+I/Choreographer( 4955): Skipped 47 frames!  The application may be doing too much work on its main thread.
+D/FlutterJNI( 4955): Sending viewport metrics to the engine.
+D/ProfileInstaller( 4955): Installing profile for com.mineflow.mine_flow
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:55263/Z35yf4uGphc=/
+VMServiceFlutterDriver: Isolate found with number: 8756385366068839
+VMServiceFlutterDriver: Isolate 8756385366068839 is runnable.
+VMServiceFlutterDriver: Isolate is paused at start.
+VMServiceFlutterDriver: Attempting to resume isolate
+I/flutter ( 4955): 00:00 +0: Repeated settled screenshot probe
+VMServiceFlutterDriver: Connected to Flutter application.
+I/Choreographer( 4955): Skipped 34 frames!  The application may be doing too much work on its main thread.
+I/Choreographer( 4955): Skipped 39 frames!  The application may be doing too much work on its main thread.
+I/HWUI    ( 4955): Davey! duration=925ms; Flags=1, FrameTimelineVsyncId=33219, IntendedVsync=1035571250382, Vsync=1036221250356, InputEventId=0, HandleInputStart=1036236226100, AnimationStart=1036236259800, PerformTraversalsStart=1036236300800, DrawStart=1036239743000, FrameDeadline=1035587917048, FrameInterval=1036235557900, FrameStartTime=16666666, SyncQueued=1036240840300, SyncStart=1036241204000, IssueDrawCommandsStart=1036242396100, SwapBuffers=1036258196700, FrameCompleted=1036497416600, DequeueBufferDuration=4477800, QueueBufferDuration=2194900, GpuCompleted=1036492823600, SwapBuffersCompleted=1036497416600, DisplayPresentTime=0, CommandSubmissionCompleted=1036258196700, 
+I/flutter ( 4955): CAPTURE_PROBE android-sized-login completed 445ms
+D/EGL_emulation( 4955): app_time_stats: avg=471.87ms min=149.54ms max=665.44ms count=3
+I/flutter ( 4955): CAPTURE_PROBE android-resized-0 completed 216ms
+D/EGL_emulation( 4955): app_time_stats: avg=142.12ms min=32.92ms max=219.49ms count=9
+I/eflow.mine_flow( 4955): NativeAlloc concurrent mark compact GC freed 180KB AllocSpace bytes, 12(476KB) LOS objects, 49% free, 2744KB/5489KB, paused 1.643ms,5.819ms total 44.642ms
+I/flutter ( 4955): CAPTURE_PROBE android-resized-1 completed 216ms
+I/flutter ( 4955): CAPTURE_PROBE android-resized-2 completed 216ms
+D/EGL_emulation( 4955): app_time_stats: avg=366.44ms min=363.76ms max=368.52ms count=3
+I/flutter ( 4955): CAPTURE_PROBE android-resized-3 completed 214ms
+I/flutter ( 4955): 00:04 +1: (tearDownAll)
+I/flutter ( 4955): 00:04 +2: All tests passed!
+[driver] Saved screenshot: D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/probe-android-surface/android-sized-login.png (37054 bytes)
+[driver] Saved screenshot: D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/probe-android-surface/android-resized-0.png (36323 bytes)
+[driver] Saved screenshot: D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/probe-android-surface/android-resized-1.png (35682 bytes)
+[driver] Saved screenshot: D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/probe-android-surface/android-resized-2.png (36226 bytes)
+[driver] Saved screenshot: D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/probe-android-surface/android-resized-3.png (36437 bytes)
+All tests passed.

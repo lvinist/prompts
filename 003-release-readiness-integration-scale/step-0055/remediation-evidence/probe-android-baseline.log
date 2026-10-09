@@ -1,0 +1,28 @@
+Running Gradle task 'assembleDebug'...                            132.1s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...        1,190ms
+I/eflow.mine_flow( 4145): Compiler allocated 5174KB to compile void android.view.ViewRootImpl.performTraversals()
+I/Choreographer( 4145): Skipped 31 frames!  The application may be doing too much work on its main thread.
+D/FlutterJNI( 4145): Sending viewport metrics to the engine.
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:62822/D8_g7n0Qk_Q=/
+VMServiceFlutterDriver: Isolate found with number: 8699694023890551
+VMServiceFlutterDriver: Isolate 8699694023890551 is runnable.
+VMServiceFlutterDriver: Isolate is paused at start.
+VMServiceFlutterDriver: Attempting to resume isolate
+I/flutter ( 4145): 00:00 +0: Repeated settled screenshot probe
+VMServiceFlutterDriver: Connected to Flutter application.
+I/Choreographer( 4145): Skipped 34 frames!  The application may be doing too much work on its main thread.
+I/HWUI    ( 4145): Davey! duration=750ms; Flags=1, FrameTimelineVsyncId=18513, IntendedVsync=293771280054, Vsync=294337946698, InputEventId=0, HandleInputStart=294342993900, AnimationStart=294343224800, PerformTraversalsStart=294343262200, DrawStart=294345776900, FrameDeadline=293787946720, FrameInterval=294342485800, FrameStartTime=16666666, SyncQueued=294347493200, SyncStart=294347893500, IssueDrawCommandsStart=294349902700, SwapBuffers=294362668000, FrameCompleted=294521931000, DequeueBufferDuration=5532000, QueueBufferDuration=979900, GpuCompleted=294521931000, SwapBuffersCompleted=294518260600, DisplayPresentTime=72904454231359566, CommandSubmissionCompleted=294362668000, 
+I/flutter ( 4145): CAPTURE_PROBE android-settled-0 completed 526ms
+I/flutter ( 4145): CAPTURE_PROBE android-settled-1 completed 220ms
+D/EGL_emulation( 4145): app_time_stats: avg=271.14ms min=90.34ms max=403.77ms count=4
+D/ProfileInstaller( 4145): Installing profile for com.mineflow.mine_flow
+I/flutter ( 4145): CAPTURE_PROBE android-settled-2 completed 216ms
+I/flutter ( 4145): CAPTURE_PROBE android-settled-3 completed 222ms
+I/flutter ( 4145): 00:02 +1: (tearDownAll)
+I/flutter ( 4145): 00:02 +2: All tests passed!
+[driver] Saved screenshot: D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/probe-android-baseline/android-settled-0.png (37054 bytes)
+[driver] Saved screenshot: D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/probe-android-baseline/android-settled-1.png (37054 bytes)
+[driver] Saved screenshot: D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/probe-android-baseline/android-settled-2.png (37054 bytes)
+[driver] Saved screenshot: D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/probe-android-baseline/android-settled-3.png (37054 bytes)
+All tests passed.

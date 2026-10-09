@@ -1,0 +1,94 @@
+Resolving dependencies...
+Downloading packages...
+  _fe_analyzer_shared 103.0.0 (108.0.0 available)
+  analyzer 13.3.0 (14.4.0 available)
+  android_file_picker 1.1.1 (2.0.0 available)
+  archive 4.0.9 (4.3.0 available)
+  battery_plus 7.1.1 (7.1.2 available)
+  build 4.0.10 (4.0.11 available)
+  build_config 1.3.2 (1.3.3 available)
+  build_daemon 4.1.5 (4.1.6 available)
+  built_collection 5.1.1 (5.1.2 available)
+  built_value 8.12.7 (8.13.0 available)
+  clock 1.1.2 (1.1.3 available)
+  code_assets 2.0.0 (2.1.0 available)
+  connectivity_plus 7.3.1 (7.3.2 available)
+  cross_file 0.3.5+5 (0.4.0 available)
+  cupertino_ui 1.0.1 (1.1.1 available)
+  dbus 0.7.15 (0.8.0 available)
+  equatable 2.1.0 (3.0.0 available)
+  file_picker 12.2.0 (13.1.0 available)
+  file_picker_darwin 1.1.0 (2.1.2 available)
+  file_picker_linux 1.1.0 (2.0.1 available)
+  file_picker_platform_interface 3.3.0 (4.0.0 available)
+  file_picker_web 3.1.0 (4.0.0 available)
+  flutter_secure_storage 11.1.0 (11.2.0 available)
+  flutter_secure_storage_darwin 0.4.0 (0.4.3 available)
+  flutter_secure_storage_linux 3.0.2 (3.0.3 available)
+  flutter_secure_storage_platform_interface 2.1.0 (2.1.1 available)
+  forui 0.26.0 (0.27.3 available)
+  forui_lucide 0.26.1 (0.27.0 available)
+  frontend_server_client 4.0.0 (4.1.0 available)
+  glob 2.1.3 (2.2.0 available)
+  go_router 18.0.1 (18.0.2 available)
+  googleapis_auth 2.3.3 (2.3.4 available)
+  hive_ce 2.19.3 (2.20.1 available)
+  hive_ce_flutter 2.3.4 (2.4.0 available)
+  image 4.9.2 (4.10.1 available)
+  image_picker_android 0.8.13+21 (0.8.13+25 available)
+  image_picker_ios 0.8.13+7 (0.8.13+9 available)
+  io 1.0.5 (1.1.0 available)
+  jni 1.0.3 (1.1.0 available)
+  jni_flutter 1.0.2 (1.0.3 available)
+  lucide_icons_flutter 3.1.19 (3.1.21 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  material_ui 1.1.0 (1.5.0 available)
+  mime 2.0.0 (2.1.0 available)
+  nm 0.5.0 (0.6.0 available)
+  objective_c 9.6.0 (9.6.2 available)
+  package_config 2.2.0 (3.0.0 available)
+  package_info_plus 10.2.1 (10.2.2 available)
+  passkeys_platform_interface 2.9.0 (2.10.0 available)
+  pdf 3.13.0 (3.13.1 available)
+  petitparser 7.0.2 (7.1.0 available)
+  platform 3.1.6 (3.2.0 available)
+  pool 1.5.2 (1.5.3 available)
+  printing 5.15.0 (5.15.1 available)
+  process 5.0.5 (5.0.6 available)
+  pub_semver 2.2.0 (2.2.1 available)
+  pubspec_parse 1.5.0 (1.6.0 available)
+  qr 3.0.2 (4.0.0 available)
+  stack_trace 1.12.1 (1.12.2 available)
+  storage_client 2.8.0 (2.8.1 available)
+  stream_transform 2.1.1 (2.1.2 available)
+  supabase 2.16.1 (2.16.2 available)
+  supabase_flutter 2.17.2 (2.18.0 available)
+  test 1.31.1 (1.32.0 available)
+  test_api 0.7.12 (0.7.14 available)
+  test_core 0.6.18 (0.6.20 available)
+  url_launcher 6.3.2 (6.3.3 available)
+  vector_math 2.4.2 (2.4.3 available)
+  webdriver 3.1.0 (3.2.0 available)
+  windows_file_picker 1.2.0 (2.0.0 available)
+  xml 7.0.1 (7.1.0 available)
+  yaml 3.1.3 (3.1.4 available)
+Got dependencies!
+72 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Launching .step55-capture-probe.dart on Web Server in debug mode...
+Waiting for connection from debug service on Web Server...         54.1s
+.step55-capture-probe.dart is being served at http://localhost:62724
+The web-server device requires the Dart Debug Chrome extension for debugging. Consider using the Chrome or Edge devices for an improved development workflow.
+
+Oops; flutter has exited unexpectedly: "SessionNotCreatedException (500): session not created: This version of ChromeDriver only supports Chrome version 152
+Current browser version is 154.0.8037.97 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe".
+A crash report has been written to D:\AppDev\mine_flow\Code\mine-flow-app\flutter_04.log
+This crash may already be reported. Check GitHub for similar crashes.
+https://github.com/flutter/flutter/issues?q=is%3Aissue+SessionNotCreatedException+%28500%29%3A+session+not+created%3A+This+version+of+ChromeDriver+only+supports+Chrome+version+152%0ACurrent+browser+version+is+154.0.8037.97+with+binary+path+C%3A%5CProgram+Files%5CGoogle%5CChrome%5CApplication%5Cchrome.exe
+
+To report your crash to the Flutter team, first read the guide to filing a bug.
+https://flutter.dev/to/report-bugs
+
+Create a new GitHub issue by pasting this link into your browser and completing the issue template. Thank you!
+https://github.com/flutter/flutter/issues/new?title=%5Btool_crash%5D+SessionNotCreatedException&body=%23%23+Command%0A%60%60%60sh%0Aflutter+drive+--driver%3Dtest_driver%2Fintegration_test.dart+--target%3D.step55-capture-probe.dart+-d+web-server+--browser-name%3Dchrome%0A%60%60%60%0A%0A%23%23+Steps+to+Reproduce%0A1.+...%0A2.+...%0A3.+...%0A%0A%23%23+Logs%0ASessionNotCreatedException%0A%60%60%60console%0A%230++++++parseW3cResponse+%28package%3Awebdriver%2Fsrc%2Fhandler%2Fw3c%2Futils.dart%3A81%3A9%29%0A%231++++++W3cSessionHandler.parseCreateResponse+%28package%3Awebdriver%2Fsrc%2Fhandler%2Fw3c%2Fsession.dart%3A19%3A21%29%0A%232++++++InferSessionHandler.parseCreateResponse+%28package%3Awebdriver%2Fsrc%2Fhandler%2Finfer_handler.dart%3A106%3A34%29%0A%233++++++AsyncRequestClient.send+%28package%3Awebdriver%2Fsrc%2Fcommon%2Frequest_client.dart%3A96%3A32%29%0A%3Casynchronous+suspension%3E%0A%234++++++createDriver+%28package%3Awebdriver%2Fasync_core.dart%3A62%3A19%29%0A%3Casynchronous+suspension%3E%0A%235++++++WebDriverService.startTest+%28package%3Aflutter_tools%2Fsrc%2Fdrive%2Fweb_driver_service.dart%3A200%3A19%29%0A%3Casynchronous+suspension%3E%0A%236++++++DriveCommand.runCommand+%28package%3Aflutter_tools%2Fsrc%2Fcommands%2Fdrive.dart%3A387%3A30%29%0A%3Casynchronous+suspension%3E%0A%237++++++FlutterCommand.run.%3Canonymous+closure%3E+%28package%3Aflutter_tools%2Fsrc%2Frunner%2Fflutter_command.dart%3A1663%3A27%29%0A%3Casynchronous+suspension%3E%0A%238++++++AppContext.run.%3Canonymous+closure%3E+%28package%3Aflutter_tools%2Fsrc%2Fbase%2Fcontext.dart%3A154%3A19%29%0A%3Casynchronous+suspension%3E%0A%239++++++CommandRunner.runCommand+%28package%3Aargs%2Fcommand_runner.dart%3A212%3A13%29%0A%3Casynchronous+suspension%3E%0A%2310+++++FlutterCommandRunner.runCommand.%3Canonymous+closure%3E+%28package%3Aflutter_tools%2Fsrc%2Frunner%2Fflutter_command_runner.dart%3A496%3A9%29%0A%3Casynchronous+suspension%3E%0A%2311+++++AppContext.run.%3Canonymous+closure%3E+%28package%3Aflutter_tools%2Fsrc%2Fbase%2Fcontext.dart%3A154%3A19%29%0A%3Casynchronous+suspension%3E%0A%2312+++++FlutterCommandRunner.runCommand+%28package%3Aflutter_tools%2Fsrc%2Frunner%2Fflutter_command_runner.dart%3A431%3A5%29%0A%3Casynchronous+suspension%3E%0A%2313+++++FlutterCommandRunner.run.%3Canonymous+closure%3E+%28package%3Aflutter_tools%2Fsrc%2Frunner%2Fflutter_command_runner.dart%3A307%3A33%29%0A%3Casynchronous+suspension%3E%0A%60%60%60%0A%60%60%60console%0A%5B%E2%9C%93%5D+Flutter+%28Channel+stable%2C+3.47.1%2C+on+Microsoft+Windows+%5BVersion+10.0.26300.9550%5D%2C+locale+en-US%29+%5B525ms%5D%0A++++%E2%80%A2+Flutter+version+3.47.1+on+channel+stable+at+D%3A%5CAppDev%5Cflutter%0A++++%E2%80%A2+Upstream+repository+https%3A%2F%2Fgithub.com%2Fflutter%2Fflutter.git%0A++++%E2%80%A2+Framework+revision+6655482ec0+%287+weeks+ago%29%2C+2026-08-19+10%3A07%3A23+-0700%0A++++%E2%80%A2+Engine+revision+5d53178869%0A++++%E2%80%A2+Dart+version+3.13.1%0A++++%E2%80%A2+DevTools+version+2.60.0%0A++++%E2%80%A2+Feature+flags%3A+enable-web%2C+enable-linux-desktop%2C+enable-macos-desktop%2C+enable-windows-desktop%2C+enable-android%2C+enable-ios%2C+cli-animations%2C+enable-native-assets%2C+enable-record-use%2C+enable-swift-package-manager%2C+omit-legacy-version-file%2C+enable-lldb-debugging%2C+enable-uiscene-migration%0A%0A%5B%E2%9C%93%5D+Windows+Version+%28Windows+11+or+higher%2C+26H2%2C+2009%29+%5B8.9s%5D%0A%0A%5B%21%5D+Android+toolchain+-+develop+for+Android+devices+%28Android+SDK+version+36.0.0%29+%5B9.5s%5D%0A++++%E2%80%A2+Android+SDK+at+C%3A%5CUsers%5CAlpxalpha%5CAppData%5CLocal%5CAndroid%5Csdk%0A++++%E2%80%A2+Emulator+version+35.5.10.0+%28build_id+13402964%29+%28CL%3AN%2FA%29%0A++++%E2%80%A2+Platform+android-37.0%2C+build-tools+36.0.0%0A++++%21+Multiple+adb+binaries+found.+This+can+cause+conflicts+and+device+detection+issues%3A%0A++++++++-+C%3A%5CUsers%5CAlpxalpha%5CAppData%5CLocal%5CAndroid%5CSdk%5Cplatform-tools%5Cadb.exe%0A++++++++-+C%3A%5CUsers%5CAlpxalpha%5CAppData%5CLocal%5CMicrosoft%5CWinGet%5CPackages%5CGenymobile.scrcpy_Microsoft.Winget.Source_8wekyb3d8bbwe%5Cscrcpy-win64-v3.3.1%5Cadb.exe%0A++++%E2%80%A2+Java+binary+at%3A+C%3A%5CProgram+Files%5CEclipse+Adoptium%5Cjdk-17.0.20.101-hotspot%5Cbin%5Cjava%0A++++++This+JDK+is+specified+in+your+Flutter+configuration.%0A++++++To+change+the+current+JDK%2C+run%3A+%60flutter+config+--jdk-dir%3D%22path%2Fto%2Fjdk%22%60.%0A++++%E2%80%A2+Java+version+OpenJDK+Runtime+Environment+Temurin-17.0.20.1%2B1+%28build+17.0.20.1%2B1%29%0D%0A++++%21+Some+Android+licenses+not+accepted.+To+resolve+this%2C+run%3A+flutter+doctor+--android-licenses%0A%0A%5B%E2%9C%93%5D+Chrome+-+develop+for+the+web+%5B27ms%5D%0A++++%E2%80%A2+Chrome+at+C%3A%5CProgram+Files%5CGoogle%5CChrome%5CApplication%5Cchrome.exe%0A%0A%5B%E2%9C%97%5D+Visual+Studio+-+develop+Windows+apps+%5B26ms%5D%0A++++%E2%9C%97+Visual+Studio+not+installed%3B+this+is+necessary+to+develop+Windows+apps.%0A++++++Download+at+https%3A%2F%2Fvisualstudio.microsoft.com%2Fdownloads%2F.%0A++++++Please+install+the+%22Desktop+development+with+C%2B%2B%22+workload%2C+including+all+of+its+default+components%0A%0A%5B%E2%9C%93%5D+Connected+device+%284+available%29+%5B1%2C124ms%5D%0A++++%E2%80%A2+Windows+%28desktop%29+%E2%80%A2+windows++++%E2%80%A2+windows-x64++++%E2%80%A2+Microsoft+Windows+%5BVersion+10.0.26300.9550%5D%0A++++%E2%80%A2+Web+Server+%28web%29++%E2%80%A2+web-server+%E2%80%A2+web-javascript+%E2%80%A2+Flutter+Tools%0A++++%E2%80%A2+Chrome+%28web%29++++++%E2%80%A2+chrome+++++%E2%80%A2+web-javascript+%E2%80%A2+Google+Chrome+154.0.8037.97%0A++++%E2%80%A2+Edge+%28web%29++++++++%E2%80%A2+edge+++++++%E2%80%A2+web-javascript+%E2%80%A2+Microsoft+Edge+154.0.4258.53%0A%0A%5B%E2%9C%93%5D+Network+resources+%5B575ms%5D%0A++++%E2%80%A2+All+expected+network+resources+are+available.%0A%0A%21+Doctor+found+issues+in+2+categories.%0A%0A%60%60%60%0A%0A%23%23+Flutter+Application+Metadata%0A%2A%2AType%2A%2A%3A+app%0A%2A%2AVersion%2A%2A%3A+0.1.0%2B1%0A%2A%2AMaterial%2A%2A%3A+true%0A%2A%2AAndroid+X%2A%2A%3A+false%0A%2A%2AModule%2A%2A%3A+false%0A%2A%2APlugin%2A%2A%3A+false%0A%2A%2AAndroid+package%2A%2A%3A+null%0A%2A%2AiOS+bundle+identifier%2A%2A%3A+null%0A%2A%2ACreation+channel%2A%2A%3A+stable%0A%2A%2ACreation+framework+version%2A%2A%3A+f94f4fc76b4d74543ed9b085bbd75341ef65de22%0A%23%23%23+Plugins%0Aapp_links-7.2.1%0Abattery_plus-7.1.1%0Aconnectivity_plus-7.3.1%0Afile_picker_darwin-1.1.0%0Aflutter_secure_storage_darwin-0.4.0%0Aimage_picker_ios-0.8.13%2B7%0Aintegration_test%0Apackage_info_plus-10.2.1%0Apath_provider_foundation-2.6.0%0Aprinting-5.15.0%0Ashared_preferences_foundation-2.5.7%0Aurl_launcher_ios-6.4.2%0Aandroid_file_picker-1.1.1%0Aflutter_plugin_android_lifecycle-2.0.35%0Aflutter_secure_storage-11.1.0%0Aimage_picker_android-0.8.13%2B21%0Ajni-1.0.3%0Ajni_flutter-1.0.2%0Apath_provider_android-2.3.1%0Ashared_preferences_android-2.4.28%0Aurl_launcher_android-6.3.33%0Afile_selector_macos-0.9.5%2B1%0Aimage_picker_macos-0.2.2%2B1%0Aurl_launcher_macos-3.2.6%0Aapp_links_linux-1.0.3%0Afile_picker_linux-1.1.0%0Afile_selector_linux-0.9.4%2B1%0Aflutter_secure_storage_linux-3.0.2%0Agtk-2.2.0%0Aimage_picker_linux-0.2.2%0Apath_provider_linux-2.2.2%0Ashared_preferences_linux-2.4.1%0Aurl_launcher_linux-3.2.3%0Afile_selector_windows-0.9.3%2B6%0Aflutter_secure_storage_windows-4.2.2%0Aimage_picker_windows-0.2.2%0Apath_provider_windows-2.3.0%0Ashared_preferences_windows-2.4.1%0Aurl_launcher_windows-3.1.6%0Awindows_file_picker-1.2.0%0Aapp_links_web-1.0.4%0Afile_picker_web-3.1.0%0Aflutter_secure_storage_web-2.1.1%0Aimage_picker_for_web-3.1.1%0Ashared_preferences_web-2.4.3%0Aurl_launcher_web-2.4.3%0A%0A&labels=tool%2Csevere%3A+crash
+

@@ -1,0 +1,300 @@
+
+COMMAND initdb ('-D', WindowsPath('C:/Users/Alpxalpha/AppData/Local/hermes/cache/scratch/step55-security-resume/pgdata'), '-U', 'step55_verify', '-A', 'trust', '--encoding=UTF8', '--no-locale')
+EXIT 0
+The files belonging to this database system will be owned by user "Alpxalpha".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "C".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+creating directory C:/Users/Alpxalpha/AppData/Local/hermes/cache/scratch/step55-security-resume/pgdata ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... windows
+selecting default "max_connections" ... 100
+selecting default "shared_buffers" ... 128MB
+selecting default time zone ... Asia/Bangkok
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    ^"C^:^\Program^ Files^\PostgreSQL^\17^\bin^\pg^_ctl^" -D ^"C^:^\Users^\Alpxalpha^\AppData^\Local^\hermes^\cache^\scratch^\step55^-security^-resume^\pgdata^" -l logfile start
+
+
+COMMAND pg_ctl ('-D', WindowsPath('C:/Users/Alpxalpha/AppData/Local/hermes/cache/scratch/step55-security-resume/pgdata'), '-l', WindowsPath('C:/Users/Alpxalpha/AppData/Local/hermes/cache/scratch/step55-security-resume/postgres.log'), '-o', '-h 127.0.0.1 -p 55456', '-w', 'start')
+EXIT 0
+
+COMMAND psql ('-X', '-h', '127.0.0.1', '-p', '55456', '-U', 'step55_verify', '-d', 'postgres', '-v', 'ON_ERROR_STOP=1', '-f', WindowsPath('D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/bootstrap_local.sql'))
+EXIT 0
+CREATE ROLE
+CREATE ROLE
+CREATE ROLE
+CREATE SCHEMA
+CREATE TABLE
+CREATE FUNCTION
+CREATE FUNCTION
+GRANT
+GRANT
+ALTER DEFAULT PRIVILEGES
+ALTER DEFAULT PRIVILEGES
+
+COMMAND psql ('-X', '-h', '127.0.0.1', '-p', '55456', '-U', 'step55_verify', '-d', 'postgres', '-v', 'ON_ERROR_STOP=1', '-f', WindowsPath('D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260718000001_core_schema.sql'))
+EXIT 0
+CREATE EXTENSION
+CREATE TYPE
+CREATE TYPE
+CREATE TYPE
+CREATE TYPE
+CREATE FUNCTION
+CREATE TABLE
+CREATE TRIGGER
+CREATE TABLE
+CREATE TRIGGER
+CREATE TABLE
+CREATE TRIGGER
+CREATE TABLE
+CREATE TRIGGER
+CREATE TABLE
+CREATE TRIGGER
+CREATE TABLE
+CREATE TRIGGER
+CREATE TABLE
+CREATE TRIGGER
+CREATE TABLE
+CREATE TRIGGER
+CREATE TABLE
+CREATE TRIGGER
+
+COMMAND psql ('-X', '-h', '127.0.0.1', '-p', '55456', '-U', 'step55_verify', '-d', 'postgres', '-v', 'ON_ERROR_STOP=1', '-f', WindowsPath('D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260718000002_rls_policies.sql'))
+EXIT 0
+CREATE FUNCTION
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+
+COMMAND psql ('-X', '-h', '127.0.0.1', '-p', '55456', '-U', 'step55_verify', '-d', 'postgres', '-v', 'ON_ERROR_STOP=1', '-f', WindowsPath('D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260718000003_data_bucket_enhancements.sql'))
+EXIT 0
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+DO
+ALTER TABLE
+DO
+psql:D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260718000003_data_bucket_enhancements.sql:16: NOTICE:  constraint "geospatial_files_file_type_check" of relation "geospatial_files" does not exist, skipping
+
+COMMAND psql ('-X', '-h', '127.0.0.1', '-p', '55456', '-U', 'step55_verify', '-d', 'postgres', '-v', 'ON_ERROR_STOP=1', '-f', WindowsPath('D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260723_step_33_1_data_model_polish.sql'))
+EXIT 0
+ALTER TABLE
+UPDATE 0
+ALTER TABLE
+ALTER TABLE
+UPDATE 0
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+
+COMMAND psql ('-X', '-h', '127.0.0.1', '-p', '55456', '-U', 'step55_verify', '-d', 'postgres', '-v', 'ON_ERROR_STOP=1', '-f', WindowsPath('D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260724_step_34_1_drop_geospatial_file_lat_lon.sql'))
+EXIT 0
+ALTER TABLE
+DROP INDEX
+DROP INDEX
+psql:D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260724_step_34_1_drop_geospatial_file_lat_lon.sql:14: NOTICE:  index "idx_geospatial_files_latitude" does not exist, skipping
+psql:D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260724_step_34_1_drop_geospatial_file_lat_lon.sql:15: NOTICE:  index "idx_geospatial_files_longitude" does not exist, skipping
+
+COMMAND psql ('-X', '-h', '127.0.0.1', '-p', '55456', '-U', 'step55_verify', '-d', 'postgres', '-v', 'ON_ERROR_STOP=1', '-f', WindowsPath('D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260831000001_step_48_17_timeline_milestones.sql'))
+EXIT 0
+CREATE TABLE
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE TRIGGER
+ALTER TABLE
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+
+COMMAND psql ('-X', '-h', '127.0.0.1', '-p', '55456', '-U', 'step55_verify', '-d', 'postgres', '-v', 'ON_ERROR_STOP=1', '-f', WindowsPath('D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260831000002_step_48_17_benchmarks.sql'))
+EXIT 0
+CREATE TABLE
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE TRIGGER
+ALTER TABLE
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+CREATE POLICY
+
+COMMAND psql ('-X', '-h', '127.0.0.1', '-p', '55456', '-U', 'step55_verify', '-d', 'postgres', '-v', 'ON_ERROR_STOP=1', '-f', WindowsPath('D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260901000001_step_48_20_updated_at_respects_client.sql'))
+EXIT 0
+CREATE FUNCTION
+
+COMMAND psql ('-X', '-h', '127.0.0.1', '-p', '55456', '-U', 'step55_verify', '-d', 'postgres', '-v', 'ON_ERROR_STOP=1', '-f', WindowsPath('D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260902000001_step_48_21_notes_columns.sql'))
+EXIT 0
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+
+COMMAND psql ('-X', '-h', '127.0.0.1', '-p', '55456', '-U', 'step55_verify', '-d', 'postgres', '-v', 'ON_ERROR_STOP=1', '-f', WindowsPath('D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260912000001_step_55_6_daily_log_hazard_contract.sql'))
+EXIT 0
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE FUNCTION
+DROP TRIGGER
+CREATE TRIGGER
+DROP POLICY
+CREATE POLICY
+DROP POLICY
+CREATE POLICY
+DROP POLICY
+CREATE POLICY
+psql:D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260912000001_step_55_6_daily_log_hazard_contract.sql:42: NOTICE:  constraint "daily_logs_hazard_state_check" of relation "daily_logs" does not exist, skipping
+psql:D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260912000001_step_55_6_daily_log_hazard_contract.sql:48: NOTICE:  constraint "daily_logs_hazard_severity_check" of relation "daily_logs" does not exist, skipping
+psql:D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260912000001_step_55_6_daily_log_hazard_contract.sql:61: NOTICE:  constraint "daily_logs_hazard_coherence_check" of relation "daily_logs" does not exist, skipping
+psql:D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260912000001_step_55_6_daily_log_hazard_contract.sql:138: NOTICE:  trigger "enforce_daily_log_transition" for relation "public.daily_logs" does not exist, skipping
+
+COMMAND psql ('-X', '-h', '127.0.0.1', '-p', '55456', '-U', 'step55_verify', '-d', 'postgres', '-v', 'ON_ERROR_STOP=1', '-f', WindowsPath('D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20260913000001_step_55_8_inventory_transactions.sql'))
+EXIT 0
+CREATE TABLE
+ALTER TABLE
+CREATE POLICY
+CREATE POLICY
+CREATE FUNCTION
+
+COMMAND psql ('-X', '-h', '127.0.0.1', '-p', '55456', '-U', 'step55_verify', '-d', 'postgres', '-v', 'ON_ERROR_STOP=1', '-f', WindowsPath('D:/AppDev/mine_flow/Code/mine-flow-app/supabase/tests/user_profile_permissions.sql'))
+EXIT 3
+BEGIN
+INSERT 0 3
+INSERT 0 3
+SET
+  set_config   
+---------------
+ authenticated
+(1 row)
+
+              set_config              
+--------------------------------------
+ 55550000-0000-4000-8000-000000000001
+(1 row)
+
+psql:D:/AppDev/mine_flow/Code/mine-flow-app/supabase/tests/user_profile_permissions.sql:29: ERROR:  REGRESSION: crew can self-promote to supervisor
+CONTEXT:  PL/pgSQL function inline_code_block line 5 at RAISE
+
+COMMAND psql ('-X', '-h', '127.0.0.1', '-p', '55456', '-U', 'step55_verify', '-d', 'postgres', '-v', 'ON_ERROR_STOP=1', '-f', WindowsPath('D:/AppDev/mine_flow/Code/mine-flow-app/supabase/migrations/20261004000001_step_55_user_profile_permissions.sql'))
+EXIT 0
+CREATE FUNCTION
+COMMENT
+CREATE TRIGGER
+
+COMMAND psql ('-X', '-h', '127.0.0.1', '-p', '55456', '-U', 'step55_verify', '-d', 'postgres', '-v', 'ON_ERROR_STOP=1', '-f', WindowsPath('D:/AppDev/mine_flow/Code/mine-flow-app/supabase/tests/user_profile_permissions.sql'))
+EXIT 0
+BEGIN
+INSERT 0 3
+INSERT 0 3
+SET
+  set_config   
+---------------
+ authenticated
+(1 row)
+
+              set_config              
+--------------------------------------
+ 55550000-0000-4000-8000-000000000001
+(1 row)
+
+DO
+DO
+              set_config              
+--------------------------------------
+ 55550000-0000-4000-8000-000000000003
+(1 row)
+
+DO
+RESET
+SET
+ set_config 
+------------
+ 
+(1 row)
+
+  set_config  
+--------------
+ service_role
+(1 row)
+
+DO
+ROLLBACK
+psql:D:/AppDev/mine_flow/Code/mine-flow-app/supabase/tests/user_profile_permissions.sql:29: NOTICE:  PASS: crew self-promotion rejected
+psql:D:/AppDev/mine_flow/Code/mine-flow-app/supabase/tests/user_profile_permissions.sql:82: NOTICE:  PASS: allowed profile fields for 55550000-0000-4000-8000-000000000001
+psql:D:/AppDev/mine_flow/Code/mine-flow-app/supabase/tests/user_profile_permissions.sql:82: NOTICE:  PASS: another account remains protected for 55550000-0000-4000-8000-000000000001
+psql:D:/AppDev/mine_flow/Code/mine-flow-app/supabase/tests/user_profile_permissions.sql:82: NOTICE:  PASS: allowed profile fields for 55550000-0000-4000-8000-000000000002
+psql:D:/AppDev/mine_flow/Code/mine-flow-app/supabase/tests/user_profile_permissions.sql:82: NOTICE:  PASS: another account remains protected for 55550000-0000-4000-8000-000000000002
+psql:D:/AppDev/mine_flow/Code/mine-flow-app/supabase/tests/user_profile_permissions.sql:82: NOTICE:  PASS: 20 protected-field updates rejected
+psql:D:/AppDev/mine_flow/Code/mine-flow-app/supabase/tests/user_profile_permissions.sql:96: NOTICE:  PASS: supervisor account management preserved
+psql:D:/AppDev/mine_flow/Code/mine-flow-app/supabase/tests/user_profile_permissions.sql:111: NOTICE:  PASS: trusted server administration preserved
+
+COMMAND psql ('-X', '-h', '127.0.0.1', '-p', '55456', '-U', 'step55_verify', '-d', 'postgres', '-v', 'ON_ERROR_STOP=1', '-At', '-c', "select count(*) from public.users where email like 'step55-%@example.invalid';")
+EXIT 0
+0
+
+COMMAND pg_ctl ('-D', WindowsPath('C:/Users/Alpxalpha/AppData/Local/hermes/cache/scratch/step55-security-resume/pgdata'), '-m', 'fast', '-w', 'stop')
+EXIT 0

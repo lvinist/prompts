@@ -1,0 +1,42 @@
+waiting for server to start.... done
+server started
+BEGIN
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+ALTER TABLE
+UPDATE 1
+ALTER TABLE
+COMMENT
+COMMENT
+COMMENT
+CREATE FUNCTION
+CREATE TRIGGER
+CREATE FUNCTION
+SET
+  set_config   
+---------------
+ authenticated
+(1 row)
+
+              set_config              
+--------------------------------------
+ 55550000-0000-4000-8000-000000000011
+(1 row)
+
+ adjust_inventory 
+------------------
+ 
+(1 row)
+
+psql:D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/resume-20261006/timestamp-green-input.sql:111: NOTICE:  PASS: new ledger created_at is server-authored
+DO
+psql:D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/resume-20261006/timestamp-green-input.sql:152: NOTICE:  PASS: legacy provenance, event time, replay, rollback and item timestamp preserved
+DO
+INSERT 0 1
+psql:D:/AppDev/mine_flow/Upcoming Prompts/step55-remediation/resume-20261006/timestamp-green-input.sql:168: NOTICE:  PASS: direct INSERT cannot spoof audit timestamp or provenance
+DO
+ROLLBACK
+waiting for server to shut down.... done
+server stopped

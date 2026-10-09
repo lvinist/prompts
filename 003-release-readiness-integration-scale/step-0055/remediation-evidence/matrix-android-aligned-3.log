@@ -1,0 +1,530 @@
+Running Gradle task 'assembleDebug'...                             20.7s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...        1,555ms
+I/flutter ( 6179): The Dart VM service is listening on http://127.0.0.1:39307/HKw9dg1iBMk=/
+D/nativeloader( 6179): Load /data/app/~~swC8ShldCLoL0BPReLlT5Q==/com.mineflow.mine_flow-RNxB5W7C5FVfWg4wGtd7sg==/base.apk!/lib/x86_64/libdartjni.so using ns clns-7 from class loader (caller=/data/app/~~swC8ShldCLoL0BPReLlT5Q==/com.mineflow.mine_flow-RNxB5W7C5FVfWg4wGtd7sg==/base.apk!classes7.dex): ok
+W/eflow.mine_flow( 6179): Accessing hidden method Landroid/view/accessibility/AccessibilityNodeInfo;->getSourceNodeId()J (unsupported,test-api, reflection, allowed)
+W/eflow.mine_flow( 6179): Accessing hidden method Landroid/view/accessibility/AccessibilityRecord;->getSourceNodeId()J (unsupported, reflection, allowed)
+W/eflow.mine_flow( 6179): Accessing hidden field Landroid/view/accessibility/AccessibilityNodeInfo;->mChildNodeIds:Landroid/util/LongArray; (unsupported, reflection, allowed)
+W/eflow.mine_flow( 6179): Accessing hidden method Landroid/util/LongArray;->get(I)J (unsupported, reflection, allowed)
+D/AccessibilityBridge( 6179): Setting not found: accessibility_display_inversion_enabled, using default: 0
+D/FlutterRenderer( 6179): Width is zero. 0,0
+W/HWUI    ( 6179): Unknown dataspace 0
+I/WindowExtensionsImpl( 6179): Initializing Window Extensions, vendor API level=6, activity embedding enabled=true
+D/FlutterRenderer( 6179): Width is zero. 0,0
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+I/Gralloc4( 6179): mapper 4.x is not supported
+W/HWUI    ( 6179): Failed to initialize 101010-2 format, error = EGL_SUCCESS
+I/eflow.mine_flow( 6179): Compiler allocated 5174KB to compile void android.view.ViewRootImpl.performTraversals()
+I/eflow.mine_flow( 6179): Compiler allocated 5417KB to compile void android.view.ViewRootImpl.performTraversals()
+I/Choreographer( 6179): Skipped 37 frames!  The application may be doing too much work on its main thread.
+D/ProfileInstaller( 6179): Installing profile for com.mineflow.mine_flow
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:56291/hepOVvS9hwI=/
+VMServiceFlutterDriver: Isolate found with number: 2802255786038919
+VMServiceFlutterDriver: Isolate 2802255786038919 is runnable.
+VMServiceFlutterDriver: Isolate is paused at start.
+VMServiceFlutterDriver: Attempting to resume isolate
+I/flutter ( 6179): 00:00 +0: Design Review Capture - Matrix
+VMServiceFlutterDriver: Connected to Flutter application.
+I/flutter ( 6179): [CONFIG] supabase.supabase_flutter: Initialize Supabase v2.17.2
+I/flutter ( 6179): [CONFIG] supabase.auth: Initialize GoTrueClient v2.27.2 with url: [REDACTED_CONFIG]/auth/v1, autoRefreshToken: <redacted>, flowType: pkce, tickDuration: 0:00:10.000000, tickThreshold: 3
+I/flutter ( 6179): [FINEST] supabase.auth: Initialize with headers: {X-Client-Info: supabase-flutter/2.17.2; platform=Android; platform-version=AE3A.240806.036; runtime=dart; runtime-version=3.13.1, apikey: <redacted>, Authorization: Bearer <redacted>}
+I/flutter ( 6179): [FINE] supabase.auth: Stopping auto refresh
+I/flutter ( 6179): [FINE] supabase.auth: Starting auto refresh
+I/flutter ( 6179): [CONFIG] supabase.postgrest: Initialize PostgrestClient with url: [REDACTED_CONFIG]/rest/v1, schema: public
+I/flutter ( 6179): [FINEST] supabase.postgrest: Initialize with headers: {X-Client-Info: supabase-flutter/2.17.2; platform=Android; platform-version=AE3A.240806.036; runtime=dart; runtime-version=3.13.1}
+I/flutter ( 6179): [CONFIG] supabase.functions: Initialize FunctionsClient v2.7.1 with url '[REDACTED_CONFIG]/functions/v1' and region 'null'
+I/flutter ( 6179): [FINEST] supabase.functions: Initialize with headers: {X-Client-Info: supabase-flutter/2.17.2; platform=Android; platform-version=AE3A.240806.036; runtime=dart; runtime-version=3.13.1}
+I/flutter ( 6179): [CONFIG] supabase.storage: Initialize SupabaseStorageClient v2.8.0 with url: [REDACTED_CONFIG]/storage/v1, retryAttempts: 0
+I/flutter ( 6179): [FINEST] supabase.storage: Initialize with headers: {X-Client-Info: supabase-flutter/2.17.2; platform=Android; platform-version=AE3A.240806.036; runtime=dart; runtime-version=3.13.1}
+I/flutter ( 6179): [CONFIG] supabase.realtime: Initialize RealtimeClient with endpoint: wss://rpdnonpivoyhghzolyzv.supabase.co/realtime/v1, timeout: 0:00:10.000000, heartbeatIntervalMs: 25000, logLevel: null
+I/flutter ( 6179): [FINEST] supabase.realtime: Initialize with headers: {apikey: <redacted>, X-Client-Info: supabase-flutter/2.17.2; platform=Android; platform-version=AE3A.240806.036; runtime=dart; runtime-version=3.13.1}, params: {apikey: <redacted>}
+I/flutter ( 6179): [CONFIG] supabase.supabase: Initialize SupabaseClient v2.16.1 with no custom access token
+I/flutter ( 6179): [FINEST] supabase.auth: onAuthStateChange: AuthState(event: initialSession, session: null, fromBroadcast: false, signOutReason: null)
+I/flutter ( 6179): [FINE] supabase.supabase_flutter: Starting deeplink observer
+I/flutter ( 6179): [INFO] supabase.supabase_flutter: ***** Supabase init completed *****
+I/flutter ( 6179): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
+I/flutter ( 6179): [INFO] ConnectivityService: Connectivity changed → online
+I/flutter ( 6179): ConnectivityService: INFO: Connectivity changed → online 
+I/flutter ( 6179): [INFO] SyncQueueManager: Network connectivity restored. Triggering queue sync.
+I/flutter ( 6179): SyncQueueManager: INFO: Network connectivity restored. Triggering queue sync. 
+I/flutter ( 6179): [FINE] SyncQueueManager: No pending sync items to process.
+I/flutter ( 6179): [INFO] SyncQueueManager: Registered sync handler for entity type: data_bucket_metadata_sync
+I/flutter ( 6179): SyncQueueManager: INFO: Registered sync handler for entity type: data_bucket_metadata_sync 
+I/flutter ( 6179): [INFO] DataBucketSyncRegistrar: Registered sync handler for data_bucket_metadata_sync
+I/flutter ( 6179): DataBucketSyncRegistrar: INFO: Registered sync handler for data_bucket_metadata_sync 
+I/flutter ( 6179): [INFO] SyncQueueManager: Registered sync handler for entity type: cut_fill_records
+I/flutter ( 6179): SyncQueueManager: INFO: Registered sync handler for entity type: cut_fill_records 
+I/flutter ( 6179): [INFO] TrackingSyncRegistrar: Registered sync handler for cut_fill_records
+I/flutter ( 6179): TrackingSyncRegistrar: INFO: Registered sync handler for cut_fill_records 
+I/flutter ( 6179): [INFO] SyncQueueManager: Registered sync handler for entity type: land_clearing_records
+I/flutter ( 6179): SyncQueueManager: INFO: Registered sync handler for entity type: land_clearing_records 
+I/flutter ( 6179): [INFO] TrackingSyncRegistrar: Registered sync handler for land_clearing_records
+I/flutter ( 6179): TrackingSyncRegistrar: INFO: Registered sync handler for land_clearing_records 
+I/flutter ( 6179): [INFO] SyncQueueManager: Registered sync handler for entity type: inventory_items
+I/flutter ( 6179): SyncQueueManager: INFO: Registered sync handler for entity type: inventory_items 
+I/flutter ( 6179): [INFO] TrackingSyncRegistrar: Registered sync handler for inventory_items
+I/flutter ( 6179): TrackingSyncRegistrar: INFO: Registered sync handler for inventory_items 
+I/flutter ( 6179): [INFO] SyncQueueManager: Registered sync handler for entity type: inventory_transactions
+I/flutter ( 6179): SyncQueueManager: INFO: Registered sync handler for entity type: inventory_transactions 
+I/flutter ( 6179): [INFO] TrackingSyncRegistrar: Registered sync handler for inventory_transactions
+I/flutter ( 6179): TrackingSyncRegistrar: INFO: Registered sync handler for inventory_transactions 
+I/flutter ( 6179): [INFO] SyncQueueManager: Registered sync handler for entity type: attendance_records
+I/flutter ( 6179): SyncQueueManager: INFO: Registered sync handler for entity type: attendance_records 
+I/flutter ( 6179): [INFO] AttendanceSyncRegistrar: Registered sync handler for attendance_records
+I/flutter ( 6179): AttendanceSyncRegistrar: INFO: Registered sync handler for attendance_records 
+I/flutter ( 6179): [INFO] SyncQueueManager: Registered sync handler for entity type: daily_logs
+I/flutter ( 6179): SyncQueueManager: INFO: Registered sync handler for entity type: daily_logs 
+I/flutter ( 6179): [INFO] DailyLogSyncRegistrar: Registered sync handler for daily_logs
+I/flutter ( 6179): DailyLogSyncRegistrar: INFO: Registered sync handler for daily_logs 
+I/flutter ( 6179): [INFO] SyncQueueManager: Registered sync handler for entity type: equipment_checks
+I/flutter ( 6179): SyncQueueManager: INFO: Registered sync handler for entity type: equipment_checks 
+I/flutter ( 6179): [INFO] EquipmentCheckSyncRegistrar: Registered sync handler for equipment_checks
+I/flutter ( 6179): EquipmentCheckSyncRegistrar: INFO: Registered sync handler for equipment_checks 
+I/flutter ( 6179): [INFO] SyncQueueManager: Registered sync handler for entity type: benchmarks
+I/flutter ( 6179): SyncQueueManager: INFO: Registered sync handler for entity type: benchmarks 
+I/flutter ( 6179): [INFO] BenchmarkSyncRegistrar: Registered sync handler for benchmarks
+I/flutter ( 6179): BenchmarkSyncRegistrar: INFO: Registered sync handler for benchmarks 
+I/flutter ( 6179): [INFO] GoRouter: Full paths for routes:
+I/flutter ( 6179): ├─/login (LoginPage)
+I/flutter ( 6179): ├─/privacy-gate (PrivacyAckPage)
+I/flutter ( 6179): ├─/__interaction-fixture (AppInteractionFixturePage)
+I/flutter ( 6179): │ └─/__interaction-fixture/form (AppInteractionFixturePage)
+I/flutter ( 6179): ├─ (ShellRoute)
+I/flutter ( 6179): │ ├─/ (BlocProvider<DashboardCubit>)
+I/flutter ( 6179): │ ├─/tools (GroupLandingPage)
+I/flutter ( 6179): │ │ └─/tools/data-bucket (DataBucketListPage)
+I/flutter ( 6179): │ │   ├─/tools/data-bucket/upload 
+I/flutter ( 6179): │ │   └─/tools/data-bucket/:id 
+I/flutter ( 6179): │ ├─/operations (GroupLandingPage)
+I/flutter ( 6179): │ │ ├─/operations/cut-fill (CutFillListScreen)
+I/flutter ( 6179): │ │ │ ├─/operations/cut-fill/form 
+I/flutter ( 6179): │ │ │ └─/operations/cut-fill/:id/form 
+I/flutter ( 6179): │ │ ├─/operations/land-clearing (LandClearingSummaryScreen)
+I/flutter ( 6179): │ │ │ ├─/operations/land-clearing/form 
+I/flutter ( 6179): │ │ │ ├─/operations/land-clearing/:id 
+I/flutter ( 6179): │ │ │ └─/operations/land-clearing/:id/form 
+I/flutter ( 6179): │ │ └─/operations/benchmark-db (BenchmarkListScreen)
+I/flutter ( 6179): │ │   ├─/operations/benchmark-db/form (BenchmarkFormScreen)
+I/flutter ( 6179): │ │   ├─/operations/benchmark-db/:id 
+I/flutter ( 6179): │ │   └─/operations/benchmark-db/:id/form 
+I/flutter ( 6179): │ ├─/teams (GroupLandingPage)
+I/flutter ( 6179): │ │ ├─/teams/attendance (AttendanceScreen)
+I/flutter ( 6179): │ │ │ └─/teams/attendance/form 
+I/flutter ( 6179): │ │ ├─/teams/daily-log (DailyLogListScreen)
+I/flutter ( 6179): │ │ │ ├─/teams/daily-log/form 
+I/flutter ( 6179): │ │ │ └─/teams/daily-log/:id/form 
+I/flutter ( 6179): │ │ ├─/teams/inventory (InventoryDashboardScreen)
+I/flutter ( 6179): │ │ │ ├─/teams/inventory/form 
+I/flutter ( 6179): │ │ │ ├─/teams/inventory/:id 
+I/flutter ( 6179): │ │ │ └─/teams/inventory/:id/form 
+I/flutter ( 6179): │ │ ├─/teams/equipment-check (EquipmentHistoryScreen)
+I/flutter ( 6179): │ │ │ ├─/teams/equipment-check/form 
+I/flutter ( 6179): │ │ │ └─/teams/equipment-check/:id 
+I/flutter ( 6179): │ │ └─/teams/timeline (TimelinePage)
+I/flutter ( 6179): │ └─/settings (SettingsPage)
+I/flutter ( 6179): │   └─/settings/profile/form (ProfileEditPage)
+I/flutter ( 6179): ├─/reports/config (Widget)
+I/flutter ( 6179): └─/notifications (BlocProvider<NotificationCubit>)
+I/flutter ( 6179): known full paths for route names:
+I/flutter ( 6179):   login => /login
+I/flutter ( 6179):   privacy-gate => /privacy-gate
+I/flutter ( 6179):   interaction-fixture => /__interaction-fixture
+I/flutter ( 6179):   interaction-fixture-form => /__interaction-fixture/form
+I/flutter ( 6179):   dashboard => /
+I/flutter ( 6179):   tools => /tools
+I/flutter ( 6179):   data-bucket => /tools/data-bucket
+I/flutter ( 6179):   data-bucket-upload => /tools/data-bucket/upload
+I/flutter ( 6179):   data-bucket-detail => /tools/data-bucket/:id
+I/flutter ( 6179):   operations => /operations
+I/flutter ( 6179):   cut-fill => /operations/cut-fill
+I/flutter ( 6179):   cut-fill-create => /operations/cut-fill/form
+I/flutter ( 6179):   cut-fill-edit => /operations/cut-fill/:id/form
+I/flutter ( 6179):   land-clearing => /operations/land-clearing
+I/flutter ( 6179):   land-clearing-create => /operations/land-clearing/form
+I/flutter ( 6179):   land-clearing-detail => /operations/land-clearing/:id
+I/flutter ( 6179):   land-clearing-edit => /operations/land-clearing/:id/form
+I/flutter ( 6179):   benchmark-db => /operations/benchmark-db
+I/flutter ( 6179):   benchmark-form => /operations/benchmark-db/form
+I/flutter ( 6179):   benchmark-detail => /operations/benchmark-db/:id
+I/flutter ( 6179):   benchmark-edit => /operations/benchmark-db/:id/form
+I/flutter ( 6179):   teams => /teams
+I/flutter ( 6179):   attendance => /teams/attendance
+I/flutter ( 6179):   attendance-form => /teams/attendance/form
+I/flutter ( 6179):   daily-log => /teams/daily-log
+I/flutter ( 6179):   daily-log-form => /teams/daily-log/form
+I/flutter ( 6179):   daily-log-record-form => /teams/daily-log/:id/form
+I/flutter ( 6179):   inventory => /teams/inventory
+I/flutter ( 6179):   inventory-form => /teams/inventory/form
+I/flutter ( 6179):   inventory-detail => /teams/inventory/:id
+I/flutter ( 6179):   inventory-edit => /teams/inventory/:id/form
+I/flutter ( 6179):   equipment-check => /teams/equipment-check
+I/flutter ( 6179):   equipment-check-form => /teams/equipment-check/form
+I/flutter ( 6179):   equipment-check-detail => /teams/equipment-check/:id
+I/flutter ( 6179):   timeline => /teams/timeline
+I/flutter ( 6179):   settings => /settings
+I/flutter ( 6179):   settings-profile => /settings/profile/form
+I/flutter ( 6179):   report-config => /reports/config
+I/flutter ( 6179):   notifications => /notifications
+I/flutter ( 6179): 
+I/flutter ( 6179): GoRouter: INFO: Full paths for routes:
+I/flutter ( 6179): ├─/login (LoginPage)
+I/flutter ( 6179): ├─/privacy-gate (PrivacyAckPage)
+I/flutter ( 6179): ├─/__interaction-fixture (AppInteractionFixturePage)
+I/flutter ( 6179): │ └─/__interaction-fixture/form (AppInteractionFixturePage)
+I/flutter ( 6179): ├─ (ShellRoute)
+I/flutter ( 6179): │ ├─/ (BlocProvider<DashboardCubit>)
+I/flutter ( 6179): │ ├─/tools (GroupLandingPage)
+I/flutter ( 6179): │ │ └─/tools/data-bucket (DataBucketListPage)
+I/flutter ( 6179): │ │   ├─/tools/data-bucket/upload 
+I/flutter ( 6179): │ │   └─/tools/data-bucket/:id 
+I/flutter ( 6179): │ ├─/operations (GroupLandingPage)
+I/flutter ( 6179): │ │ ├─/operations/cut-fill (CutFillListScreen)
+I/flutter ( 6179): │ │ │ ├─/operations/cut-fill/form 
+I/flutter ( 6179): │ │ │ └─/operations/cut-fill/:id/form 
+I/flutter ( 6179): │ │ ├─/operations/land-clearing (LandClearingSummaryScreen)
+I/flutter ( 6179): │ │ │ ├─/operations/land-clearing/form 
+I/flutter ( 6179): │ │ │ ├─/operations/land-clearing/:id 
+I/flutter ( 6179): │ │ │ └─/operations/land-clearing/:id/form 
+I/flutter ( 6179): │ │ └─/operations/benchmark-db (BenchmarkListScreen)
+I/flutter ( 6179): │ │   ├─/operations/benchmark-db/form (BenchmarkFormScreen)
+I/flutter ( 6179): │ │   ├─/operations/benchmark-db/:id 
+I/flutter ( 6179): │ │   └─/operations/benchmark-db/:id/form 
+I/flutter ( 6179): │ ├─/teams (GroupLandingPage)
+I/flutter ( 6179): │ │ ├─/teams/attendance (AttendanceScreen)
+I/flutter ( 6179): │ │ │ └─/teams/attendance/form 
+I/flutter ( 6179): │ │ ├─/teams/daily-log (DailyLogListScreen)
+I/flutter ( 6179): │ │ │ ├─/teams/daily-log/form 
+I/flutter ( 6179): │ │ │ └─/teams/daily-log/:id/form 
+I/flutter ( 6179): │ │ ├─/teams/inventory (InventoryDashboardScreen)
+I/flutter ( 6179): │ │ │ ├─/teams/inventory/form 
+I/flutter ( 6179): │ │ │ ├─/teams/inventory/:id 
+I/flutter ( 6179): │ │ │ └─/teams/inventory/:id/form 
+I/flutter ( 6179): │ │ ├─/teams/equipment-check (EquipmentHistoryScreen)
+I/flutter ( 6179): │ │ │ ├─/teams/equipment-check/form 
+I/flutter ( 6179): │ │ │ └─/teams/equipment-check/:id 
+I/flutter ( 6179): │ │ └─/teams/timeline (TimelinePage)
+I/flutter ( 6179): │ └─/settings (SettingsPage)
+I/flutter ( 6179): │   └─/settings/profile/form (ProfileEditPage)
+I/flutter ( 6179): ├─/reports/config (Widget)
+I/flutter ( 6179): └─/notifications (BlocProvider<NotificationCubit>)
+I/flutter ( 6179): known full paths for route names:
+I/flutter ( 6179):   login => /login
+I/flutter ( 6179):   privacy-gate => /privacy-gate
+I/flutter ( 6179):   interaction-fixture => /__interaction-fixture
+I/flutter ( 6179):   interaction-fixture-form => /__interaction-fixture/form
+I/flutter ( 6179):   dashboard => /
+I/flutter ( 6179):   tools => /tools
+I/flutter ( 6179):   data-bucket => /tools/data-bucket
+I/flutter ( 6179):   data-bucket-upload => /tools/data-bucket/upload
+I/flutter ( 6179):   data-bucket-detail => /tools/data-bucket/:id
+I/flutter ( 6179):   operations => /operations
+I/flutter ( 6179):   cut-fill => /operations/cut-fill
+I/flutter ( 6179):   cut-fill-create => /operations/cut-fill/form
+I/flutter ( 6179):   cut-fill-edit => /operations/cut-fill/:id/form
+I/flutter ( 6179):   land-clearing => /operations/land-clearing
+I/flutter ( 6179):   land-clearing-create => /operations/land-clearing/form
+I/flutter ( 6179):   land-clearing-detail => /operations/land-clearing/:id
+I/flutter ( 6179):   land-clearing-edit => /operations/land-clearing/:id/form
+I/flutter ( 6179):   benchmark-db => /operations/benchmark-db
+I/flutter ( 6179):   benchmark-form => /operations/benchmark-db/form
+I/flutter ( 6179):   benchmark-detail => /operations/benchmark-db/:id
+I/flutter ( 6179):   benchmark-edit => /operations/benchmark-db/:id/form
+I/flutter ( 6179):   teams => /teams
+I/flutter ( 6179):   attendance => /teams/attendance
+I/flutter ( 6179):   attendance-form => /teams/attendance/form
+I/flutter ( 6179):   daily-log => /teams/daily-log
+I/flutter ( 6179):   daily-log-form => /teams/daily-log/form
+I/flutter ( 6179):   daily-log-record-form => /teams/daily-log/:id/form
+I/flutter ( 6179):   inventory => /teams/inventory
+I/flutter ( 6179):   inventory-form => /teams/inventory/form
+I/flutter ( 6179):   inventory-detail => /teams/inventory/:id
+I/flutter ( 6179):   inventory-edit => /teams/inventory/:id/form
+I/flutter ( 6179):   equipment-check => /teams/equipment-check
+I/flutter ( 6179):   equipment-check-form => /teams/equipment-check/form
+I/flutter ( 6179):   equipment-check-detail => /teams/equipment-check/:id
+I/flutter ( 6179):   timeline => /teams/timeline
+I/flutter ( 6179):   settings => /settings
+I/flutter ( 6179):   settings-profile => /settings/profile/form
+I/flutter ( 6179):   report-config => /reports/config
+I/flutter ( 6179):   notifications => /notifications
+I/flutter ( 6179):  
+I/flutter ( 6179): [INFO] GoRouter: setting initial location /login
+I/flutter ( 6179): GoRouter: INFO: setting initial location /login 
+I/flutter ( 6179): [INFO] GoRouter: Using WidgetsApp configuration
+I/flutter ( 6179): GoRouter: INFO: Using WidgetsApp configuration 
+I/eflow.mine_flow( 6179): NativeAlloc concurrent mark compact GC freed 4145KB AllocSpace bytes, 9(372KB) LOS objects, 49% free, 2762KB/5525KB, paused 551us,9.159ms total 42.573ms
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/talkback/talkback.apk' with 1 weak references
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '/vendor/overlay/EmulatorTalkBackOverlay/EmulatorTalkBackOverlay.apk' with 1 weak references
+VMServiceFlutterDriver: request_data message is taking a long time to complete...
+I/ImeTracker( 6179): com.mineflow.mine_flow:d6bd1da9: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+D/InputMethodManager( 6179): showSoftInput() view=io.flutter.embedding.android.FlutterView{8d9460d VFE...... .F....ID 0,0-1080,2400 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/EGL_emulation( 6179): app_time_stats: avg=185.30ms min=121.89ms max=319.15ms count=7
+I/ImeTracker( 6179): com.mineflow.mine_flow:17100ba5: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+D/InputMethodManager( 6179): showSoftInput() view=io.flutter.embedding.android.FlutterView{8d9460d VFE...... .F....ID 0,0-1080,2400 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/EGL_emulation( 6179): app_time_stats: avg=1864.07ms min=655.45ms max=4088.46ms count=3
+I/ImeTracker( 6179): com.mineflow.mine_flow:71e2ccb4: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+D/InputMethodManager( 6179): showSoftInput() view=io.flutter.embedding.android.FlutterView{8d9460d VFE...... .F...... 0,0-1080,2400 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 6179): com.mineflow.mine_flow:631dad3f: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+D/InputMethodManager( 6179): showSoftInput() view=io.flutter.embedding.android.FlutterView{8d9460d VFE...... .F...... 0,0-1080,2400 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/AssistStructure( 6179): Flattened final assist data: 452 bytes, containing 1 windows, 3 views
+W/RemoteInputConnectionImpl( 6179): requestCursorUpdates on inactive InputConnection
+I/ImeTracker( 6179): com.mineflow.mine_flow:1efc3a4d: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+D/InsetsController( 6179): show(ime(), fromIme=true)
+W/InteractionJankMonitor( 6179): Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=com.mineflow.mine_flow
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+D/InsetsController( 6179): show(ime(), fromIme=true)
+I/ImeTracker( 6179): com.mineflow.mine_flow:17100ba5: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+I/ImeTracker( 6179): com.mineflow.mine_flow:d6bd1da9: onShown
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+D/EGL_emulation( 6179): app_time_stats: avg=220.09ms min=196.89ms max=258.90ms count=5
+D/EGL_emulation( 6179): app_time_stats: avg=120.25ms min=7.83ms max=694.32ms count=8
+W/RemoteInputConnectionImpl( 6179): requestCursorUpdates on inactive InputConnection
+W/RemoteInputConnectionImpl( 6179): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6179): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6179): requestCursorUpdates on inactive InputConnection
+W/RemoteInputConnectionImpl( 6179): requestCursorUpdates on inactive InputConnection
+D/InsetsController( 6179): show(ime(), fromIme=true)
+I/ImeTracker( 6179): com.mineflow.mine_flow:71e2ccb4: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/InsetsController( 6179): show(ime(), fromIme=true)
+I/ImeTracker( 6179): com.mineflow.mine_flow:631dad3f: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/InsetsController( 6179): hide(ime(), fromIme=true)
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+I/ImeTracker( 6179): com.mineflow.mine_flow:c6338c64: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+I/ImeTracker( 6179): com.mineflow.mine_flow:1efc3a4d: onHidden
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+D/FlutterJNI( 6179): Sending viewport metrics to the engine.
+D/EGL_emulation( 6179): app_time_stats: avg=130.99ms min=20.25ms max=232.60ms count=8
+I/flutter ( 6179): [FINE] supabase.auth: Saving session
+I/flutter ( 6179): [FINEST] supabase.auth: Saving session: Session(providerToken: <redacted>, providerRefreshToken: <redacted>, expiresIn: 3600, tokenType: bearer, user: User(id: cb041494-fccd-493b-b73b-50e952366ea8, appMetadata: {provider: email, providers: [email]}, userMetadata: {email_verified: true}, aud: authenticated, confirmationSentAt: null, recoverySentAt: null, emailChangeSentAt: null, newEmail: null, invitedAt: null, actionLink: null, email: [REDACTED_CONFIG], phone: , createdAt: 2026-08-29T08:04:41.039217Z, confirmedAt: 2026-08-29T08:04:41.068013Z, emailConfirmedAt: 2026-08-29T08:04:41.068013Z, phoneConfirmedAt: null, lastSignInAt: 2026-10-04T13:08:50.254170326Z, role: authenticated, updatedAt: 2026-10-04T13:08:50.282164Z, identities: [UserIdentity(id: cb041494-fccd-493b-b73b-50e952366ea8, userId: cb041494-fccd-493b-b73b-50e952366ea8, identityData: {email: [REDACTED_CONFIG], email_verified: false, phone_verified: false, sub: cb041494-fccd-493b-b73b-50e952366ea8}, identityId: 8d3c9ac0-0cb4-431a-ba43-538
+I/flutter ( 6179): [FINEST] supabase.auth: onAuthStateChange: AuthState(event: signedIn, session: Session(providerToken: <redacted>, providerRefreshToken: <redacted>, expiresIn: 3600, tokenType: bearer, user: User(id: cb041494-fccd-493b-b73b-50e952366ea8, appMetadata: {provider: email, providers: [email]}, userMetadata: {email_verified: true}, aud: authenticated, confirmationSentAt: null, recoverySentAt: null, emailChangeSentAt: null, newEmail: null, invitedAt: null, actionLink: null, email: [REDACTED_CONFIG], phone: , createdAt: 2026-08-29T08:04:41.039217Z, confirmedAt: 2026-08-29T08:04:41.068013Z, emailConfirmedAt: 2026-08-29T08:04:41.068013Z, phoneConfirmedAt: null, lastSignInAt: 2026-10-04T13:08:50.254170326Z, role: authenticated, updatedAt: 2026-10-04T13:08:50.282164Z, identities: [UserIdentity(id: cb041494-fccd-493b-b73b-50e952366ea8, userId: cb041494-fccd-493b-b73b-50e952366ea8, identityData: {email: [REDACTED_CONFIG], email_verified: false, phone_verified: false, sub: cb041494-fccd-493b-b73b-50e952366ea8}, 
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/users?select=%2A&id=eq.cb041494-fccd-493b-b73b-50e952366ea8
+I/flutter ( 6179): [INFO] GoRouter: redirecting to RouteMatchList#50070(uri: /privacy-gate, matches: [RouteMatch#75dfd(route: GoRoute#8bf1c(name: "privacy-gate", path: "/privacy-gate"))])
+I/flutter ( 6179): GoRouter: INFO: redirecting to RouteMatchList#50070(uri: /privacy-gate, matches: [RouteMatch#75dfd(route: GoRoute#8bf1c(name: "privacy-gate", path: "/privacy-gate"))]) 
+D/EGL_emulation( 6179): app_time_stats: avg=133.62ms min=113.25ms max=209.11ms count=8
+I/flutter ( 6179): [INFO] GoRouter: going to /
+I/flutter ( 6179): GoRouter: INFO: going to / 
+I/flutter ( 6179): [INFO] GoRouter: Using WidgetsApp configuration
+I/flutter ( 6179): GoRouter: INFO: Using WidgetsApp configuration 
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/attendance_records?select=%2A%2Cusers%21attendance_records_user_id_fkey%28name%29&deleted_at=is.null
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/equipment_checks?select=%2A&deleted_at=is.null
+I/flutter ( 6179): [FINE] SyncQueueManager: No pending sync items to process.
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/cut_fill_records?select=%2A&deleted_at=is.null
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/land_clearing_records?select=%2A&deleted_at=is.null
+D/EGL_emulation( 6179): app_time_stats: avg=221.94ms min=12.15ms max=552.46ms count=6
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/inventory_items?select=%2A&deleted_at=is.null
+I/flutter ( 6179): [INFO] GoRouter: going to /
+I/flutter ( 6179): GoRouter: INFO: going to / 
+I/flutter ( 6179): [FINER] supabase.auth: Access token expires in 359 ticks
+D/EGL_emulation( 6179): app_time_stats: avg=164.18ms min=11.61ms max=509.76ms count=8
+D/EGL_emulation( 6179): app_time_stats: avg=602.62ms min=17.79ms max=4016.26ms count=8
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/talkback/talkback.apk' with 1 weak references
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '/vendor/overlay/EmulatorTalkBackOverlay/EmulatorTalkBackOverlay.apk' with 1 weak references
+I/flutter ( 6179): [INFO] GoRouter: going to /teams/daily-log
+I/flutter ( 6179): GoRouter: INFO: going to /teams/daily-log 
+I/flutter ( 6179): [INFO] GoRouter: Using WidgetsApp configuration
+I/flutter ( 6179): GoRouter: INFO: Using WidgetsApp configuration 
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/users?select=%2A&deleted_at=is.null&is_active=eq.true&site_id=eq.f47ac10b-58cc-4372-a567-0e02b2c3d479&order=name.asc.nullslast
+W/WindowOnBackDispatcher( 6179): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 6179): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/daily_logs?select=%2A&deleted_at=is.null
+D/EGL_emulation( 6179): app_time_stats: avg=206.10ms min=117.61ms max=301.12ms count=5
+D/EGL_emulation( 6179): app_time_stats: avg=1551.08ms min=1551.08ms max=1551.08ms count=1
+I/flutter ( 6179): [INFO] GoRouter: going to /teams/daily-log/form
+I/flutter ( 6179): GoRouter: INFO: going to /teams/daily-log/form 
+D/EGL_emulation( 6179): app_time_stats: avg=281.62ms min=117.73ms max=531.83ms count=4
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/daily_logs?select=%2A&deleted_at=is.null
+D/EGL_emulation( 6179): app_time_stats: avg=357.94ms min=151.17ms max=533.46ms count=3
+D/EGL_emulation( 6179): app_time_stats: avg=1664.69ms min=1664.69ms max=1664.69ms count=1
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/talkback/talkback.apk' with 1 weak references
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '/vendor/overlay/EmulatorTalkBackOverlay/EmulatorTalkBackOverlay.apk' with 1 weak references
+I/flutter ( 6179): [INFO] GoRouter: going to /operations
+I/flutter ( 6179): GoRouter: INFO: going to /operations 
+I/flutter ( 6179): [INFO] GoRouter: Using WidgetsApp configuration
+I/flutter ( 6179): GoRouter: INFO: Using WidgetsApp configuration 
+D/EGL_emulation( 6179): app_time_stats: avg=225.98ms min=117.04ms max=509.35ms count=5
+D/EGL_emulation( 6179): app_time_stats: avg=1134.65ms min=1134.65ms max=1134.65ms count=1
+I/flutter ( 6179): [INFO] GoRouter: going to /teams
+I/flutter ( 6179): GoRouter: INFO: going to /teams 
+I/flutter ( 6179): [INFO] GoRouter: going to /teams/daily-log
+I/flutter ( 6179): GoRouter: INFO: going to /teams/daily-log 
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/users?select=%2A&deleted_at=is.null&is_active=eq.true&site_id=eq.f47ac10b-58cc-4372-a567-0e02b2c3d479&order=name.asc.nullslast
+W/WindowOnBackDispatcher( 6179): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 6179): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/daily_logs?select=%2A&deleted_at=is.null
+D/EGL_emulation( 6179): app_time_stats: avg=246.31ms min=115.82ms max=399.00ms count=5
+D/EGL_emulation( 6179): app_time_stats: avg=1884.79ms min=1884.79ms max=1884.79ms count=1
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/talkback/talkback.apk' with 1 weak references
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '/vendor/overlay/EmulatorTalkBackOverlay/EmulatorTalkBackOverlay.apk' with 1 weak references
+I/flutter ( 6179): [INFO] GoRouter: going to /tools
+I/flutter ( 6179): GoRouter: INFO: going to /tools 
+I/flutter ( 6179): [INFO] GoRouter: Using WidgetsApp configuration
+I/flutter ( 6179): GoRouter: INFO: Using WidgetsApp configuration 
+D/EGL_emulation( 6179): app_time_stats: avg=228.48ms min=118.33ms max=532.32ms count=5
+D/EGL_emulation( 6179): app_time_stats: avg=1163.30ms min=1163.30ms max=1163.30ms count=1
+D/EGL_emulation( 6179): app_time_stats: avg=251.35ms min=118.05ms max=527.02ms count=4
+I/flutter ( 6179): [INFO] GoRouter: going to /
+I/flutter ( 6179): GoRouter: INFO: going to / 
+D/EGL_emulation( 6179): app_time_stats: avg=233.14ms min=131.45ms max=521.14ms count=5
+D/EGL_emulation( 6179): app_time_stats: avg=1499.91ms min=1499.91ms max=1499.91ms count=1
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/talkback/talkback.apk' with 1 weak references
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '/vendor/overlay/EmulatorTalkBackOverlay/EmulatorTalkBackOverlay.apk' with 1 weak references
+I/flutter ( 6179): [INFO] GoRouter: going to /teams/daily-log
+I/flutter ( 6179): GoRouter: INFO: going to /teams/daily-log 
+I/flutter ( 6179): [FINER] supabase.auth: Access token expires in 358 ticks
+D/EGL_emulation( 6179): app_time_stats: avg=220.14ms min=117.32ms max=515.28ms count=5
+D/EGL_emulation( 6179): app_time_stats: avg=1098.72ms min=1098.72ms max=1098.72ms count=1
+I/flutter ( 6179): [INFO] GoRouter: going to /teams/daily-log/form
+I/flutter ( 6179): GoRouter: INFO: going to /teams/daily-log/form 
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/daily_logs?select=%2A&deleted_at=is.null
+D/EGL_emulation( 6179): app_time_stats: avg=248.27ms min=59.72ms max=538.87ms count=6
+D/EGL_emulation( 6179): app_time_stats: avg=1487.66ms min=1487.66ms max=1487.66ms count=1
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/talkback/talkback.apk' with 1 weak references
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '/vendor/overlay/EmulatorTalkBackOverlay/EmulatorTalkBackOverlay.apk' with 1 weak references
+I/flutter ( 6179): [INFO] GoRouter: going to /operations
+I/flutter ( 6179): GoRouter: INFO: going to /operations 
+D/EGL_emulation( 6179): app_time_stats: avg=217.65ms min=112.91ms max=508.90ms count=5
+D/EGL_emulation( 6179): app_time_stats: avg=1096.07ms min=1096.07ms max=1096.07ms count=1
+I/flutter ( 6179): [INFO] GoRouter: going to /teams
+I/flutter ( 6179): GoRouter: INFO: going to /teams 
+I/flutter ( 6179): [INFO] GoRouter: going to /teams/daily-log
+I/flutter ( 6179): GoRouter: INFO: going to /teams/daily-log 
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/users?select=%2A&deleted_at=is.null&is_active=eq.true&site_id=eq.f47ac10b-58cc-4372-a567-0e02b2c3d479&order=name.asc.nullslast
+W/WindowOnBackDispatcher( 6179): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 6179): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/daily_logs?select=%2A&deleted_at=is.null
+D/EGL_emulation( 6179): app_time_stats: avg=215.88ms min=116.58ms max=321.84ms count=5
+D/EGL_emulation( 6179): app_time_stats: avg=1783.27ms min=1783.27ms max=1783.27ms count=1
+I/eflow.mine_flow( 6179): NativeAlloc concurrent mark compact GC freed 337KB AllocSpace bytes, 15(1568KB) LOS objects, 49% free, 2830KB/5661KB, paused 1.184ms,12.406ms total 44.165ms
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/talkback/talkback.apk' with 1 weak references
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '/vendor/overlay/EmulatorTalkBackOverlay/EmulatorTalkBackOverlay.apk' with 1 weak references
+I/flutter ( 6179): [INFO] GoRouter: going to /tools
+I/flutter ( 6179): GoRouter: INFO: going to /tools 
+D/EGL_emulation( 6179): app_time_stats: avg=260.17ms min=120.17ms max=531.45ms count=4
+D/EGL_emulation( 6179): app_time_stats: avg=1116.23ms min=1116.23ms max=1116.23ms count=1
+D/EGL_emulation( 6179): app_time_stats: avg=222.42ms min=116.92ms max=513.73ms count=5
+I/flutter ( 6179): [INFO] GoRouter: going to /
+I/flutter ( 6179): GoRouter: INFO: going to / 
+D/EGL_emulation( 6179): app_time_stats: avg=179.22ms min=101.98ms max=276.59ms count=6
+D/EGL_emulation( 6179): app_time_stats: avg=1933.91ms min=1933.91ms max=1933.91ms count=1
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/talkback/talkback.apk' with 1 weak references
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '/vendor/overlay/EmulatorTalkBackOverlay/EmulatorTalkBackOverlay.apk' with 1 weak references
+I/flutter ( 6179): [INFO] GoRouter: going to /teams/daily-log
+I/flutter ( 6179): GoRouter: INFO: going to /teams/daily-log 
+D/EGL_emulation( 6179): app_time_stats: avg=222.59ms min=117.03ms max=523.77ms count=5
+D/EGL_emulation( 6179): app_time_stats: avg=1115.64ms min=1115.64ms max=1115.64ms count=1
+I/flutter ( 6179): [INFO] GoRouter: going to /teams/daily-log/form
+I/flutter ( 6179): GoRouter: INFO: going to /teams/daily-log/form 
+D/EGL_emulation( 6179): app_time_stats: avg=258.99ms min=117.70ms max=524.74ms count=4
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/daily_logs?select=%2A&deleted_at=is.null
+I/flutter ( 6179): [FINER] supabase.auth: Access token expires in 357 ticks
+D/EGL_emulation( 6179): app_time_stats: avg=258.57ms min=27.94ms max=511.49ms count=4
+D/EGL_emulation( 6179): app_time_stats: avg=1425.38ms min=1425.38ms max=1425.38ms count=1
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/talkback/talkback.apk' with 1 weak references
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '/vendor/overlay/EmulatorTalkBackOverlay/EmulatorTalkBackOverlay.apk' with 1 weak references
+I/flutter ( 6179): [INFO] GoRouter: going to /operations
+I/flutter ( 6179): GoRouter: INFO: going to /operations 
+D/EGL_emulation( 6179): app_time_stats: avg=219.74ms min=116.92ms max=509.74ms count=5
+D/EGL_emulation( 6179): app_time_stats: avg=1105.81ms min=1105.81ms max=1105.81ms count=1
+I/flutter ( 6179): [INFO] GoRouter: going to /teams
+I/flutter ( 6179): GoRouter: INFO: going to /teams 
+I/flutter ( 6179): [INFO] GoRouter: going to /teams/daily-log
+I/flutter ( 6179): GoRouter: INFO: going to /teams/daily-log 
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/users?select=%2A&deleted_at=is.null&is_active=eq.true&site_id=eq.f47ac10b-58cc-4372-a567-0e02b2c3d479&order=name.asc.nullslast
+W/WindowOnBackDispatcher( 6179): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 6179): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/daily_logs?select=%2A&deleted_at=is.null
+D/EGL_emulation( 6179): app_time_stats: avg=236.03ms min=140.19ms max=517.60ms count=6
+D/EGL_emulation( 6179): app_time_stats: avg=1533.87ms min=1533.87ms max=1533.87ms count=1
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/talkback/talkback.apk' with 1 weak references
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '/vendor/overlay/EmulatorTalkBackOverlay/EmulatorTalkBackOverlay.apk' with 1 weak references
+I/flutter ( 6179): [INFO] GoRouter: going to /tools
+I/flutter ( 6179): GoRouter: INFO: going to /tools 
+D/EGL_emulation( 6179): app_time_stats: avg=219.40ms min=117.15ms max=511.03ms count=5
+D/EGL_emulation( 6179): app_time_stats: avg=1098.18ms min=1098.18ms max=1098.18ms count=1
+I/flutter ( 6179): [INFO] GoRouter: going to /
+I/flutter ( 6179): GoRouter: INFO: going to / 
+D/EGL_emulation( 6179): app_time_stats: avg=178.42ms min=117.50ms max=304.86ms count=6
+D/EGL_emulation( 6179): app_time_stats: avg=1585.01ms min=1585.01ms max=1585.01ms count=1
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/talkback/talkback.apk' with 1 weak references
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '/vendor/overlay/EmulatorTalkBackOverlay/EmulatorTalkBackOverlay.apk' with 1 weak references
+I/flutter ( 6179): [INFO] GoRouter: going to /teams/daily-log
+I/flutter ( 6179): GoRouter: INFO: going to /teams/daily-log 
+D/EGL_emulation( 6179): app_time_stats: avg=222.60ms min=119.71ms max=512.69ms count=5
+D/EGL_emulation( 6179): app_time_stats: avg=1115.84ms min=1115.84ms max=1115.84ms count=1
+I/flutter ( 6179): [INFO] GoRouter: going to /teams/daily-log/form
+I/flutter ( 6179): GoRouter: INFO: going to /teams/daily-log/form 
+D/EGL_emulation( 6179): app_time_stats: avg=251.24ms min=120.39ms max=517.32ms count=4
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/daily_logs?select=%2A&deleted_at=is.null
+D/EGL_emulation( 6179): app_time_stats: avg=1351.38ms min=1351.38ms max=1351.38ms count=1
+I/eflow.mine_flow( 6179): NativeAlloc concurrent mark compact GC freed 281KB AllocSpace bytes, 15(1700KB) LOS objects, 49% free, 2838KB/5677KB, paused 1.005ms,23.139ms total 42.219ms
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/talkback/talkback.apk' with 1 weak references
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '/vendor/overlay/EmulatorTalkBackOverlay/EmulatorTalkBackOverlay.apk' with 1 weak references
+I/flutter ( 6179): [INFO] GoRouter: going to /operations
+I/flutter ( 6179): GoRouter: INFO: going to /operations 
+D/EGL_emulation( 6179): app_time_stats: avg=239.82ms min=85.08ms max=527.64ms count=5
+D/EGL_emulation( 6179): app_time_stats: avg=1114.11ms min=1114.11ms max=1114.11ms count=1
+I/flutter ( 6179): [INFO] GoRouter: going to /teams
+I/flutter ( 6179): GoRouter: INFO: going to /teams 
+D/EGL_emulation( 6179): app_time_stats: avg=222.08ms min=116.86ms max=510.65ms count=5
+I/flutter ( 6179): [INFO] GoRouter: going to /teams/daily-log
+I/flutter ( 6179): GoRouter: INFO: going to /teams/daily-log 
+I/flutter ( 6179): [FINER] supabase.auth: Access token expires in 356 ticks
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/users?select=%2A&deleted_at=is.null&is_active=eq.true&site_id=eq.f47ac10b-58cc-4372-a567-0e02b2c3d479&order=name.asc.nullslast
+W/WindowOnBackDispatcher( 6179): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 6179): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter ( 6179): [FINEST] supabase.postgrest: Request: GET [REDACTED_CONFIG]/rest/v1/daily_logs?select=%2A&deleted_at=is.null
+D/EGL_emulation( 6179): app_time_stats: avg=246.67ms min=156.28ms max=527.58ms count=5
+D/EGL_emulation( 6179): app_time_stats: avg=1567.87ms min=1567.87ms max=1567.87ms count=1
+I/eflow.mine_flow( 6179): NativeAlloc concurrent mark compact GC freed 401KB AllocSpace bytes, 15(1568KB) LOS objects, 49% free, 2830KB/5661KB, paused 1.197ms,5.895ms total 35.349ms
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/talkback/talkback.apk' with 1 weak references
+W/eflow.mine_flow( 6179): ApkAssets: Deleting an ApkAssets object '/vendor/overlay/EmulatorTalkBackOverlay/EmulatorTalkBackOverlay.apk' with 1 weak references
+I/flutter ( 6179): [INFO] GoRouter: going to /tools
+I/flutter ( 6179): GoRouter: INFO: going to /tools 
+D/EGL_emulation( 6179): app_time_stats: avg=219.08ms min=114.71ms max=511.57ms count=5
+D/EGL_emulation( 6179): app_time_stats: avg=1099.74ms min=1099.74ms max=1099.74ms count=1
+I/flutter ( 6179): design-review captures (25/25): android-login-phone-light-en, android-dashboard-phone-light-id, android-daily-log-phone-light-id, android-daily-log-form-phone-light-id, android-operations-phone-light-id, android-teams-phone-light-id, android-tools-phone-light-id, android-dashboard-phone-light-en, android-daily-log-phone-light-en, android-daily-log-form-phone-light-en, android-operations-phone-light-en, android-teams-phone-light-en, android-tools-phone-light-en, android-dashboard-phone-dark-id, android-daily-log-phone-dark-id, android-daily-log-form-phone-dark-id, android-operations-phone-dark-id, android-teams-phone-dark-id, android-tools-phone-dark-id, android-dashboard-phone-dark-en, android-daily-log-phone-dark-en, android-daily-log-form-phone-dark-en, android-operations-phone-dark-en, android-teams-phone-dark-en, android-tools-phone-dark-en
+I/flutter ( 6179): 00:44 +1: (tearDownAll)
+I/Choreographer( 6179): Skipped 33 frames!  The application may be doing too much work on its main thread.
+D/EGL_emulation( 6179): app_time_stats: avg=1173.99ms min=1173.99ms max=1173.99ms count=1
+I/flutter ( 6179): 00:45 +2: All tests passed!
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-login-phone-light-en.png (68195 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-dashboard-phone-light-id.png (117800 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-daily-log-phone-light-id.png (103457 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-daily-log-form-phone-light-id.png (153482 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-operations-phone-light-id.png (111649 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-teams-phone-light-id.png (193788 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-tools-phone-light-id.png (75398 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-dashboard-phone-light-en.png (117800 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-daily-log-phone-light-en.png (193788 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-daily-log-form-phone-light-en.png (152372 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-operations-phone-light-en.png (111649 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-teams-phone-light-en.png (193788 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-tools-phone-light-en.png (75398 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-dashboard-phone-dark-id.png (118611 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-daily-log-phone-dark-id.png (193884 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-daily-log-form-phone-dark-id.png (155023 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-operations-phone-dark-id.png (112672 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-teams-phone-dark-id.png (193884 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-tools-phone-dark-id.png (76167 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-dashboard-phone-dark-en.png (118611 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-daily-log-phone-dark-en.png (193884 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-daily-log-form-phone-dark-en.png (153888 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-operations-phone-dark-en.png (112672 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-teams-phone-dark-en.png (193884 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-android-aligned-3/android-tools-phone-dark-en.png (76167 bytes)
+All tests passed.

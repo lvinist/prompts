@@ -1,0 +1,34 @@
+00:00 +0: loading D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_item_entry_screen_test.dart
+00:00 +0: cold edit loads and saves the URL item, not a new UUID
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+showFToast(...) called with a context that does not contain a FToaster.
+No FToaster ancestor could be found starting from the context that was passed to showFToast(...).
+This usually happens when the context provided is from the same StatefulWidget as that whose build
+function actually creates the FToaster widget being sought.
+There are several ways to avoid this problem. The simplest is to use a Builder to get a context that
+is "under" the FToaster.
+The context used was:
+  BlocConsumer<InventoryBloc, InventoryState>
+
+When the exception was thrown, this was the stack:
+#0      showFToast (package:forui/src/widgets/toast/toaster.dart:52:5)
+#1      _InventoryItemFormViewState.build.<anonymous closure> (package:mine_flow/features/tracking/presentation/pages/inventory_item_entry_screen.dart:202:13)
+#2      _BlocConsumerState.build.<anonymous closure> (package:flutter_bloc/src/bloc_consumer.dart:160:26)
+#3      _BlocListenerBaseState._subscribe.<anonymous closure> (package:flutter_bloc/src/bloc_listener.dart:215:30)
+#23     FakeAsync.run.<anonymous closure>.<anonymous closure> (package:fake_async/fake_async.dart:189:18)
+#24     FakeAsync.flushMicrotasks (package:fake_async/fake_async.dart:200:32)
+#25     AutomatedTestWidgetsFlutterBinding.runTest.<anonymous closure> (package:flutter_test/src/binding.dart:2507:17)
+(elided 34 frames from dart:async and package:stack_trace)
+
+The test description was:
+  cold edit loads and saves the URL item, not a new UUID
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +0 -1: cold edit loads and saves the URL item, not a new UUID [E]
+  Test failed. See exception logs above.
+  The test description was: cold edit loads and saves the URL item, not a new UUID
+  
+00:02 +0 -1: Some tests failed.
+
+Failing tests:
+  D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_item_entry_screen_test.dart: cold edit loads and saves the URL item, not a new UUID

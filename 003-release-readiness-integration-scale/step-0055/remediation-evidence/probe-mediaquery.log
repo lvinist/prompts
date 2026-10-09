@@ -1,0 +1,85 @@
+Running Gradle task 'assembleDebug'...                             17.6s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...           6.6s
+D/nativeloader( 5813): Load /data/app/~~mYm_qFsft9M3qM1dhaK5zQ==/com.mineflow.mine_flow-HV963Ei8J__sVu6jugf1Xw==/base.apk!/lib/x86_64/libdartjni.so using ns clns-7 from class loader (caller=/data/app/~~mYm_qFsft9M3qM1dhaK5zQ==/com.mineflow.mine_flow-HV963Ei8J__sVu6jugf1Xw==/base.apk!classes7.dex): ok
+W/eflow.mine_flow( 5813): Accessing hidden method Landroid/view/accessibility/AccessibilityNodeInfo;->getSourceNodeId()J (unsupported,test-api, reflection, allowed)
+W/eflow.mine_flow( 5813): Accessing hidden method Landroid/view/accessibility/AccessibilityRecord;->getSourceNodeId()J (unsupported, reflection, allowed)
+W/eflow.mine_flow( 5813): Accessing hidden field Landroid/view/accessibility/AccessibilityNodeInfo;->mChildNodeIds:Landroid/util/LongArray; (unsupported, reflection, allowed)
+W/eflow.mine_flow( 5813): Accessing hidden method Landroid/util/LongArray;->get(I)J (unsupported, reflection, allowed)
+D/AccessibilityBridge( 5813): Setting not found: accessibility_display_inversion_enabled, using default: 0
+D/FlutterRenderer( 5813): Width is zero. 0,0
+W/HWUI    ( 5813): Unknown dataspace 0
+I/WindowExtensionsImpl( 5813): Initializing Window Extensions, vendor API level=6, activity embedding enabled=true
+D/FlutterRenderer( 5813): Width is zero. 0,0
+D/FlutterJNI( 5813): Sending viewport metrics to the engine.
+I/Gralloc4( 5813): mapper 4.x is not supported
+W/HWUI    ( 5813): Failed to initialize 101010-2 format, error = EGL_SUCCESS
+I/eflow.mine_flow( 5813): Compiler allocated 5174KB to compile void android.view.ViewRootImpl.performTraversals()
+I/Choreographer( 5813): Skipped 54 frames!  The application may be doing too much work on its main thread.
+D/ProfileInstaller( 5813): Installing profile for com.mineflow.mine_flow
+D/FlutterJNI( 5813): Sending viewport metrics to the engine.
+I/eflow.mine_flow( 5813): Compiler allocated 5417KB to compile void android.view.ViewRootImpl.performTraversals()
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:49682/kJcHemjpgqg=/
+VMServiceFlutterDriver: Isolate found with number: 8178904792932187
+VMServiceFlutterDriver: Isolate 8178904792932187 is runnable.
+VMServiceFlutterDriver: Isolate is paused at start.
+VMServiceFlutterDriver: Attempting to resume isolate
+I/flutter ( 5813): 00:00 +0: Repeated settled screenshot probe
+VMServiceFlutterDriver: Connected to Flutter application.
+I/Choreographer( 5813): Skipped 39 frames!  The application may be doing too much work on its main thread.
+I/Choreographer( 5813): Skipped 46 frames!  The application may be doing too much work on its main thread.
+I/flutter ( 5813): ══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+I/flutter ( 5813): The following TestFailure was thrown running a test:
+I/flutter ( 5813): Expected: Size:<Size(400.0, 800.0)>
+I/flutter ( 5813):   Actual: Size:<Size(411.4, 914.3)>
+I/flutter ( 5813): capture layout and responsive MediaQuery must agree
+I/flutter ( 5813): 
+I/flutter ( 5813): When the exception was thrown, this was the stack:
+I/flutter ( 5813): #4      main.<anonymous closure> (file:///D:/AppDev/mine_flow/Code/mine-flow-app/.step55-capture-probe.dart:43:5)
+I/flutter ( 5813): <asynchronous suspension>
+I/flutter ( 5813): #5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+I/flutter ( 5813): <asynchronous suspension>
+I/flutter ( 5813): #6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+I/flutter ( 5813): <asynchronous suspension>
+I/flutter ( 5813): #7      TestWidgetsFlutterBinding._createTestCompletionHandler.<anonymous closure> (package:flutter_test/src/binding.dart:1707:12)
+I/flutter ( 5813): <asynchronous suspension>
+I/flutter ( 5813): 
+I/flutter ( 5813): This was caught by the test expectation on the following line:
+I/flutter ( 5813):   file:///D:/AppDev/mine_flow/Code/mine-flow-app/.step55-capture-probe.dart line 43
+I/flutter ( 5813): The test description was:
+I/flutter ( 5813):   Repeated settled screenshot probe
+I/flutter ( 5813): ════════════════════════════════════════════════════════════════════════════════════════════════════
+I/flutter ( 5813): 00:02 +0: Repeated settled screenshot probe [E]
+I/flutter ( 5813):   Test failed. See exception logs above.
+I/flutter ( 5813):   The test description was: Repeated settled screenshot probe
+I/flutter ( 5813):   
+I/flutter ( 5813): 00:02 +0 -1: (tearDownAll)
+I/flutter ( 5813): 00:03 +1 -1: Some tests failed.
+Failure Details:
+Failure in method: Repeated settled screenshot probe
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞═════════════════
+The following TestFailure was thrown running a test:
+Expected: Size:<Size(400.0, 800.0)>
+  Actual: Size:<Size(411.4, 914.3)>
+capture layout and responsive MediaQuery must agree
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///D:/AppDev/mine_flow/Code/mine-flow-app/.step55-capture-probe.dart:43:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._createTestCompletionHandler.<anonymous closure> (package:flutter_test/src/binding.dart:1707:12)
+<asynchronous suspension>
+
+This was caught by the test expectation on the following line:
+  file:///D:/AppDev/mine_flow/Code/mine-flow-app/.step55-capture-probe.dart line 43
+The test description was:
+  Repeated settled screenshot probe
+═════════════════════════════════════════════════════════════════
+
+end of failure 1
+
+
+

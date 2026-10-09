@@ -1,0 +1,94 @@
+Launching integration_test/design_review_capture_test.dart on Web Server in debug mode...
+Waiting for connection from debug service on Web Server...        113.6s
+integration_test/design_review_capture_test.dart is being served at http://localhost:58805
+The web-server device requires the Dart Debug Chrome extension for debugging. Consider using the Chrome or Edge devices for an improved development workflow.
+Debug service listening on ws://127.0.0.1:62199/jqLHvhCFZtI=/ws
+A Dart VM Service on Web Server is available at: http://127.0.0.1:62199/jqLHvhCFZtI=
+The Flutter DevTools debugger and profiler on Web Server is available at: http://127.0.0.1:62199/jqLHvhCFZtI=/devtools/?uri=ws://127.0.0.1:62199/jqLHvhCFZtI=/ws
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/login-phone-light-en.png (25385 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/dashboard-phone-light-id.png (46296 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-phone-light-id.png (37783 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-form-phone-light-id.png (61574 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/operations-phone-light-id.png (39077 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/teams-phone-light-id.png (99155 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/tools-phone-light-id.png (25709 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/dashboard-phone-light-en.png (46296 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-phone-light-en.png (99155 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-form-phone-light-en.png (61799 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/operations-phone-light-en.png (39077 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/teams-phone-light-en.png (99155 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/tools-phone-light-en.png (25709 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/dashboard-phone-dark-id.png (46333 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-phone-dark-id.png (100430 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-form-phone-dark-id.png (63373 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/operations-phone-dark-id.png (39806 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/teams-phone-dark-id.png (100430 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/tools-phone-dark-id.png (26522 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/dashboard-phone-dark-en.png (46333 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-phone-dark-en.png (100430 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-form-phone-dark-en.png (63272 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/operations-phone-dark-en.png (39806 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/teams-phone-dark-en.png (100430 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/tools-phone-dark-en.png (26522 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/dashboard-tablet-light-id.png (50071 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-tablet-light-id.png (114052 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-form-tablet-light-id.png (77570 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/operations-tablet-light-id.png (31444 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/teams-tablet-light-id.png (114052 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/tools-tablet-light-id.png (22139 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/dashboard-tablet-light-en.png (50071 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-tablet-light-en.png (114052 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-form-tablet-light-en.png (76752 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/operations-tablet-light-en.png (31444 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/teams-tablet-light-en.png (114052 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/tools-tablet-light-en.png (22139 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/dashboard-tablet-dark-id.png (51084 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-tablet-dark-id.png (115048 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-form-tablet-dark-id.png (78285 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/operations-tablet-dark-id.png (32726 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/teams-tablet-dark-id.png (115048 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/tools-tablet-dark-id.png (23568 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/dashboard-tablet-dark-en.png (51084 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-tablet-dark-en.png (115048 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-form-tablet-dark-en.png (77478 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/operations-tablet-dark-en.png (32726 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/teams-tablet-dark-en.png (115048 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/tools-tablet-dark-en.png (23568 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/dashboard-desktop-light-id.png (75616 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-desktop-light-id.png (155214 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-form-desktop-light-id.png (150459 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/operations-desktop-light-id.png (63849 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/teams-desktop-light-id.png (155214 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/tools-desktop-light-id.png (56471 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/dashboard-desktop-light-en.png (75616 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-desktop-light-en.png (155214 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-form-desktop-light-en.png (149759 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/operations-desktop-light-en.png (63849 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/teams-desktop-light-en.png (155214 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/tools-desktop-light-en.png (56471 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/dashboard-desktop-dark-id.png (76108 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-desktop-dark-id.png (156395 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-form-desktop-dark-id.png (147866 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/operations-desktop-dark-id.png (64025 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/teams-desktop-dark-id.png (156395 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/tools-desktop-dark-id.png (56667 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/dashboard-desktop-dark-en.png (76108 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-desktop-dark-en.png (156395 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/daily-log-form-desktop-dark-en.png (147126 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/operations-desktop-dark-en.png (64025 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/teams-desktop-dark-en.png (156395 bytes)
+[driver] Saved screenshot: D:\AppDev\mine_flow\Upcoming Prompts\step55-remediation\matrix-web-surface-1/tools-desktop-dark-en.png (56667 bytes)
+result {"result":"false","failureDetails":["{\"methodName\":\"Design Review Capture - Matrix\",\"details\":\"══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞═════════════════\\nThe following message was thrown:\\nMultiple exceptions (42) were detected during the running of the\\ncurrent test, and at least one was unexpected.\\n═════════════════════════════════════════════════════════════════\\n\"}"],"data":{"screenshots":[{"screenshotName":"login-phone-light-en","bytes":[]},{"screenshotName":"dashboard-phone-light-id","bytes":[]},{"screenshotName":"daily-log-phone-light-id","bytes":[]},{"screenshotName":"daily-log-form-phone-light-id","bytes":[]},{"screenshotName":"operations-phone-light-id","bytes":[]},{"screenshotName":"teams-phone-light-id","bytes":[]},{"screenshotName":"tools-phone-light-id","bytes":[]},{"screenshotName":"dashboard-phone-light-en","bytes":[]},{"screenshotName":"daily-log-phone-light-en","bytes":[]},{"screenshotName":"daily-log-form-phone-light-en","bytes":[]},{"screenshotName":"operations-phone-light-en","bytes":[]},{"screenshotName":"teams-phone-light-en","bytes":[]},{"screenshotName":"tools-phone-light-en","bytes":[]},{"screenshotName":"dashboard-phone-dark-id","bytes":[]},{"screenshotName":"daily-log-phone-dark-id","bytes":[]},{"screenshotName":"daily-log-form-phone-dark-id","bytes":[]},{"screenshotName":"operations-phone-dark-id","bytes":[]},{"screenshotName":"teams-phone-dark-id","bytes":[]},{"screenshotName":"tools-phone-dark-id","bytes":[]},{"screenshotName":"dashboard-phone-dark-en","bytes":[]},{"screenshotName":"daily-log-phone-dark-en","bytes":[]},{"screenshotName":"daily-log-form-phone-dark-en","bytes":[]},{"screenshotName":"operations-phone-dark-en","bytes":[]},{"screenshotName":"teams-phone-dark-en","bytes":[]},{"screenshotName":"tools-phone-dark-en","bytes":[]},{"screenshotName":"dashboard-tablet-light-id","bytes":[]},{"screenshotName":"daily-log-tablet-light-id","bytes":[]},{"screenshotName":"daily-log-form-tablet-light-id","bytes":[]},{"screenshotName":"operations-tablet-light-id","bytes":[]},{"screenshotName":"teams-tablet-light-id","bytes":[]},{"screenshotName":"tools-tablet-light-id","bytes":[]},{"screenshotName":"dashboard-tablet-light-en","bytes":[]},{"screenshotName":"daily-log-tablet-light-en","bytes":[]},{"screenshotName":"daily-log-form-tablet-light-en","bytes":[]},{"screenshotName":"operations-tablet-light-en","bytes":[]},{"screenshotName":"teams-tablet-light-en","bytes":[]},{"screenshotName":"tools-tablet-light-en","bytes":[]},{"screenshotName":"dashboard-tablet-dark-id","bytes":[]},{"screenshotName":"daily-log-tablet-dark-id","bytes":[]},{"screenshotName":"daily-log-form-tablet-dark-id","bytes":[]},{"screenshotName":"operations-tablet-dark-id","bytes":[]},{"screenshotName":"teams-tablet-dark-id","bytes":[]},{"screenshotName":"tools-tablet-dark-id","bytes":[]},{"screenshotName":"dashboard-tablet-dark-en","bytes":[]},{"screenshotName":"daily-log-tablet-dark-en","bytes":[]},{"screenshotName":"daily-log-form-tablet-dark-en","bytes":[]},{"screenshotName":"operations-tablet-dark-en","bytes":[]},{"screenshotName":"teams-tablet-dark-en","bytes":[]},{"screenshotName":"tools-tablet-dark-en","bytes":[]},{"screenshotName":"dashboard-desktop-light-id","bytes":[]},{"screenshotName":"daily-log-desktop-light-id","bytes":[]},{"screenshotName":"daily-log-form-desktop-light-id","bytes":[]},{"screenshotName":"operations-desktop-light-id","bytes":[]},{"screenshotName":"teams-desktop-light-id","bytes":[]},{"screenshotName":"tools-desktop-light-id","bytes":[]},{"screenshotName":"dashboard-desktop-light-en","bytes":[]},{"screenshotName":"daily-log-desktop-light-en","bytes":[]},{"screenshotName":"daily-log-form-desktop-light-en","bytes":[]},{"screenshotName":"operations-desktop-light-en","bytes":[]},{"screenshotName":"teams-desktop-light-en","bytes":[]},{"screenshotName":"tools-desktop-light-en","bytes":[]},{"screenshotName":"dashboard-desktop-dark-id","bytes":[]},{"screenshotName":"daily-log-desktop-dark-id","bytes":[]},{"screenshotName":"daily-log-form-desktop-dark-id","bytes":[]},{"screenshotName":"operations-desktop-dark-id","bytes":[]},{"screenshotName":"teams-desktop-dark-id","bytes":[]},{"screenshotName":"tools-desktop-dark-id","bytes":[]},{"screenshotName":"dashboard-desktop-dark-en","bytes":[]},{"screenshotName":"daily-log-desktop-dark-en","bytes":[]},{"screenshotName":"daily-log-form-desktop-dark-en","bytes":[]},{"screenshotName":"operations-desktop-dark-en","bytes":[]},{"screenshotName":"teams-desktop-dark-en","bytes":[]},{"screenshotName":"tools-desktop-dark-en","bytes":[]}]}}
+Failure Details:
+Failure in method: Design Review Capture - Matrix
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞═════════════════
+The following message was thrown:
+Multiple exceptions (42) were detected during the running of the
+current test, and at least one was unexpected.
+═════════════════════════════════════════════════════════════════
+
+end of failure 1
+
+
+
+Application finished.

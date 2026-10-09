@@ -1,0 +1,47 @@
+CREATE FUNCTION
+COMMENT
+CREATE TRIGGER
+BEGIN
+INSERT 0 3
+INSERT 0 3
+SET
+  set_config   
+---------------
+ authenticated
+(1 row)
+
+              set_config              
+--------------------------------------
+ 55550000-0000-4000-8000-000000000001
+(1 row)
+
+psql:supabase/tests/user_profile_permissions.sql:29: NOTICE:  PASS: crew self-promotion rejected
+DO
+psql:supabase/tests/user_profile_permissions.sql:82: NOTICE:  PASS: allowed profile fields for 55550000-0000-4000-8000-000000000001
+psql:supabase/tests/user_profile_permissions.sql:82: NOTICE:  PASS: another account remains protected for 55550000-0000-4000-8000-000000000001
+psql:supabase/tests/user_profile_permissions.sql:82: NOTICE:  PASS: allowed profile fields for 55550000-0000-4000-8000-000000000002
+psql:supabase/tests/user_profile_permissions.sql:82: NOTICE:  PASS: another account remains protected for 55550000-0000-4000-8000-000000000002
+psql:supabase/tests/user_profile_permissions.sql:82: NOTICE:  PASS: 20 protected-field updates rejected
+DO
+              set_config              
+--------------------------------------
+ 55550000-0000-4000-8000-000000000003
+(1 row)
+
+psql:supabase/tests/user_profile_permissions.sql:96: NOTICE:  PASS: supervisor account management preserved
+DO
+RESET
+SET
+ set_config 
+------------
+ 
+(1 row)
+
+  set_config  
+--------------
+ service_role
+(1 row)
+
+psql:supabase/tests/user_profile_permissions.sql:111: NOTICE:  PASS: trusted server administration preserved
+DO
+ROLLBACK

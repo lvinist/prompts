@@ -1,0 +1,185 @@
+{
+  "platform": "android",
+  "target": "integration_test/design_review_capture_test.dart",
+  "exit": 0,
+  "timed_out": false,
+  "secret_leak_stopped": false,
+  "expected": 25,
+  "artifacts": [
+    {
+      "file": "android-daily-log-form-phone-dark-en.png",
+      "bytes": 153888,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-daily-log-form-phone-dark-id.png",
+      "bytes": 155023,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-daily-log-form-phone-light-en.png",
+      "bytes": 152372,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-daily-log-form-phone-light-id.png",
+      "bytes": 153482,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-daily-log-phone-dark-en.png",
+      "bytes": 193884,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-daily-log-phone-dark-id.png",
+      "bytes": 193884,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-daily-log-phone-light-en.png",
+      "bytes": 193788,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-daily-log-phone-light-id.png",
+      "bytes": 103457,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-dashboard-phone-dark-en.png",
+      "bytes": 118611,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-dashboard-phone-dark-id.png",
+      "bytes": 118611,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-dashboard-phone-light-en.png",
+      "bytes": 117800,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-dashboard-phone-light-id.png",
+      "bytes": 117800,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-login-phone-light-en.png",
+      "bytes": 68195,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-operations-phone-dark-en.png",
+      "bytes": 112672,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-operations-phone-dark-id.png",
+      "bytes": 112672,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-operations-phone-light-en.png",
+      "bytes": 111649,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-operations-phone-light-id.png",
+      "bytes": 111649,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-teams-phone-dark-en.png",
+      "bytes": 193884,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-teams-phone-dark-id.png",
+      "bytes": 193884,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-teams-phone-light-en.png",
+      "bytes": 193788,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-teams-phone-light-id.png",
+      "bytes": 193788,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-tools-phone-dark-en.png",
+      "bytes": 76167,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-tools-phone-dark-id.png",
+      "bytes": 76167,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-tools-phone-light-en.png",
+      "bytes": 75398,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    },
+    {
+      "file": "android-tools-phone-light-id.png",
+      "bytes": 75398,
+      "width": 1080,
+      "height": 2400,
+      "valid": true
+    }
+  ]
+}

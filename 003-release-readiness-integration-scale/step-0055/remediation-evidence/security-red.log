@@ -1,0 +1,16 @@
+BEGIN
+INSERT 0 3
+INSERT 0 3
+SET
+  set_config   
+---------------
+ authenticated
+(1 row)
+
+              set_config              
+--------------------------------------
+ 55550000-0000-4000-8000-000000000001
+(1 row)
+
+psql:supabase/tests/user_profile_permissions.sql:29: ERROR:  REGRESSION: crew can self-promote to supervisor
+CONTEXT:  PL/pgSQL function inline_code_block line 5 at RAISE

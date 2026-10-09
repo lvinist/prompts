@@ -1,0 +1,521 @@
+{
+  "platform": "web",
+  "target": "integration_test/design_review_capture_test.dart",
+  "exit": 0,
+  "timed_out": false,
+  "secret_leak_stopped": false,
+  "expected": 73,
+  "artifacts": [
+    {
+      "file": "daily-log-desktop-dark-en.png",
+      "bytes": 156395,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-desktop-dark-id.png",
+      "bytes": 156395,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-desktop-light-en.png",
+      "bytes": 155214,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-desktop-light-id.png",
+      "bytes": 155214,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-form-desktop-dark-en.png",
+      "bytes": 153522,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-form-desktop-dark-id.png",
+      "bytes": 154175,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-form-desktop-light-en.png",
+      "bytes": 156907,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-form-desktop-light-id.png",
+      "bytes": 157299,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-form-phone-dark-en.png",
+      "bytes": 57527,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-form-phone-dark-id.png",
+      "bytes": 58155,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-form-phone-light-en.png",
+      "bytes": 56383,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-form-phone-light-id.png",
+      "bytes": 56867,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-form-tablet-dark-en.png",
+      "bytes": 61889,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-form-tablet-dark-id.png",
+      "bytes": 62103,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-form-tablet-light-en.png",
+      "bytes": 61011,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-form-tablet-light-id.png",
+      "bytes": 61221,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-phone-dark-en.png",
+      "bytes": 75444,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-phone-dark-id.png",
+      "bytes": 75444,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-phone-light-en.png",
+      "bytes": 75267,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-phone-light-id.png",
+      "bytes": 36743,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-tablet-dark-en.png",
+      "bytes": 89372,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-tablet-dark-id.png",
+      "bytes": 89372,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-tablet-light-en.png",
+      "bytes": 88240,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "daily-log-tablet-light-id.png",
+      "bytes": 88240,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "dashboard-desktop-dark-en.png",
+      "bytes": 76108,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "dashboard-desktop-dark-id.png",
+      "bytes": 76108,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "dashboard-desktop-light-en.png",
+      "bytes": 75616,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "dashboard-desktop-light-id.png",
+      "bytes": 75616,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "dashboard-phone-dark-en.png",
+      "bytes": 42925,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "dashboard-phone-dark-id.png",
+      "bytes": 42925,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "dashboard-phone-light-en.png",
+      "bytes": 42858,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "dashboard-phone-light-id.png",
+      "bytes": 42858,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "dashboard-tablet-dark-en.png",
+      "bytes": 48197,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "dashboard-tablet-dark-id.png",
+      "bytes": 48197,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "dashboard-tablet-light-en.png",
+      "bytes": 47141,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "dashboard-tablet-light-id.png",
+      "bytes": 47141,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "login-phone-light-en.png",
+      "bytes": 25385,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "operations-desktop-dark-en.png",
+      "bytes": 64025,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "operations-desktop-dark-id.png",
+      "bytes": 64025,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "operations-desktop-light-en.png",
+      "bytes": 63849,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "operations-desktop-light-id.png",
+      "bytes": 63849,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "operations-phone-dark-en.png",
+      "bytes": 39806,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "operations-phone-dark-id.png",
+      "bytes": 39806,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "operations-phone-light-en.png",
+      "bytes": 39077,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "operations-phone-light-id.png",
+      "bytes": 39077,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "operations-tablet-dark-en.png",
+      "bytes": 32726,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "operations-tablet-dark-id.png",
+      "bytes": 32726,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "operations-tablet-light-en.png",
+      "bytes": 31444,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "operations-tablet-light-id.png",
+      "bytes": 31444,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "teams-desktop-dark-en.png",
+      "bytes": 156395,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "teams-desktop-dark-id.png",
+      "bytes": 156395,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "teams-desktop-light-en.png",
+      "bytes": 155214,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "teams-desktop-light-id.png",
+      "bytes": 155214,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "teams-phone-dark-en.png",
+      "bytes": 75444,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "teams-phone-dark-id.png",
+      "bytes": 75444,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "teams-phone-light-en.png",
+      "bytes": 75267,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "teams-phone-light-id.png",
+      "bytes": 75267,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "teams-tablet-dark-en.png",
+      "bytes": 89372,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "teams-tablet-dark-id.png",
+      "bytes": 89372,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "teams-tablet-light-en.png",
+      "bytes": 88240,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "teams-tablet-light-id.png",
+      "bytes": 88240,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "tools-desktop-dark-en.png",
+      "bytes": 56667,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "tools-desktop-dark-id.png",
+      "bytes": 56667,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "tools-desktop-light-en.png",
+      "bytes": 56471,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "tools-desktop-light-id.png",
+      "bytes": 56471,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "tools-phone-dark-en.png",
+      "bytes": 26522,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "tools-phone-dark-id.png",
+      "bytes": 26522,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "tools-phone-light-en.png",
+      "bytes": 25709,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "tools-phone-light-id.png",
+      "bytes": 25709,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "tools-tablet-dark-en.png",
+      "bytes": 23568,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "tools-tablet-dark-id.png",
+      "bytes": 23568,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "tools-tablet-light-en.png",
+      "bytes": 22139,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    },
+    {
+      "file": "tools-tablet-light-id.png",
+      "bytes": 22139,
+      "width": 1578,
+      "height": 870,
+      "valid": true
+    }
+  ]
+}
