@@ -311,13 +311,13 @@ worked, and completed.
 > Work on branch `step-0057-zone-insert-policy` in `mine-flow-app` and `mine-flow-docs`; `prompts/` trunk for bookkeeping.
 > **Conditional close per owner Q5 (2026-10-10):** CI gate parked — branches stay unpushed until morning review. All local evidence green at fc4b984; RISK-0030 stays open until full-green CI at merged head.
 
-|| # | Title | Status | Evidence / deliverables ||
-||---|---|-------|--------|----------||
-|| 57.0 | RISK-0030 record reconciliation + approach-A verification | Done | risks.yml RISK-0030 mitigation updated with seed evidence (docs commit 3e6b9ea); staging row live-verified (Pit Alpha, created 2026-10-07); check.sh 0 fails ||
-|| 57.1 | Doc 06 threat review + ADR-0020 | Done | ADR-0020 Accepted (docs commit f202da9); Doc 06 §7 threat review (v0.4.0); RISK-0031 added; check.sh 0 fails, duplicate ADR scan clean, EOL sound ||
-|| 57.2 | Policy migration + staging apply + RLS tests | Done | Migration `20261010000001_step_57_foreman_zones_insert.sql` (app commit fc4b984); applied to staging (owner Q4); live role-matrix verified (foreman INSERT 201, supervisor-row PATCH 204-0-rows deny, crew/anon denied); RLS tests +2; database.ts regenerated; contract guard exit 0 ||
-|| 57.3 | E2E closure: daily_log journey + CI gate | Done | daily_log GREEN locally: Web result:true (e2e_executed marker verified daily_log_journey_test), Android +1 All tests passed, both at head fc4b984; CI gate PARKED per owner Q5 ||
-|| 57.4 | Docs/registry reconciliation + STEP close bookkeeping | Done | risks.yml RISK-0030 updated with 57.2/57.3 evidence + revisit_trigger (docs commit 33eb300); STEP-57 index row In progress + conditional-close evidence cell; PLAN flip; archive move; prompts trunk pushed; check.sh 0 fails; git diff --check clean ||
+| # | Title | Status | Evidence / deliverables |
+|---|---|-------|--------|----------|
+| 57.0 | RISK-0030 record reconciliation + approach-A verification | Done | risks.yml RISK-0030 mitigation updated with seed evidence (docs commit 3e6b9ea); staging row live-verified (Pit Alpha, created 2026-10-07); check.sh 0 fails |
+| 57.1 | Doc 06 threat review + ADR-0020 | Done | ADR-0020 Accepted (docs commit f202da9); Doc 06 §7 threat review (v0.4.0); RISK-0031 added; check.sh 0 fails, duplicate ADR scan clean, EOL sound |
+| 57.2 | Policy migration + staging apply + RLS tests | Done | Migration `20261010000001_step_57_foreman_zones_insert.sql` (app commit fc4b984); applied to staging (owner Q4); live role-matrix verified (foreman INSERT 201, supervisor-row PATCH 204-0-rows deny, crew/anon denied); RLS tests +2; database.ts regenerated; contract guard exit 0 |
+| 57.3 | E2E closure: daily_log journey + CI gate | Done | daily_log GREEN locally: Web result:true (e2e_executed marker verified daily_log_journey_test), Android +1 All tests passed, both at head fc4b984; CI gate PARKED per owner Q5 |
+| 57.4 | Docs/registry reconciliation + STEP close bookkeeping | Done | risks.yml RISK-0030 updated with 57.2/57.3 evidence + revisit_trigger (docs commit 33eb300); STEP-57 index row In progress + conditional-close evidence cell; PLAN flip; archive move; prompts trunk pushed; check.sh 0 fails; git diff --check clean |
 
 ### STEP-52 substeps
 
