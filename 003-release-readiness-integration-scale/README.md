@@ -30,5 +30,10 @@ STEP numbers are global (they don't reset per phase).
 | STEP-53 | Dependency Maintenance — hive_ce / forui / Flutter regression follow-ups | 53.1..53.4 | 2026-09-10 |
 | STEP-54 | Multiplatform Impeccable Feature-Cohesion Critique & Polish Spec | 54.0..54.11 incl. 54.10a | 2026-09-11 |
 | STEP-55 | Cohesive UI Rebuild — Form Sheets, Contextual Report Dialogs & Impeccable Audit | 55.0..55.11 | 2026-10-09 |
+| STEP-56 | Phase-3 Close-Out: Release Notes & User-Facing Docs | 56.1..56.2 | 2026-10-10 |
+| STEP-57 | Staging Zone Seed & Foreman Zone-Insert Policy | 57.0..57.4 | 2026-10-10 |
+| STEP-58 | Doc-Drift Reconciliation, Risk-Register Sweep & Workspace Hygiene | 58.1..58.3 | 2026-10-10 |
+| STEP-59 | OS Process-Death Restoration for All Form Features (FC-54.5-013) | 59.0..59.4 | 2026-10-10 |
+| STEP-60 | Dependency & Security Maintenance Sweep | 60.0..60.2 | 2026-10-10 |
 
 <!-- Add a row when a STEP's folder is moved into this phase on completion. -->
